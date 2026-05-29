@@ -1,0 +1,3 @@
+[submodule "dirtyfrag"]
+	path = dirtyfrag
+	url = https://github.com/V4bel/dirtyfrag.git
