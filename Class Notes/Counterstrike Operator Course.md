@@ -261,14 +261,3 @@ Counterstrike Operator Course{{{
 	    }}}
     }}}
 }}}
-Resources{{{
-	MITRE ATT&CK - https://attack.mitre.org/
-	MITRE D3fend - https://d3fend.mitre.org/
-	MITRE Engage - https://engage.mitre.org/
-	https://jcwa.cybercom.mil/apps
-	https://dash.ent1.pcte.mil/
-	whois
-	cert.sh
-	[Counter Strike Operations](https://dco-counterstrike-pilot-course-content.pages.levelup.cce.af.mil/module-content/)
-	[GitHub - vulhub/vulhub: Pre-Built Vulnerable Environments Based on Docker-Compose · GitHub](https://github.com/vulhub/vulhub)
-}}}
