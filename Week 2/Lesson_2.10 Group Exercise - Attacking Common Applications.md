@@ -1,4 +1,4 @@
-# Student Brief: L2.10 Group Exercise - Attacking Common Applications
+# Student Brief
 
 ## Activity Overview
 
@@ -37,9 +37,9 @@ Your team will provide:
 
 - All HTB answers for **Attacking Common Applications - Skills Assessment II**.
 - A 5-10 minute briefing including
-    - How you utilized tactical planning to complete the assessment.
-    - A short summary of the path from initial access to the final answer.
-    - The key evidence that supported each answer, such as relevant commands, screenshots, file paths, repository findings, or configuration snippets.
+- How you utilized tactical planning to complete the assessment.
+- A short summary of the path from initial access to the final answer.
+- The key evidence that supported each answer, such as relevant commands, screenshots, file paths, repository findings, or configuration snippets.
 - A brief note on the most important lesson your team took from the assessment.
 
 ## Instructor Review
