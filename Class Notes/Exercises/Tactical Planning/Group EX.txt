@@ -1,0 +1,103 @@
+S- 	State-sposored, Highly funded
+A- 	Spearphishing
+	exec and persist w/ Native windows lolbins
+	
+L-	Varensk
+U- 	EIS Lattice-9
+T- 	Unk
+E- 	mythic C2-framework
+	Lightweight fileless beacons
+
+---
+
+what is their capability to perform the action?
+	
+what limits their ability to perform it?
+
+under what conditions will they perform it?
+
+
+---
+
+Friendly
+	o- our data sources include endpoint telemitry, windows evt logs, and fw logs, but the limited netflow and no full pcap limits the scope of our visibility in the network.
+	 
+	c- our resonse actions should be overt
+
+	o- enemys use of encrypted payloads and indicator removal coupled with their use of dynamic IP resolution and frequent domain/ip rotation prevent our use of domain/ip blacklisting
+
+	k- the network is used for energy-policy and transportation-sector planning; enemy havests bulk data from emails, documents, creds, cookie stealing, etc
+
+	a- Increasing our visibility with full PCAP and an additional tap on  the blue-edge-router to allow for the the capture of all C2 traffic
+
+	w- RFI: what is the current forcast for the area?
+
+Enemy
+	o- the enemy will be able to maintain situational awareness through the continued use of their C2 framework to effected hosts.
+	 
+	c- the enemy relys on the use of "smash and grab" operations and is therefore not stealthy.
+
+	o-the cusomers use of endpoint telemitry and log collection, along with their overt tactics 
+
+	k- enemy key terrain includes their layerd backdoor access and communication with their C2 server and also will rely on the blue-edge-router for C2 communication and exfil.
+
+	a- Spearphishing with LNK/HTA attachments in archives (T1566.001, T1204.001, T1204.002), HTML smuggling (T1027.006), weaponized Microsoft Word documents/templates (T1221), and USB drive weaponization for replication (T1091).
+
+	w- RFI: what is the current forcast for the area?
+
+Time	
+	the enemy relys on rapidly spreading through the network and exfil data as much as possible. due to automated scripting and collection, there is littile to no affect from timezone difference.
+Space
+	the network is located in lunovia's capital city, Velystok.
+Logistics
+	Are the required tools and infrastructure available and provisioned?
+Civ Considerations
+	the network is used for energy-policy and transportation-sector planning
+----
+
+x Observation and fields of fire -    
+    what are our data sources? what is our vis into the env? - what are their sensors(insider access, compromised logging, C2 beacons)? what is their situational awareness?
+x Cover and Concealment -             
+    will our actions be overt or covert? will we use dedicated obfucation infrax)? - how are they hiding (matching network baseline, using encryption, "smash and grab" with no stealth)?
+x Obstacles -                         
+    what barriers hinder data aquisition or scheme of manuver(eg. firewalls, encryption, lack of logging)? - what obstacles do they face(edr, application allow-listing)?
+Key terrain -                       
+    what is the critical func/info on this network? - what terrain is critical for their mission (eg. a specific database,  
+Avenues of Approach -               
+    how can we gain or improve access? - how did they get in, and how can they move? map to mitre att&ck initial access techniques
+Weather -                           
+    phys weather can effect power and satcom, impacting phys infrax - same as friendly
+
+
+-----
+mapping the gamaredon intrusion
+	email delivered with a .lnk attachment	
+		1566.001
+			d3-ef
+			d3-cm
+			d3-cq
+			d3-rfam
+		1027.012
+		1204.002
+		1587.002
+
+	mshta.exe is observerd executing a url hosted ona .ru domain
+		1218.005
+		1105
+
+	ps is observed running a command containing invoke-expression with base64 encoded string
+		1059.001
+		1027
+		1140
+
+	pterolok.vbs is obserevd querying wmi for win32_logicaldisk where mediatype=null
+		1082
+		
+	pteropsdoor.ps1 is observed reading .docx, .xlsx, and .pdf files from a users desktop
+		1025
+		1005
+		1083
+		1119
+
+
+how to decieve and isolate
