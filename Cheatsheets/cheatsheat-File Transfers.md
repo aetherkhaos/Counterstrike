@@ -4,6 +4,19 @@ https://lolbas-project.github.io/
 https://gtfobins.github.io/
 https://github.com/juliourena/plaintext/raw/master/hackthebox/certreq.exe
 
+#### Attacks
+https://github.com/Arrexel/phpbash
+https://github.com/pentestmonkey/php-reverse-shell
+https://github.com/danielmiessler/SecLists/tree/master/Web-Shells
+
+#### Blacklist Bypasses
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20PHP/extensions.lst
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files/Extension%20ASP
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-extensions.txt
+
+#### Content/Type Bypass
+https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/web-all-content-types.txt
+https://en.wikipedia.org/wiki/List_of_file_signatures
 
 | **Command**                                                                                                                                                                                                                                                                            | **Description**                                  |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
