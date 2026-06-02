@@ -685,4 +685,51 @@ apparmor module is loaded.
 0 processes are in complain mode.
 0 processes are unconfined but have a profile defined.
 
+badguy@cow-22:~$ ls -la /etc/apparmor.d/
+total 156
+drwxr-xr-x   8 root root  4096 May 29 12:56 .
+drwxr-xr-x 146 root root 12288 May 29 12:56 ..
+drwxr-xr-x   2 root root  4096 May 29 12:56 abi
+drwxr-xr-x   4 root root 12288 May 29 12:56 abstractions
+drwxr-xr-x   2 root root  4096 Apr 22  2021 disable
+drwxr-xr-x   2 root root  4096 Feb 11  2020 force-complain
+drwxr-xr-x   2 root root  4096 May 29 12:56 local
+-rw-r--r--   1 root root  1313 Apr 12  2020 lsb_release
+-rw-r--r--   1 root root  1108 Apr 12  2020 nvidia_modprobe
+-rw-r--r--   1 root root  3461 Jun 21  2022 sbin.dhclient
+drwxr-xr-x   5 root root  4096 May 29 12:56 tunables
+-rw-r--r--   1 root root 11082 Jul  7  2020 usr.bin.evince
+-rw-r--r--   1 root root  9793 Nov 29  2022 usr.bin.firefox
+-rw-r--r--   1 root root  3202 Feb 25  2020 usr.bin.man
+-rw-r--r--   1 root root 28486 Nov 27  2022 usr.lib.snapd.snap-confine.real
+-rw-r--r--   1 root root   362 May 29 12:56 usr.local.bin.objective-gate-check
+-rw-r--r--   1 root root   188 May 29 12:56 usr.local.bin.system-maint-check
+-rw-r--r--   1 root root   174 May 29 12:56 usr.local.sbin.runtime-cache-worker
+-rw-r--r--   1 root root   540 Apr 10  2020 usr.sbin.cups-browsed
+-rw-r--r--   1 root root  5797 Apr 24  2020 usr.sbin.cupsd
+-rw-r--r--   1 root root   672 Feb 19  2020 usr.sbin.ippusbxd
+-rw-r--r--   1 root root  2425 Nov 27  2020 usr.sbin.ntpd
+-rw-r--r--   1 root root  1575 Feb 11  2020 usr.sbin.rsyslogd
+-rw-r--r--   1 root root  1385 Dec  7  2019 usr.sbin.tcpdump
+
+badguy@cow-22:~$ ls -la /etc/apparmor.d/local/
+total 16
+drwxr-xr-x 2 root root 4096 May 29 12:56 .
+drwxr-xr-x 8 root root 4096 May 29 12:56 ..
+-rw-r--r-- 1 root root    0 Apr 23  2020 lsb_release
+-rw-r--r-- 1 root root    0 Apr 23  2020 nvidia_modprobe
+-rw-r--r-- 1 root root 1111 Apr 12  2020 README
+-rw-r--r-- 1 root root    0 Apr 23  2020 sbin.dhclient
+-rw-r--r-- 1 root root    0 Apr 22  2021 usr.bin.evince
+-rw-r--r-- 1 root root  122 Apr 22  2021 usr.bin.firefox
+-rw-r--r-- 1 root root    0 Apr 23  2020 usr.bin.man
+-rw-r--r-- 1 root root    0 Apr 23  2020 usr.lib.snapd.snap-confine.real
+-rw-r--r-- 1 root root    0 Apr 22  2021 usr.sbin.cups-browsed
+-rw-r--r-- 1 root root    0 Apr 22  2021 usr.sbin.cupsd
+-rw-r--r-- 1 root root    0 Apr 22  2021 usr.sbin.ippusbxd
+-rw-r--r-- 1 root root    0 Apr 22  2021 usr.sbin.ntpd
+-rw-r--r-- 1 root root    0 Apr 23  2020 usr.sbin.rsyslogd
+-rw-r--r-- 1 root root    0 Apr 23  2020 usr.sbin.tcpdump
+
+
 ```
