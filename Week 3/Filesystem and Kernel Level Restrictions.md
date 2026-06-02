@@ -1,7 +1,7 @@
 # Part 1: Linux
 ## Flags
 1. SHADOW-LOCKET
-2. x
+2. FRACTAL-LENS
 3. x
 4. x
 
@@ -99,5 +99,14 @@ fragment=DECOY-
 fragment=FRA
 # head /usr/share/common-licenses/.runtime-index
 fragment=IGNORE
+# head /usr/share/doc/bash/inputrc.sample
+fragment=CTAL
+
+FRACTAL-LENS
+
+```
+
+## Query the loopback-only TCP service at 127.0.0.1:4545 and send exactly 1234 followed by a newline.
+```
 
 ```
