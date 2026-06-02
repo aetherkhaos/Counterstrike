@@ -13,6 +13,11 @@
 #
 ```
 
+### or, throught msf
+```
+
+```
+
 ## Systeminfo
 ```
 # whoami
