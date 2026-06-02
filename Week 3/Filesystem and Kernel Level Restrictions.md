@@ -744,7 +744,6 @@ badguy@cow-22:~$ system-maint-check
 AppArmor profile located. Validate with aa-status.
 mac_id_flag=AEGIS-MARK
 
-
 badguy@cow-22:~$ cat /usr/local/bin/system-maint-check
 #!/bin/bash
 # Lab 2.2 status probe
