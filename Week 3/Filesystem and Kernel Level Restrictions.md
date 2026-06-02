@@ -10,7 +10,7 @@
 ┌──(kali㉿kali)-[~]
 └─$ nc 20.30.40.21 4444
 /bin/sh: 0: can't access tty; job control turned off
-
+#
 ```
 
 ## Systeminfo
@@ -99,8 +99,6 @@ drwxr-xr-x 2 root root 4096 May 29 16:56 notes
 
 # restore-cache cache.id
 SHADOW-LOCKET
-
-
 ```
 
 ## Reconstruct the value from references in /opt/lab21/notes/fragments.txt
@@ -452,7 +450,6 @@ ORBIT-CIRCUIT
                                  Dload  Upload   Total   Spent    Left  Speed
 100    19    0    14    0     5    138     49 --:--:-- --:--:-- --:--:--   190
 ORBIT-CIRCUIT
-
 ```
 
 ## Review parent process environment evidence at /proc/$PPID/environ, identify the session token assignment, and send only that token value plus a newline to 127.0.0.1:4646.
@@ -486,7 +483,6 @@ KESTREL-THREAD
 ```
 
 ---
-
 # Part 2: Living with AppArmor Restrictions
 ## Flags:
 1. x
