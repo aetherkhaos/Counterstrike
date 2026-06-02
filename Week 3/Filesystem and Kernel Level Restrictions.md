@@ -58,5 +58,12 @@ Runtime package note
 The maintenance cache map is stored at /var/lib/dpkg/info/.cache.map.
 Strip NUL bytes from it to reveal NEXT_HINT.
 
+# head /var/lib/dpkg/info/.cache.map
+NEXT_HINT=/var/log/apt/term.log.1.gz
 
+# head /var/log/apt/term.log.1
+Cache recovery usage
+The decoder command is on PATH as restore-cache.
+Example: restore-cache cache.id
+ 
 ```
