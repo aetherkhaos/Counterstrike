@@ -543,3 +543,40 @@ Linux cow-22 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x86_
 
 
 ```
+
+# User/Env Context
+```
+badguy@cow-22:~$ sudo -l
+[sudo] password for badguy: 
+Matching Defaults entries for badguy on cow-22:
+    env_reset, mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin\:/opt/puppetlabs/bin
+
+User badguy may run the following commands on cow-22:
+    (ALL : ALL) ALL
+
+badguy@cow-22:~$ echo $SHELL
+/bin/bash
+
+badguy@cow-22:~$ man init | head
+SYSTEMD(1)                                            systemd                                           SYSTEMD(1)
+
+NAME
+       systemd, init - systemd system and service manager
+
+badguy@cow-22:~$ pwd
+/home/badguy
+
+badguy@cow-22:~$ ls -la
+total 36
+drwxr-xr-x 5 badguy badguy 4096 Jun  2 12:28 .
+drwxr-xr-x 6 root   root   4096 May 29 12:56 ..
+-rw------- 1 badguy badguy    5 Jun  2 10:19 .bash_history
+-rw-r--r-- 1 badguy badguy  220 Feb 25  2020 .bash_logout
+-rw-r--r-- 1 badguy badguy 3771 Feb 25  2020 .bashrc
+drwxr-xr-x 4 badguy badguy 4096 Jun  2 10:15 .cache
+drwx------ 4 badguy badguy 4096 Jun  2 10:15 .config
+drwxr-xr-x 3 badguy badguy 4096 Jun  2 10:15 .local
+-rw-r--r-- 1 badguy badguy  807 Feb 25  2020 .profile
+-rw-r--r-- 1 badguy badguy    0 Jun  2 12:28 .sudo_as_admin_successful
+```
