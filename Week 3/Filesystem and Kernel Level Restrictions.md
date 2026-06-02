@@ -491,3 +491,37 @@ KESTREL-THREAD
 4. x
 
 ## Connecting to target
+```
+┌──(kali㉿kali)-[~]
+└─$ ssh badguy@20.30.40.22 
+The authenticity of host '20.30.40.22 (20.30.40.22)' can't be established.
+ED25519 key fingerprint is: SHA256:5urkJTfIERXGIaVupbdtXNC2RP+33AbYdGcCtamb0Ak
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:6: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '20.30.40.22' (ED25519) to the list of known hosts.
+** WARNING: connection is not using a post-quantum key exchange algorithm.
+** This session may be vulnerable to "store now, decrypt later" attacks.
+** The server may need to be upgraded. See https://openssh.com/pq.html
+badguy@20.30.40.22's password: 
+Welcome to Ubuntu 20.04.5 LTS (GNU/Linux 5.4.0-135-generic x86_64)
+
+-<BREAK>-
+
+  System load:    2.24              Users logged in:          0
+  Usage of /home: 0.0% of 24.44GB   IPv4 address for docker0: 172.17.0.1
+  Memory usage:   24%               IPv4 address for eth0:    10.10.20.22
+  Swap usage:     7%                IPv4 address for eth1:    20.30.40.22
+  Processes:      246
+  
+-<BREAK>-
+
+
+badguy@cow-22:~$ 
+
+```
+
+## Systeminfo
+```
+
+```

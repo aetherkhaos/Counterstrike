@@ -44,9 +44,9 @@ Expected flags: 5.
 
 ### Access
 
-|Hostname (expected)|IP address|Username|Password|Connection|
-|---|---|---|---|---|
-|`cow-22`|`20.30.40.22`|`badguy`|`badGuy!QAZ1qaz`|SSH (TCP 22)|
+| Hostname (expected) | IP address    | Username | Password         | Connection   |
+| ------------------- | ------------- | -------- | ---------------- | ------------ |
+| `cow-22`            | `20.30.40.22` | `badguy` | `badGuy!QAZ1qaz` | SSH (TCP 22) |
 
 ### Tasks
 
