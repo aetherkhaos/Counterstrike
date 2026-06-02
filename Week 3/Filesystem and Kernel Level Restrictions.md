@@ -500,7 +500,7 @@ KESTREL-THREAD
 ---
 # Part 2: Living with AppArmor Restrictions
 ## Flags:
-1. x
+1. AEGIS-MARK
 2. x
 3. x
 4. x
@@ -748,4 +748,20 @@ echo "mac_id_flag=$(printf '%s' 'QUVHSVMtTUFSSw==' | /usr/bin/base64 -d)"
 
 badguy@cow-22:~$ printf '%s' 'QUVHSVMtTUFSSw==' | /usr/bin/base64 -d
 AEGIS-MARK
+```
+# Identify and exercise lab-related helper/gate scripts in normal administrative paths.
+```
+
+```
+# Execute an uploaded payload through the gate from its initial location and capture blocked/denied behavior.
+```
+
+```
+# Collect denial and policy evidence from native host artifacts and correlate it to the blocked action.
+```
+
+```
+# Identify an allowed execution path from policy evidence, run the same payload from that path, and validate successful behavior.
+```
+
 ```
