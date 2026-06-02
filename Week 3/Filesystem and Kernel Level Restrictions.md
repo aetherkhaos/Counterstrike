@@ -81,3 +81,23 @@ SHADOW-LOCKET
 ```
 
 ## Reconstruct the value from references in /opt/lab21/notes/fragments.txt
+```
+# head -20 /opt/lab21/notes/fragments.txt
+challenge=resolve_fragment_references
+format=slot_NN|state=keep|value=<file-path>
+slot_03|state=keep|value=/var/lib/dpkg/info/base-files.list.d
+slot_90|state=drop|value=/var/tmp/.font-unix-cache
+slot_01|state=keep|value=/etc/apt/preferences.d/00-cache-state
+slot_91|state=drop|value=/usr/share/common-licenses/.runtime-index
+slot_02|state=keep|value=/usr/share/doc/bash/inputrc.sample
+
+# head /var/lib/dpkg/info/base-files.list.d
+fragment=-LENS
+# head /var/tmp/.font-unix-cache
+fragment=DECOY-
+# head /etc/apt/preferences.d/00-cache-state
+fragment=FRA
+# head /usr/share/common-licenses/.runtime-index
+fragment=IGNORE
+
+```
