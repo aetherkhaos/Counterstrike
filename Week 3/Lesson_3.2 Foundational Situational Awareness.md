@@ -12,6 +12,8 @@ A standard Linux server (for example Ubuntu or Rocky) is provided with common se
 
 Expected flags: 5.
 
+### Analyst Box:
+kali - toortoor!
 ### Access
 
 |Hostname (expected)|IP address|Username|Password|Connection|
@@ -46,18 +48,18 @@ Expected flags: 5.
 
 ### Access
 
-|Hostname (expected)|IP address|Username|Password|Connection|
-|---|---|---|---|---|
-|`bull-12`|`20.30.40.12`|`badguy`|`badGuy!QAZ1qaz`|psexec|
+| Hostname (expected) | IP address    | Username | Password           | Connection |
+| ------------------- | ------------- | -------- | ------------------ | ---------- |
+| `bull-12`           | `20.30.40.12` | `badguy` | `1qaz2wsx!QAZ@WSX` | psexec     |
 
 ### Tasks
 
-1. Enumerate running processes and differentiate system components, installed software, and custom execution.
-2. Enumerate active/listening network connections and map key ports to expected services.
-3. Review scheduled task activity and identify high-privilege or custom task behavior.
-4. Establish user/domain context and enumerate account/session indicators relevant to host operation.
-5. Perform file and configuration reconnaissance for web, script, and credential-bearing artifacts.
-6. Produce a host-purpose conclusion from the collected evidence and recover all five lab flags discovered during enumeration.
+- 1. Enumerate running processes and differentiate system components, installed software, and custom execution.
+- 2. Enumerate active/listening network connections and map key ports to expected services.
+- 3. Review scheduled task activity and identify high-privilege or custom task behavior.
+1. Establish user/domain context and enumerate account/session indicators relevant to host operation.
+- 5. Perform file and configuration reconnaissance for web, script, and credential-bearing artifacts.
+1. Produce a host-purpose conclusion from the collected evidence and recover all five lab flags discovered during enumeration. - web server
 
 ### Clues and Constraints
 
@@ -70,4 +72,15 @@ Submit a complete analysis covering process, network, scheduled-task, user/domai
 
 ## Submission Notes
 
-Follow instructor-provided assessment criteria for exact deliverable format and grading expectations.
+Push your report to the JCWA GitLab instance in the Counterstrike course [Student Submissions](https://code.levelup.cce.af.mil/dco-counterstrike-pilot-course-content/student-submissions) repository.
+
+- Create a new branch name `Lab3.2-<Lastname>-<Firstname>`
+
+---
+## Building the Gitlab Student Submissions Folder
+
+@ian.starr
+https://code.levelup.cce.af.mil/dco-counterstrike-pilot-course-content/student-submissions.git
+r2d2-3WBbMpkNeq2Zz5G9OF742W86MQp1OmhmbAk.01.0z0mvhgbs
+
+git -c http.sslVerify=false clone 'https://ian.starr:r2d2-3WBbMpkNeq2Zz5G9OF742W86MQp1OmhmbAk.01.0z0mvhgbs@code.levelup.cce.af.mil/dco-counterstrike-pilot-course-content/student-submissions.git'
