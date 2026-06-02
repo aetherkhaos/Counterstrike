@@ -1,3 +1,4 @@
+# Part 1: Linux
 ## Flags:
  - Processes: QUARTZ-VEIL
  - Services: SIGNAL-HARBOR
@@ -736,7 +737,7 @@ VELVET-ANCHOR
 
 ```
 
-##  services
+##  Services
 ```
 badguy@boar-11:/home$ nc -v  localhost 8081
 Connection to localhost 8081 port [tcp/tproxy] succeeded!
@@ -791,6 +792,7 @@ connection_secret=QUARTZ-VEIL
 ---
 # Part 2: Windows
 
+## Flags
 1. NIMBUS-KEYSTONE - desktop
 2. BRAVO-EMBER - schtasks
 3. TIDAL-ROUTE - http header from running service
