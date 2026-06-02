@@ -1,6 +1,6 @@
 # Part 1: Linux
 ## Flags
-1. x
+1. SHADOW-LOCKET
 2. x
 3. x
 4. x
@@ -25,7 +25,7 @@ Linux collie-21 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x
 /bin/sh: 4: man: not found
 ```
 
-## Shell upgrade - Come back to it
+## Shell upgrade
 ```
 # python3
 /bin/sh: 1: python3: not found
@@ -33,7 +33,7 @@ Linux collie-21 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x
 /bin/sh: 2: python: not found
 ```
 
-## Establish runtime context (identity, working path, process visibility, and filesystem boundaries) from the constrained shell.
+## Read /usr/share/doc/base-files/runtime-notes and follow the chain until you find the flag.
 ```
 # cat README.first
 /bin/sh: 4: cat: not found
@@ -61,9 +61,23 @@ Strip NUL bytes from it to reveal NEXT_HINT.
 # head /var/lib/dpkg/info/.cache.map
 NEXT_HINT=/var/log/apt/term.log.1.gz
 
+# gunzip /var/log/apt/term.log.1.gz
+
 # head /var/log/apt/term.log.1
 Cache recovery usage
 The decoder command is on PATH as restore-cache.
 Example: restore-cache cache.id
- 
+
+# ls -la
+total 20
+drwxr-xr-x 3 root root 4096 May 29 16:56 .
+drwxr-xr-x 3 root root 4096 Mar 19 13:23 ..
+-rw-r--r-- 1 root root  704 May 29 16:56 README.first
+-rw-r--r-- 1 root root   14 May 29 16:56 cache.id
+drwxr-xr-x 2 root root 4096 May 29 16:56 notes
+# restore-cache cache.id
+SHADOW-LOCKET
+
 ```
+
+## Reconstruct the value from references in /opt/lab21/notes/fragments.txt
