@@ -35,15 +35,23 @@ Linux collie-21 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x
 
 ## Read /usr/share/doc/base-files/runtime-notes and follow the chain until you find the flag.
 ```
+# ls -la
+total 20
+drwxr-xr-x 3 root root 4096 May 29 16:56 .
+drwxr-xr-x 3 root root 4096 Mar 19 13:23 ..
+-rw-r--r-- 1 root root  704 May 29 16:56 README.first
+-rw-r--r-- 1 root root   14 May 29 16:56 cache.id
+drwxr-xr-x 2 root root 4096 May 29 16:56 notes
+
+# ls -la notes
+total 12
+drwxr-xr-x 2 root root 4096 May 29 16:56 .
+drwxr-xr-x 3 root root 4096 May 29 16:56 ..
+-rw-r--r-- 1 root root  385 May 29 16:56 fragments.txt
+
 # cat README.first
 /bin/sh: 4: cat: not found
-# head
 
-^C
-                                                                                
-┌──(kali㉿kali)-[~]
-└─$ nc 20.30.40.21 4444
-/bin/sh: 0: can't access tty; job control turned off
 # head README.first
 Start by mapping this filesystem and recording what tools are missing.
 This README is the instruction surface for the flags in this jail.
