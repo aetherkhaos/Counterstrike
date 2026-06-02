@@ -1,4 +1,4 @@
-# Part 1: Linux
+# Part 1: The Chroot Jail
 ## Flags
 1. SHADOW-LOCKET
 2. FRACTAL-LENS
@@ -68,6 +68,27 @@ Cache recovery usage
 The decoder command is on PATH as restore-cache.
 Example: restore-cache cache.id
 
+# which restore-cache
+/usr/local/bin/restore-cache
+
+# file /usr/local/bin/restore-cache
+/bin/sh: 9: file: not found
+
+# head -1 /usr/local/bin/restore-cache
+#!/bin/sh
+
+# head /usr/local/bin/restore-cache
+#!/bin/sh
+if [ "$#" -ne 1 ]; then
+  printf "%s\n" "usage: restore-cache <file-name>"
+  exit 1
+fi
+input_file="${1##*/}"
+if [ ! -r "$input_file" ]; then
+  printf "%s\n" "cannot read input file: $input_file"
+  exit 1
+fi
+
 # ls -la
 total 20
 drwxr-xr-x 3 root root 4096 May 29 16:56 .
@@ -75,8 +96,10 @@ drwxr-xr-x 3 root root 4096 Mar 19 13:23 ..
 -rw-r--r-- 1 root root  704 May 29 16:56 README.first
 -rw-r--r-- 1 root root   14 May 29 16:56 cache.id
 drwxr-xr-x 2 root root 4096 May 29 16:56 notes
+
 # restore-cache cache.id
 SHADOW-LOCKET
+
 
 ```
 
@@ -445,3 +468,12 @@ perl: warning: Please check that your locale settings:
 perl: warning: Falling back to the standard locale ("C").
 KESTREL-THREAD
 ```
+
+# Part 2: Living with AppArmor Restrictions
+## Flags:
+1. x
+2. x
+3. x
+4. x
+
+## Connecting to target
