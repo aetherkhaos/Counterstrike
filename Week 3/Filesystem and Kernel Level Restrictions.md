@@ -536,7 +536,7 @@ badguy@cow-22:~$
 
 ```
 
-## Systeminfo
+# Systeminfo
 ```
 badguy@cow-22:~$ uname -a
 Linux cow-22 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
@@ -625,7 +625,7 @@ drwxr-xr-x 2 hunter hunter 4096 May 29 12:56 .
 drwxr-xr-x 3 root   root   4096 May 29 12:56 ..
 ```
 
-## Confirm AppArmor status and identify relevant profile state and policy locations.
+# Confirm AppArmor status and identify relevant profile state and policy locations.
 ```
 adguy@cow-22:~$ sudo apparmor_status 
 apparmor module is loaded.
@@ -731,5 +731,21 @@ drwxr-xr-x 8 root root 4096 May 29 12:56 ..
 -rw-r--r-- 1 root root    0 Apr 23  2020 usr.sbin.rsyslogd
 -rw-r--r-- 1 root root    0 Apr 23  2020 usr.sbin.tcpdump
 
+badguy@cow-22:~$ cat /etc/apparmor.d/usr.local.bin.system-maint-check 
+#include <tunables/global>
+/usr/local/bin/system-maint-check flags=(complain) {
+  #include <abstractions/base>
+  /usr/local/bin/system-maint-check r,
+  /bin/bash ix,
+  /usr/bin/bash ix,
+}
 
+badguy@cow-22:~$ cat /usr/local/bin/system-maint-check
+#!/bin/bash
+# Lab 2.2 status probe
+echo 'AppArmor profile located. Validate with aa-status.'
+echo "mac_id_flag=$(printf '%s' 'QUVHSVMtTUFSSw==' | /usr/bin/base64 -d)"
+
+badguy@cow-22:~$ printf '%s' 'QUVHSVMtTUFSSw==' | /usr/bin/base64 -d
+AEGIS-MARK
 ```
