@@ -538,5 +538,8 @@ badguy@cow-22:~$
 
 ## Systeminfo
 ```
+badguy@cow-22:~$ uname -a
+Linux cow-22 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+
 
 ```
