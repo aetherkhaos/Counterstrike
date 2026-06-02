@@ -444,6 +444,14 @@ perl: warning: Please check that your locale settings:
     are supported and installed on your system.
 perl: warning: Falling back to the standard locale ("C").
 ORBIT-CIRCUIT
+```
+### Or, instead of PEARL...
+```
+# echo "1234" | curl telnet://127.0.0.1:4545
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    19    0    14    0     5    138     49 --:--:-- --:--:-- --:--:--   190
+ORBIT-CIRCUIT
 
 ```
 
@@ -468,6 +476,16 @@ perl: warning: Please check that your locale settings:
 perl: warning: Falling back to the standard locale ("C").
 KESTREL-THREAD
 ```
+### Or, instead of PEARL...
+```
+# echo "toortoor" | curl telnet://127.0.0.1:4646
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    24    0    15    0     9    145     87 --:--:-- --:--:-- --:--:--   233
+KESTREL-THREAD
+```
+
+---
 
 # Part 2: Living with AppArmor Restrictions
 ## Flags:
