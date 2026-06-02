@@ -1,10 +1,11 @@
-# Flags:
+## Flags:
  - Processes: QUARTZ-VEIL
  - Services: SIGNAL-HARBOR
  - Scheduled Tasks: IRON-LANTERN
  - User/Priv Context: VELVET-ANCHOR
  - files: COBALT-TRACE
 
+## Systeminfo
 ```
 unset histfile
 export histsize=0
@@ -38,7 +39,7 @@ SYNOPSIS
        init [OPTIONS...] {COMMAND}
 ```
 
-# Processes
+## Processes
 ```
 
 badguy@boar-11:~$ ps -lef
@@ -46,7 +47,7 @@ F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME C
 4 S root       28094   28093  0  80   0 -  1723 -      11:35 ?        00:00:00 /bin/bash -c env PROCESS_FLAG="IRON-LANTERN" sleep 90 || true
 ```
 
-# Services
+## Services
 ```
 badguy@boar-11:/home$ sudo netstat -putan
 Active Internet connections (servers and established)
@@ -579,7 +580,7 @@ badguy@boar-11:/home$ systemctl status docker-registry.service
              └─1014 /usr/bin/docker-registry serve /etc/docker/registry/config.yml
 
 ```
-
+## User Context
 ```
 badguy@boar-11:~$ cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash
@@ -735,7 +736,7 @@ VELVET-ANCHOR
 
 ```
 
-
+##  services
 ```
 badguy@boar-11:/home$ nc -v  localhost 8081
 Connection to localhost 8081 port [tcp/tproxy] succeeded!
@@ -761,6 +762,7 @@ Content-Type: text/html; charset=iso-8859-1
 
 ```
 
+## Logs
 ```
 badguy@boar-11:/home$ cat /var/log/sys
 syslog       syslog.1     syslog.2.gz  syslog.3.gz  syslog.4.gz  syslog.5.gz  syslog.6.gz  syslog.7.gz  syswatch/    
@@ -769,6 +771,7 @@ badguy@boar-11:/home$ cat /var/log/syswatch/app.log
 
 ```
 
+## Service Configurations
 ```
 badguy@boar-11:/var/www/html$ ls
 db_config.txt  index.html
@@ -786,6 +789,8 @@ connection_secret=QUARTZ-VEIL
 
 
 ---
+# Part 2: Windows
+
 1. NIMBUS-KEYSTONE - desktop
 2. BRAVO-EMBER - schtasks
 3. TIDAL-ROUTE - http header from running service
@@ -986,7 +991,6 @@ c:\Windows\Tasks> curl http://localhost
 </html>
 
 ```
-
 
 ```
 c:\> dir
