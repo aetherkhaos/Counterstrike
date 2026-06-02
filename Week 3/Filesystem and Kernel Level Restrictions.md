@@ -623,6 +623,66 @@ badguy@cow-22:~$ ls -la ../hunter/downloads
 total 8
 drwxr-xr-x 2 hunter hunter 4096 May 29 12:56 .
 drwxr-xr-x 3 root   root   4096 May 29 12:56 ..
+```
 
+## Confirm AppArmor status and identify relevant profile state and policy locations.
+```
+adguy@cow-22:~$ sudo apparmor_status 
+apparmor module is loaded.
+44 profiles are loaded.
+43 profiles are in enforce mode.
+   /snap/snapd/17883/usr/lib/snapd/snap-confine
+   /snap/snapd/17883/usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/bin/evince
+   /usr/bin/evince-previewer
+   /usr/bin/evince-previewer//sanitized_helper
+   /usr/bin/evince-thumbnailer
+   /usr/bin/evince//sanitized_helper
+   /usr/bin/man
+   /usr/lib/NetworkManager/nm-dhcp-client.action
+   /usr/lib/NetworkManager/nm-dhcp-helper
+   /usr/lib/connman/scripts/dhclient-script
+   /usr/lib/cups/backend/cups-pdf
+   /usr/lib/snapd/snap-confine
+   /usr/lib/snapd/snap-confine//mount-namespace-capture-helper
+   /usr/local/bin/objective-gate-check
+   /usr/local/sbin/runtime-cache-worker
+   /usr/sbin/cups-browsed
+   /usr/sbin/cupsd
+   /usr/sbin/cupsd//third_party
+   /usr/sbin/ntpd
+   /usr/sbin/tcpdump
+   /{,usr/}sbin/dhclient
+   docker-default
+   ippusbxd
+   lsb_release
+   man_filter
+   man_groff
+   nvidia_modprobe
+   nvidia_modprobe//kmod
+   snap-update-ns.lxd
+   snap.lxd.activate
+   snap.lxd.benchmark
+   snap.lxd.buginfo
+   snap.lxd.check-kernel
+   snap.lxd.daemon
+   snap.lxd.hook.configure
+   snap.lxd.hook.install
+   snap.lxd.hook.remove
+   snap.lxd.lxc
+   snap.lxd.lxc-to-lxd
+   snap.lxd.lxd
+   snap.lxd.migrate
+   snap.lxd.user-daemon
+1 profiles are in complain mode.
+   /usr/local/bin/system-maint-check
+4 processes have profiles defined.
+4 processes are in enforce mode.
+   /usr/bin/bash (1009) /usr/local/sbin/runtime-cache-worker
+   /usr/sbin/cups-browsed (3928778) 
+   /usr/sbin/cupsd (3928777) 
+   /usr/sbin/ntpd (1063) 
+0 processes are in complain mode.
+0 processes are unconfined but have a profile defined.
 
 ```
