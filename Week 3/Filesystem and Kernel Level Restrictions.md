@@ -25,7 +25,15 @@ Linux collie-21 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x
 /bin/sh: 4: man: not found
 ```
 
-## Shell upgrade
+## Shell upgrade - Come back to it
+```
+# python3
+/bin/sh: 1: python3: not found
+# python
+/bin/sh: 2: python: not found
+```
+
+## Establish runtime context (identity, working path, process visibility, and filesystem boundaries) from the constrained shell.
 ```
 
 ```
