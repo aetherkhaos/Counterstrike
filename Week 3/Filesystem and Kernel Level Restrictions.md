@@ -35,5 +35,28 @@ Linux collie-21 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x
 
 ## Establish runtime context (identity, working path, process visibility, and filesystem boundaries) from the constrained shell.
 ```
+# cat README.first
+/bin/sh: 4: cat: not found
+# head
+
+^C
+                                                                                
+┌──(kali㉿kali)-[~]
+└─$ nc 20.30.40.21 4444
+/bin/sh: 0: can't access tty; job control turned off
+# head README.first
+Start by mapping this filesystem and recording what tools are missing.
+This README is the instruction surface for the flags in this jail.
+For one flag, read /usr/share/doc/base-files/runtime-notes and follow the chain until you find the flag.
+For one flag, reconstruct the value from references in /opt/lab21/notes/fragments.txt.
+For one flag, query the loopback-only TCP service at 127.0.0.1:4545 and send exactly 1234 followed by a newline.
+For one flag, review parent process environment evidence at /proc/$PPID/environ, identify the session token assignment, and send only that token value plus a newline to 127.0.0.1:4646.
+Use fundamental commands and inspect files before executing custom helpers.
+
+# head /usr/share/doc/base-files/runtime-notes
+Runtime package note
+The maintenance cache map is stored at /var/lib/dpkg/info/.cache.map.
+Strip NUL bytes from it to reveal NEXT_HINT.
+
 
 ```
