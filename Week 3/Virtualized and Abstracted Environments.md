@@ -634,4 +634,4 @@ walkthrough
 in the meterpreter session
 	resolve (hotsname)
 	bg
-	
+	portfwd add -L 0.0.0.0 -p 3022 -P 22 -r resolved ip
