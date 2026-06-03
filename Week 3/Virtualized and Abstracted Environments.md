@@ -550,3 +550,25 @@ Collect evidence from manpage source artifacts with alternate tooling.
 .SH VALIDATION
 token=runtime-manproof
 ```
+
+/opt/ops/tools/check-man-evidence
+```
+root@0521ead29eb7:/app# cat /opt/ops/tools/check-man-evidence
+cat /opt/ops/tools/check-man-evidence
+#!/bin/sh
+set -eu
+if [ -z "${1:-}" ]; then
+  echo "usage: check-man-evidence <token>"
+  exit 2
+fi
+if [ "$1" = "runtime-manproof" ]; then
+  echo "limited_tooling_flag=ATLAS-SHARD"
+  exit 0
+fi
+echo "result=invalid-token"
+exit 1
+root@0521ead29eb7:/app# /opt/ops/tools/check-man-evidence runtime-manproof
+/opt/ops/tools/check-man-evidence runtime-manproof
+limited_tooling_flag=ATLAS-SHARD
+root@0521ead29eb7:/app# 
+```
