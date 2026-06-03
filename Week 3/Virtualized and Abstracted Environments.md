@@ -607,3 +607,12 @@ root@0521ead29eb7:/app# /opt/ops/tools/check-man-evidence runtime-manproof
 limited_tooling_flag=ATLAS-SHARD
 root@0521ead29eb7:/app# 
 ```
+
+
+
+---
+
+walkthrough
+	view source
+	id functions
+	
