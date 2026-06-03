@@ -12,8 +12,8 @@ Local upload path: /var/www/html/uploads
 
 Remote execution staging root: /var/run/exec-dropbox
 Upload file:
-Remote file name: Args: Command:
-Hints
+Remote file name: Args: 
+Command:
 
 Start with runtime context and process evidence in this container.
 Remote execution requests run in a different container.
@@ -38,7 +38,15 @@ F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME C
 4 S www-data     156      26  0  80   0 -   666 do_wai 12:19 ?        00:00:00 sh -c -- ps -lef 2>&1
 4 R www-data     157     156  0  80   0 -  1607 -      12:19 ?        00:00:00 ps -lef
 ```
-			
+		- file /usr/local/bin/PIVOT-SPARK
+			- /usr/local/bin/PIVOT-SPARK: POSIX shell script, ASCII text executable
+		- cat /usr/local/bin/PIVOT-SPARK
+```
+#!/bin/sh
+while true; do
+  sleep 300
+done
+```
 
 - What evidence shows this is a containerized or otherwise abstracted runtime?
 - Which process, file-activity, or environment artifacts look intentionally placed for this exercise?
