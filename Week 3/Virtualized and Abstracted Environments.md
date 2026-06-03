@@ -537,3 +537,16 @@ if __name__ == "__main__":
     main()
 
 ```
+
+```
+root@0521ead29eb7:/app# cat /usr/share/man/man7/ops-runtime.7
+cat /usr/share/man/man7/ops-runtime.7
+.TH OPS-RUNTIME 7
+.SH NAME
+ops-runtime \- runtime operations reference
+.SH DESCRIPTION
+This environment intentionally omits the man command.
+Collect evidence from manpage source artifacts with alternate tooling.
+.SH VALIDATION
+token=runtime-manproof
+```
