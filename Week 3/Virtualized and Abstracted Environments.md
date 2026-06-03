@@ -123,6 +123,11 @@ done
 3. 
 
 - What paths or labels does the web page reveal for uploaded files and remote execution?
+	- mounted_path_hint=/srv/archive/reports/maintenance-readme.txt
+	- limited_tooling_hint=extract-token-from-man-source
+	- man_source=/usr/share/man/man7/ops-runtime.7.gz
+	- man_validator=/opt/ops/tools/check-man-evidence
+	- ssh_artifacts=/opt/ops/ssh-materials
 - If you upload a small diagnostic payload, what does its output prove about where it ran?
 - What output fields or response text are different from local web-shell command output?
 - Which discovered hints point toward mounted data, missing-tool adaptation, scoped request/response behavior, or later movement?
