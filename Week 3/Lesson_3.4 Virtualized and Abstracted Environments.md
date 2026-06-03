@@ -14,9 +14,9 @@ Expected flags: 9.
 
 ### Access
 
-|Hostname (expected)|IP address|Username|Password|Connection|
-|---|---|---|---|---|
-|`duck-31`|`20.30.40.31`|N/A|N/A|Web shell endpoint: `http://20.30.40.31:8081/?t=<instructor-provided-token>`|
+| Hostname (expected) | IP address    | Username | Password | Connection                                                         |
+| ------------------- | ------------- | -------- | -------- | ------------------------------------------------------------------ |
+| `duck-31`           | `20.30.40.31` | N/A      | N/A      | Web shell endpoint: `http://20.30.40.31:8081/?t=ops_console_token` |
 
 ### Investigation Rules
 
