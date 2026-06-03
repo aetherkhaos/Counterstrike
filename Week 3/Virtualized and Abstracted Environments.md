@@ -1,8 +1,8 @@
 # Gate 1 - Where Am I Starting?
 
 ## Flags:
-1. PIVOT-SPARK
-
+1. PIVOT-SPARK - Process listing
+2. CANOPY-SIGNAL - catting /.dockerenv 
 - What user, host, shell, working directory, OS, process list, and network state can you observe from the web shell?
 	- on visiting the web console
 ```
@@ -20,7 +20,36 @@ Remote execution requests run in a different container.
 Some objectives require adapting to limited tooling and private-network reachability.
 
 ```
-	- commands can be run from the web console
+		- ls -la /
+```
+total 72
+drwxr-xr-x   1 root root 4096 Jun  3 03:42 .
+drwxr-xr-x   1 root root 4096 Jun  3 03:42 ..
+-rwxr-xr-x   1 root root   33 Jun  3 03:42 .dockerenv
+lrwxrwxrwx   1 root root    7 Mar  2 21:50 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Mar  2 21:50 boot
+drwxr-xr-x   5 root root  340 Jun  3 03:42 dev
+drwxr-xr-x   1 root root 4096 Jun  3 03:42 etc
+drwxr-xr-x   2 root root 4096 Mar  2 21:50 home
+lrwxrwxrwx   1 root root    7 Mar  2 21:50 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Mar  2 21:50 lib64 -> usr/lib64
+drwxr-xr-x   2 root root 4096 Apr  6 00:00 media
+drwxr-xr-x   2 root root 4096 Apr  6 00:00 mnt
+drwxr-xr-x   2 root root 4096 Apr  6 00:00 opt
+dr-xr-xr-x 284 root root    0 Jun  3 03:42 proc
+drwx------   2 root root 4096 Apr  6 00:00 root
+drwxr-xr-x   1 root root 4096 Apr  7 14:45 run
+lrwxrwxrwx   1 root root    8 Mar  2 21:50 sbin -> usr/sbin
+drwxr-xr-x   2 root root 4096 Apr  6 00:00 srv
+dr-xr-xr-x  13 root root    0 Jun  3 12:16 sys
+drwxrwxrwt   1 root root 4096 Jun  3 03:42 tmp
+drwxr-xr-x   1 root root 4096 Apr  6 00:00 usr
+drwxr-xr-x   1 root root 4096 Apr  7 01:37 var
+```
+		- cat /.dockerenv
+```
+DOCKERENV_ENV_FLAG=CANOPY-SIGNAL
+```
 		- ps -lef
 ```
 F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
