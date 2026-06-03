@@ -616,5 +616,5 @@ walkthrough
 	view source
 	identify functions
 	create own way to view and interact with the page
-	curl -v $TGT
-	
+		$TGT = (url to the webpage)
+		curl -v $TGT
