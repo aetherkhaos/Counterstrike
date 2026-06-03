@@ -110,5 +110,8 @@ done
 ```
 
 - What evidence shows this is a containerized or otherwise abstracted runtime?
+	- the existance of the /.dockerenv file and the minimal processes/services
 - Which process, file-activity, or environment artifacts look intentionally placed for this exercise?
+	- /.dockerenv
+	- /usr/local/bin/PIVOT-SPARK
 - Which three objectives can you recover from this first runtime context?
