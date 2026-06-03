@@ -118,9 +118,9 @@ done
 # Gate 2: What Does Upload and Execute Actually Do?
 
 ## Flags
-1. GRANITE-BRIDGE
-2. ATLAS-SHARD
-3. 
+1. GRANITE-BRIDGE - /srv/archive/reports/maintenance-readme.txt
+2. ATLAS-SHARD - /usr/share/man/man7/ops-runtime.7.gz
+3. MARLIN-FOCUS - /opt/ops/objectives.txt
 
 - What paths or labels does the web page reveal for uploaded files and remote execution?
 	- mounted_path_hint=/srv/archive/reports/maintenance-readme.txt
@@ -178,6 +178,35 @@ stdout=Maintenance archive notes:
 stderr=
 ```
 
+```
+root@0521ead29eb7:/var/run/exec-dropbox/uploads# cd /opt/ops
+cd /opt/ops
+
+root@0521ead29eb7:/opt/ops# ls -la
+ls -la
+total 28
+drwxr-xr-x 1 root root 4096 Jun  3 03:42 .
+drwxr-xr-x 1 root root 4096 Apr  7 14:45 ..
+-rw-r--r-- 1 root root  174 Jun  3 03:42 objectives.txt
+drwxr-xr-x 1 root root 4096 Apr  7 14:45 ssh-materials
+-rw-r--r-- 1 root root  211 Jun  3 03:42 tooling-note.txt
+drwxr-xr-x 2 root root 4096 Jun  3 03:42 tools
+
+root@0521ead29eb7:/opt/ops# cat tooling-note.txt
+cat tooling-note.txt
+limited tooling observed: ssh,nc,netstat,ss,ip,man
+objective_hint=man command missing; inspect manpage source directly
+man_source=/usr/share/man/man7/ops-runtime.7.gz
+validator=/opt/ops/tools/check-man-evidence
+
+root@0521ead29eb7:/opt/ops# cat obj*
+cat obj*
+Container role: exec
+mounted_path_flag=GRANITE-BRIDGE
+limited_tooling_objective=missing-man-alt-method
+misconfig_scope_flag=MARLIN-FOCUS
+ssh_artifacts=/opt/ops/ssh-materials
+```
 ls -la /opt/ops/ssh-materials
 ```
 source=exec-container
