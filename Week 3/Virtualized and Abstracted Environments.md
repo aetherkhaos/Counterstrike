@@ -614,5 +614,7 @@ root@0521ead29eb7:/app#
 
 walkthrough
 	view source
-	id functions
+	identify functions
+	create own way to view and interact with the page
+	curl -v $TGT
 	
