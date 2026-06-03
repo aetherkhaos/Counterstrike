@@ -262,3 +262,40 @@ ssh_artifacts=/opt/ops/ssh-materials
 stdout=
 stderr=
 ```
+
+```
+source=exec-container
+exit_code=0
+mounted_path_hint=/srv/archive/reports/maintenance-readme.txt
+limited_tooling_hint=extract-token-from-man-source
+man_source=/usr/share/man/man7/ops-runtime.7.gz
+man_validator=/opt/ops/tools/check-man-evidence
+ssh_artifacts=/opt/ops/ssh-materials
+stdout=Running Command: ls -la /
+----------------------------------------
+total 68
+drwxr-xr-x   1 root root 4096 Jun  3 03:42 .
+drwxr-xr-x   1 root root 4096 Jun  3 03:42 ..
+-rwxr-xr-x   1 root root    0 Jun  3 03:42 .dockerenv
+drwxr-xr-x   1 root root 4096 Apr  7 14:45 app
+lrwxrwxrwx   1 root root    7 Mar  2 21:50 bin -> usr/bin
+drwxr-xr-x   2 root root 4096 Mar  2 21:50 boot
+drwxr-xr-x   5 root root  340 Jun  3 03:42 dev
+drwxr-xr-x   1 root root 4096 Jun  3 03:42 etc
+drwxr-xr-x   2 root root 4096 Mar  2 21:50 home
+lrwxrwxrwx   1 root root    7 Mar  2 21:50 lib -> usr/lib
+lrwxrwxrwx   1 root root    9 Mar  2 21:50 lib64 -> usr/lib64
+drwxr-xr-x   2 root root 4096 Apr  6 00:00 media
+drwxr-xr-x   2 root root 4096 Apr  6 00:00 mnt
+drwxr-xr-x   1 root root 4096 Apr  7 14:45 opt
+dr-xr-xr-x 288 root root    0 Jun  3 03:42 proc
+drwx------   1 root root 4096 Apr  7 02:17 root
+drwxr-xr-x   1 root root 4096 Apr  7 14:45 run
+lrwxrwxrwx   1 root root    8 Mar  2 21:50 sbin -> usr/sbin
+drwxr-xr-x   1 root root 4096 Jun  3 03:42 srv
+dr-xr-xr-x  13 root root    0 Jun  3 12:16 sys
+drwxrwxrwt   2 root root 4096 Apr  6 00:00 tmp
+drwxr-xr-x   1 root root 4096 Apr  6 00:00 usr
+drwxr-xr-x   1 root root 4096 Apr  6 00:00 var
+stderr=
+```
