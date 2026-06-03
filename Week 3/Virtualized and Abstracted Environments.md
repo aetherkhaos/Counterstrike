@@ -119,7 +119,8 @@ done
 
 ## Flags
 1. GRANITE-BRIDGE
-2. 
+2. ATLAS-SHARD
+3. 
 
 - What paths or labels does the web page reveal for uploaded files and remote execution?
 - If you upload a small diagnostic payload, what does its output prove about where it ran?
@@ -228,5 +229,36 @@ stderr=
 
 cat 
 ```
+source=exec-container
+exit_code=0
+mounted_path_hint=/srv/archive/reports/maintenance-readme.txt
+limited_tooling_hint=extract-token-from-man-source
+man_source=/usr/share/man/man7/ops-runtime.7.gz
+man_validator=/opt/ops/tools/check-man-evidence
+ssh_artifacts=/opt/ops/ssh-materials
+stdout=#!/bin/sh
+set -eu
+if [ -z "${1:-}" ]; then
+  echo "usage: check-man-evidence <token>"
+  exit 2
+fi
+if [ "$1" = "runtime-manproof" ]; then
+  echo "limited_tooling_flag=ATLAS-SHARD"
+  exit 0
+fi
+echo "result=invalid-token"
+exit 1
+stderr=
+```
 
+```
+source=exec-container
+exit_code=0
+mounted_path_hint=/srv/archive/reports/maintenance-readme.txt
+limited_tooling_hint=extract-token-from-man-source
+man_source=/usr/share/man/man7/ops-runtime.7.gz
+man_validator=/opt/ops/tools/check-man-evidence
+ssh_artifacts=/opt/ops/ssh-materials
+stdout=
+stderr=
 ```
