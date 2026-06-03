@@ -45,11 +45,7 @@ Click "View" on the top left menu of the Havoc client then click "Listeners". In
 
 In the new window that pops up, give the Listener a Name and modify any options you would like to change. Then click Save.
 
-## 
-
-[](https://howto.thec2matrix.com/c2/havoc#create-payload)
-
-Create Payload
+## Create Payload
 
 Click "Attack" on the top left menu of the Havoc client and then click "Payload". In the new window, select your Listener, Arch, Format, and modify any configuration, then click "Generate". Note this takes a little bit of time. Once the payload is compiled, it will ask you to save it somewhere. To host it with apache, save it at /var/www/html/demon.exe
 
@@ -61,11 +57,7 @@ Copy
 sudo service apache2 start
 ```
 
-## 
-
-[](https://howto.thec2matrix.com/c2/havoc#download-and-execute)
-
-Download and Execute
+## Download and Execute
 
 On the target system, open a browser to http://IPAddress/demon.exe
 
