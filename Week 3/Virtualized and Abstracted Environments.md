@@ -108,7 +108,13 @@ while true; do
 done
 ```
 
-
+ls -la /var/tmp
+```
+total 12
+drwxrwxrwt 1 root root 4096 Jun  3 03:42 .
+drwxr-xr-x 1 root root 4096 Apr  7 01:37 ..
+-rw-r--r-- 1 root root    0 Jun  3 03:42 ARCHIVE-ECHO
+```
 ## What evidence shows this is a containerized or otherwise abstracted runtime?
 - the existance of the /.dockerenv file and the minimal processes/services
 ## Which process, file-activity, or environment artifacts look intentionally placed for this exercise?
