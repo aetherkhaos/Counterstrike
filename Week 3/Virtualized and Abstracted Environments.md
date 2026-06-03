@@ -3,24 +3,56 @@
 ## Flags:
 1. PIVOT-SPARK - Process listing
 2. CANOPY-SIGNAL - catting /.dockerenv 
-- What user, host, shell, working directory, OS, process list, and network state can you observe from the web shell?
+3. ARCHIVE-ECHO - running env
+4. 
+
+
+## What user, host, shell, working directory, OS, process list, and network state can you observe from the web shell?
 	- on visiting the web console
+
+whoami
 ```
-Operations Maintenance Console
-
-Local upload path: /var/www/html/uploads
-
-Remote execution staging root: /var/run/exec-dropbox
-Upload file:
-Remote file name: Args: 
-Command:
-
-Start with runtime context and process evidence in this container.
-Remote execution requests run in a different container.
-Some objectives require adapting to limited tooling and private-network reachability.
-
+www-data
 ```
-		- ls -la /
+
+uname -a
+```
+Linux 223933f455d2 5.4.0-135-generic #152-Ubuntu SMP Wed Nov 23 20:19:22 UTC 2022 x86_64 GNU/Linux
+```
+
+env
+```
+APACHE_CONFDIR=/etc/apache2
+HOSTNAME=223933f455d2
+PHP_INI_DIR=/usr/local/etc/php
+SHLVL=0
+REMOTE_EXEC_ROOT=/var/run/exec-dropbox
+DOCKERENV_ENV_FLAG=CANOPY-SIGNAL
+PHP_LDFLAGS=-Wl,-O1 -pie
+APACHE_RUN_DIR=/var/run/apache2
+PHP_CFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+PHP_VERSION=8.2.30
+APACHE_PID_FILE=/var/run/apache2/apache2.pid
+GPG_KEYS=39B641343D8C104B2B146DC3F9C39DC0B9698544 E60913E4DF209907D8E30D96659A97C9CF2A795A 1198C0117593497A5EC5C199286AF1F9897469DC
+PHP_ASC_URL=https://www.php.net/distributions/php-8.2.30.tar.xz.asc
+PHP_CPPFLAGS=-fstack-protector-strong -fpic -fpie -O2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+PHP_URL=https://www.php.net/distributions/php-8.2.30.tar.xz
+LAB31_WEB_TOKEN=ops_console_token
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+APACHE_LOCK_DIR=/var/lock/apache2
+LANG=C
+RECENT_FILE_FLAG=ARCHIVE-ECHO
+APACHE_RUN_GROUP=www-data
+APACHE_RUN_USER=www-data
+APACHE_LOG_DIR=/var/log/apache2
+CONTAINER_PROCESS_FLAG=PIVOT-SPARK
+PWD=/var/www/html
+PHPIZE_DEPS=autoconf 		dpkg-dev 		file 		g++ 		gcc 		libc-dev 		make 		pkg-config 		re2c
+PHP_SHA256=bc90523e17af4db46157e75d0c9ef0b9d0030b0514e62c26ba7b513b8c4eb015
+APACHE_ENVVARS=/etc/apache2/envvars
+```
+ 
+ ls -la /
 ```
 total 72
 drwxr-xr-x   1 root root 4096 Jun  3 03:42 .
@@ -46,11 +78,11 @@ drwxrwxrwt   1 root root 4096 Jun  3 03:42 tmp
 drwxr-xr-x   1 root root 4096 Apr  6 00:00 usr
 drwxr-xr-x   1 root root 4096 Apr  7 01:37 var
 ```
-		- cat /.dockerenv
+cat /.dockerenv
 ```
 DOCKERENV_ENV_FLAG=CANOPY-SIGNAL
 ```
-		- ps -lef
+ps -lef
 ```
 F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 4 S root           1       0  0  80   0 - 46445 -      03:42 ?        00:00:01 apache2 -DFOREGROUND
