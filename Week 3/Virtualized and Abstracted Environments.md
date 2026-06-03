@@ -115,4 +115,11 @@ done
 	- See Flags
 ## Which three objectives can you recover from this first runtime context?
 
-## What Does Upload and Execute Actually Do?
+# Gate 2: What Does Upload and Execute Actually Do?
+
+## Flags
+
+ - What paths or labels does the web page reveal for uploaded files and remote execution?
+- If you upload a small diagnostic payload, what does its output prove about where it ran?
+- What output fields or response text are different from local web-shell command output?
+- Which discovered hints point toward mounted data, missing-tool adaptation, scoped request/response behavior, or later movement?
