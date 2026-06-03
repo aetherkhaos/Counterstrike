@@ -129,6 +129,7 @@ done
 	- man_validator=/opt/ops/tools/check-man-evidence
 	- ssh_artifacts=/opt/ops/ssh-materials
 - If you upload a small diagnostic payload, what does its output prove about where it ran?
+	- /app
 - What output fields or response text are different from local web-shell command output?
 - Which discovered hints point toward mounted data, missing-tool adaptation, scoped request/response behavior, or later movement?
 
