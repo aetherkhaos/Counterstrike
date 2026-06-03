@@ -4,7 +4,6 @@
 1. PIVOT-SPARK - Process listing
 2. CANOPY-SIGNAL - catting /.dockerenv 
 3. ARCHIVE-ECHO - running env
-4. 
 
 
 ## What user, host, shell, working directory, OS, process list, and network state can you observe from the web shell?
@@ -108,6 +107,7 @@ while true; do
   sleep 300
 done
 ```
+
 
 ## What evidence shows this is a containerized or otherwise abstracted runtime?
 - the existance of the /.dockerenv file and the minimal processes/services
