@@ -4,5 +4,5 @@ gain access:
 
 
 remote:
-- 192.168.
+- 192.168.10.5
 - ports: get request to 7001-7020
