@@ -8,7 +8,7 @@
 -  keyfile = `C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\pk.dat  - from Invoke-WuModule.ps1
 	- `IFUpPgYKFQEVHy0KEQIzOAcXFx0AGxQdNzIKAREBAxYuMBURAQ4WPxwBAQYALhoQLQwPV1ZaRFc=`
 
-# Teamserver
-- $RocketChatUrl = "203.0.113.150:3000"
-- $UserId        = "fZvfWT7BbNHDgAgRG"
-- $AuthToken     = "MhbQ_Bh0ETL6TaEZ_4jZdYT-fJpxlLz-Y9KxbL3B190"
+# Teamserver: (Used to collect exfil)
+- $RocketChatUrl = "203.0.113.150:3000" - from Network_Share_Login.b64
+- $UserId        = "fZvfWT7BbNHDgAgRG" - from Network_Share_Login.b64
+- $AuthToken     = "MhbQ_Bh0ETL6TaEZ_4jZdYT-fJpxlLz-Y9KxbL3B190" - from Network_Share_Login.b64
