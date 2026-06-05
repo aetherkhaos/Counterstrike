@@ -1,3 +1,5 @@
+#### Web Shells
+[GitHub - Arrexel/phpbash: A semi-interactive PHP shell compressed into a single file. · GitHub](https://github.com/Arrexel/phpbash/tree/master)
 
 #### Links
 https://lolbas-project.github.io/
