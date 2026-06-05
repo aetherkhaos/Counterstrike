@@ -107,4 +107,4 @@ crimsonguard@htb[/htb]$ sudo tail -1 /var/www/uploads/SecretUploadDirectory/user
 
 user65:x:1000:1000:,,,:/home/user65:/bin/bash
 
-Other T
+Other Tools:
