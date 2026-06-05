@@ -6,7 +6,7 @@ Our primary references for this lesson are: The Tactical Planning Process studen
 
 ### Mission
 
-- Deny or degrade the FSB Center 18's ability to collect intelligence from network X IOT perserve friendly freedom of maneuver in cyberspace.
+- Deny or degrade the FSB Center 18's ability to collect intelligence from network X IOT preserve friendly freedom of maneuver in cyberspace.
 
 ### Enemy
 
@@ -16,17 +16,22 @@ Our primary references for this lesson are: The Tactical Planning Process studen
     
 - Size:
 	- Great RFI for intel. We can say, however, given the fact that this actor falls under the FSB, they should be assumed to be well funded and well resourced.
+
 - Activity:
 	- The group's primary activity is cyberespionage. Key actions include: - Initial Access: Spearphishing with malicious LNK/HTA attachments and weaponized USB drives (PteroLNK). - Data Exfiltration: Stealing documents, browser credentials (PteroSteal), cookies (PteroCookie), and data from messaging apps like Signal (PteroSig) and Telegram (PteroGram). - Persistence & Lateral Movement: Heavy use of weaponized Word document templates (PteroDoc, PteroTemplate) and scheduled tasks.
 	- We are going to update this section after we conduct our terrain and enemy reconnaissance. We want this to be as accurate as possible and we want it to be terrain specific.
+
 - Location:
 	- Physically operating out of occupied Crimea.
 	- Logically they maintain global infrastructure
 	- Logically, they are operating within multiple Ukrainian networks which are predominately physically hosted in Kyiv.
+
 - Unit:
 	- 18th Center of Information Security of the FSB Military Unit 64829
+	
 - Time:
 	- Ongoing
+	
 - Equipment:
 	- All heavily obfuscated tools capable of bypassing Windows Defender
 	- Powershell, VBScript Downloaders that download various post-exploitation payloads
@@ -79,10 +84,13 @@ What we aren't going to do is try to force this model to fit our needs. We are g
 	- 1 certified counter-strike operator
 	- 1 certified malware analyst
 	- Standard complement of tools (network taps, forensic workstations, etc.)
+
 - Attachments and Detachments:
 	- No attachments or detachments.
+
 - Fire Support Available:
 	- 1 SBO ME in direct support
+
 - Higher and Adjacent Units:
 	- N/A
 
@@ -93,53 +101,43 @@ What we aren't going to do is try to force this model to fit our needs. We are g
 #### Friendly OCOKAW
 
 - Observation and Fields of Fire:
-- Our physical terrain is locally hosted and we will have access to server rooms as well as to user workstations. We have the ability to monitor network traffic at the boundary as well as internally. We have the ability to monitor and analyze logs from various sources including EDR, Windows Event Logs, Sysmon, netflow, etc.
+	- Our physical terrain is locally hosted and we will have access to server rooms as well as to user workstations. We have the ability to monitor network traffic at the boundary as well as internally. We have the ability to monitor and analyze logs from various sources including EDR, Windows Event Logs, Sysmon, netflow, etc.
     
 - Cover and Concealment:
-    
-- We will try to conceal our tools by making sure that our EDR agents are configured to look like normal processes and that our analysts are using normal user accounts. We will also try to conceal our monitoring by making sure that we are not generating a lot of noise on the network or in the logs.
+	- We will try to conceal our tools by making sure that our EDR agents are configured to look like normal processes and that our analysts are using normal user accounts. We will also try to conceal our monitoring by making sure that we are not generating a lot of noise on the network or in the logs.
     
 - Obstacles:
-    
-- We are working with a very cooperative partner and we have a lot of access to the network. We do not have any significant obstacles to our movement within the network. The main obstacle that we have is the sheer amount of data that we have to analyze. We will need to prioritize our analysis and focus on the most relevant data sources.
+	- We are working with a very cooperative partner and we have a lot of access to the network. We do not have any significant obstacles to our movement within the network. The main obstacle that we have is the sheer amount of data that we have to analyze. We will need to prioritize our analysis and focus on the most relevant data sources.
     
 - Key Terrain:
-    
-- From the network perspective, we need to control the blue core router. This is the main point of ingress and egress for the network and it will allow us to monitor all traffic going in and out of the network. We also need to be able to see lateral movement within the network. From a host perspective, the domain controller is not necessarily key terrain but the ntds.dit file is. This adversary is primarily focused on stealing working documents from user workstations and servers. They are not focused on stealing credentials but they are focused on stealing the documents that the users have access to. This means that we need to be able to see what files are being accessed and exfiltrated from user workstations and servers.
+	- From the network perspective, we need to control the blue core router. This is the main point of ingress and egress for the network and it will allow us to monitor all traffic going in and out of the network. We also need to be able to see lateral movement within the network. From a host perspective, the domain controller is not necessarily key terrain but the ntds.dit file is. This adversary is primarily focused on stealing working documents from user workstations and servers. They are not focused on stealing credentials but they are focused on stealing the documents that the users have access to. This means that we need to be able to see what files are being accessed and exfiltrated from user workstations and servers.
     
 - Avenues of Approach:
-    
-- The main avenue of approach for the enemy is going to be through spear phishing. They have been observed sending spear phishing emails with weaponized attachments to users within the network. They have also been observed using USB drives to infect machines. They have also been observed using LNK files to infect machines.
+	- The main avenue of approach for the enemy is going to be through spear phishing. They have been observed sending spear phishing emails with weaponized attachments to users within the network. They have also been observed using USB drives to infect machines. They have also been observed using LNK files to infect machines.
     
 - Weather:
-    
-- There are no significant weather events in the forecast. However, due to kinetic strikes on the power grid around Kyiv, there may be some power outages that could impact our operations. We need to be prepared for this and have backup power sources available.
+	- There are no significant weather events in the forecast. However, due to kinetic strikes on the power grid around Kyiv, there may be some power outages that could impact our operations. We need to be prepared for this and have backup power sources available.
 
 #### Enemy OCOKAW
 
 - Observation and Fields of Fire:
-- The enemy has no physical access to the network but they have logical access to compromised hosts within the network. They have no ability to monitor network traffic but can look at host based logs such as Windows Event Logs, Sysmon, etc.
+	- The enemy has no physical access to the network but they have logical access to compromised hosts within the network. They have no ability to monitor network traffic but can look at host based logs such as Windows Event Logs, Sysmon, etc.
     
 - Cover and Concealment:
-    
-- The enemy is using heavy obfuscation to conceal their tools and techniques. However, they are leveraging known LOLBAS (Living Off the Land Binaries and Scripts) and persistence locations. They are also using a lot of different C&C domains and IP addresses to make it difficult for us to block them to include using telegram and cloudflare services.
+	- The enemy is using heavy obfuscation to conceal their tools and techniques. However, they are leveraging known LOLBAS (Living Off the Land Binaries and Scripts) and persistence locations. They are also using a lot of different C&C domains and IP addresses to make it difficult for us to block them to include using telegram and cloudflare services.
     
 - Obstacles:
-    
-- The workstations and servers in the network are protected by Windows Defender and Crowdstrike EDR. The network is protected by a firewall and an IDS. The main obstacle for the enemy is the fact that they are operating in a network that is actively being monitored and defended by a team of analysts.
+	- The workstations and servers in the network are protected by Windows Defender and Crowdstrike EDR. The network is protected by a firewall and an IDS. The main obstacle for the enemy is the fact that they are operating in a network that is actively being monitored and defended by a team of analysts.
     
 - Key Terrain:
-    
-- The adversary's main target are working documents on user workstations and servers. They are not focused on stealing credentials but they are focused on stealing the documents that the users have access to. This means that the key terrain for the enemy is going to be the user workstations and servers that have the documents that they want to steal. They are also focused on maintaining access to these machines so they can continue to steal documents over time. Common persistence locations such as the Windows Registry, startup folder, and scheduled tasks are also key terrain for the enemy.
+	- The adversary's main target are working documents on user workstations and servers. They are not focused on stealing credentials but they are focused on stealing the documents that the users have access to. This means that the key terrain for the enemy is going to be the user workstations and servers that have the documents that they want to steal. They are also focused on maintaining access to these machines so they can continue to steal documents over time. Common persistence locations such as the Windows Registry, startup folder, and scheduled tasks are also key terrain for the enemy.
     
 - Avenues of Approach:
-    
-- T1566 Spear phishing
-- Removable media such as USB drives
+	- T1566 Spear phishing
+	- Removable media such as USB drives
     
 - Weather:
-    
-- No significant weather events in the forecast for the Crimean peninsula. However, the ongoing conflict in Ukraine may impact the enemy's operations and capabilities. We need to be aware of any changes in the situation that could impact our mission.
+	- No significant weather events in the forecast for the Crimean peninsula. However, the ongoing conflict in Ukraine may impact the enemy's operations and capabilities. We need to be aware of any changes in the situation that could impact our mission.
 
 ### Time/Space/Logistics
 
