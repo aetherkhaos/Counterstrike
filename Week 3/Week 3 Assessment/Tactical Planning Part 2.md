@@ -15,29 +15,28 @@ Our primary references for this lesson are: The Tactical Planning Process studen
 - Students will break into small groups and complete a SALUTE report on the FSB Center 18 based on the information in the ESET reports and any other open source information that they can find. The goal of this exercise is to get students to think critically about the enemy and to understand their composition, disposition, strength, capabilities, and limitations.
     
 - Size:
-    
-- Great RFI for intel. We can say, however, given the fact that this actor falls under the FSB, they should be assumed to be well funded and well resourced.
+	- Great RFI for intel. We can say, however, given the fact that this actor falls under the FSB, they should be assumed to be well funded and well resourced.
 - Activity:
-- The group's primary activity is cyberespionage. Key actions include: - Initial Access: Spearphishing with malicious LNK/HTA attachments and weaponized USB drives (PteroLNK). - Data Exfiltration: Stealing documents, browser credentials (PteroSteal), cookies (PteroCookie), and data from messaging apps like Signal (PteroSig) and Telegram (PteroGram). - Persistence & Lateral Movement: Heavy use of weaponized Word document templates (PteroDoc, PteroTemplate) and scheduled tasks.
-- We are going to update this section after we conduct our terrain and enemy reconnaissance. We want this to be as accurate as possible and we want it to be terrain specific.
+	- The group's primary activity is cyberespionage. Key actions include: - Initial Access: Spearphishing with malicious LNK/HTA attachments and weaponized USB drives (PteroLNK). - Data Exfiltration: Stealing documents, browser credentials (PteroSteal), cookies (PteroCookie), and data from messaging apps like Signal (PteroSig) and Telegram (PteroGram). - Persistence & Lateral Movement: Heavy use of weaponized Word document templates (PteroDoc, PteroTemplate) and scheduled tasks.
+	- We are going to update this section after we conduct our terrain and enemy reconnaissance. We want this to be as accurate as possible and we want it to be terrain specific.
 - Location:
-- Physically operating out of occupied Crimea.
-- Logically they maintain global infrastructure
-- Logically, they are operating within multiple Ukrainian networks which are predominately physically hosted in Kyiv.
+	- Physically operating out of occupied Crimea.
+	- Logically they maintain global infrastructure
+	- Logically, they are operating within multiple Ukrainian networks which are predominately physically hosted in Kyiv.
 - Unit:
-- 18th Center of Information Security of the FSB Military Unit 64829
+	- 18th Center of Information Security of the FSB Military Unit 64829
 - Time:
-- Ongoing
+	- Ongoing
 - Equipment:
-- All heavily obfuscated tools capable of bypassing Windows Defender
-- Powershell, VBScript Downloaders that download various post-exploitation payloads
-- C Droppers that drop various payloads
-- Powershell, VBScript Weaponizers that weaponize office documents, usb drives, and LNK files _already present in the target environment_
-- PowerShell, VBScript Stealers that exfiltrate files, capture screenshots, exfiltrate cookies, etc.
-- PowerShell Backdoors that serve as remote shells
-- PowerShell socks proxies for pivoting through environments.
-- Final payload of a file stealer (see MONTEREY) whose main goal is to look for files with specific file extensions and exfiltrate them to the command and control server.
-- See more in reference [^3](https://web-assets.esetstatic.com/wls/en/papers/white-papers/cyberespionage-gamaredon-way.pdf).
+	- All heavily obfuscated tools capable of bypassing Windows Defender
+	- Powershell, VBScript Downloaders that download various post-exploitation payloads
+	- C Droppers that drop various payloads
+	- Powershell, VBScript Weaponizers that weaponize office documents, usb drives, and LNK files _already present in the target environment_
+	- PowerShell, VBScript Stealers that exfiltrate files, capture screenshots, exfiltrate cookies, etc.
+	- PowerShell Backdoors that serve as remote shells
+	- PowerShell socks proxies for pivoting through environments.
+	- Final payload of a file stealer (see MONTEREY) whose main goal is to look for files with specific file extensions and exfiltrate them to the command and control server.
+	- See more in reference [^3](https://web-assets.esetstatic.com/wls/en/papers/white-papers/cyberespionage-gamaredon-way.pdf).
 
 #### Capabilities and Limitations
 
@@ -46,67 +45,46 @@ What we aren't going to do is try to force this model to fit our needs. We are g
 - Students will break into small groups and complete a capabilities and limitations analysis on the FSB Center 18 based on the information in the ESET reports and any other open source information that they can find. The goal of this exercise is to get students to think critically about the enemy and to understand their capabilities and limitations.
     
 - Defend:
-    
-- Under what conditions can the enemy DEFEND?: Typically, they defend their accesses by deploying multiple simple downloaders or backdoors simultaneously. They also have invested a lot of time into testing and applying a variety of techniques to thwart domain-based blocking. They stopped relying solely on registering dozens of new C&C domains and started leveraging services provided by third parties like Telegram and Cloudflare.
-    
-- Under what conditions is the enemy unable to DEFEND?:
-    
-- Under what conditions WILL the enemy DEFEND?: We assume that the enemy will attempt to defend their accesses and infrastructure at all times albeit in an unconventional manner. This adversary accepts that they will be discovered in the network and they defend by having multiple simultaneous backdoors on any given machine.
+	- Under what conditions can the enemy DEFEND?: Typically, they defend their accesses by deploying multiple simple downloaders or backdoors simultaneously. They also have invested a lot of time into testing and applying a variety of techniques to thwart domain-based blocking. They stopped relying solely on registering dozens of new C&C domains and started leveraging services provided by third parties like Telegram and Cloudflare.
+	- Under what conditions is the enemy unable to DEFEND?:
+	- Under what conditions WILL the enemy DEFEND?: We assume that the enemy will attempt to defend their accesses and infrastructure at all times albeit in an unconventional manner. This adversary accepts that they will be discovered in the network and they defend by having multiple simultaneous backdoors on any given machine.
     
 - Reinforce:
-    
-- Under what conditions can the enemy REINFORCE?: They reinforce their positions within networks by deploying miltiple simple downlaoders or backdoors simultaneously. They also have the ability to reinforce by handing off their access to a more sophisticated actor like Center 16.
-    
-- Under what conditions does the enemy have the inability to REINFORCE?: We do not know specifically how much capacity INVISIMOLE has to give over to GAMAREDON. We assume that INVISIMOLE's capacity to support is the limiting factor.
-    
-- Under what conditions WILL the enemy REINFORCE?: Observed activity has shown that, given a particularly "juicy" access, GAMAREDON will ask INVISIMOLE to take over the access to reinforce said access via kernel level implant.
+	- Under what conditions can the enemy REINFORCE?: They reinforce their positions within networks by deploying miltiple simple downlaoders or backdoors simultaneously. They also have the ability to reinforce by handing off their access to a more sophisticated actor like Center 16.
+	- Under what conditions does the enemy have the inability to REINFORCE?: We do not know specifically how much capacity INVISIMOLE has to give over to GAMAREDON. We assume that INVISIMOLE's capacity to support is the limiting factor.
+	- Under what conditions WILL the enemy REINFORCE?: Observed activity has shown that, given a particularly "juicy" access, GAMAREDON will ask INVISIMOLE to take over the access to reinforce said access via kernel level implant.
     
 - Attack:
-    
-- Under what conditions can the enemy ATTACK?: Given sufficient access to an environment they can, in theory, perform destructive attacks.
-    
-- Under what conditions is the enemy unable to ATTACK?: Their mission does not seem to be data destruction but data collection.
-    
-- Under what conditions WILL the enemy ATTACK?: A change of mission assignment. There has been no observed attack activity by FSB Center 18.
+	- Under what conditions can the enemy ATTACK?: Given sufficient access to an environment they can, in theory, perform destructive attacks.
+	- Under what conditions is the enemy unable to ATTACK?: Their mission does not seem to be data destruction but data collection.
+	- Under what conditions WILL the enemy ATTACK?: A change of mission assignment. There has been no observed attack activity by FSB Center 18.
     
 - Withdraw:
-    
-- Under what conditions is the enemy capable of WITHDRAW?: Certain pieces of malware by this actor have the ability to delete themselves.
-    
-- Under what conditions is the enemy unable to WITHDRAW?: Some of the adverary's malware operates like a psuedo worm. It automatically infects external drives for self-propagation as well as backdooring normal.dotm files. We believe that this actually makes it somewhat difficult for the adversary to fully withdraw because they themselves may lose track of what machines are infected. Especially if they wind up jumping an airgap.
-    
-- Under what conditions WILL the enemy WITHDRAW?: We do not believe the enemy will willfully withdraw under any condition.
+	- Under what conditions is the enemy capable of WITHDRAW?: Certain pieces of malware by this actor have the ability to delete themselves.
+	- Under what conditions is the enemy unable to WITHDRAW?: Some of the adverary's malware operates like a psuedo worm. It automatically infects external drives for self-propagation as well as backdooring normal.dotm files. We believe that this actually makes it somewhat difficult for the adversary to fully withdraw because they themselves may lose track of what machines are infected. Especially if they wind up jumping an airgap.
+	- Under what conditions WILL the enemy WITHDRAW?: We do not believe the enemy will willfully withdraw under any condition.
     
 - Delay:
-    
-- Under what conditions can the enemy DELAY?: Their extensive use of heavy obfuscation delay's hunt and counterstrike personnel significantly. The sheer number of compromises within a network as well as the traffic it produces also is overwhelming for a defensive team.
-    
-- Under what conditions is the enemy unable to DELAY?: They are limited by their use of scriptbased malware and live off the land techniques. Script based malware is much easier to debug and deobfuscate than compiled binaries.
-    
-- Under what conditions WILL the enemy DELAY?: We believe they will try to delay our efforts at all times.
+	- Under what conditions can the enemy DELAY?: Their extensive use of heavy obfuscation delay's hunt and counterstrike personnel significantly. The sheer number of compromises within a network as well as the traffic it produces also is overwhelming for a defensive team.
+	- Under what conditions is the enemy unable to DELAY?: They are limited by their use of scriptbased malware and live off the land techniques. Script based malware is much easier to debug and deobfuscate than compiled binaries.
+	- Under what conditions WILL the enemy DELAY?: We believe they will try to delay our efforts at all times.
     
 
 ### Troops and Fire Support Available
 
 - Organic:
-- 3 host analysts
-- 3 network analysts
-- 1 all source analyst
-- 1 certified counter-strike operator
-- 1 certified malware analyst
-- Standard complement of tools (network taps, forensic workstations, etc.)
-    
+	- 3 host analysts
+	- 3 network analysts
+	- 1 all source analyst
+	- 1 certified counter-strike operator
+	- 1 certified malware analyst
+	- Standard complement of tools (network taps, forensic workstations, etc.)
 - Attachments and Detachments:
-    
-- No attachments or detachments.
-    
+	- No attachments or detachments.
 - Fire Support Available:
-    
-- 1 SBO ME in direct support
-    
+	- 1 SBO ME in direct support
 - Higher and Adjacent Units:
-    
-- N/A
+	- N/A
 
 ### Terrain and Weather
 
