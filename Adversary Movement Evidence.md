@@ -1,5 +1,5 @@
 # Redirector Info: (Reverse tunnel to adversary)
-- `$SshExe = "$env:WINDIR\System32\OpenSSH\ssh.exe"`
+- `$SshExe = "$env:WINDIR\System32\OpenSSH\ssh.exe"` - from "Inner-Reve"
 - ` RedirectorUser = "accesscheck"`
 - ` RedirectorHost = "203.0.113.150"
 - ` RemotePort = 55985
