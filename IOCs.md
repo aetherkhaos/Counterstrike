@@ -1,3 +1,4 @@
+# Scheduled Tasks
 ```
 PS C:\Users\Administrator> schtasks
 
@@ -8,6 +9,11 @@ Network_Share_Connection_Test            6/5/2026 8:45:01 AM    Ready
 Windows Module Analysis Cache            6/5/2026 11:15:00 AM   Ready
 ```
 
+# Network_Share_Connection_Test - Runs every 5 M
+```
+C:\Program Files\PowerShell\7\pwsh.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "C:\Windows\System32\Network_Share_Scripts\Network_Share_Setup.ps1" 
+```
+# C:\Windows\System32\Network_Share_Scripts\
 ```
 PS C:\Users\Administrator> gci C:\Windows\System32\Network_Share_Scripts\
 
