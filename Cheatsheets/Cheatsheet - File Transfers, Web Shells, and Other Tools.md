@@ -1,6 +1,7 @@
 #### Web Shells
 [GitHub - Arrexel/phpbash: A semi-interactive PHP shell compressed into a single file. · GitHub](https://github.com/Arrexel/phpbash/tree/master)
 
+[GitHub - brightio/penelope: Penelope Shell Handler · GitHub](https://github.com/brightio/penelope)
 #### Links
 https://lolbas-project.github.io/
 https://gtfobins.github.io/
