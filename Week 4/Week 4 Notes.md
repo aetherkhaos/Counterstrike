@@ -19,3 +19,6 @@ bottom -
 # The Handoff Package
 document the method for accessing the system well (msf payload, port, times, etc.)
 
+---
+
+# attacking a sliver server
