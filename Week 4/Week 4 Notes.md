@@ -212,7 +212,9 @@ c7637374312040a7b54bfe1a908848cf
 
 ```
 
-
+- Login to the site using admin and the found password
+- Manage Jenkins > Script Console
+	- https://gist.githubusercontent.com/frohoff/fed1ffaab9b9beeb1c76/raw/7cfa97c7dc65e2275abfb378101a505bfb754a95/revsh.groovy
 #### Console 2
 ```
 ┌──(kali㉿kali)-[~]
