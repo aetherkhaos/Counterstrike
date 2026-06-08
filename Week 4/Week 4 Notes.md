@@ -16,3 +16,6 @@ bottom -
 	Hashs - search for hash, use whitelsting
 	IOCs -
 
+# The Handoff Package
+document the method for accessing the system well (msf payload, port, times, etc.)
+
