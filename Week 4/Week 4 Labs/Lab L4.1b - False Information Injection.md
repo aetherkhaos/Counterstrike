@@ -4,7 +4,7 @@ This lab asks you to produce a controlled `deceive` or `manipulate` effect by po
 
 Duration: about 2 hours.
 
-## Lab Access Model[](#lab-access-model)
+## Lab Access Model
 
 You are working from the student ops station against a simulated adversary stack. Use the range-provided values if your instructor or range card rotates any defaults.
 
@@ -16,7 +16,7 @@ You are working from the student ops station against a simulated adversary stack
 |`blue-lake` / collector database|`20.30.40.151`|Internal-only database; reach it from the `red-river` shell using credentials discovered in `/opt/c2/config.yaml`.|
 |`amber-bay` / exfil agent|`20.30.40.156`|Expected source for legitimate exfil activity. Do not pivot to it.|
 
-### Foothold Re-Entry[](#foothold-re-entry)
+### Foothold Re-Entry
 
 Primary method: SSH key foothold on custom port `2222`.
 
@@ -52,7 +52,7 @@ Allowed fallback methods, only if SSH is unavailable:
 
 You should be able to operate a remote shell on `red-river` and reach the admin endpoint before attempting poisoning actions.
 
-## Operational Context[](#operational-context)
+## Operational Context
 
 After L4.1a's disable-rollback demonstration, the adversary's exfil pipeline has been re-enabled. You still hold the admin foothold on `red-river`. Command appetite has shifted from "stop them" to "poison them": leadership now wants the adversary to act on bad intelligence while remediation completes on the blue side.
 
@@ -62,7 +62,7 @@ The database ingestion process is not parameterized. It uses raw string concaten
 
 This builds directly on the Week 2 L2.8 SQL injection tradecraft, applied in the opposite direction: you are the injector, and the adversary's backend is the target. Reference: [Lab 2.8 Box A Student Brief](/dco-counterstrike-pilot-course-content/module-content/main/../../../../week2/labs/L2.8_Gaining_Access/Lab%202.8%20Box%20A%20Student%20Brief.md).
 
-## Mission Commander Guidance[](#mission-commander-guidance)
+## Mission Commander Guidance
 
 - Command intent: produce a broad `deceive` or `manipulate` effect so adversary decisions are based on corrupted evidence, not a service outage.
 - Commander-approved battlespace: operate across `/opt/staging/incoming/` and `blue-lake.exfil_logs` to plant and shape deceptive records.
@@ -70,7 +70,7 @@ This builds directly on the Week 2 L2.8 SQL injection tradecraft, applied in the
 - Commander red lines: do not destroy target capability with `DROP`, `TRUNCATE`, destructive `DELETE`, or full service kill; do not modify schema; do not pivot to `green-harbor`; and do not implant callbacks.
 - Execution expectation: team leads choose the specific technique mix and tempo inside this guidance and record exactly what was injected for later reconstruction.
 
-## Required Work[](#required-work)
+## Required Work
 
 1. Recon the ingestion path. Read `/opt/c2/config.yaml` and whichever script or cron handles the drain from `/opt/staging/incoming/` into `exfil_logs`. Identify exactly which metadata fields are string-concatenated into the `INSERT`.
     
@@ -93,14 +93,14 @@ This builds directly on the Week 2 L2.8 SQL injection tradecraft, applied in the
 6. Write the five-line effect report per the 4.1 lecture cadence.
     
 
-## Constraints[](#constraints)
+## Constraints
 
 - Preserve the pipeline. The exfil pipeline must still be running end-to-end after your action. The goal is poisoning, not outage. If you break ingestion, you have produced a `deny`, `disrupt`, `degrade`, or `destroy` effect on collection, not a `deceive` or `manipulate` effect, and will be graded accordingly.
 - Do not use `DROP`, `TRUNCATE`, or `DELETE` without a `WHERE ingested_at > <timestamp_of_your_injection>` clause.
 - Do not plant more than 50 honey-files. Goal is precision, not flood.
 - Log your payloads. Every honey-filename and every SQL-bearing string you plant must appear in the effect report, in plaintext, so command can reconstruct what is real and what is yours.
 
-## Evidence Expectations[](#evidence-expectations)
+## Evidence Expectations
 
 Submit the following to the instructor:
 
@@ -109,14 +109,14 @@ Submit the following to the instructor:
 3. Before/after analytics snapshot: one query demonstrating the corruption, such as row count per `source_host`, total exfil volume, or a similar metric.
 4. Five-line effect report: effect, action, predicted adversary response, observed result, and burn-risk reassessment.
 
-## Success Criteria[](#success-criteria)
+## Success Criteria
 
 - At least two poisoned rows are visible in `exfil_logs` with values that would mislead an adversary analyst.
 - At least one aggregation query result is materially wrong because of your rows.
 - The pipeline remains functional, with new legitimate rows from `amber-bay` continuing to land.
 - The effect report correctly names the effect as `deceive` or `manipulate`, not `deny`, `disrupt`, `degrade`, or `destroy`.
 
-## Course Tie-Back[](#course-tie-back)
+## Course Tie-Back
 
 - Week 1 CG/CV: attacks the adversary's decision cycle by corrupting the evidence base their EMLCOA is built on.
 - Week 2 L2.8: reuses the SQLi payload shape in the opposite direction, with you as the injector and their backend as the target.
