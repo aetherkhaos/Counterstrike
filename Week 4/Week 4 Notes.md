@@ -10,3 +10,9 @@ influence the cycle by following the cycle in reverse.
 	- what do we have them see to trigger those thoughts?
 
 # Pyramid of Pain
+top - TTPs - 
+middle - IPs - scanning
+bottom - 
+	Hashs - search for hash, use whitelsting
+	IOCs -
+
