@@ -412,6 +412,34 @@ foothold
 {"note":"Use approved remote foothold channel for maintenance actions.","panel":"adv-c2 admin shim","status":"authenticated"}
 ```
 
+## Survey the box
+```
+foothold@e5316a5b004d:~$ ps -lef
+F S UID          PID    PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD                                  
+4 S root           1       0  0  80   0 -  9673 -      04:22 ?        00:00:04 /usr/bin/python3 /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
+5 S root          15       1  0  80   0 -  1069 -      04:22 ?        00:00:00 cron                                 
+1 S root          17       1  0  80   0 -  3659 -      04:22 ?        00:00:00 nginx: master process nginx          
+5 S nobody        18      17  0  80   0 -  3773 -      04:22 ?        00:00:00 nginx: worker process                
+5 S nobody        19      17  0  80   0 -  3773 -      04:22 ?        00:00:00 nginx: worker process                
+5 S nobody        20      17  0  80   0 -  3773 -      04:22 ?        00:00:00 nginx: worker process                
+5 S nobody        21      17  0  80   0 -  3773 -      04:22 ?        00:00:00 nginx: worker process                
+4 S c2-app        22       1  0  80   0 -  9058 -      04:22 ?        00:00:04 /usr/local/bin/python3.11 /usr/local/bin/gunicorn -b 127.0.0.1:9000 --workers 2 app:app
+4 S c2-app        23       1  0  80   0 -  9058 -      04:22 ?        00:00:03 /usr/local/bin/python3.11 /usr/local/bin/gunicorn -b 127.0.0.1:9001 --workers 2 app:app
+4 S root          24       1  0  80   0 -  2944 -      04:22 ?        00:00:00 sshd: /usr/sbin/sshd -D -e [listener] 0 of 10-100 startups
+5 S c2-app        25      23  0  80   0 - 10896 -      04:22 ?        00:00:01 /usr/local/bin/python3.11 /usr/local/bin/gunicorn -b 127.0.0.1:9001 --workers 2 app:app
+5 S c2-app        26      22  0  80   0 - 10896 -      04:22 ?        00:00:01 /usr/local/bin/python3.11 /usr/local/bin/gunicorn -b 127.0.0.1:9000 --workers 2 app:app
+5 S c2-app        27      23  0  80   0 - 10896 -      04:22 ?        00:00:01 /usr/local/bin/python3.11 /usr/local/bin/gunicorn -b 127.0.0.1:9001 --workers 2 app:app
+5 S c2-app        28      22  0  80   0 - 10896 -      04:22 ?        00:00:01 /usr/local/bin/python3.11 /usr/local/bin/gunicorn -b 127.0.0.1:9000 --workers 2 app:app
+4 S root       17207      24  0  80   0 -  4698 -      12:16 ?        00:00:00 sshd-session: foothold [priv]
+5 S foothold   17214   17207  0  80   0 -  4721 -      12:16 ?        00:00:00 sshd-session: foothold@pts/0
+4 S foothold   17215   17214  0  80   0 -  1082 do_wai 12:16 pts/0    00:00:00 -bash
+4 R foothold   17793   17215  0  80   0 -  1612 -      12:32 pts/0    00:00:00 ps -lef
+
+
+```
+
+### Found artifacts
+ /usr/bin/python3 /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
 ## create a fwd tunnel for nmap scanning
 ```
 
