@@ -1705,6 +1705,22 @@ adv-n8n admin endpoint: http://20.30.40.153:5678
 adv-n8n admin username: adv_operator
 adv-n8n admin password: operator!n8n
 ```
+##### meterpreter > cat config.yaml
+```
+meterpreter > cd /opt/c2/
+meterpreter > cat config.yaml 
+db:
+  host: 20.30.40.161
+  port: 5432
+  name: adv_collector
+  user: adv_analyst
+  password: collector!db
+ingest_token: INGEST-3d9f2c
+tasking:
+- id: tsk-001
+  command: collect-system-profile
+  status: queued
+```
 
 
 
@@ -1735,3 +1751,7 @@ tcp   TIME-WAIT 0      0          127.0.0.1:54892    127.0.0.1:9000
 tcp   ESTAB     0      0       20.30.40.160:35236  30.40.50.10:1111  users:(("ss",pid=6155,fd=3),("sh",pid=6154,fd=3),("rev",pid=4780,fd=3))
 tcp   TIME-WAIT 0      0          127.0.0.1:54324    127.0.0.1:8080                                                                         
 tcp   LISTEN    0      128             [::]:2222          [::]:* 
+```
+
+## Turnover Report
+- 
