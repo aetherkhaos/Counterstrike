@@ -1463,3 +1463,8 @@ dont know where to go from here
 ---
 
 # 4.2A
+## Access foothold
+```
+ssh foothold@20.30.40.150 -i super_secret_key -p 2222
+```
+
