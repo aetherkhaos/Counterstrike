@@ -112,6 +112,36 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 116.73 seconds
 
+┌──(kali㉿kali)-[~]
+└─$ curl http://10.1.10.196:8080 -v
+*   Trying 10.1.10.196:8080...
+* Established connection to 10.1.10.196 (10.1.10.196 port 8080) from 10.1.10.56 port 43710 
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: 10.1.10.196:8080
+> User-Agent: curl/8.18.0
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 403 Forbidden
+< Date: Tue, 09 Jun 2026 11:47:01 GMT
+< X-Content-Type-Options: nosniff
+< Set-Cookie: JSESSIONID.bd169905=node01bez1fivweceo28s4fbv23fo2694849.node0; Path=/; HttpOnly
+< Expires: Thu, 01 Jan 1970 00:00:00 GMT
+< Content-Type: text/html;charset=utf-8
+< X-Hudson: 1.395
+< X-Jenkins: 2.440
+< X-Jenkins-Session: 80bd7e16
+< Transfer-Encoding: chunked
+< Server: Jetty(10.0.18)
+< 
+<html><head><meta http-equiv='refresh' content='1;url=/login?from=%2F'/><script id='redirect' data-redirect-url='/login?from=%2F' src='/static/80bd7e16/scripts/redirect.js'></script></head><body style='background-color:white; color:white;'>
+Authentication required
+<!--
+-->
+
+* Connection #0 to host 10.1.10.196:8080 left intact
+</body></html>                                   
 ```
 
 # Vulnerable jenkins instance
