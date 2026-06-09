@@ -1424,6 +1424,17 @@ WARN[0000] Ligolo-ng API is experimental, and should be running behind a reverse
   Made in France ♥            by @Nicocha30!
   Version: dev
 
+ligolo-ng » INFO[0184] Agent joined.                                 id=3eea7c7edda2 name=root@e5316a5b004d remote="20.30.40.150:58014"
+ligolo-ng » session
+? Specify a session : 1 - root@e5316a5b004d - 20.30.40.150:58014 - 3eea7c7edda2
+[Agent : root@e5316a5b004d] » autoroute
+? Select routes to add: 172.18.0.3/16
+? Create a new interface or use an existing one? Create a new interface
+INFO[0446] Generating a random interface name...        
+INFO[0446] Using interface name touchingnightsh         
+INFO[0446] Creating routes for touchingnightsh...       
+? Start the tunnel? Yes
+INFO[0449] Starting tunnel to root@e5316a5b004d (3eea7c7edda2) 
 
 ```
 
