@@ -1102,8 +1102,12 @@ if __name__ == "__main__":
 ```
 
 ### Found artifacts
- - /usr/bin/python3 /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
- - 30.40.50.10:58664
+ - Services and processes supporting the exfil ingestion endpoints.
+	 - /usr/bin/python3 /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
+	 - 30.40.50.10:58664
+ - Scheduled execution, such as cron or systemd timers, that moves incoming artifacts into the collector database.
+	 - * * * * * root /bin/bash -lc "python3 /opt/c2/drain.py; sleep 30; python3 /opt/c2/drain.py" >> /var/log/adv-c2/drain.log 2>&1
+
 ## create a fwd tunnel for nmap scanning
 ```
 
