@@ -855,7 +855,8 @@ tcp              LISTEN               0                  128                    
 ```
 
 ### Found artifacts
- /usr/bin/python3 /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
+ - /usr/bin/python3 /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
+ - 30.40.50.10:58664
 ## create a fwd tunnel for nmap scanning
 ```
 
