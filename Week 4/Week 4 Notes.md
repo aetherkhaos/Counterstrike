@@ -466,6 +466,21 @@ autorestart=true
 stdout_logfile=/var/log/adv-c2/sshd.log
 stderr_logfile=/var/log/adv-c2/sshd.err.log
 
+foothold@e5316a5b004d:/var/www/html$ ls -la /var/log/adv-c2/
+total 396
+drwxr-xr-x 2 c2-app c2-app   4096 Jun  8 12:36 .
+drwxr-xr-x 1 root   root     4096 Jun  9 12:16 ..
+-rw-r--r-- 1 c2-app c2-app 296476 Jun  9 12:56 access.log
+-rw-r--r-- 1 c2-app c2-app   6291 Jun  9 04:22 c2-admin.err.log
+-rw-r--r-- 1 c2-app c2-app      0 Jun  8 12:36 c2-admin.log
+-rw-r--r-- 1 c2-app c2-app   6291 Jun  9 04:22 c2-ingest.err.log
+-rw-r--r-- 1 c2-app c2-app      0 Jun  8 12:36 c2-ingest.log
+-rw-r--r-- 1 c2-app c2-app  47931 Jun  9 04:22 drain.log
+-rw-r--r-- 1 c2-app c2-app      0 Jun  9 04:22 error.log
+-rw-r--r-- 1 c2-app c2-app   2024 Jun  9 12:16 sshd.err.log
+-rw-r--r-- 1 c2-app c2-app      0 Jun  8 12:36 sshd.log
+-rw-r--r-- 1 c2-app c2-app  12595 Jun  9 04:22 supervisord.log
+
 foothold@e5316a5b004d:~$ cat /etc/services 
 # Network services, Internet style
 #
@@ -1009,6 +1024,7 @@ def main():
     conn.close()
 if __name__ == "__main__":
     main()
+
 
 ```
 
