@@ -410,5 +410,5 @@ foothold
 ┌──(root㉿blue-ops)-[/home/kali]
 └─# curl -u admin:adminadmin http://20.30.40.150:8080/admin
 {"note":"Use approved remote foothold channel for maintenance actions.","panel":"adv-c2 admin shim","status":"authenticated"}
-
 ```
+
