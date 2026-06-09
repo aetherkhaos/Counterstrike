@@ -1343,7 +1343,15 @@ foothold@e5316a5b004d:/tmp$ curl -v telnet://adv-collector-db:5432
 	 - 30.40.50.10:58664
  - Scheduled execution, such as cron or systemd timers, that moves incoming artifacts into the collector database.
 	 - * * * * * root /bin/bash -lc "python3 /opt/c2/drain.py; sleep 30; python3 /opt/c2/drain.py" >> /var/log/adv-c2/drain.log 2>&1
-
+- Credential(s) the exfil agent is authenticating with against `/exfil` or `/beacon`.
+	- db:
+	  host: adv-collector-db
+	  port: 5432
+	  name: adv_collector
+	  user: adv_analyst
+	  password: collector!db
+- Observe the live exfil cadence in `/var/log/adv-c2/access.log` for at least two agent cycles so you can establish a baseline.
+	- 
 ## create a fwd tunnel for nmap scanning
 ```
 
