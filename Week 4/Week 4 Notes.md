@@ -325,4 +325,77 @@ setup and connect to the sliver server via proxychains
 
 # Lab 4.1
 [[Lab L4.1a - Disable Adversary Tooling]]
-## 
+## Prep the key
+```
+┌──(root㉿blue-ops)-[/home/kali]
+└─# ls -la
+total 16712
+drwx------ 22 kali kali     4096 Jun  9 08:10 .
+drwxr-xr-x  6 root root     4096 Jan  8 08:22 ..
+-rw-r--r--  1 kali kali      220 Jan  7 18:51 .bash_logout
+-rw-r--r--  1 kali kali     5551 Jan  7 18:51 .bashrc
+-rw-r--r--  1 kali kali     3526 Jan  7 18:51 .bashrc.original
+drwxrwxr-x 11 kali kali     4096 Feb 25 12:40 .cache
+-rw-rw-r--  1 kali kali     8010 Feb 25 10:06 changes.patch
+drwxrwxr-x  2 kali kali     4096 Feb 24 12:28 compose_debs
+drwxr-xr-x 16 kali kali     4096 Feb 24 11:52 .config
+drwxrwxr-x  6 kali kali     4096 Feb 25 11:07 cs-oc
+-rw-rw-r--  1 kali kali 16897955 Feb 24 12:11 cs-oc.tar.bz2
+drwxr-xr-x  2 kali kali     4096 Jan  8 10:09 Desktop
+-rw-r--r--  1 kali kali       35 Jan  7 18:56 .dmrc
+drwxr-xr-x  2 kali kali     4096 Feb 25 10:17 Documents
+drwxr-xr-x  2 kali kali     4096 Jan  7 18:56 Downloads
+-rw-r--r--  1 kali kali    11759 Jan  7 18:51 .face
+lrwxrwxrwx  1 kali kali        5 Jan  7 18:51 .face.icon -> .face
+drwx------  3 kali kali     4096 Jan  7 18:56 .gnupg
+drwxr-xr-x  2 root root     4096 Mar 12 07:11 .havoc
+-rw-------  1 kali kali        0 Jan  7 18:56 .ICEauthority
+-rw-r--r--  1 root root      362 Jan  8 08:36 install_packages.log
+drwxr-xr-x  3 kali kali     4096 Jan  7 18:51 .java
+drwxr-xr-x  5 kali kali     4096 Jan  7 18:56 .local
+drwxrwxr-x  5 kali kali     4096 Feb 24 13:22 .mozilla
+drwxr-xr-x  2 kali kali     4096 Jan  7 18:56 Music
+-rw-r--r--  1 root root      640 Jan  8 08:22 packages.microsoft.gpg
+drwxr-xr-x  2 kali kali     4096 Jan  7 18:56 Pictures
+drwx------  3 kali kali     4096 Jan  8 08:59 .pki
+-rw-r--r--  1 kali kali      807 Jan  7 18:51 .profile
+drwxr-xr-x  2 kali kali     4096 Jan  7 18:56 Public
+drwx------  3 kali kali     4096 Jun  8 09:30 .ssh
+-rw-r--r--  1 kali kali        0 Jan  7 18:56 .sudo_as_admin_successful
+-rw-------  1 kali kali      399 Jun  8 09:29 super_secret_key
+drwxr-xr-x  2 kali kali     4096 Jan  7 18:56 Templates
+drwxr-xr-x  2 kali kali     4096 Jan  7 18:56 Videos
+drwxr-xr-x  2 kali kali     4096 Feb 25 10:17 .vim
+-rw-------  1 kali kali    14376 Mar 12 10:15 .viminfo
+-rw-------  1 kali kali       53 Jun  9 08:10 .Xauthority
+-rw-------  1 kali kali     4833 Jun  9 08:11 .xsession-errors
+-rw-------  1 kali kali     4742 Jun  8 23:54 .xsession-errors.old
+-rw-r--r--  1 kali kali      336 Jan  7 18:51 .zprofile
+-rw-------  1 kali kali    10056 Mar 12 13:38 .zsh_history
+-rw-r--r--  1 kali kali    10855 Jan  7 18:51 .zshrc
+                                                                                ┌──(root㉿blue-ops)-[/home/kali]
+└─# cp super_secret_key super_secret_key.backup
+                                                                                ┌──(root㉿blue-ops)-[/home/kali]
+└─# chmod 400 super_secret_key
+
+```
+
+## Connect to the first box and verify location
+```
+┌──(root㉿blue-ops)-[/home/kali]
+└─# ssh foothold@20.30.40.150 -p 2222 -i super_secret_key
+The authenticity of host '[20.30.40.150]:2222 ([20.30.40.150]:2222)' can't be established.
+ED25519 key fingerprint is: SHA256:bDY+Ke4QPou3DRxwiE7wj1d9UC0Exe+9sW2m7ZzIw8I
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[20.30.40.150]:2222' (ED25519) to the list of known hosts.
+Linux e5316a5b004d 6.17.10+kali-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.17.10-1kali1 (2025-12-08) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+
+```
