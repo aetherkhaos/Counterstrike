@@ -481,6 +481,79 @@ drwxr-xr-x 1 root   root     4096 Jun  9 12:16 ..
 -rw-r--r-- 1 c2-app c2-app      0 Jun  8 12:36 sshd.log
 -rw-r--r-- 1 c2-app c2-app  12595 Jun  9 04:22 supervisord.log
 
+foothold@e5316a5b004d:/var/www/html$ tail -20 /var/log/adv-c2/supervisord.log 
+2026-06-09 02:56:40,366 INFO supervisord started with pid 1
+2026-06-09 02:56:41,370 INFO spawned: 'c2-admin' with pid 23
+2026-06-09 02:56:41,371 INFO spawned: 'c2-ingest' with pid 24
+2026-06-09 02:56:41,373 INFO spawned: 'sshd' with pid 25
+2026-06-09 02:56:43,026 INFO success: c2-admin entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2026-06-09 02:56:43,026 INFO success: c2-ingest entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2026-06-09 02:56:43,026 INFO success: sshd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2026-06-09 03:55:15,949 WARN received SIGTERM indicating exit request
+2026-06-09 03:55:15,949 INFO waiting for c2-admin, c2-ingest, sshd to die
+2026-06-09 03:55:15,950 INFO stopped: sshd (exit status 0)
+2026-06-09 03:55:17,079 INFO stopped: c2-ingest (exit status 0)
+2026-06-09 03:55:17,199 INFO stopped: c2-admin (exit status 0)
+2026-06-09 04:22:44,918 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2026-06-09 04:22:44,925 INFO supervisord started with pid 1
+2026-06-09 04:22:45,928 INFO spawned: 'c2-admin' with pid 22
+2026-06-09 04:22:45,938 INFO spawned: 'c2-ingest' with pid 23
+2026-06-09 04:22:45,946 INFO spawned: 'sshd' with pid 24
+2026-06-09 04:22:47,758 INFO success: c2-admin entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2026-06-09 04:22:47,758 INFO success: c2-ingest entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2026-06-09 04:22:47,759 INFO success: sshd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+
+foothold@e5316a5b004d:/var/www/html$ tail -30 /var/log/adv-c2/drain.log 
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "20.30.40.151", port 5432 failed: No route to host
+        Is the server running on that host and accepting TCP/IP connections?
+
+Traceback (most recent call last):
+  File "/opt/c2/drain.py", line 172, in <module>
+    main()
+  File "/opt/c2/drain.py", line 112, in main
+    conn = psycopg2.connect(dsn)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: connection to server at "20.30.40.151", port 5432 failed: No route to host
+        Is the server running on that host and accepting TCP/IP connections?
+
+foothold@e5316a5b004d:/var/www/html$ tail -30 /var/log/adv-c2/access.log 
+127.0.0.1 - - [09/Jun/2026:12:55:28 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:55:43 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:55:58 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+172.18.0.1 - - [09/Jun/2026:12:56:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+127.0.0.1 - - [09/Jun/2026:12:56:14 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:56:29 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:56:44 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:56:59 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+172.18.0.1 - - [09/Jun/2026:12:57:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+127.0.0.1 - - [09/Jun/2026:12:57:14 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:57:29 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:57:44 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:57:59 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+172.18.0.1 - - [09/Jun/2026:12:58:02 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+127.0.0.1 - - [09/Jun/2026:12:58:14 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:58:29 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:58:44 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:58:59 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+172.18.0.1 - - [09/Jun/2026:12:59:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+127.0.0.1 - - [09/Jun/2026:12:59:14 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:59:29 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:12:59:45 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:13:00:00 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+172.18.0.1 - - [09/Jun/2026:13:00:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+127.0.0.1 - - [09/Jun/2026:13:00:15 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:13:00:30 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:13:00:45 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+127.0.0.1 - - [09/Jun/2026:13:01:00 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+172.18.0.1 - - [09/Jun/2026:13:01:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+127.0.0.1 - - [09/Jun/2026:13:01:15 +0000] "GET /healthz HTTP/1.1" 200 16 "-" "curl/8.14.1"
+
 foothold@e5316a5b004d:~$ cat /etc/services 
 # Network services, Internet style
 #
