@@ -326,7 +326,7 @@ setup and connect to the sliver server via proxychains
 # Lab 4.1
 [[Lab L4.1a - Disable Adversary Tooling]]
 ## Prep the key
-```
+```trem1
 ┌──(root㉿blue-ops)-[/home/kali]
 └─# ls -la
 total 16712
@@ -381,7 +381,7 @@ drwxr-xr-x  2 kali kali     4096 Feb 25 10:17 .vim
 ```
 
 ## Connect to the first box and verify location
-```
+```term1
 ┌──(root㉿blue-ops)-[/home/kali]
 └─# ssh foothold@20.30.40.150 -p 2222 -i super_secret_key
 The authenticity of host '[20.30.40.150]:2222 ([20.30.40.150]:2222)' can't be established.
@@ -397,5 +397,18 @@ individual files in /usr/share/doc/*/copyright.
 
 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
+
+foothold@e5316a5b004d:~$ hostname && whoami && pwd
+e5316a5b004d
+foothold
+/home/foothold
+
+```
+
+## Verify C2 admin visibility
+```term2
+┌──(root㉿blue-ops)-[/home/kali]
+└─# curl -u admin:adminadmin http://20.30.40.150:8080/admin
+{"note":"Use approved remote foothold channel for maintenance actions.","panel":"adv-c2 admin shim","status":"authenticated"}
 
 ```
