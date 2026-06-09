@@ -373,11 +373,12 @@ drwxr-xr-x  2 kali kali     4096 Feb 25 10:17 .vim
 -rw-r--r--  1 kali kali      336 Jan  7 18:51 .zprofile
 -rw-------  1 kali kali    10056 Mar 12 13:38 .zsh_history
 -rw-r--r--  1 kali kali    10855 Jan  7 18:51 .zshrc
-                                                                                ┌──(root㉿blue-ops)-[/home/kali]
-└─# cp super_secret_key super_secret_key.backup
-                                                                                ┌──(root㉿blue-ops)-[/home/kali]
-└─# chmod 400 super_secret_key
 
+┌──(root㉿blue-ops)-[/home/kali]
+└─# cp super_secret_key super_secret_key.backup
+
+┌──(root㉿blue-ops)-[/home/kali]
+└─# chmod 400 super_secret_key
 ```
 
 ## Connect to the first box and verify location
@@ -940,6 +941,8 @@ tcp              TIME-WAIT            0                  0                      
 tcp              TIME-WAIT            0                  0                                 172.18.0.3:33860                           172.18.0.2:5432                                
 tcp              TIME-WAIT            0                  0                                  127.0.0.1:53204                            127.0.0.1:9000                                
 tcp              LISTEN               0                  128                                     [::]:2222                                  [::]:*    
+
+
 
 foothold@e5316a5b004d:/var/www/html$ ls -la /etc/cron.*     
 /etc/cron.d:
