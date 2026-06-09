@@ -1317,6 +1317,22 @@ gunicorn==22.0.0
 psycopg2-binary==2.9.9
 pyyaml==6.0.1
 
+foothold@e5316a5b004d:/tmp$ curl -v telnet://adv-collector-db
+* Host adv-collector-db:23 was resolved.
+* IPv6: (none)
+* IPv4: 172.18.0.2
+*   Trying 172.18.0.2:23...
+* connect to 172.18.0.2 port 23 from 172.18.0.3 port 33088 failed: Connection refused
+* Failed to connect to adv-collector-db port 23 after 0 ms: Could not connect to server
+* closing connection #0
+curl: (7) Failed to connect to adv-collector-db port 23 after 0 ms: Could not connect to server
+
+foothold@e5316a5b004d:/tmp$ curl -v telnet://adv-collector-db:5432
+* Host adv-collector-db:5432 was resolved.
+* IPv6: (none)
+* IPv4: 172.18.0.2
+*   Trying 172.18.0.2:5432...
+* Connected to adv-collector-db (172.18.0.2) port 5432
 
 
 ```
