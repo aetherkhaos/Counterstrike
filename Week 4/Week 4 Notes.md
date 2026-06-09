@@ -1358,7 +1358,11 @@ foothold@e5316a5b004d:/tmp$ curl -v telnet://adv-collector-db:5432
 172.18.0.1 - - [09/Jun/2026:13:00:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
 172.18.0.1 - - [09/Jun/2026:13:01:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
 ```
-## create a fwd tunnel for nmap scanning
+
+## privesc on foothold
+- [copy-fail-CVE-2026-31431/copy_fail_exp.py at main · theori-io/copy-fail-CVE-2026-31431 · GitHub](https://github.com/theori-io/copy-fail-CVE-2026-31431/blob/main/copy_fail_exp.py)
+
+## 
 ```
 
 ```
