@@ -412,3 +412,7 @@ foothold
 {"note":"Use approved remote foothold channel for maintenance actions.","panel":"adv-c2 admin shim","status":"authenticated"}
 ```
 
+## create a fwd tunnel for nmap scanning
+```
+
+```
