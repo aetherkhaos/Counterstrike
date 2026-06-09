@@ -8,13 +8,13 @@ Duration: about 2.5 hours.
 
 You are working from the student ops station against a simulated adversary stack. Use the range-provided values if your instructor or range card rotates any defaults.
 
-|Role|Student-facing value|Notes|
-|---|---|---|
-|`red-river` / `adv-c2`|`20.30.40.150`|Primary target for foothold access and C2 administration.|
-|SSH foothold|`foothold@20.30.40.150:2222`|Primary access method from the ops station.|
-|C2 admin panel|`http://20.30.40.150:8080/admin`|Default credentials are `admin` / `adminadmin` unless rotated.|
-|`blue-lake` / collector database|`20.30.40.151`|Internal-only database; reach it from the `red-river` shell using credentials discovered in `/opt/c2/config.yaml`.|
-|`amber-bay` / exfil agent|`20.30.40.156`|You should see this source in `red-river` access logs. Do not pivot to it.|
+| Role                             | Student-facing value             | Notes                                                                                                              |
+| -------------------------------- | -------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `red-river` / `adv-c2`           | `20.30.40.150`                   | Primary target for foothold access and C2 administration.                                                          |
+| SSH foothold                     | `foothold@20.30.40.150:2222`     | Primary access method from the ops station.                                                                        |
+| C2 admin panel                   | `http://20.30.40.150:8080/admin` | Default credentials are `admin` / `adminadmin` unless rotated.                                                     |
+| `blue-lake` / collector database | `20.30.40.151` (not reliable)    | Internal-only database; reach it from the `red-river` shell using credentials discovered in `/opt/c2/config.yaml`. |
+| `amber-bay` / exfil agent        | `20.30.40.156` (not reliable)    | You should see this source in `red-river` access logs. Do not pivot to it.                                         |
 
 ### Foothold Re-Entry
 
@@ -23,7 +23,7 @@ Primary method: SSH key foothold on custom port `2222`.
 1. From your ops station, protect the issued private key:
     
     ```
-    chmod 600 ~/ops/footholds/l4.1a/adv-c2_id_ed25519
+    chmod 600 ~/Super_Secret_Key
     ```
     
 2. Connect to `red-river`:

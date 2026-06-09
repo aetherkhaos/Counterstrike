@@ -323,3 +323,6 @@ setup and connect to the sliver server via proxychains
 
 ---
 
+# Lab 4.1
+[[Lab L4.1a - Disable Adversary Tooling]]
+## 
