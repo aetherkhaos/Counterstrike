@@ -1454,3 +1454,12 @@ rev
 time="2026-06-09T18:24:48Z" level=warning msg="warning, certificate validation disabled"
 time="2026-06-09T18:24:48Z" level=info msg="Connection established" addr="30.40.50.10:11601"
 ```
+
+
+???
+dont know where to go from here
+???
+
+---
+
+# 4.2A
