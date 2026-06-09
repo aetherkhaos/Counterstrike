@@ -852,6 +852,164 @@ tcp              TIME-WAIT            0                  0                      
 tcp              TIME-WAIT            0                  0                                 172.18.0.3:33860                           172.18.0.2:5432                                
 tcp              TIME-WAIT            0                  0                                  127.0.0.1:53204                            127.0.0.1:9000                                
 tcp              LISTEN               0                  128                                     [::]:2222                                  [::]:*    
+
+foothold@e5316a5b004d:/var/www/html$ ls -la /etc/cron.*     
+/etc/cron.d:
+total 20
+drwxr-xr-x 1 root root 4096 Jun  8 03:31 .
+drwxr-xr-x 1 root root 4096 Jun  8 14:55 ..
+-rw-r--r-- 1 root root  102 Jun 13  2025 .placeholder
+-rw-r--r-- 1 root root  126 Jun  8 03:27 c2-drain
+
+foothold@e5316a5b004d:/var/www/html$ cat /etc/cron.d/c2-drain 
+* * * * * root /bin/bash -lc "python3 /opt/c2/drain.py; sleep 30; python3 /opt/c2/drain.py" >> /var/log/adv-c2/drain.log 2>&1
+
+foothold@e5316a5b004d:/var/www/html$ cat /opt/c2/drain.py 
+import hashlib
+import json
+import os
+import re
+import shutil
+import gzip
+import base64
+from pathlib import Path
+import psycopg2
+import yaml
+CONFIG_PATH = Path("/opt/c2/config.yaml")
+INCOMING_DIR = Path("/opt/staging/incoming")
+SHARED_EXFIL_DIR = Path("/shared/exfil")
+SHARED_CORPUS_DIR = Path("/shared/corpus")
+VALID_TIMESTAMP_RE = re.compile(r"^\d{8}T\d{6}Z$")
+HTML_IMG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
+def load_config():
+    cfg = yaml.safe_load(CONFIG_PATH.read_text(encoding="utf-8"))
+    cfg["db"]["host"] = os.getenv("DB_HOST", cfg["db"]["host"])
+    cfg["db"]["port"] = int(os.getenv("DB_PORT", cfg["db"]["port"]))
+    cfg["db"]["name"] = os.getenv("DB_NAME", cfg["db"]["name"])
+    cfg["db"]["user"] = os.getenv("DB_USER", cfg["db"]["user"])
+    cfg["db"]["password"] = os.getenv("DB_PASS", cfg["db"]["password"])
+    return cfg
+def parse_metadata(path: Path):
+    meta_path = path.with_name(f"{path.name}.meta.json")
+    if meta_path.exists():
+        data = json.loads(meta_path.read_text(encoding="utf-8"))
+        return (
+            int(data.get("size_bytes", path.stat().st_size)),
+            data.get("sha256", hashlib.sha256(path.read_bytes()).hexdigest()),
+            data.get("source_host", "adv-exfil-agent"),
+            meta_path,
+        )
+    return (
+        path.stat().st_size,
+        hashlib.sha256(path.read_bytes()).hexdigest(),
+        "adv-exfil-agent",
+        None,
+    )
+def parse_pipeline_filename(fname: str):
+    if not fname.endswith(".b64"):
+        return None
+    stem = fname[:-4]
+    parts = stem.split("_")
+    if len(parts) < 5:
+        return None
+    timestamp = parts[0]
+    if VALID_TIMESTAMP_RE.match(timestamp) is None:
+        return None
+    category = parts[-1]
+    exfil_host = parts[-2]
+    source_host = parts[-3]
+    orig_with_ext = "_".join(parts[1:-3])
+    orig_base, orig_ext = os.path.splitext(orig_with_ext)
+    if not orig_base or not orig_ext:
+        return None
+    return {
+        "timestamp": timestamp,
+        "orig_base": orig_base,
+        "orig_ext": orig_ext.lstrip(".").lower(),
+        "source_host": source_host,
+        "exfil_host": exfil_host,
+        "category": category.upper(),
+    }
+def decode_pipeline_payload(path: Path):
+    raw = path.read_bytes()
+    decoded = base64.b64decode(raw, validate=True)
+    return gzip.decompress(decoded)
+def strip_tracking_pixels_if_text(payload: bytes, ext: str):
+    if ext not in {"html", "htm", "md", "markdown"}:
+        return payload
+    text = payload.decode("utf-8", errors="ignore")
+    # Intended to remove tracking pixels before analyst review.
+    # BUG: only HTML <img> tags are stripped; markdown image syntax remains.
+    cleaned = HTML_IMG_RE.sub("", text)
+    return cleaned.encode("utf-8")
+def main():
+    cfg = load_config()
+    SHARED_EXFIL_DIR.mkdir(parents=True, exist_ok=True)
+    SHARED_CORPUS_DIR.mkdir(parents=True, exist_ok=True)
+    INCOMING_DIR.mkdir(parents=True, exist_ok=True)
+    review_category = os.getenv("PIPELINE_REVIEW_CATEGORY", "REVIEW").upper()
+    allowlist = {
+        item.strip().upper()
+        for item in os.getenv("PIPELINE_CATEGORY_ALLOWLIST", "REVIEW,ARCHIVE,INTEL").split(",")
+        if item.strip()
+    }
+    dsn = (
+        f"dbname={cfg['db']['name']} user={cfg['db']['user']} "
+        f"password={cfg['db']['password']} host={cfg['db']['host']} port={cfg['db']['port']}"
+    )
+    conn = psycopg2.connect(dsn)
+    conn.autocommit = True
+    cur = conn.cursor()
+    for path in sorted(INCOMING_DIR.iterdir()):
+        if path.name.endswith(".meta.json") or not path.is_file():
+            continue
+        fname = path.name
+        parsed = parse_pipeline_filename(fname)
+        size, sha, host, meta_path = parse_metadata(path)
+        category = "UNKNOWN"
+        pipeline_status = "quarantined"
+        decoded_name = None
+        decoded_size = 0
+        if parsed is not None:
+            category = parsed["category"]
+        if parsed is not None and category in allowlist:
+            try:
+                payload = decode_pipeline_payload(path)
+            except Exception:
+                pipeline_status = "decode_error"
+                shutil.copy2(path, SHARED_CORPUS_DIR / fname)
+            else:
+                source_host = parsed["source_host"] or host
+                host = source_host
+                if category == review_category:
+                    cleaned = strip_tracking_pixels_if_text(payload, parsed["orig_ext"])
+                    decoded_name = f"{parsed['timestamp']}_{parsed['orig_base']}.{parsed['orig_ext']}"
+                    destination = SHARED_EXFIL_DIR / decoded_name
+                    destination.write_bytes(cleaned)
+                    decoded_size = destination.stat().st_size
+                    pipeline_status = "review_ready"
+                else:
+                    shutil.copy2(path, SHARED_CORPUS_DIR / fname)
+                    pipeline_status = "stored_nonreview"
+        else:
+            shutil.copy2(path, SHARED_CORPUS_DIR / fname)
+        cur.execute(
+            """
+            INSERT INTO exfil_logs
+              (filename, size_bytes, sha256, source_host, category, pipeline_status, decoded_filename, decoded_size_bytes)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (fname, size, sha, host, category, pipeline_status, decoded_name, decoded_size),
+        )
+        if meta_path and meta_path.exists():
+            shutil.copy2(meta_path, SHARED_CORPUS_DIR / meta_path.name)
+            meta_path.unlink(missing_ok=True)
+        path.unlink(missing_ok=True)
+    cur.close()
+    conn.close()
+if __name__ == "__main__":
+    main()
+
 ```
 
 ### Found artifacts
