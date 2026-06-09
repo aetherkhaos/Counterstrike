@@ -8,15 +8,15 @@ Duration: about 2.75 hours.
 
 You are working from the student ops station against a simulated adversary stack. Use the range-provided values if your instructor or range card rotates any defaults.
 
-|Role|Student-facing value|Notes|
-|---|---|---|
-|`red-river` / `adv-c2`|`20.30.40.150`|Primary target for foothold access and C2 administration.|
-|SSH foothold|`foothold@20.30.40.150:2222`|Primary access method from the ops station.|
-|C2 admin panel|`http://20.30.40.150:8080/admin`|Default credentials are `admin` / `adminadmin` unless rotated.|
-|`blue-lake` / collector database|`20.30.40.151`|Internal-only database; reach it from the `red-river` shell using credentials discovered in `/opt/c2/config.yaml`.|
-|`amber-bay` / exfil agent|`20.30.40.156`|Expected source for legitimate exfil activity in `red-river` access logs. Do not pivot to it.|
-|`green-harbor` / analyst workstation|`20.30.40.157`|Internal analyst host; you observe its behavior through pipeline and callback evidence. Do not run additional code there.|
-|Student callback listener|`20.30.40.155:9443/tcp`|Stand up your listener on this address, or your team-segment equivalent in PCTE.|
+| Role                                 | Student-facing value             | Notes                                                                                                                     |
+| ------------------------------------ | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `red-river` / `adv-c2`               | `20.30.40.150`                   | Primary target for foothold access and C2 administration.                                                                 |
+| SSH foothold                         | `foothold@20.30.40.160:2222`     | Primary access method from the ops station.                                                                               |
+| C2 admin panel                       | `http://20.30.40.150:8080/admin` | Default credentials are `admin` / `adminadmin` unless rotated.                                                            |
+| `blue-lake` / collector database     | `20.30.40.151`                   | Internal-only database; reach it from the `red-river` shell using credentials discovered in `/opt/c2/config.yaml`.        |
+| `amber-bay` / exfil agent            | `20.30.40.156`                   | Expected source for legitimate exfil activity in `red-river` access logs. Do not pivot to it.                             |
+| `green-harbor` / analyst workstation | `20.30.40.157`                   | Internal analyst host; you observe its behavior through pipeline and callback evidence. Do not run additional code there. |
+| Student callback listener            | `20.30.40.155:9443/tcp`          | Stand up your listener on this address, or your team-segment equivalent in PCTE.                                          |
 
 ### Foothold Re-Entry
 

@@ -1463,8 +1463,17 @@ dont know where to go from here
 ---
 
 # 4.2A
-## Access foothold
+## Access foothold account on red-river
 ```
-ssh foothold@20.30.40.150 -i super_secret_key -p 2222
+ssh foothold@20.30.40.160 -i super_secret_key -p 2222
 ```
 
+## System info
+```
+foothold@l42-adv-c2:~$ hostname && id && pwd
+l42-adv-c2
+uid=1002(foothold) gid=1002(foothold) groups=1002(foothold)
+/home/foothold
+
+
+```
