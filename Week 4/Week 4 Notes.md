@@ -1351,7 +1351,13 @@ foothold@e5316a5b004d:/tmp$ curl -v telnet://adv-collector-db:5432
 	  user: adv_analyst
 	  password: collector!db
 - Observe the live exfil cadence in `/var/log/adv-c2/access.log` for at least two agent cycles so you can establish a baseline.
-	- 
+	- every minute
+```
+172.18.0.1 - - [09/Jun/2026:12:58:02 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+172.18.0.1 - - [09/Jun/2026:12:59:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+172.18.0.1 - - [09/Jun/2026:13:00:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+172.18.0.1 - - [09/Jun/2026:13:01:01 +0000] "POST /exfil HTTP/1.1" 200 106 "-" "python-requests/2.34.2"
+```
 ## create a fwd tunnel for nmap scanning
 ```
 
