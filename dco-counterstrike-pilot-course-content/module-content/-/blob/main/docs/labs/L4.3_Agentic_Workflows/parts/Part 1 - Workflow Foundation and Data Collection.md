@@ -86,7 +86,7 @@ Next, give the workflow raw evidence to analyze. You will read a syslog file fro
     |Field|Value|
     |---|---|
     |Operation|`Read File(s) From Disk`|
-    |File(s) Selector|`/opt/agentic/lab_data/auth_syslog.txt`|
+    |File(s) Selector|`/log/auth_syslog.txt`|
     
 4. Rename the node to `Read Syslog File`.
     
