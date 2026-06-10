@@ -1767,4 +1767,8 @@ tcp   LISTEN    0      128             [::]:2222          [::]:*
 		- After obtaining root, execute the reverse tcp shell again to elevate the meterpreter shell's permissions
 ?? what is the context of the login ??
 
-# 
+# Lab 4.3a
+## Start the Pre-configured Containers
+```
+
+```
