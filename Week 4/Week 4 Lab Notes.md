@@ -1770,5 +1770,40 @@ tcp   LISTEN    0      128             [::]:2222          [::]:*
 # Lab 4.3a
 ## Start the Pre-configured Containers
 ```
-
+┌──(kali㉿blue-ops)-[~]
+└─$ cd /opt/agentic
+                                                                                
+┌──(kali㉿blue-ops)-[/opt/agentic]
+└─$ ll
+total 120
+-rw-rw-r-- 1 kali kali   657 Feb 25 11:16 auth_syslog.txt
+drwxr-xr-x 2 root root  4096 Feb 25 10:22 cti_server
+-rw-rw-r-- 1 kali kali  1530 Feb 25 11:39 docker-compose.yaml
+-rw-r--r-- 1 root root   911 Feb 25 10:23 n8n-task-runners.json
+drwxr-xr-x 5 root root  4096 Feb 25 11:17 vols
+-rw-rw-r-- 1 kali kali 99707 Feb 25 10:26 vols.blank.tar.bz2
+                                                                                
+┌──(kali㉿blue-ops)-[/opt/agentic]
+└─$ docker compose up -d
+[+] up 4/4
+ ✔ Container ollama               Running                                   0.0s
+ ✔ Container n8n                  Running                                   0.0s
+ ✔ Container n8n-runner           Running                                   0.0s
+ ✔ Container agentic-cti_server-1 Started                                   0.4s
+                                                  
 ```
+
+## Verify they are running
+```
+┌──(kali㉿blue-ops)-[/opt/agentic]
+└─$ docker ps           
+CONTAINER ID   IMAGE                       COMMAND                  CREATED        STATUS              PORTS                                             NAMES
+b9e2333adee2   n8n:counterstrike           "docker-entrypoint.s…"   3 months ago   Up 10 hours         0.0.0.0:5678->5678/tcp, [::]:5678->5678/tcp       n8n
+188ac371b39e   n8n_runners:counterstrike   "tini -- /usr/local/…"   3 months ago   Up 10 hours         5680/tcp                                          n8n-runner
+5d8d770f6fab   cti_server:counterstrike    "python app.py"          3 months ago   Up About a minute   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp       agentic-cti_server-1
+e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago   Up 10 hours         0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp   ollama   
+```
+
+## Open the n8n interface
+![[Pasted image 20260610091728.png]]
+## Confirm the 
