@@ -1862,3 +1862,6 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 }
 ```
 ### Part 3
+- Parsed JSON output from `Parse AI Output`.
+- IF-node routing result from `Is Threat Malicious?`.
+- Final `markdown_report` from `Format IR Ticket`.
