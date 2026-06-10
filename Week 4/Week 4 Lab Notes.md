@@ -1813,7 +1813,7 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 
 ---
 ## Evidence to Capture[](app://obsidian.md/index.html#evidence-to-capture)
-
+### Part 1
 - Screenshot or execution output showing `raw_syslog_data` from `Extract Syslog Text`.
 ```json
 {
@@ -1854,4 +1854,11 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 "apt-29-associated"
 ]
 ```
-
+### Part 2
+- Execution output from `AI Triage Agent` showing valid JSON with `classification`, `confidence`, and `summary`.
+```json
+{
+"text": "```json\n{\n  \"classification\": \"Malicious\",\n  \"confidence\": 85,\n  \"summary\": \"Multiple failed SSH attempts from an unknown IP address, followed by unauthorized sudo access attempt.\"\n}\n```" 
+}
+```
+### Part 3
