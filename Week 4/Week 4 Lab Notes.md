@@ -1808,3 +1808,53 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 ![[Pasted image 20260610091728.png]]
 ## Confirm the Phi-4-mini chat model is available through an ollama chat
 ![[Pasted image 20260610092347.png]]
+
+
+
+---
+## Evidence to Capture[](app://obsidian.md/index.html#evidence-to-capture)
+
+- Screenshot or execution output showing `raw_syslog_data` from `Extract Syslog Text`.
+```json
+{
+  
+  
+"raw_syslog_data": "Mar 16 14:02:11 web-srv-01 sshd[14302]: Accepted publickey for admin from 10.50.2.14 port 54322 ssh2\nMar 16 14:05:33 web-srv-01 kernel: [  124.556] iptables dropped: IN=eth0 OUT= MAC=00:1A:2B:3C:4D:5E SRC=198.51.100.44 DST=10.50.1.100 LEN=60 TOS=0x00 PREC=0x00 TTL=54 ID=4231 DF PROTO=TCP SPT=443 DPT=22 WINDOW=14600 RES=0x00 SYN URGP=0\nMar 16 14:05:35 web-srv-01 sshd[14511]: Invalid user support from 198.51.100.44 port 39412\nMar 16 14:05:37 web-srv-01 sshd[14511]: Connection closed by invalid user support 198.51.100.44 port 39412 [preauth]\nMar 16 14:08:12 web-srv-01 sudo: admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/cat /etc/shadow\n"
+  
+}
+```
+- Execution output showing the IP array from `Extract IPs from Logs`.
+```json
+{
+  "output": {
+    "ip_addresses": [
+      "192.168.1.10",
+      "172.16.0.5" 
+      ] 
+    }
+}
+```
+- Execution output showing consolidated CTI enrichment from `Merge CTI from all IPs together`.
+```json
+{
+	"data": [
+		{
+			"classification": "benign",
+			"indicator": "192.168.1.10",
+			"message": "No known malicious associations.",
+			"reputation_score": 0,
+			"tags": [ 
+			]
+		}, 
+		{
+			"classification": "benign",
+			"indicator": "172.16.0.5",
+			"message": "No known malicious associations.",
+			"reputation_score": 0,
+			"tags": [ 
+			] 
+		} 
+	]
+}
+```
+
