@@ -10,13 +10,13 @@ This lab builds the "happy path" workflow that you will harden in Lab L4.3b (Age
 
 You are working on the pre-staged agentic lab VM. All work happens in the local n8n canvas and terminal on that VM. Use the range-provided values if your instructor rotates any defaults.
 
-|Role|Student-facing value|Notes|
-|---|---|---|
-|n8n UI|`http://localhost:5678`|Primary workflow builder and execution audit surface. Login: **`student@cs.ops`** / **`1qaz2wsx!QAZ@WSX`**.|
-|Ollama (from n8n nodes)|`http://ollama:11434`|Docker-network hostname used inside n8n AI nodes.|
-|Mock CTI API (from n8n nodes)|`http://cti-api:5000`|Docker-network hostname for threat-intel lookups.|
-|Syslog artifact|`/opt/agentic/lab_data/auth_syslog.txt`|Pre-staged evidence file for this lab.|
-|Lab stack directory|`/opt/agentic`|Docker Compose project root.|
+| Role                          | Student-facing value                    | Notes                                                                                                       |
+| ----------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| n8n UI                        | `http://localhost:5678`                 | Primary workflow builder and execution audit surface. Login: **`student@cs.ops`** / **`1qaz2wsx!QAZ@WSX`**. |
+| Ollama (from n8n nodes)       | `http://ollama:11434`                   | Docker-network hostname used inside n8n AI nodes.                                                           |
+| Mock CTI API (from n8n nodes) | `http://cti-api:5000`                   | Docker-network hostname for threat-intel lookups.                                                           |
+| Syslog artifact               | `/opt/agentic/lab_data/auth_syslog.txt` | Pre-staged evidence file for this lab.                                                                      |
+| Lab stack directory           | `/opt/agentic`                          | Docker Compose project root.                                                                                |
 
 ### Environment Start and Verification
 

@@ -1806,4 +1806,4 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 
 ## Open the n8n interface
 ![[Pasted image 20260610091728.png]]
-## Confirm the 
+## Confirm the Ollama chat model is available
