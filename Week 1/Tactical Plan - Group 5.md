@@ -87,50 +87,52 @@
 
 #### Friendly OCOKAW
 
-- Observation and Fields of Fire:
+##### Observation and Fields of Fire:
   - RFI: Where are we physically located and will we have access to server rooms as well as to user workstations? We have the ability to monitor network traffic at the boundary as well as internally. We have the ability to monitor and analyze logs from various sources including endpoint telemetry, firewall logs, Windows Event Logs, limited netflow, limited PCAP across some segments.
 
-- Cover and Concealment:
+##### Cover and Concealment:
   - RFI: Are we able to deploy EDR agents on this network? We would conceal our tools by making sure that our EDR agents are configured to look like normal processes and that our analysts are using normal user accounts. We would also try to conceal our monitoring by making sure that we are not generating a lot of noise on the network or in the logs.
 
-- Obstacles:
+##### Obstacles:
   - Unknown number of event logs to parse through as well as the fidelity of the logging on the endpoints. Limited netflow and PCAP as well.
 
-- Key Terrain:
+##### Key Terrain:
   - From the network perspective, we need to control the blue core router. This is the main point of ingress and egress for the network and it will allow us to monitor all traffic going in and out of the network. We also need to be able to see lateral movement within the network. From a host perspective, the domain controller is not necessarily key terrain but the ntds.dit file is. This adversary is primarily focused on stealing working documents from user workstations and servers. They are not focused on stealing credentials but they are focused on stealing the documents that the users have access to. This means that we need to be able to see what files are being accessed and exfiltrated from user workstations and servers.
 
-- Avenues of Approach:
+##### Avenues of Approach:
   - The main avenue of approach for the enemy is going to be through USB weaponization. They have been known to spear phish with weaponized attachments to users within the network. They have also been observed using LNK files to infect machines.
 
-- Weather:
+##### Weather:
   - RFI are there any significant weather events in the forecast in Lunovia? RFI: Does the Lunovian srever room we are using have an UPS and what is their capacity at? 
 
 #### Enemy OCOKAW
 
-- Observation and Fields of Fire:
+##### Observation and Fields of Fire:
   - Unknown if the enemy has no physical access to the network but they have logical access to compromised hosts within the network. RFI: Are there any intelligence reports/sigint indicating there may be insider threats within the Lunovian government networks?
 
-- Cover and Concealment:
+##### Cover and Concealment:
   - The enemy is using heavy obfuscation to conceal their tools and techniques. However, they are leveraging known LOLBAS (Living Off the Land Binaries and Scripts) and persistence locations. 
 
-- Obstacles:
+##### Obstacles:
   - Unknown what the Lunovian workstations and servers in the network are protected by. Network map does not show a firewall but more information needs to be requested. Do they have a firewall, EDR, and IDS? Uknown if there are any obstacles to the enemy at this time. Have any clear actions been taken since detection?
 
-- Key Terrain:
+##### Key Terrain:
   - The adversary's main target are working documents on user workstations and servers. They are not focused on stealing credentials but they are focused on stealing the documents that the users have access to. This means that the key terrain for the enemy is going to be the user workstations and servers that have the documents that they want to steal. They are also focused on maintaining access to these machines so they can continue to steal documents over time. Common persistence locations such as the Windows Registry, startup folder, and scheduled tasks are also key terrain for the enemy.
 
-- Avenues of Approach:
+##### Avenues of Approach:
   - T1566 Spear phishing
   - Removable media such as USB drives
 
-- Weather:
+##### Weather:
   - RFI are there any significant weather events in the forecast in Varensk?
 
 ### Time/Space/Logistics
-
-- Time: Adversary ops tempo is high
-- Space: RFI Where are we physically located and who do we have access to system admins/server room?
-- Logistics: RFI: Are we physically co-located with administrators or do we need to travel somewhere to talk to them? Are they available for us to talk to when events arise or do we have set meeting times? 
+#####  Time:
+- Adversary ops tempo is high
+##### Space: 
+- RFI Where are we physically located and who do we have access to system admins/server room?
+##### Logistics: 
+- RFI: Are we physically co-located with administrators or do we need to travel somewhere to talk to them? Are they available for us to talk to when events arise or do we have set meeting times? 
 ### Civilian Consideration
 - Are we operating on a critical infrastructure (e.g. power grid, financial services)? What are the potential collateral effects? Do we know what documents regarding energy-policy coordination and transportation-setor continuity planning were exfiltrated?
 
