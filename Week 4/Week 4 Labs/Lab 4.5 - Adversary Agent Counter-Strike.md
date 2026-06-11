@@ -259,7 +259,7 @@ The survey workflow is the main counter-strike surface. It sends normalized surv
 Start with boring telemetry.
 
 ```
-curl -fsS -X POST http://20.30.40.155/webhook/agent-survey \
+curl -fsS -X POST http://20.30.40.153/webhook-test/agent-survey \
   -H 'Content-Type: application/json' \
   -d '{
     "event_type": "survey_result",
@@ -312,7 +312,7 @@ In the latest `L45 - Survey Analysis and Tasking` execution:
 Now send a survey containing a document path that a tasking analyst would likely prioritize.
 
 ```
-curl -fsS -X POST http://20.30.40.155/webhook/agent-survey \
+curl -fsS -X POST http://20.30.40.153/webhook-test/agent-survey \
   -H 'Content-Type: application/json' \
   -d '{
     "event_type": "survey_result",
