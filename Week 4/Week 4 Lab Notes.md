@@ -1912,8 +1912,14 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 
 - Send a Baseline Check-In
 ```
-Effect:none
-Action:test
+Effect:
+
+none
+
+Action:
+
+test
+
 Predicted response:
 
 {
@@ -1927,8 +1933,16 @@ Predicted response:
 
 Observed result:
 
-{"task_type":"survey","task_payload":{},"report_urls":{"survey":"http://20.30.40.155/webhook/agent-survey","collection":"http://20.30.40.155/webhook/agent-collection"}} 
+	{
+	"task_type":"survey",
+	"task_payload":{},
+	"report_urls":{
+		"survey":"http://20.30.40.155/webhook/agent-survey",
+		"collection":"http://20.30.40.155/webhook/agent-collection"
+	}} 
 
-Burn-risk / failed guardrail:none
+Burn-risk / failed guardrail:
+
+	none
 ```
 - 
