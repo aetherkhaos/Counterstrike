@@ -1899,7 +1899,11 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 	- the LLM summary node,
 		- Summarize for Feed
 	- where the original file is written,
+		- Write Original File
 		- /shared/published/files
 	- where the updates feed is appended,
-		- /shared/published
+		- Append Updates Feed
+		- /shared/published/updates.html
 	- where metadata is saved.
+		- Save Collected Metadata
+		- 
