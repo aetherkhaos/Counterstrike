@@ -1909,3 +1909,20 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 		- Save Collected Metadata
 
 ## Part 2
+```
+Effect:none
+Action:test
+Predicted response:
+
+
+{
+  "task_type": "survey",
+  "task_payload": {},
+  "report_urls": {
+    "survey": "http://20.30.40.155/webhook/agent-survey",
+    "collection": "http://20.30.40.155/webhook/agent-collection"
+  }
+}
+served result:
+Burn-risk / failed guardrail:
+```
