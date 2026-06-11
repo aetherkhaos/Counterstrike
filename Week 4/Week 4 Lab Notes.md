@@ -1870,4 +1870,21 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 # Lab 4.5
 ## Workflow Maps
 - Agent Check-in Dispatcher
-	- 
+	- the webhook node,
+		- Checkin Webhook
+	- where the workflow checks for pending tasks
+		- Fetch Pending Tasks executeQuery
+	- where it claims a task
+		- Claim Task executeQuery
+	- where it builds a default survey response.
+		- Build Pending Task Response
+- Survey Analysis and Tasking
+	- the webhook node
+		- Survey Webhook
+	- where survey input is normalized
+		- Normalize Survey Input
+	- where the raw survey is saved
+		- 
+	- the LLM decision node,
+	- the IF node that decides whether a task exists,
+	- the Postgres node that enqueues tasking
