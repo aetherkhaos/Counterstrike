@@ -536,10 +536,10 @@ For each attempt:
 
 Use this evidence table in your notes:
 
-|Attempt|Field changed|Desired outcome|LLM response|Queued task|Follow-up check-in result|
-|---|---|---|---|---|---|
-|1||||||
-|2||||||
+| Attempt | Field changed | Desired outcome | LLM response | Queued task | Follow-up check-in result |
+| ------- | ------------- | --------------- | ------------ | ----------- | ------------------------- |
+| 1       |               |                 |              |             |                           |
+| 2       |               |                 |              |             |                           |
 
 > **Check Your Understanding**
 > 

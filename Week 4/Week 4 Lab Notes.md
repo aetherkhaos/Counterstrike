@@ -1946,4 +1946,9 @@ Burn-risk / failed guardrail:
 
 	none
 ```
-- 
+
+
+| Attempt | Field changed | Desired outcome | LLM response | Queued task | Follow-up check-in result |
+| ------- | ------------- | --------------- | ------------ | ----------- | ------------------------- |
+| 1       |               |                 |              |             |                           |
+| 2       |               |                 |              |             |                           |
