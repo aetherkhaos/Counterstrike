@@ -1906,4 +1906,4 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 		- /shared/published/updates.html
 	- where metadata is saved.
 		- Save Collected Metadata
-		- 
+
