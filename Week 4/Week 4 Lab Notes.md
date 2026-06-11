@@ -1948,7 +1948,7 @@ Burn-risk / failed guardrail:
 ```
 
 
-| Attempt | Field changed | Desired outcome | LLM response | Queued task | Follow-up check-in result |
-| ------- | ------------- | --------------- | ------------ | ----------- | ------------------------- |
-| 1       |               |                 |              |             |                           |
-| 2       |               |                 |              |             |                           |
+| Attempt | Field changed   | Desired outcome | LLM response | Queued task | Follow-up check-in result |
+| ------- | --------------- | --------------- | ------------ | ----------- | ------------------------- |
+| 1       | logged_on_users |                 |              |             |                           |
+| 2       | host_name       |                 |              |             |                           |
