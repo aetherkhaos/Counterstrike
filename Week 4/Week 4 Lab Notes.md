@@ -1884,7 +1884,22 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 	- where survey input is normalized
 		- Normalize Survey Input
 	- where the raw survey is saved
-		- 
-	- the LLM decision node,
-	- the IF node that decides whether a task exists,
+		- Save Survey Event
+	- the LLM decision node
+		- LLM Decision Builder
+	- the IF node that decides whether a task exists
+		- Has Follow-on Task?
 	- the Postgres node that enqueues tasking
+		- Enqueue Follow-on Task executeQuery
+- File Summary and Updates Feed
+	- the webhook node,
+		- Collection Webhook
+	- where file metadata is normalized,
+		- Normalize Collection Input
+	- the LLM summary node,
+		- Summarize for Feed
+	- where the original file is written,
+		- /shared/published/files
+	- where the updates feed is appended,
+		- /shared/published
+	- where metadata is saved.
