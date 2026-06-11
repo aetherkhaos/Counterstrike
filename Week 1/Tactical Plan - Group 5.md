@@ -7,22 +7,20 @@
 
 ### Enemy
 
-#### Composition, Disposition, Strength
-
-- Size:
+#### Composition, Disposition, Strength (SALUTE)
+##### Size:
   - The actor falls under the ISB, they should be assumed to be well funded and well resourced. 
-- Activity:
+##### Activity:
   - The group's primary activity is cyberespionage. Key actions include: - Initial Access: Weaponized USB based on removable-media alert recorded during same week as the first suspicious script execution. - Possible Data Exfiltration/C2: repeated script execution from user profile paths and unusual outbound web traffic to external infrastructure - Discovery and Collection: file server contains staged archives of common office-document types in user-writable directory 
-
-- Location:
+##### Location:
   - Physically operating out of Varensk.
   - Logically, they are operating within multiple Lunovian networks and allied partnered nations.
-- Unit:
+##### Unit:
   - Unit 18 under the ISB. RFI for known coordination between Unit 18 and Unit 47 under the ISB. Initial access appears to be Unit 18 due to use of removable media and script execution but the targets appear to be of specific interest to Unit 47.
-- Time:
+##### Time:
   - Ongoing
   - RFI for exact date/time when the initial removable media alert was recorded as well as the first suspicious script execution
-- Equipment:
+##### Equipment:
   - All heavily obfuscated tools capable of bypassing EDR
   - AmberLNK (PowerShell/VBScript versions) for USB drive weaponization with enticing LNK files (double extensions, conspicuous filenames)
   - Custom PowerShell (e.g., AmberPSLoad variants) and VBScript (e.g., AmberX, AmberSand, AmberDash, AmberRisk) general-purpose and dedicated downloaders that support encrypted PE files, PowerShell commands, and VBScript payloads (often XOR-encrypted with volume serial number as key)
@@ -30,37 +28,37 @@
   - AmberCDrop (C-based) for delivering VBScript payloads.
   - File stealers (e.g., AmberPSDoor, AmberVDoor variants) targeting specific extensions; browser credential/cookie stealers (AmberSteal, AmberCookie); app-specific stealers (e.g., for messaging clients); screen capture (AmberScreen); remote shells (AmberPShell, ReVBShell); reverse SOCKS proxies (AmberSocks).
 
-#### Capabilities and Limitations
+#### Capabilities and Limitations (DRAWD)
 
-- Defend:
+##### Defend:
   - Under what conditions can the enemy DEFEND?: Typically, they defend their accesses by deploying multiple simple downloaders or backdoors simultaneously.
 
   - Under what conditions is the enemy unable to DEFEND?: Doesn't prioritize stealth
 
   - Under what conditions WILL the enemy DEFEND?: We assume that the enemy will attempt to defend their accesses and infrastructure at all times albeit in an unconventional manner. This adversary accepts that they will be discovered in the network and they defend by having multiple simultaneous backdoors on any given machine.
 
-- Reinforce:
+##### Reinforce:
   - Under what conditions can the enemy REINFORCE?: They reinforce their positions within networks by deploying miltiple simple downlaoders or backdoors simultaneously.
 
   - Under what conditions does the enemy have the inability to REINFORCE?: doesn't appear to do priv esc but rather mass internal propogation, has goal to maintain persistence access through layered tooling and facilitate lateral movement and new victim acquisition
 
   - Under what conditions WILL the enemy REINFORCE?: Based on report given there is no privilege esclation done by this group. An RFI is needed to determine if there is additional reporting regarding this or if they work with another unit and pass initial access to them for privilege escalation.
 
-- Attack:
+##### Attack:
   - Under what conditions can the enemy ATTACK?: Given sufficient access to an environment they can, in theory, perform destructive attacks. spearphishing with LNK/HTA
 
   - Under what conditions is the enemy unable to ATTACK?: Their mission does not seem to be data destruction but data collection.
 
   - Under what conditions WILL the enemy ATTACK?: RFI Are there any policies within the ISB the prevents Unit 18 from conducting offensive effects?
 
-- Withdraw:
+##### Withdraw:
   - Under what conditions is the enemy capable of WITHDRAW?: Certain pieces of malware by this actor have the ability to delete themselves.
 
   - Under what conditions is the enemy unable to WITHDRAW?: Some of the adverary's malware operates like a psuedo worm. It automatically infects external drives for self-propagation as well as backdooring normal.dotm files. We believe that this actually makes it somewhat difficult for the adversary to fully withdraw because they themselves may lose track of what machines are infected. Especially if they wind up jumping an airgap.
 
   - Under what conditions WILL the enemy WITHDRAW?: RFI what is considered intel gain/loss for unit 18? 
 
-- Delay:
+##### Delay:
   - Under what conditions can the enemy DELAY?: Their extensive use of heavy obfuscation delay's hunt and counterstrike personnel significantly. The sheer number of compromises within a network as well as the traffic it produces also is overwhelming for a defensive team.
   - Under what conditions is the enemy unable to DELAY?: RFI needed for if there are any Varenskian or ISB policies/terms/conditions/ that they would not want to delay
 
@@ -133,7 +131,8 @@
 - Time: Adversary ops tempo is high
 - Space: RFI Where are we physically located and who do we have access to system admins/server room?
 - Logistics: RFI: Are we physically co-located with administrators or do we need to travel somewhere to talk to them? Are they available for us to talk to when events arise or do we have set meeting times? 
-- Civilian Consideration: Are we operating on a critical infrastructure (e.g. power grid, financial services)? What are the potential collateral effects? Do we know what documents regarding energy-policy coordination and transportation-setor continuity planning were exfiltrated?
+### Civilian Consideration
+- Are we operating on a critical infrastructure (e.g. power grid, financial services)? What are the potential collateral effects? Do we know what documents regarding energy-policy coordination and transportation-setor continuity planning were exfiltrated?
 
 ### EMLCOA
 
