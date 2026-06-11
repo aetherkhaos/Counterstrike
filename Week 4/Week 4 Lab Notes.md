@@ -1868,7 +1868,8 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 
 ---
 # Lab 4.5
-## Workflow Maps
+## Part 1
+### Workflow Maps
 - Agent Check-in Dispatcher
 	- the webhook node,
 		- Checkin Webhook
@@ -1907,3 +1908,4 @@ e1257009f399   ollama:counterstrike        "ollama serve"           3 months ago
 	- where metadata is saved.
 		- Save Collected Metadata
 
+## Part 2
