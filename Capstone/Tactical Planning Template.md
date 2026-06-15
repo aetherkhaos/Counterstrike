@@ -13,7 +13,7 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
 #### SALUTE: Composition, Disposition, Strength
 
 ##### Size:
-- Unit 18 “Amber Tide” is a Varensk-aligned advanced persistent threat (APT) group operating under the Internal Security Bureau (ISB) of Varensk.
+- Unit 18 “Amber Tide” is a Varensk-aligned advanced persistent threat (APT) group operating under the Internal Security Bureau (ISB) of Varensk. Considered a nation state level actor.
 ##### Activity:
 1. **Initial Access**: Spearphishing with LNK/HTA attachments in archives (T1566.001, T1204.001, T1204.002), HTML smuggling, weaponized Microsoft Word documents/templates (T1221), and USB drive weaponization for replication (T1091).
     
@@ -23,14 +23,19 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
     
 4. **Defense Evasion**: Obfuscation via command/HTML smuggling/embedded payloads/encrypted files (T1027), masquerading with double extensions and benign registry names (T1036), mshta.exe proxying (T1218.005), hidden files (T1564.001), AMSI bypass, and indicator removal (T1070.004).
     
-5. **Discovery & Collection**: Targeted file discovery on local/network/USB drives, browser credential/cookie theft, screen capture, and data staging. Exfiltration Over C2 Channel (T1041), 
+5. **Discovery & Collection**: Targeted file discovery on local/network/USB drives, browser credential/cookie theft, screen capture, and data staging.
+
+6. **Command & Control**: HTTP/HTTPS with dynamic IP resolution, third-party services (messaging platforms, cloud tunneling), proxies/reverse SOCKS, and frequent domain/IP rotation.
+    
+7. **Exfiltration**: Over C2 channels after staging (T1041).
 
 ##### Location:
-- 
+- Amber Tide physically located in Varensk and logically operating in Lenovia
 ##### Unit:
-
+- Unit 18 “Amber Tide”
+	- operating under the Internal Security Bureau (ISB) of Varensk
 ##### Time:
-
+- 
 ##### Equipment:
 
 ---
