@@ -96,30 +96,88 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
 - Cyber Auxiliary Reserve
 #### Supporting:
 - Foreign Cyber Partnerships
-- 
+- Rear-Echelon Support (USCC/Agencies)
 
 ---
 
 ### Terrain and Weather
 
-#### OCOKAW:
+#### Friendly OCOKAW:
 
 ##### Obstacles:
+- Current Posture: Amber Tide is known for “living off the land” (using native tools like PowerShell or WMI) and employing encrypted Command and Control (C2) channels.
+- Analysis:
+	- Host-Level: User-mode logs are insufficient here; Amber Tide will likely clear them or bypass user-mode hooks. We absolutely require kernel-level EDR agents deployed across all endpoints to catch their living-off-the-land binaries (LOLBins) and memory-resident malware.
+- Network-Level: NetFlow is only good for spotting the volume of their exfiltration, but we need full PCAP at the boundary and passive network taps at critical internal choke points to decrypt or analyze the behavioral signatures of their C2 beacons.
+- Blind Spots: We must identify segments where we lack visibility (e.g., legacy systems, unmanaged BYOD devices, or IoT segments) as Amber Tide will use these as safe havens.
 
 ##### Cover and Concealment:
+- Current Posture: Do we want Amber Tide to know we are hunting them?
+- Analysis:
+	- Covert Approach (Watching): If our goal is intelligence gathering to understand Amber Tide’s full toolset and ultimate objective, our hunt activities must be highly concealed. We should not use overt active scanning or aggressively kill their shells, as this will burn our presence and cause them to dig deeper or deploy destructive wipers. We would route our analysis tools through obfuscated infrastructure.
+	- Overt Approach (Eviction): If the mission shifts to immediate remediation, we drop concealment. We overtly isolate hosts, block their known C2 IPs at the firewall, and actively sweep the domain. We accept that they will know we are onto them.
 
 ##### Observation:
+- **Current Posture:** What is preventing us from hunting Amber Tide effectively?
+- **Analysis:**
+    - **Data Acquisition Barriers:** Strict privacy policies, siloed IT departments, or outsourced infrastructure (like a third-party managed cloud) that prevents us from rapidly pulling forensic images or deploying our EDR tools.
+    - **Maneuver Barriers:** Highly segmented network enclaves (e.g., air-gapped ICS/SCADA networks). While these keep Amber Tide out, they also act as obstacles for _our_ incident responders trying to push updates or pull telemetry.
+    - **Adversary-Created Obstacles:** Amber Tide may have deployed rootkits to blind our EDR, or they might have altered firewall rules to lock us out of management interfaces.
 
 ##### Key Terrain:
+- **Current Posture:** Why is Amber Tide here, and what must we protect at all costs?
+- **Analysis:**
+    - While the Domain Controller (DC) is tactical high ground for identity management, it is likely _not_ Amber Tide’s ultimate goal.
+    - **Business/Mission Purpose:** If this network facilitates research and development, the Key Terrain is the **engineering database or file shares** containing intellectual property.
+    - **Operational Purpose:** If this is a military or logistics network, the Key Terrain might be the **logistics planning applications or the Exchange email servers** where C2 communications happen.
+    - We must position our heaviest defenses and most aggressive “Observation” (EDR/taps) around this specific Key Terrain, not just the IT infrastructure.
 
 ##### Avenues of Approach:
+- **Current Posture:** How did Amber Tide get in, and how might they re-enter?
+- **Analysis:**
+    - Based on MITRE ATT&CK, advanced actors like Amber Tide frequently utilize:
+        - **T1189 Drive-by Compromise / T1566 Phishing:** Spear-phishing targeting the specific personnel who have access to the Key Terrain.
+        - **T1190 Exploit Public-Facing Application:** Exploiting zero-days or N-days in edge devices (e.g., VPNs, firewalls, or web servers) that face the internet.
+        - **T1078 Valid Accounts:** Purchasing compromised credentials from initial access brokers to walk right through the front door via the VPN.
+    - We must seal these avenues by enforcing MFA, patching edge devices, and conducting aggressive email filtering.
 
 ##### Weather:
+- **Current Posture:** How does the physical world impact this cyber engagement?
+- **Analysis:**
+    - If our defense relies on cloud-based EDR consoles or remote logging, severe weather (hurricanes, solar flares) impacting local ISPs or SATCOM links could sever our “Observation” capabilities.
+    - If Amber Tide is targeting a forward-deployed tactical operations center, bad weather might degrade the very satellite communications we need to coordinate the incident response, forcing us to rely entirely on local, disconnected defense measures.
+
+#### Enemy OCOKAW:
+
+##### Observation and fields of fire:
+- They utilize WMI for USB discovery and local/network drive enumeration to map out file shares. They target what they can see locally from the infected endpoint, scraping browser credentials (AmberCookie) and taking screen captures (AmberScreen) to observe user activity and target specific file extensions.
+
+##### Cover and Concealment:
+- Stealth is sacrificed for speed. They conceal their payloads locally using double extensions, masquerading with benign registry names, and AMSI bypasses. Network concealment is achieved by blending C2 traffic into third-party messaging platforms, cloud tunneling, or using HTTP/HTTPS with frequent dynamic IP/domain rotation.
+
+##### Obstacles:
+- EDR systems that block script execution or monitor AMSI are their primary obstacles. To bypass these, they utilize proxy execution via `mshta\.exe`, fileless registry storage, and environmental keying (ensuring payloads only execute on the intended victim machine to avoid sandbox analysis).
+
+##### Key Terrain:
+- Initial foothold endpoints. By dropping layered tooling (AmberCDrop, AmberTemplate) onto a single host, they establish a durable beachhead. Compromising an internal communication node (like the email server in 2023) is vital terrain, allowing them to rapidly blast malicious attachments to internal peers who trust the source.
+
+##### Avenues of Approach:
+- They approach the network via spearphishing attachments (LNK/HTA in archives). Once inside, their internal avenues of approach are highly opportunistic: infecting any inserted USB drive to jump across air-gaps or segmentations, and leveraging legitimate Microsoft Office template macros to move laterally via document sharing
+
+##### Weather:
+- Same as friendly
+
 
 ---
 
 ### Time/Space/Logistics
 
+### Time:
+- Amber Tides operations rely on fast moving "smash and grab opertaions" meaning a high adversarial op tempo.
+### Space:
+- Partner Network is located in Lunovia's capital city, Velystok.
+### Logistics:
+- Due to the amount of data/alerts generated by the adversary, the full kit would be required.
 ---
 
 ### Civil Considerations
