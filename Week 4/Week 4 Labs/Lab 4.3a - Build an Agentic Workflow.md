@@ -336,7 +336,7 @@ You should see the workflow loop the HTTP request for every IP found in the log 
 
 ## Next Step[](#next-step)
 
-Continue to [Part 2 - Configure the AI Triage Agent](/dco-counterstrike-pilot-course-content/module-content/-/blob/main/docs/labs/L4.3_Agentic_Workflows/parts/part-2-configure-ai-triage-agent.md).
+Continue to [Part 2 - Configure the AI Triage Agent](part-2-configure-ai-triage-agent.md).
 1. Part 2 - Configure the AI Triage Agent
 2. Part 3 - Parse, Branch, and Transform the Output
 

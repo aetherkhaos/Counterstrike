@@ -1,6 +1,6 @@
 # Part 3 - Parse, Branch, and Transform the Output[](#part-3---parse-branch-and-transform-the-output)
 
-[Back to lab overview](/dco-counterstrike-pilot-course-content/module-content/-/blob/main/../index.md) | [Previous: Part 2](/dco-counterstrike-pilot-course-content/module-content/-/blob/main/docs/labs/L4.3_Agentic_Workflows/parts/part-2-configure-ai-triage-agent.md)
+[Back to lab overview](/dco-counterstrike-pilot-course-content/module-content/-/blob/main/../index.md) | [Previous: Part 2](part-2-configure-ai-triage-agent.md)
 
 ## Operational Context[](#operational-context)
 

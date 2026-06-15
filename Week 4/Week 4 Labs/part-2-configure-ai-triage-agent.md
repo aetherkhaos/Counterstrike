@@ -124,4 +124,4 @@ Now inject the evidence and CTI context from your earlier nodes into the user pr
 
 ## Next Step[](#next-step)
 
-Continue to [Part 3 - Parse, Branch, and Transform the Output](/dco-counterstrike-pilot-course-content/module-content/-/blob/main/docs/labs/L4.3_Agentic_Workflows/parts/part-3-parse-branch-and-transform.md)
+Continue to [Part 3 - Parse, Branch, and Transform the Output](part-3-parse-branch-and-transform.md)
