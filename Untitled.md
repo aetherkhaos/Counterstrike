@@ -1354,4 +1354,31 @@ Nmap done: 1 IP address (1 host up) scanned in 703.97 seconds
 - 8081/tcp  open   http             Apache Tomcat 9.0.98
 - 9000/tcp  open   http             Golang net/http server
 - 9090/tcp  open   http             Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
-- 
+
+## COA Development
+- 8081/tcp  open   http             Apache Tomcat 9.0.98
+```
+┌──(kali㉿dco-ops)-[~]
+└─$ searchsploit tomcat 9.0
+------------------------------------------------------------------------------------------------ ---------------------------------
+ Exploit Title                                                                                  |  Path
+------------------------------------------------------------------------------------------------ ---------------------------------
+Apache Tomcat 9.0.0.M1 - Cross-Site Scripting (XSS)                                             | multiple/webapps/50119.txt
+Apache Tomcat 9.0.0.M1 - Open Redirect                                                          | multiple/webapps/50118.txt
+Apache Tomcat < 9.0.1 (Beta) / < 8.5.23 / < 8.0.47 / < 7.0.8 - JSP Upload Bypass / Remote Code  | jsp/webapps/42966.py
+Apache Tomcat < 9.0.1 (Beta) / < 8.5.23 / < 8.0.47 / < 7.0.8 - JSP Upload Bypass / Remote Code  | windows/webapps/42953.txt
+Tomcat proprietaryEvaluate 9.0.0.M1 - Sandbox Escape                                            | java/webapps/47892.txt
+------------------------------------------------------------------------------------------------ ---------------------------------
+Shellcodes: No Results
+Papers: No Results
+
+```
+
+- 9001/tcp  open   http             Golang net/http server
+```
+|   VULNERABLE:
+|   phpMyAdmin grab_globals.lib.php subform Parameter Traversal Local File Inclusion
+|     State: UNKNOWN (unable to test)
+|     IDs:  CVE:CVE-2005-3299
+|       PHP file inclusion vulnerability in grab_globals.lib.php in phpMyAdmin 2.6.4 and 2.6.4-pl1 allows remote attackers to include local files via the $__redirect parameter, possibly involving the subform array.
+```
