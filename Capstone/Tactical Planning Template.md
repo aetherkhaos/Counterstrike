@@ -15,7 +15,7 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
 ##### Size:
 - Unit 18 “Amber Tide” is a Varensk-aligned advanced persistent threat (APT) group operating under the Internal Security Bureau (ISB) of Varensk. Considered a nation state level actor.
 ##### Activity:
-1. **Initial Access**: Spearphishing with LNK/HTA attachments in archives (T1566.001, T1204.001, T1204.002), HTML smuggling, weaponized Microsoft Word documents/templates (T1221), and USB drive weaponization for replication (T1091).
+1. **Initial Access**: Spearphishing with LNK/HTA attachments in archives (T1566.001, T1204.001, T1204.002), HTML smuggling(T1027), weaponized Microsoft Word documents/templates (T1221), and USB drive weaponization for replication (T1091).
     
 2. **Execution & Lateral Movement**: PowerShell (T1059.001) and VBScript (T1059.005) for command execution, WMI for USB discovery (T1047), Metasploit Framework integration, and mass internal propagation.
     
