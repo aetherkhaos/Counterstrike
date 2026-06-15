@@ -757,3 +757,70 @@ evil-winrm-py PS C:\ProgramData\FileSync> type SyncSvc.xml
 
 ```
 
+# Reg Key
+```
+evil-winrm-py PS C:\windows\system32\tasks> reg query HKEY_LOCAL_MACHINE\software\microsoft\windows\currentversion\run
+
+OfficeUpdateAgent    REG_SZ    C:\Users\Public\Libraries\Agent.exe
+
+```
+
+# c:\programdata\file_sync_state.json
+```
+<BREAK>
+    
+    {
+        "Path":  "c:\\windows\\winsxs\\wow64_microsoft-windows-t..tional-chinese-dayi_31bf3856ad364e35_10.0.19041.1_none_20c1c94bb9595c32\\tabletextservicedayi.txt",
+        "LastWriteUtc":  "2019-12-07T09:10:04.1629521Z",
+        "Size":  980224,
+        "Hash":  "22932611428065343faa8f8241bbea120638758923f1fa8a752d0493f12003b6",
+        "LastUploaded":  null,
+        "FirstSeenUtc":  "2026-04-28T15:53:48.5335234Z"
+    },
+    {
+        "Path":  "c:\\windows\\winsxs\\wow64_microsoft-windows-windowscodecraw_31bf3856ad364e35_10.0.19041.2251_none_140f630ca14effba\\windowscodecsraw.txt",
+        "LastWriteUtc":  "2019-12-07T09:10:08.9131874Z",
+        "Size":  1649,
+        "Hash":  "6e422654148bd675b224e1d7de0033bdd711db3e07d3f3fd0e5c871301d491c5",
+        "LastUploaded":  null,
+        "FirstSeenUtc":  "2026-04-28T15:53:48.8779417Z"
+    },
+    {
+        "Path":  "c:\\windows\\winsxs\\wow64_multimedia-generalmididata_31bf3856ad364e35_10.0.19041.1_none_490303a12a215bda\\gmreadme.txt",
+        "LastWriteUtc":  "2019-12-07T09:09:11.8799672Z",
+        "Size":  646,
+        "Hash":  "10bf6e15c08c8c7f5d96b658bab78aed86d1de20f08e7871eefba0939af11a02",
+        "LastUploaded":  null,
+        "FirstSeenUtc":  "2026-04-28T15:53:49.1741357Z"
+    },
+    {
+        "Path":  "c:\\windows\\winsxs\\x86_netfx4-attributionfile_b03f5f7f11d50a3a_4.0.15805.0_none_bdecefa7687adc22\\thirdpartynotices.txt",
+        "LastWriteUtc":  "2019-12-07T09:10:48.6334731Z",
+        "Size":  61714,
+        "Hash":  "de857de6afd5cee75c12b56f0f9522675623352df6d9d5a7a228062140aa77c1",
+        "LastUploaded":  null,
+        "FirstSeenUtc":  "2026-04-28T15:53:50.8930730Z"
+    }
+]
+
+```
+
+# sync_config.enc.json
+```
+evil-winrm-py PS C:\programdata> type sync_config.enc.json
+{
+    "CipherTextBase64":  "kUwAPbf+f4VgEwLCPXkKbRU2L5CO1NL7Dnm1uScB7s8+B0Y+zNeAAKWhrfMY4tuWbjM8Q1Cn0edrk9g7reY5U25riil7ICbAJNi6AUJBlNnQq32CpjuFWfgturzuOPSUYyRAdFBJV3QhygeWANx4mTPWwOjYKE0F3wHPzqTWzS03U4c6WegD8ltufv0i3youl59Cw9tLhYoVZf8XSQ8NOS4PLXv/ohz/blmjbIAtxL4dU91S0yzqF4H6rew9HHbph4Hfpzc9yB0Hz6us86vIcVPNMzQlMSYfBTdV5f6vmoDwusedevnqMFNyfhaq4wztVWjbDw2H2v8lrdHlpCAbw/XvogSRczxRpWayGKnnEVXqd9ruu4RGVFx8XCkYMasqzaTslMifFC5buP5izkHIo0gnebzex04YpijMD9sciCGXQ7VeGqUuc46FFtoDok+FONbo+NvH7113m0/3CuwJv5ZMEwkLz+Rhq37yrhl/cHK9Ta437n181zWnT1CIcj7h+1NjYM+Wk7YPusZMR5iDWvaEcXWvjzLSxsR6CJ+3tLiTA/r3YNb6fu8YP0K1jcCi7GlbQyjBUJeSFhLKtyVuWSRNr0NGxV6Mtba/KNPd2nStlo96FYjLgNBDFK6K2MCadw0mbXnkIQo/AEG2cPN2FcAwxsYoB8HZ0uusPLBSHNv1LfCed6eQEMT/nf2VBxXdNIe7zYShP+EKR9pvxfepg23msZ6bHwwnlLhXsVbYRLkKyvVH9OojpuB3zLVYMZ/DxmgkvEVpJC2n1ln2KNpc6ut9OHQeaDx9QXfjDBv6Brg1+QaBvudgNZyrvSibM3aFCQcgDPS0ff9nipsKQ/m3a+bNzwChXlJkGCjLTtpW80geJKijnOdtkQVA90psiwNQBn5PSv5+pruJgYEr8Ysy3gwgry5hqVFMgpz8c6PupmXjYsPtRD4VvObl8R372Oxxjl2Ug0GVNxP+nuWcz1YR6/IGCRSSFgem5W4bB6ry6/ym10c07loquyppuK53qJ9ixuFMSn9d+kzNFHUe1l2ItDDhOSFpvrkeFjy/1/4aLRUqcbA4e/rmQlWJ5Fbu7roh9EhAEz+Dhsmmo1sowAxtilkNQTL/qzYzFBlGnfrW27TK3fXzdTQUAY+94jTJaPf9OKOoXLt+uL+N6fvSNkR3IvY7TyfJRsBHUeU1cOiJ7dzZyYGr4/0DXkWXQDET/bDk/VVpd1eaLjD1/Eql/1mqPSITFAuolC+iwNIn/XhHrVai76T43bW/FyHnM2zERm12vGd/TiXS2Gvz4DhihqR6aWydde4dirSTi34QlU/xqBY9730w8RiWzhmc02eeYR/FOMTzw7ViB7ifATcyKPT3GAvpb3AYisf8OsIkrE+uGjTwVOxJ/36R5DQNZ1L4GGGFcYk4ZjLFobNQ6xj5hQWxsabvWrQCQGa1A0nQBcM3bXpgc098AtdwE4/23C13MRXtha1zGl6NVD99frIGsfRYDHZo49mXOU4mzfkHklPC0Hzs6BPlhpY45o2TEvU0hyrpmSReZ3TmI9+bySlFOvE0P/gjyl8sPWCt+5ePRERlc2k=",
+    "SaltBase64":  "DPZ0kDT+oITx1misu24UlQ==",
+    "IvBase64":  "gjJvHMlyrrEeB8M7twuo5Q==",
+    "Kdf":  "PBKDF2-SHA1-10000",
+    "Cipher":  "AES-256-CBC"
+}
+
+```
+
+
+---
+# Scanning the redirector
+```
+
+```
