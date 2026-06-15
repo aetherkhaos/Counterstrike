@@ -23,9 +23,9 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
     
 4. **Defense Evasion**: Obfuscation via command/HTML smuggling/embedded payloads/encrypted files (T1027), masquerading with double extensions and benign registry names (T1036), mshta.exe proxying (T1218.005), hidden files (T1564.001), AMSI bypass, and indicator removal (T1070.004).
     
-5. **Discovery & Collection**: Targeted file discovery on local/network/USB drives, browser credential/cookie theft, screen capture, and data staging.
+5. **Discovery & Collection**: Targeted file discovery on local/network/USB drives(T1083), browser credential/cookie theft(T1539), screen capture(T1113), and data staging(T1074.001.
 
-6. **Command & Control**: HTTP/HTTPS with dynamic IP resolution, third-party services (messaging platforms, cloud tunneling), proxies/reverse SOCKS, and frequent domain/IP rotation.
+6. **Command & Control**: HTTP/HTTPS with dynamic IP resolution(T1568, T1071.001), third-party services (messaging platforms, cloud tunneling), proxies/reverse SOCKS, and frequent domain/IP rotation.
     
 7. **Exfiltration**: Over C2 channels after staging (T1041).
 
