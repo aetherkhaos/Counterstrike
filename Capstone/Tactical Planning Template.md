@@ -6,7 +6,7 @@
 
 ### Mission:
 
-
+reconnoiter enemy greyspace in order to identify avenues of approach. Upon discovery of initial access vectors/opportunities, provide COAs to the commander to achieve initial access.
 
 ### Enemy Analysis:
 
