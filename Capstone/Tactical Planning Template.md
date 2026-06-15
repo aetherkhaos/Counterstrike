@@ -214,3 +214,5 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
 ## Exploitation Plan
 
 ### What is your plan to target the identified critical vulnerability in the enemy system?
+- COA 1:
+	- 

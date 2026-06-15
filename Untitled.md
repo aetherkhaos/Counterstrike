@@ -818,9 +818,540 @@ evil-winrm-py PS C:\programdata> type sync_config.enc.json
 
 ```
 
+# c:\programdata\synccache\
+```
+evil-winrm-py PS C:\programdata\SyncCache> dir
 
+    Directory: C:\programdata\SyncCache
+
+Mode                 LastWriteTime         Length Name                                                        
+----                 -------------         ------ ----                                                        
+-a----         4/28/2026   2:57 PM           1011 BLUENET-BLUE05_20260428_185718.zip                          
+-a----         6/10/2026   8:29 AM           1120 BLUENET-BLUE05_20260610_122932.zip                          
+-a----         6/10/2026   8:39 AM            875 BLUENET-BLUE05_20260610_123958.zip                          
+-a----         6/15/2026  12:54 PM         317160 service.log 
+```
+
+# c:\programdata\synccache\service.log
+```
+<BREAK>
+[2026-06-15T16:20:03.4306539Z] Starting sync cycle.
+[2026-06-15T16:20:03.8837878Z] [JITTER] Sleeping 59 second(s) before scan.
+[2026-06-15T16:21:15.2605403Z] Done. Uploaded=0 Pending=0 Skipped=253 Failed=0 StateFile=C:\ProgramData\file_sync_state.json
+[2026-06-15T16:21:15.2761657Z] Sync cycle completed successfully.
+[2026-06-15T16:31:15.2983784Z] Starting sync cycle.
+[2026-06-15T16:31:15.7671341Z] [JITTER] Sleeping 33 second(s) before scan.
+[2026-06-15T16:32:01.1125167Z] Done. Uploaded=0 Pending=0 Skipped=253 Failed=0 StateFile=C:\ProgramData\file_sync_state.json
+[2026-06-15T16:32:01.1281391Z] Sync cycle completed successfully.
+[2026-06-15T16:42:01.1630427Z] Starting sync cycle.
+[2026-06-15T16:42:01.6317431Z] [JITTER] Sleeping 65 second(s) before scan.
+[2026-06-15T16:43:19.1484137Z] Done. Uploaded=0 Pending=0 Skipped=253 Failed=0 StateFile=C:\ProgramData\file_sync_state.json
+[2026-06-15T16:43:19.1640569Z] Sync cycle completed successfully.
+[2026-06-15T16:53:19.1997190Z] Starting sync cycle.
+[2026-06-15T16:53:19.6528235Z] [JITTER] Sleeping 75 second(s) before scan.
+[2026-06-15T16:54:47.4826804Z] Done. Uploaded=0 Pending=0 Skipped=253 Failed=0 StateFile=C:\ProgramData\file_sync_state.json
+[2026-06-15T16:54:47.4982976Z] Sync cycle completed successfully.
+```
+
+# Running Process showing config passphrase
+```
+evil-winrm-py PS C:\programdata\SyncCache> wmic process get name,commandline,processid | findstr sync
+"powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "C:\ProgramData\FileSync\file_sync_service_runner.ps1" -SyncScriptPath "C:\ProgramData\FileSync\file_sync.ps1" -EncryptedConfigPath "C:\ProgramData\sync_config.enc.json" -ConfigPassphrase "Counterstrike-Capstone" -IntervalSeconds 600  powershell.exe             3812
+```
 ---
-# Scanning the redirector
+# Scanning the redirector (198.51.100.200)
 ```
+Starting Nmap 7.98 ( https://nmap.org ) at 2026-06-15 13:07 -0400
+Nmap scan report for 198.51.100.200
+Host is up (0.0018s latency).
+Not shown: 989 filtered tcp ports (no-response)
+PORT      STATE  SERVICE          VERSION
+3000/tcp  open   ppp?
+| fingerprint-strings: 
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     X-Powered-By: Next.js 15.1.0
+|     Vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch, Accept-Encoding
+|     x-nextjs-cache: HIT
+|     x-nextjs-prerender: 1
+|     x-nextjs-stale-time: 4294967294
+|     Cache-Control: s-maxage=31536000, 
+|     ETag: "xwcggixrkr873"
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 10623
+|     Date: Mon, 15 Jun 2026 17:07:55 GMT
+|     Connection: close
+|     <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="preload" as="image" href="/logo.svg"/><link rel="preload" as="image" href="/bakery-hero.png"/><link rel="stylesheet" href="/_next/static/css/07b47dcf3b43cab2.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-db0a529a99835594.js"/><script src="/_next/static/chunks/4bd1b696-6061d34c2fbf1
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.1 400 Bad Request
+|     X-Powered-By: Next.js 15.1.0
+|     vary: RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch
+|     Allow: GET
+|     Allow: HEAD
+|     Cache-Control: private, no-cache, no-store, max-age=0, must-revalidate
+|     Date: Mon, 15 Jun 2026 17:07:55 GMT
+|     Connection: close
+|   Help, NCP: 
+|     HTTP/1.1 400 Bad Request
+|_    Connection: close
+3001/tcp  open   nessus?
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Help, Kerberos, NCP, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, TerminalServerCookie, X11Probe: 
+|     HTTP/1.1 400 Bad Request
+|     Connection: close
+|   FourOhFourRequest: 
+|     HTTP/1.1 200 OK
+|     X-Frame-Options: SAMEORIGIN
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 2444
+|     ETag: W/"98c-RxUaxZHFr+/FSabMqXO58T7mz+U"
+|     Date: Mon, 15 Jun 2026 17:07:55 GMT
+|     Connection: close
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="UTF-8" />
+|     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+|     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+|     <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+|     <link rel="manifest" href="/manifest.json" />
+|     <meta name="theme-color" id="theme-color" content="" />
+|     <meta name="description" content="Uptime Kuma monitoring tool" />
+|     <title>Uptime Kuma</title>
+|     <style> .noscript-message {
+|     font-size: 20px;
+|     text-align: center;
+|     padding: 10px;
+|     max-width: 500px;
+|     marg
+|   GetRequest: 
+|     HTTP/1.1 302 Found
+|     X-Frame-Options: SAMEORIGIN
+|     Location: /dashboard
+|     Vary: Accept
+|     Content-Type: text/plain; charset=utf-8
+|     Content-Length: 32
+|     Date: Mon, 15 Jun 2026 17:07:55 GMT
+|     Connection: close
+|     Found. Redirecting to /dashboard
+|   HTTPOptions, RTSPRequest: 
+|     HTTP/1.1 200 OK
+|     X-Frame-Options: SAMEORIGIN
+|     Vary: Accept-Encoding
+|     Allow: GET,HEAD
+|     Content-Type: text/html; charset=utf-8
+|     Content-Length: 8
+|     ETag: W/"8-ZRAf8oNBS3Bjb/SU2GYZCmbtmXg"
+|     Date: Mon, 15 Jun 2026 17:07:55 GMT
+|     Connection: close
+|_    GET,HEAD
+3306/tcp  open   mysql            MariaDB 11.8.6
+5432/tcp  open   postgresql       PostgreSQL DB 9.6.0 or later
+8081/tcp  open   http             Apache Tomcat 9.0.98
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-enum: 
+|_  /admin.jsp: Possible admin folder
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=198.51.100.200
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://198.51.100.200:8081/admin.jsp
+|     Form id: item
+|_    Form action: order.jsp
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+9000/tcp  open   http             Golang net/http server
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Accept-Ranges: bytes
+|     Content-Length: 303
+|     Content-Type: application/xml
+|     Server: MinIO
+|     Strict-Transport-Security: max-age=31536000; includeSubDomains
+|     Vary: Origin
+|     X-Amz-Id-2: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8
+|     X-Amz-Request-Id: 18B9502DE06DB0D7
+|     X-Content-Type-Options: nosniff
+|     X-Xss-Protection: 1; mode=block
+|     Date: Mon, 15 Jun 2026 17:08:05 GMT
+|     <?xml version="1.0" encoding="UTF-8"?>
+|     <Error><Code>InvalidRequest</Code><Message>Invalid Request (invalid argument)</Message><Resource>/nice ports,/Trinity.txt.bak</Resource><RequestId>18B9502DE06DB0D7</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>
+|   GenericLines, Help, RTSPRequest, SSLSessionReq: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 400 Bad Request
+|     Accept-Ranges: bytes
+|     Content-Length: 276
+|     Content-Type: application/xml
+|     Server: MinIO
+|     Strict-Transport-Security: max-age=31536000; includeSubDomains
+|     Vary: Origin
+|     X-Amz-Id-2: dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8
+|     X-Amz-Request-Id: 18B9502A5E8168FC
+|     X-Content-Type-Options: nosniff
+|     X-Xss-Protection: 1; mode=block
+|     Date: Mon, 15 Jun 2026 17:07:50 GMT
+|     <?xml version="1.0" encoding="UTF-8"?>
+|     <Error><Code>InvalidRequest</Code><Message>Invalid Request (invalid argument)</Message><Resource>/</Resource><RequestId>18B9502A5E8168FC</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>
+|   HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Vary: Origin
+|     Date: Mon, 15 Jun 2026 17:07:50 GMT
+|_    Content-Length: 0
+| http-cross-domain-policy: 
+|   VULNERABLE:
+|   Cross-domain and Client Access policies.
+|     State: VULNERABLE
+|       A cross-domain policy file specifies the permissions that a web client such as Java, Adobe Flash, Adobe Reader,
+|       etc. use to access data across different domains. A client acces policy file is similar to cross-domain policy
+|       but is used for M$ Silverlight applications. Overly permissive configurations enables Cross-site Request
+|       Forgery attacks, and may allow third parties to access sensitive data meant for the user.
+|     Check results:
+|       /crossdomain.xml:
+|         <?xml version="1.0"?><!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd"><cross-domain-policy><allow-access-from domain="*" secure="false" /></cross-domain-policy>
+|     Extra information:
+|       Trusted domains:*
+|   
+|     References:
+|       https://www.owasp.org/index.php/Test_RIA_cross_domain_policy_%28OTG-CONFIG-008%29
+|       http://acunetix.com/vulnerabilities/web/insecure-clientaccesspolicy-xml-file
+|       http://gursevkalra.blogspot.com/2013/08/bypassing-same-origin-policy-with-flash.html
+|       https://www.adobe.com/devnet-docs/acrobatetk/tools/AppSec/CrossDomain_PolicyFile_Specification.pdf
+|       http://sethsec.blogspot.com/2014/03/exploiting-misconfigured-crossdomainxml.html
+|_      https://www.adobe.com/devnet/articles/crossdomain_policy_file_spec.html
+|_http-server-header: MinIO
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+| http-enum: 
+|_  /crossdomain.xml: Adobe Flash crossdomain policy
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+9001/tcp  open   http             Golang net/http server
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| http-phpmyadmin-dir-traversal: 
+|   VULNERABLE:
+|   phpMyAdmin grab_globals.lib.php subform Parameter Traversal Local File Inclusion
+|     State: UNKNOWN (unable to test)
+|     IDs:  CVE:CVE-2005-3299
+|       PHP file inclusion vulnerability in grab_globals.lib.php in phpMyAdmin 2.6.4 and 2.6.4-pl1 allows remote attackers to include local files via the $__redirect parameter, possibly involving the subform array.
+|       
+|     Disclosure date: 2005-10-nil
+|     Extra information:
+|       ../../../../../etc/passwd :
+|   <!doctype html><html lang="en"><head><meta charset="utf-8"/><base href="/"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#081C42" media="(prefers-color-scheme: light)" name="theme-color"/><meta content="#081C42" media="(prefers-color-scheme: dark)" name="theme-color"/><meta content="MinIO Console" name="description"/><meta name="minio-license" content="agpl"/><link href="./styles/root-styles.css" rel="stylesheet"/><link href="./apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180"/><link href="./favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/><link href="./favicon-96x96.png" rel="icon" sizes="96x96" type="image/png"/><link href="./favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/><link href="./manifest.json" rel="manifest"/><link color="#3a4e54" href="./safari-pinned-tab.svg" rel="mask-icon"/><title>MinIO Console</title><script defer="defer" src="./static/js/main.bb7c7604.js"></script><link href="./static/css/main.e60e4760.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div id="preload"><img src="./images/background.svg"/> <img src="./images/background-wave-orig2.svg"/></div><div id="loader-block"><img src="./Loader.svg"/></div></div></body></html>
+|     References:
+|       http://www.exploit-db.com/exploits/1244/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-3299
+|_http-majordomo2-dir-traversal: ERROR: Script execution failed (use -d to debug)
+| fingerprint-strings: 
+|   GenericLines, SSLSessionReq: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 200 OK
+|     Accept-Ranges: bytes
+|     Content-Length: 1309
+|     Content-Security-Policy: default-src 'self' 'unsafe-eval' 'unsafe-inline'; script-src 'self' https://unpkg.com; connect-src 'self' https://unpkg.com;
+|     Content-Type: text/html
+|     Last-Modified: Mon, 15 Jun 2026 17:07:50 GMT
+|     Referrer-Policy: strict-origin-when-cross-origin
+|     Server: MinIO Console
+|     X-Content-Type-Options: nosniff
+|     X-Frame-Options: DENY
+|     X-Xss-Protection: 1; mode=block
+|     Date: Mon, 15 Jun 2026 17:07:50 GMT
+|_    <!doctype html><html lang="en"><head><meta charset="utf-8"/><base href="/"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#081C42" media="(prefers-color-scheme: light)" name="theme-color"/><meta content="#081C42" media="(prefers-color-scheme: dark)" name="theme-color"/><meta content="MinIO Console" name="description"/><meta name="minio-license" content="agpl"/><link href="./s
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: MinIO Console
+|_ssl-ccs-injection: No reply from server (TIMEOUT)
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+9002/tcp  open   http             Golang net/http server
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.0 404 Not Found
+|     Content-Security-Policy: script-src 'self' https://js.hsforms.net https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; object-src 'none'; frame-ancestors 'none'; frame-src https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/
+|     Content-Type: text/plain; charset=utf-8
+|     Vary: Accept-Encoding
+|     X-Content-Type-Options: nosniff
+|     Date: Mon, 15 Jun 2026 17:08:05 GMT
+|     Content-Length: 19
+|     page not found
+|   GenericLines, Help, LPDString, RTSPRequest, SIPOptions, SSLSessionReq, Socks5: 
+|     HTTP/1.1 400 Bad Request
+|     Content-Type: text/plain; charset=utf-8
+|     Connection: close
+|     Request
+|   GetRequest: 
+|     HTTP/1.0 307 Temporary Redirect
+|     Content-Type: text/html; charset=utf-8
+|     Location: /timeout.html
+|     Date: Mon, 15 Jun 2026 17:07:50 GMT
+|     Content-Length: 49
+|     href="/timeout.html">Temporary Redirect</a>.
+|   HTTPOptions: 
+|     HTTP/1.0 307 Temporary Redirect
+|     Location: /timeout.html
+|     Date: Mon, 15 Jun 2026 17:07:50 GMT
+|_    Content-Length: 0
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+9003/tcp  closed unknown
+9090/tcp  open   http             Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+10000/tcp closed snet-sensor-mgmt
+5 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3000-TCP:V=7.98%I=7%D=6/15%Time=6A30316A%P=x86_64-pc-linux-gnu%r(Ge
+SF:tRequest,2B17,"HTTP/1\.1\x20200\x20OK\r\nX-Powered-By:\x20Next\.js\x201
+SF:5\.1\.0\r\nVary:\x20RSC,\x20Next-Router-State-Tree,\x20Next-Router-Pref
+SF:etch,\x20Next-Router-Segment-Prefetch,\x20Accept-Encoding\r\nx-nextjs-c
+SF:ache:\x20HIT\r\nx-nextjs-prerender:\x201\r\nx-nextjs-stale-time:\x20429
+SF:4967294\r\nCache-Control:\x20s-maxage=31536000,\x20\r\nETag:\x20\"xwcgg
+SF:ixrkr873\"\r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-L
+SF:ength:\x2010623\r\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:07:55\x20GM
+SF:T\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x20html><html\x20lang=\"en\"
+SF:><head><meta\x20charSet=\"utf-8\"/><meta\x20name=\"viewport\"\x20conten
+SF:t=\"width=device-width,\x20initial-scale=1\"/><link\x20rel=\"preload\"\
+SF:x20as=\"image\"\x20href=\"/logo\.svg\"/><link\x20rel=\"preload\"\x20as=
+SF:\"image\"\x20href=\"/bakery-hero\.png\"/><link\x20rel=\"stylesheet\"\x2
+SF:0href=\"/_next/static/css/07b47dcf3b43cab2\.css\"\x20data-precedence=\"
+SF:next\"/><link\x20rel=\"preload\"\x20as=\"script\"\x20fetchPriority=\"lo
+SF:w\"\x20href=\"/_next/static/chunks/webpack-db0a529a99835594\.js\"/><scr
+SF:ipt\x20src=\"/_next/static/chunks/4bd1b696-6061d34c2fbf1")%r(Help,2F,"H
+SF:TTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(N
+SF:CP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r
+SF:\n")%r(HTTPOptions,12A,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nX-Powered
+SF:-By:\x20Next\.js\x2015\.1\.0\r\nvary:\x20RSC,\x20Next-Router-State-Tree
+SF:,\x20Next-Router-Prefetch,\x20Next-Router-Segment-Prefetch\r\nAllow:\x2
+SF:0GET\r\nAllow:\x20HEAD\r\nCache-Control:\x20private,\x20no-cache,\x20no
+SF:-store,\x20max-age=0,\x20must-revalidate\r\nDate:\x20Mon,\x2015\x20Jun\
+SF:x202026\x2017:07:55\x20GMT\r\nConnection:\x20close\r\n\r\n")%r(RTSPRequ
+SF:est,12A,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nX-Powered-By:\x20Next\.j
+SF:s\x2015\.1\.0\r\nvary:\x20RSC,\x20Next-Router-State-Tree,\x20Next-Route
+SF:r-Prefetch,\x20Next-Router-Segment-Prefetch\r\nAllow:\x20GET\r\nAllow:\
+SF:x20HEAD\r\nCache-Control:\x20private,\x20no-cache,\x20no-store,\x20max-
+SF:age=0,\x20must-revalidate\r\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:0
+SF:7:55\x20GMT\r\nConnection:\x20close\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port3001-TCP:V=7.98%I=7%D=6/15%Time=6A303165%P=x86_64-pc-linux-gnu%r(NC
+SF:P,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\
+SF:n")%r(GetRequest,EC,"HTTP/1\.1\x20302\x20Found\r\nX-Frame-Options:\x20S
+SF:AMEORIGIN\r\nLocation:\x20/dashboard\r\nVary:\x20Accept\r\nContent-Type
+SF::\x20text/plain;\x20charset=utf-8\r\nContent-Length:\x2032\r\nDate:\x20
+SF:Mon,\x2015\x20Jun\x202026\x2017:07:55\x20GMT\r\nConnection:\x20close\r\
+SF:n\r\nFound\.\x20Redirecting\x20to\x20/dashboard")%r(HTTPOptions,FC,"HTT
+SF:P/1\.1\x20200\x20OK\r\nX-Frame-Options:\x20SAMEORIGIN\r\nVary:\x20Accep
+SF:t-Encoding\r\nAllow:\x20GET,HEAD\r\nContent-Type:\x20text/html;\x20char
+SF:set=utf-8\r\nContent-Length:\x208\r\nETag:\x20W/\"8-ZRAf8oNBS3Bjb/SU2GY
+SF:ZCmbtmXg\"\r\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:07:55\x20GMT\r\n
+SF:Connection:\x20close\r\n\r\nGET,HEAD")%r(RTSPRequest,FC,"HTTP/1\.1\x202
+SF:00\x20OK\r\nX-Frame-Options:\x20SAMEORIGIN\r\nVary:\x20Accept-Encoding\
+SF:r\nAllow:\x20GET,HEAD\r\nContent-Type:\x20text/html;\x20charset=utf-8\r
+SF:\nContent-Length:\x208\r\nETag:\x20W/\"8-ZRAf8oNBS3Bjb/SU2GYZCmbtmXg\"\
+SF:r\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:07:55\x20GMT\r\nConnection:
+SF:\x20close\r\n\r\nGET,HEAD")%r(RPCCheck,2F,"HTTP/1\.1\x20400\x20Bad\x20R
+SF:equest\r\nConnection:\x20close\r\n\r\n")%r(DNSVersionBindReqTCP,2F,"HTT
+SF:P/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(DNS
+SF:StatusRequestTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\
+SF:x20close\r\n\r\n")%r(Help,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCon
+SF:nection:\x20close\r\n\r\n")%r(SSLSessionReq,2F,"HTTP/1\.1\x20400\x20Bad
+SF:\x20Request\r\nConnection:\x20close\r\n\r\n")%r(TerminalServerCookie,2F
+SF:,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%
+SF:r(TLSSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x
+SF:20close\r\n\r\n")%r(Kerberos,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\n
+SF:Connection:\x20close\r\n\r\n")%r(SMBProgNeg,2F,"HTTP/1\.1\x20400\x20Bad
+SF:\x20Request\r\nConnection:\x20close\r\n\r\n")%r(X11Probe,2F,"HTTP/1\.1\
+SF:x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(FourOhFour
+SF:Request,A5D,"HTTP/1\.1\x20200\x20OK\r\nX-Frame-Options:\x20SAMEORIGIN\r
+SF:\nContent-Type:\x20text/html;\x20charset=utf-8\r\nContent-Length:\x2024
+SF:44\r\nETag:\x20W/\"98c-RxUaxZHFr\+/FSabMqXO58T7mz\+U\"\r\nDate:\x20Mon,
+SF:\x2015\x20Jun\x202026\x2017:07:55\x20GMT\r\nConnection:\x20close\r\n\r\
+SF:n<!DOCTYPE\x20html>\n<html\x20lang=\"en\">\n<head>\n\x20\x20\x20\x20<me
+SF:ta\x20charset=\"UTF-8\"\x20/>\n\x20\x20\x20\x20<meta\x20name=\"viewport
+SF:\"\x20content=\"width=device-width,\x20initial-scale=1\.0,\x20viewport-
+SF:fit=cover\"\x20/>\n\x20\x20\x20\x20<link\x20rel=\"apple-touch-icon\"\x2
+SF:0sizes=\"180x180\"\x20href=\"/apple-touch-icon\.png\">\n\x20\x20\x20\x2
+SF:0<link\x20rel=\"icon\"\x20type=\"image/svg\+xml\"\x20href=\"/icon\.svg\
+SF:"\x20/>\n\x20\x20\x20\x20<link\x20rel=\"manifest\"\x20href=\"/manifest\
+SF:.json\"\x20/>\n\x20\x20\x20\x20<meta\x20name=\"theme-color\"\x20id=\"th
+SF:eme-color\"\x20content=\"\"\x20/>\n\x20\x20\x20\x20<meta\x20name=\"desc
+SF:ription\"\x20content=\"Uptime\x20Kuma\x20monitoring\x20tool\"\x20/>\n\x
+SF:20\x20\x20\x20<title>Uptime\x20Kuma</title>\n\x20\x20\x20\x20<style>\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\.noscript-message\x20{\n\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20font-size:\x2020px;\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20text-align:\x20center;\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20padding:\x2010px;\n\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20max-width:\x20500px;\n\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20marg");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9000-TCP:V=7.98%I=7%D=6/15%Time=6A303165%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request")%r(GetRequest,2B0,"HTTP/1\.0\x20400\x20Bad\x20Request\r\nAcc
+SF:ept-Ranges:\x20bytes\r\nContent-Length:\x20276\r\nContent-Type:\x20appl
+SF:ication/xml\r\nServer:\x20MinIO\r\nStrict-Transport-Security:\x20max-ag
+SF:e=31536000;\x20includeSubDomains\r\nVary:\x20Origin\r\nX-Amz-Id-2:\x20d
+SF:d9025bab4ad464b049177c95eb6ebf374d3b3fd1af9251148b658df7ac2e3e8\r\nX-Am
+SF:z-Request-Id:\x2018B9502A5E8168FC\r\nX-Content-Type-Options:\x20nosniff
+SF:\r\nX-Xss-Protection:\x201;\x20mode=block\r\nDate:\x20Mon,\x2015\x20Jun
+SF:\x202026\x2017:07:50\x20GMT\r\n\r\n<\?xml\x20version=\"1\.0\"\x20encodi
+SF:ng=\"UTF-8\"\?>\n<Error><Code>InvalidRequest</Code><Message>Invalid\x20
+SF:Request\x20\(invalid\x20argument\)</Message><Resource>/</Resource><Requ
+SF:estId>18B9502A5E8168FC</RequestId><HostId>dd9025bab4ad464b049177c95eb6e
+SF:bf374d3b3fd1af9251148b658df7ac2e3e8</HostId></Error>")%r(HTTPOptions,59
+SF:,"HTTP/1\.0\x20200\x20OK\r\nVary:\x20Origin\r\nDate:\x20Mon,\x2015\x20J
+SF:un\x202026\x2017:07:50\x20GMT\r\nContent-Length:\x200\r\n\r\n")%r(RTSPR
+SF:equest,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/
+SF:plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Re
+SF:quest")%r(Help,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\
+SF:x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20B
+SF:ad\x20Request")%r(SSLSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\
+SF:r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20clos
+SF:e\r\n\r\n400\x20Bad\x20Request")%r(FourOhFourRequest,2CB,"HTTP/1\.0\x20
+SF:400\x20Bad\x20Request\r\nAccept-Ranges:\x20bytes\r\nContent-Length:\x20
+SF:303\r\nContent-Type:\x20application/xml\r\nServer:\x20MinIO\r\nStrict-T
+SF:ransport-Security:\x20max-age=31536000;\x20includeSubDomains\r\nVary:\x
+SF:20Origin\r\nX-Amz-Id-2:\x20dd9025bab4ad464b049177c95eb6ebf374d3b3fd1af9
+SF:251148b658df7ac2e3e8\r\nX-Amz-Request-Id:\x2018B9502DE06DB0D7\r\nX-Cont
+SF:ent-Type-Options:\x20nosniff\r\nX-Xss-Protection:\x201;\x20mode=block\r
+SF:\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:08:05\x20GMT\r\n\r\n<\?xml\x
+SF:20version=\"1\.0\"\x20encoding=\"UTF-8\"\?>\n<Error><Code>InvalidReques
+SF:t</Code><Message>Invalid\x20Request\x20\(invalid\x20argument\)</Message
+SF:><Resource>/nice\x20ports,/Trinity\.txt\.bak</Resource><RequestId>18B95
+SF:02DE06DB0D7</RequestId><HostId>dd9025bab4ad464b049177c95eb6ebf374d3b3fd
+SF:1af9251148b658df7ac2e3e8</HostId></Error>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9001-TCP:V=7.98%I=7%D=6/15%Time=6A303165%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request")%r(GetRequest,702,"HTTP/1\.0\x20200\x20OK\r\nAccept-Ranges:\
+SF:x20bytes\r\nContent-Length:\x201309\r\nContent-Security-Policy:\x20defa
+SF:ult-src\x20'self'\x20'unsafe-eval'\x20'unsafe-inline';\x20script-src\x2
+SF:0'self'\x20https://unpkg\.com;\x20\x20connect-src\x20'self'\x20https://
+SF:unpkg\.com;\r\nContent-Type:\x20text/html\r\nLast-Modified:\x20Mon,\x20
+SF:15\x20Jun\x202026\x2017:07:50\x20GMT\r\nReferrer-Policy:\x20strict-orig
+SF:in-when-cross-origin\r\nServer:\x20MinIO\x20Console\r\nX-Content-Type-O
+SF:ptions:\x20nosniff\r\nX-Frame-Options:\x20DENY\r\nX-Xss-Protection:\x20
+SF:1;\x20mode=block\r\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:07:50\x20G
+SF:MT\r\n\r\n<!doctype\x20html><html\x20lang=\"en\"><head><meta\x20charset
+SF:=\"utf-8\"/><base\x20href=\"/\"/><meta\x20content=\"width=device-width,
+SF:initial-scale=1\"\x20name=\"viewport\"/><meta\x20content=\"#081C42\"\x2
+SF:0media=\"\(prefers-color-scheme:\x20light\)\"\x20name=\"theme-color\"/>
+SF:<meta\x20content=\"#081C42\"\x20media=\"\(prefers-color-scheme:\x20dark
+SF:\)\"\x20name=\"theme-color\"/><meta\x20content=\"MinIO\x20Console\"\x20
+SF:name=\"description\"/><meta\x20name=\"minio-license\"\x20content=\"agpl
+SF:\"/><link\x20href=\"\./s")%r(SSLSessionReq,67,"HTTP/1\.1\x20400\x20Bad\
+SF:x20Request\r\nContent-Type:\x20text/plain;\x20charset=utf-8\r\nConnecti
+SF:on:\x20close\r\n\r\n400\x20Bad\x20Request")%r(HTTPOptions,702,"HTTP/1\.
+SF:0\x20200\x20OK\r\nAccept-Ranges:\x20bytes\r\nContent-Length:\x201309\r\
+SF:nContent-Security-Policy:\x20default-src\x20'self'\x20'unsafe-eval'\x20
+SF:'unsafe-inline';\x20script-src\x20'self'\x20https://unpkg\.com;\x20\x20
+SF:connect-src\x20'self'\x20https://unpkg\.com;\r\nContent-Type:\x20text/h
+SF:tml\r\nLast-Modified:\x20Mon,\x2015\x20Jun\x202026\x2017:07:50\x20GMT\r
+SF:\nReferrer-Policy:\x20strict-origin-when-cross-origin\r\nServer:\x20Min
+SF:IO\x20Console\r\nX-Content-Type-Options:\x20nosniff\r\nX-Frame-Options:
+SF:\x20DENY\r\nX-Xss-Protection:\x201;\x20mode=block\r\nDate:\x20Mon,\x201
+SF:5\x20Jun\x202026\x2017:07:50\x20GMT\r\n\r\n<!doctype\x20html><html\x20l
+SF:ang=\"en\"><head><meta\x20charset=\"utf-8\"/><base\x20href=\"/\"/><meta
+SF:\x20content=\"width=device-width,initial-scale=1\"\x20name=\"viewport\"
+SF:/><meta\x20content=\"#081C42\"\x20media=\"\(prefers-color-scheme:\x20li
+SF:ght\)\"\x20name=\"theme-color\"/><meta\x20content=\"#081C42\"\x20media=
+SF:\"\(prefers-color-scheme:\x20dark\)\"\x20name=\"theme-color\"/><meta\x2
+SF:0content=\"MinIO\x20Console\"\x20name=\"description\"/><meta\x20name=\"
+SF:minio-license\"\x20content=\"agpl\"/><link\x20href=\"\./s");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9002-TCP:V=7.98%I=7%D=6/15%Time=6A303165%P=x86_64-pc-linux-gnu%r(Ge
+SF:nericLines,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20t
+SF:ext/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x
+SF:20Request")%r(GetRequest,CE,"HTTP/1\.0\x20307\x20Temporary\x20Redirect\
+SF:r\nContent-Type:\x20text/html;\x20charset=utf-8\r\nLocation:\x20/timeou
+SF:t\.html\r\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:07:50\x20GMT\r\nCon
+SF:tent-Length:\x2049\r\n\r\n<a\x20href=\"/timeout\.html\">Temporary\x20Re
+SF:direct</a>\.\n\n")%r(HTTPOptions,74,"HTTP/1\.0\x20307\x20Temporary\x20R
+SF:edirect\r\nLocation:\x20/timeout\.html\r\nDate:\x20Mon,\x2015\x20Jun\x2
+SF:02026\x2017:07:50\x20GMT\r\nContent-Length:\x200\r\n\r\n")%r(RTSPReques
+SF:t,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain
+SF:;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request
+SF:")%r(Help,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20te
+SF:xt/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x2
+SF:0Request")%r(SSLSessionReq,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCo
+SF:ntent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n
+SF:\r\n400\x20Bad\x20Request")%r(FourOhFourRequest,1CA,"HTTP/1\.0\x20404\x
+SF:20Not\x20Found\r\nContent-Security-Policy:\x20script-src\x20'self'\x20h
+SF:ttps://js\.hsforms\.net\x20https://www\.google\.com/recaptcha/\x20https
+SF:://www\.gstatic\.com/recaptcha/;\x20object-src\x20'none';\x20frame-ance
+SF:stors\x20'none';\x20frame-src\x20https://www\.google\.com/recaptcha/\x2
+SF:0https://www\.gstatic\.com/recaptcha/\r\nContent-Type:\x20text/plain;\x
+SF:20charset=utf-8\r\nVary:\x20Accept-Encoding\r\nX-Content-Type-Options:\
+SF:x20nosniff\r\nDate:\x20Mon,\x2015\x20Jun\x202026\x2017:08:05\x20GMT\r\n
+SF:Content-Length:\x2019\r\n\r\n404\x20page\x20not\x20found\n")%r(LPDStrin
+SF:g,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:\x20text/plain
+SF:;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20Bad\x20Request
+SF:")%r(SIPOptions,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nContent-Type:
+SF:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\r\n400\x20
+SF:Bad\x20Request")%r(Socks5,67,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nCon
+SF:tent-Type:\x20text/plain;\x20charset=utf-8\r\nConnection:\x20close\r\n\
+SF:r\n400\x20Bad\x20Request");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 703.97 seconds
 
 ```
+
+# Identified Services
+- 3306/tcp  open   mysql            MariaDB 11.8.6
+- 5432/tcp  open   postgresql       PostgreSQL DB 9.6.0 or later
+- 8081/tcp  open   http             Apache Tomcat 9.0.98
+- 9000/tcp  open   http             Golang net/http server
+- 9090/tcp  open   http             Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+- 
