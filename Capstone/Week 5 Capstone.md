@@ -19,7 +19,8 @@ Your unit has been tasked to begin counterstrike operations against this adversa
 
 ## Commander’s Intent
 
-**No later than the end of day 1**reconnoiter enemy greyspace in order to identify avenues of approach. Upon discovery of initial access vectors/opportunities, **be prepared to** provide COAs to the commander to achieve initial access.
+**No later than the end of day 1**
+reconnoiter enemy greyspace in order to identify avenues of approach. Upon discovery of initial access vectors/opportunities, **be prepared to** provide COAs to the commander to achieve initial access.
 
 ---
 
