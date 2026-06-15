@@ -858,6 +858,153 @@ Mode                 LastWriteTime         Length Name
 evil-winrm-py PS C:\programdata\SyncCache> wmic process get name,commandline,processid | findstr sync
 "powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "C:\ProgramData\FileSync\file_sync_service_runner.ps1" -SyncScriptPath "C:\ProgramData\FileSync\file_sync.ps1" -EncryptedConfigPath "C:\ProgramData\sync_config.enc.json" -ConfigPassphrase "Counterstrike-Capstone" -IntervalSeconds 600  powershell.exe             3812
 ```
+# c:\programdata
+```
+evil-winrm-py PS C:\programdata> dir
+
+
+    Directory: C:\programdata
+
+
+Mode                 LastWriteTime         Length Name                                                                  
+----                 -------------         ------ ----                                                                  
+d-----         4/30/2026   8:54 AM                FileSync                                                              
+d---s-         4/21/2026  10:41 AM                Microsoft                                                             
+d-----        11/21/2022   9:24 PM                Microsoft Help                                                        
+d-----        11/22/2022   4:04 AM                Microsoft OneDrive                                                    
+d-----        11/22/2022  12:49 PM                Package Cache                                                         
+d-----        11/21/2022   8:20 PM                Packages                                                              
+d-----        11/22/2022   2:27 PM                PuppetLabs                                                            
+d-----         6/14/2026   9:34 PM                regid.1991-06.com.microsoft                                           
+d-----         12/7/2019   4:14 AM                SoftwareDistribution                                                  
+d-----         6/14/2026   9:34 PM                ssh                                                                   
+d-----         4/21/2026  11:17 AM                staging                                                               
+d-----         6/10/2026   8:39 AM                SyncCache                                                             
+d-----        11/22/2022   4:03 AM                USOPrivate                                                            
+d-----         12/7/2019   4:14 AM                USOShared                                                             
+d-----        11/22/2022   4:07 AM                VMware                                                                
+d-----         12/7/2019   4:52 AM                WindowsHolographicDevices                                             
+-a----         6/15/2026   2:35 PM         103168 file_sync_state.json                                                  
+-a----         4/28/2026   2:55 PM           1777 sync_config.enc.json                                                  
+```
+
+# c:\programdata\ssh
+```
+
+evil-winrm-py PS C:\programdata> cd ssh
+evil-winrm-py PS C:\programdata\ssh> dir
+
+
+    Directory: C:\programdata\ssh
+
+
+Mode                 LastWriteTime         Length Name                                                                  
+----                 -------------         ------ ----                                                                  
+d-----        11/22/2022  12:47 PM                logs                                                                  
+-a----        11/22/2022  12:19 PM           2251 ssbolt_config                                                         
+-a----         6/14/2026   9:34 PM              6 sshd.pid                                                              
+-a----        10/15/2019   5:50 PM           2253 sshd_config                                                           
+-a----        11/22/2022  12:47 PM           1401 ssh_host_dsa_key                                                      
+-a----        11/22/2022  12:47 PM            626 ssh_host_dsa_key.pub                                                  
+-a----        11/22/2022  12:47 PM            537 ssh_host_ecdsa_key                                                    
+-a----        11/22/2022  12:47 PM            198 ssh_host_ecdsa_key.pub                                                
+-a----        11/22/2022  12:47 PM            432 ssh_host_ed25519_key                                                  
+-a----        11/22/2022  12:47 PM            118 ssh_host_ed25519_key.pub                                              
+-a----        11/22/2022  12:47 PM           2622 ssh_host_rsa_key                                                      
+-a----        11/22/2022  12:47 PM            590 ssh_host_rsa_key.pub                                                  
+
+```
+
+# c:\programdata\ssh\ssbolt_config
+```
+evil-winrm-py PS C:\programdata\ssh> type ssbolt_config
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
+
+# The strategy used for options in the default sshd_config shipped with
+# OpenSSH is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options override the
+# default value.
+
+Port 8022
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+
+#HostKey __PROGRAMDATA__/ssh/ssh_host_rsa_key
+#HostKey __PROGRAMDATA__/ssh/ssh_host_dsa_key
+#HostKey __PROGRAMDATA__/ssh/ssh_host_ecdsa_key
+#HostKey __PROGRAMDATA__/ssh/ssh_host_ed25519_key
+
+# Ciphers and keying
+#RekeyLimit default none
+
+# Logging
+#SyslogFacility AUTH
+#LogLevel INFO
+
+# Authentication:
+
+#LoginGraceTime 2m
+#PermitRootLogin prohibit-password
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
+
+#PubkeyAuthentication yes
+
+# The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+# but this is overridden so installations will only check .ssh/authorized_keys
+AuthorizedKeysFile	.ssh/authorized_keys
+
+#AuthorizedPrincipalsFile none
+
+# For this to work you will also need host keys in %programData%/ssh/ssh_known_hosts
+#HostbasedAuthentication no
+# Change to yes if you don't trust ~/.ssh/known_hosts for
+# HostbasedAuthentication
+#IgnoreUserKnownHosts no
+# Don't read the user's ~/.rhosts and ~/.shosts files
+#IgnoreRhosts yes
+
+# To disable tunneled clear text passwords, change to no here!
+#PasswordAuthentication yes
+#PermitEmptyPasswords no
+
+#AllowAgentForwarding yes
+#AllowTcpForwarding yes
+#GatewayPorts no
+#PermitTTY yes
+#PrintMotd yes
+#PrintLastLog yes
+#TCPKeepAlive yes
+#UseLogin no
+#PermitUserEnvironment no
+#ClientAliveInterval 0
+#ClientAliveCountMax 3
+#UseDNS no
+#PidFile /var/run/sshd.pid
+#MaxStartups 10:30:100
+#PermitTunnel no
+#ChrootDirectory none
+#VersionAddendum none
+
+# no default banner path
+#Banner none
+
+# override default of no subsystems
+Subsystem	sftp	sftp-server.exe
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#	AllowTcpForwarding no
+#	PermitTTY no
+#	ForceCommand cvs server
+
+Match Group administrators
+       AuthorizedKeysFile __PROGRAMDATA__/ssh/administrators_authorized_keys
+
+```
 ---
 # Scanning the redirector (198.51.100.200)
 ```

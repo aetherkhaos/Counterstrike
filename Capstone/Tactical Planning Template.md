@@ -218,4 +218,8 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
 	- 8081/tcp  open   http             Apache Tomcat 9.0.98
 		- MSF exploit
 			- windows/http/tomcat_cgi_cmdlineargs
-		- 
+- COA 2:
+	- 8081/tcp  open   http             Apache Tomcat 9.0.98 
+		- searchsploit tomcat 9.0
+			- Apache Tomcat < 9.0.1 (Beta) / < 8.5.23 / < 8.0.47 / < 7.0.8 - JSP Upload Bypass / Remote Code
+				- windows/webapps/42953.txt
