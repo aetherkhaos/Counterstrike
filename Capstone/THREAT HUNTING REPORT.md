@@ -24,14 +24,14 @@ The activity was detected during routine hunting and contained quickly. This rep
 
 ## 2. Incident Timeline
 
-|Date / Time|Event|Detection / Evidence|
-|---|---|---|
-|Late May 2026|Suspected initial access (method unknown)|No clear logs available|
-|Day 0|Beacon dropped to `C:\users\public\libraries\agent.exe`|File creation / anomaly scan|
-|Day 0–1|HKLM Run key "OfficeUpdateAgent" created|Registry analysis|
-|Day 1|Malicious service `SyncSvc` installed + supporting scripts in `C:\ProgramData\FileSync\`|Services / File system enumeration|
-|Day 1–Ongoing|Beacon and service maintain C2 via redirector|Network connections (high-port outbound)|
-|June 8, 2026|USA Threat Hunting Team detected anomalies → containment|Proactive hunt findings|
+| Date / Time   | Event                                                                                    | Detection / Evidence                     |
+| ------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------- |
+| Late May 2026 | Suspected initial access (method unknown)                                                | No clear logs available                  |
+| Day 0         | Beacon dropped to `C:\users\public\libraries\agent.exe`                                  | File creation / anomaly scan             |
+| Day 0–1       | HKLM Run key "OfficeUpdateAgent" created                                                 | Registry analysis                        |
+| Day 1         | Malicious service `SyncSvc` installed + supporting scripts in `C:\ProgramData\FileSync\` | Services / File system enumeration       |
+| Day 1–Ongoing | Beacon and service maintain C2 via redirector                                            | Network connections (high-port outbound) |
+| June 8, 2026  | USA Threat Hunting Team detected anomalies → containment                                 | Proactive hunt findings                  |
 
 ## 3. Threat Actor Attribution
 
