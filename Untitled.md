@@ -1382,3 +1382,6 @@ Papers: No Results
 |     IDs:  CVE:CVE-2005-3299
 |       PHP file inclusion vulnerability in grab_globals.lib.php in phpMyAdmin 2.6.4 and 2.6.4-pl1 allows remote attackers to include local files via the $__redirect parameter, possibly involving the subform array.
 ```
+
+- http://198.51.100.200:3001/settings/about
+	- Uptime Kuma Version: 1.23.17

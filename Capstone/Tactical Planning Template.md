@@ -215,4 +215,7 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
 
 ### What is your plan to target the identified critical vulnerability in the enemy system?
 - COA 1:
-	- 
+	- 8081/tcp  open   http             Apache Tomcat 9.0.98
+		- MSF exploit
+			- windows/http/tomcat_cgi_cmdlineargs
+		- 
