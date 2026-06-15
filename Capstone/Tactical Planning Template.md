@@ -181,28 +181,33 @@ reconnoiter enemy greyspace in order to identify avenues of approach. Upon disco
 ---
 
 ### Civil Considerations
-
+- the adversary is primarily focused on cyberespionage against Lunovian governmental institutions
 ---
 
 ## EMLCOA
 
 ### What is the enemy's mission?
+- cyberespionage against Lunovian governmental institutions
 
 ### What are they currently doing?
+- They are actively executing aggressive, noisy mass lateral movement across our networks using native PowerShell and VBScript. They are dropping layered, redundant tooling (like AmberX and AmberSand) and aggressively spreading via weaponized Word templates and USB drives (AmberLNK). Simultaneously, they are staging stolen browser credentials and targeted files for exfiltration over dynamic HTTP/HTTPS proxies and third-party messaging platforms.
 
 ### What will they do on contact?
+- They will not retreat or attempt to “go dark.” Because they do not prioritize stealth, upon defensive contact (e.g., blocking an IP, killing a shell, or quarantining a host), they will attempt to outpace our response. They will rapidly iterate their toolsets, change obfuscation layers (Base64, string splitting), and rotate C2 infrastructure. More importantly, they will instantly trigger their redundant, multi-layered persistence mechanisms (fileless registry storage, scheduled tasks, and offline infected USBs) to immediately re-infect the environment and re-establish access.
 
 ---
 
 ## Center of Gravity
 
 ### What is the enemy relying upon to accomplish their mission?
+- unrestricted ability to leverage native Windows scripting environments (PowerShell, VBScript, WMI) and physical media (USBs) to achieve rapid mass redundancy.
 
 ---
 
 ## Critical Vulnerability
 
 ### What can I take away from the enemy that renders their center of gravity ineffective?
+- the enemy relies on their C2 network for exfiltration. degradation of that network would render their operations ineffective.
 
 ---
 
