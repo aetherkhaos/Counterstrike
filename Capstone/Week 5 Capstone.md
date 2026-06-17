@@ -209,7 +209,23 @@ You are expected to: - Perform reconnaissance of redspace systems you now have a
 
 ## Key Goals
 
-By the end of this phase, you should be able to answer: - What redspace infrastructure have I been able to access and survey? - What have I learned about how the adversary operates in redspace (including data movement and C2 workflows)? - How can the gathered adversary operations be turned into valuable intelligence? - What D4M options can I credibly recommend to the commander based on my reconnaissance? - Can I clearly explain my actions, decisions, and reasoning from all phases?
+By the end of this phase, you should be able to answer: - What redspace infrastructure have I been able to access and survey?
+- teamserver
+	- hosts vulnerable application (webmin 1.920)
+- What have I learned about how the adversary operates in redspace (including data movement and C2 workflows)? 
+	- C2 infrax is located on .50 and agentic workflows are located on .100
+	- files collected are stored on the redirector using powershell scripts and an sftp connection
+- How can the gathered adversary operations be turned into valuable intelligence? 
+	- information gathered about their TTPs through the use of Sliver C2, ssh key planting, and use of powershell scripts.
+- What D4M options can I credibly recommend to the commander based on my reconnaissance?
+	- deny
+		- blocking them at the redirector and removing users/ssh keys
+	- degrade
+		- disruption of infrax on the teamserver and redirector
+			- delete ssh keys, users, C2 application
+	- destroy
+		- removing the teamserver entirely by deletion of the filesystem
+- Can I clearly explain my actions, decisions, and reasoning from all phases?
 
 ---
 
