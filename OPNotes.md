@@ -1532,3 +1532,9 @@ Papers: No Results
 
 - http://198.51.100.200:3001/settings/about
 	- Uptime Kuma Version: 1.23.17
+
+---
+```
+tcp   LISTEN 0      511                  0.0.0.0:80            0.0.0.0:*     users:(("nginx",pid=1626,fd=6),("nginx",pid=1625,fd=6),("nginx",pid=1624,fd=6),("nginx",pid=1623,fd=6),("nginx",pid=1619,fd=6))
+
+```
