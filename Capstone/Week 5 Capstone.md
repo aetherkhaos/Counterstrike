@@ -209,8 +209,9 @@ You are expected to: - Perform reconnaissance of redspace systems you now have a
 
 ## Key Goals
 
-By the end of this phase, you should be able to answer: - What redspace infrastructure have I been able to access and survey?
-- teamserver
+By the end of this phase, you should be able to answer: 
+- What redspace infrastructure have I been able to access and survey?
+	- teamserver
 	- hosts vulnerable application (webmin 1.920)
 - What have I learned about how the adversary operates in redspace (including data movement and C2 workflows)? 
 	- C2 infrax is located on .50 and agentic workflows are located on .100
@@ -226,6 +227,7 @@ By the end of this phase, you should be able to answer: - What redspace infrastr
 	- destroy
 		- removing the teamserver entirely by deletion of the filesystem
 - Can I clearly explain my actions, decisions, and reasoning from all phases?
+	- yes
 
 ---
 
