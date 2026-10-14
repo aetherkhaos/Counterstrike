@@ -1,5 +1,0 @@
-- "the parking lot"
-- redirection
-- postpone the answer - topic will be covered shortly
-	- need to check in with the student after covering
-- 
