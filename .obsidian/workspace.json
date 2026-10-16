@@ -34,7 +34,7 @@
               "type": "markdown",
               "state": {
                 "file": "00_TTT Course/Week 1/B01.M35_DGX Spark Team Buildout.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -205,7 +205,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "21c70078b5a05844",
+  "active": "17b887354a4a4661",
   "lastOpenFiles": [
     "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/lu13548jux6w.tmp",
     "00_TTT Course/Week 1/Supporting Documents/Operational Terms and Graphics.pdf",
