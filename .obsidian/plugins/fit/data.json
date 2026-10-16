@@ -1,0 +1,14 @@
+{
+  "encryptionPassword": "",
+  "pat": "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",
+  "owner": "aetherkhaos",
+  "avatarUrl": "https://avatars.githubusercontent.com/u/22028233?v=4",
+  "repo": "Counterstrike",
+  "branch": "main",
+  "deviceName": "",
+  "checkEveryXMinutes": 5,
+  "autoSync": "off",
+  "notifyChanges": true,
+  "notifyConflicts": true,
+  "enableDebugLogging": true
+}

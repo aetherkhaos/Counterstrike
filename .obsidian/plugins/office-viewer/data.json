@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 2,
+  "settings": {
+    "rememberReadingPosition": true,
+    "diagnosticSummary": false,
+    "thumbnailRailWidth": 120
+  },
+  "positions": {
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M19_attck-navigator_Instructor.pptx": {
+      "path": "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M19_attck-navigator_Instructor.pptx",
+      "size": 4498475,
+      "mtime": 1791988774483,
+      "slideIndex": 13,
+      "updatedAt": 1791992278388
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx": {
+      "path": "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx",
+      "size": 8351650,
+      "mtime": 1791988774540,
+      "slideIndex": 23,
+      "updatedAt": 1792067205835
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M28_mitre-d3fend-cad_Instructor.pptx": {
+      "path": "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M28_mitre-d3fend-cad_Instructor.pptx",
+      "size": 5438405,
+      "mtime": 1791988774601,
+      "slideIndex": 15,
+      "updatedAt": 1792067071569
+    }
+  },
+  "companionNotes": {}
+}
