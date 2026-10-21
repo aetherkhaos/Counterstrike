@@ -1,0 +1,863 @@
+@prefix d3f: <http://d3fend.mitre.org/ontologies/d3fend.owl#>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix : <http://d3fend.mitre.org/ontologies/cad/Amber-Tide#>.
+
+<http://d3fend.mitre.org/ontologies/cad/Amber-Tide#> a owl:Ontology;
+    owl:imports <http://d3fend.mitre.org/ontologies/d3fend.owl#>.
+:CloudTunneling a owl:Class;
+    rdfs:label "Cloud Tunneling".
+:MessagingPlatforms a owl:Class;
+    rdfs:label "Messaging Platforms".
+d3f:T1566.001 rdfs:subClassOf _:n3-0.
+_:n3-0 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1204.001.
+d3f:T1566.001 rdfs:subClassOf _:n3-1.
+_:n3-1 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1204.002.
+d3f:T1204.001 rdfs:subClassOf _:n3-2.
+_:n3-2 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1027.006.
+:C a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:T1204.002 rdfs:subClassOf _:n3-3.
+_:n3-3 a owl:Restriction;
+    owl:onProperty :C;
+    owl:someValuesFrom d3f:T1221.
+d3f:T1027.006 rdfs:subClassOf _:n3-4.
+_:n3-4 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1059.001.
+d3f:T1221 rdfs:subClassOf _:n3-5.
+_:n3-5 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1059.001.
+d3f:T1091 rdfs:subClassOf _:n3-6.
+_:n3-6 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1204.002.
+d3f:T1027.006 rdfs:subClassOf _:n3-7.
+_:n3-7 a owl:Restriction;
+    owl:onProperty d3f:may-execute;
+    owl:someValuesFrom d3f:T1059.005.
+d3f:T1221 rdfs:subClassOf _:n3-8.
+_:n3-8 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1059.005.
+d3f:T1059.001 rdfs:subClassOf _:n3-9.
+_:n3-9 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1047.
+d3f:T1059.005 rdfs:subClassOf _:n3-10.
+_:n3-10 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1047.
+d3f:T1047 rdfs:subClassOf _:n3-11.
+_:n3-11 a owl:Restriction;
+    owl:onProperty d3f:creates;
+    owl:someValuesFrom d3f:T1547.001.
+d3f:T1059.005 rdfs:subClassOf _:n3-12.
+_:n3-12 a owl:Restriction;
+    owl:onProperty d3f:creates;
+    owl:someValuesFrom d3f:T1037.001.
+d3f:T1059.001 rdfs:subClassOf _:n3-13.
+_:n3-13 a owl:Restriction;
+    owl:onProperty d3f:creates;
+    owl:someValuesFrom d3f:T1037.001.
+d3f:T1204.002 rdfs:subClassOf _:n3-14.
+_:n3-14 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1137.001.
+d3f:T1137.001 rdfs:subClassOf _:n3-15.
+_:n3-15 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1059.005.
+d3f:T1137.001 rdfs:subClassOf _:n3-16.
+_:n3-16 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1059.001.
+d3f:T1059.001 rdfs:subClassOf _:n3-17.
+_:n3-17 a owl:Restriction;
+    owl:onProperty d3f:creates;
+    owl:someValuesFrom d3f:T1053.005.
+d3f:T1059.001 rdfs:subClassOf _:n3-18.
+_:n3-18 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1027.010.
+d3f:T1027.010 rdfs:subClassOf _:n3-19.
+_:n3-19 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1547.001.
+d3f:T1027.010 rdfs:subClassOf _:n3-20.
+_:n3-20 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1037.001.
+d3f:T1027.010 rdfs:subClassOf _:n3-21.
+_:n3-21 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1053.005.
+d3f:T1027.006 rdfs:subClassOf _:n3-22.
+_:n3-22 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1027.010.
+d3f:T1547.001 rdfs:subClassOf _:n3-23.
+_:n3-23 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1027.009.
+d3f:T1037.001 rdfs:subClassOf _:n3-24.
+_:n3-24 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1027.009.
+d3f:T1053.005 rdfs:subClassOf _:n3-25.
+_:n3-25 a owl:Restriction;
+    owl:onProperty d3f:contains;
+    owl:someValuesFrom d3f:T1027.009.
+d3f:T1053.005 rdfs:subClassOf _:n3-26.
+_:n3-26 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1027.013.
+d3f:T1037.001 rdfs:subClassOf _:n3-27.
+_:n3-27 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1027.013.
+d3f:T1547.001 rdfs:subClassOf _:n3-28.
+_:n3-28 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1027.013.
+d3f:T1027.013 rdfs:subClassOf _:n3-29.
+_:n3-29 a owl:Restriction;
+    owl:onProperty d3f:enables;
+    owl:someValuesFrom d3f:T1218.005.
+d3f:T1027.009 rdfs:subClassOf _:n3-30.
+_:n3-30 a owl:Restriction;
+    owl:onProperty d3f:may-create;
+    owl:someValuesFrom d3f:T1564.001.
+d3f:T1027.009 rdfs:subClassOf _:n3-31.
+_:n3-31 a owl:Restriction;
+    owl:onProperty d3f:may-create;
+    owl:someValuesFrom d3f:T1027.013.
+d3f:T1027.009 rdfs:subClassOf _:n3-32.
+_:n3-32 a owl:Restriction;
+    owl:onProperty d3f:may-execute;
+    owl:someValuesFrom d3f:T1070.004.
+d3f:T1027.013 rdfs:subClassOf _:n3-33.
+_:n3-33 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1083.
+d3f:T1027.013 rdfs:subClassOf _:n3-34.
+_:n3-34 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1539.
+d3f:T1027.013 rdfs:subClassOf _:n3-35.
+_:n3-35 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1113.
+:s a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:T1113 rdfs:subClassOf _:n3-36.
+_:n3-36 a owl:Restriction;
+    owl:onProperty :s;
+    owl:someValuesFrom d3f:T1074.001.
+d3f:T1539 rdfs:subClassOf _:n3-37.
+_:n3-37 a owl:Restriction;
+    owl:onProperty d3f:enables;
+    owl:someValuesFrom d3f:T1074.001.
+d3f:T1083 rdfs:subClassOf _:n3-38.
+_:n3-38 a owl:Restriction;
+    owl:onProperty d3f:enables;
+    owl:someValuesFrom d3f:T1074.001.
+d3f:T1568 rdfs:subClassOf _:n3-39.
+_:n3-39 a owl:Restriction;
+    owl:onProperty d3f:executed-by;
+    owl:someValuesFrom d3f:T1071.001.
+:C a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:T1074.001 rdfs:subClassOf _:n3-40.
+_:n3-40 a owl:Restriction;
+    owl:onProperty :C;
+    owl:someValuesFrom d3f:T1041.
+d3f:T1071.001 rdfs:subClassOf _:n3-41.
+_:n3-41 a owl:Restriction;
+    owl:onProperty d3f:executes;
+    owl:someValuesFrom d3f:T1059.001.
+d3f:T1071.001 rdfs:subClassOf _:n3-42.
+_:n3-42 a owl:Restriction;
+    owl:onProperty d3f:may-execute;
+    owl:someValuesFrom d3f:T1059.005.
+:CloudTunneling rdfs:subClassOf _:n3-43.
+_:n3-43 a owl:Restriction;
+    owl:onProperty d3f:enabled-by;
+    owl:someValuesFrom d3f:T1071.001.
+:CloudTunneling rdfs:subClassOf _:n3-44.
+_:n3-44 a owl:Restriction;
+    owl:onProperty d3f:enabled-by;
+    owl:someValuesFrom d3f:T1568.
+:MessagingPlatforms rdfs:subClassOf _:n3-45.
+_:n3-45 a owl:Restriction;
+    owl:onProperty d3f:enabled-by;
+    owl:someValuesFrom d3f:T1071.001.
+:MessagingPlatforms rdfs:subClassOf _:n3-46.
+_:n3-46 a owl:Restriction;
+    owl:onProperty d3f:enabled-by;
+    owl:someValuesFrom d3f:T1568.
+d3f:T1041 rdfs:subClassOf _:n3-47.
+_:n3-47 a owl:Restriction;
+    owl:onProperty d3f:enables;
+    owl:someValuesFrom :MessagingPlatforms.
+d3f:T1041 rdfs:subClassOf _:n3-48.
+_:n3-48 a owl:Restriction;
+    owl:onProperty d3f:enables;
+    owl:someValuesFrom :CloudTunneling.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-49.
+_:n3-49 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1566.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:EmailRemoval rdfs:subClassOf _:n3-50.
+_:n3-50 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1566.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEncryption rdfs:subClassOf _:n3-51.
+_:n3-51 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1566.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:DecoyFile rdfs:subClassOf _:n3-52.
+_:n3-52 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1566.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:NetworkTrafficFiltering rdfs:subClassOf _:n3-53.
+_:n3-53 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:OutboundTrafficFiltering rdfs:subClassOf _:n3-54.
+_:n3-54 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-55.
+_:n3-55 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-56.
+_:n3-56 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-57.
+_:n3-57 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:DynamicAnalysis rdfs:subClassOf _:n3-58.
+_:n3-58 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:EmulatedFileAnalysis rdfs:subClassOf _:n3-59.
+_:n3-59 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:SystemInitConfigAnalysis rdfs:subClassOf _:n3-60.
+_:n3-60 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1547.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-61.
+_:n3-61 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1547.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-62.
+_:n3-62 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1547.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-63.
+_:n3-63 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1547.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:DynamicAnalysis rdfs:subClassOf _:n3-64.
+_:n3-64 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1547.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:EmulatedFileAnalysis rdfs:subClassOf _:n3-65.
+_:n3-65 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1547.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-66.
+_:n3-66 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1070.004.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-67.
+_:n3-67 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1070.004.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-68.
+_:n3-68 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1070.004.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:IOPortRestriction rdfs:subClassOf _:n3-69.
+_:n3-69 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1091.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:RadiationHardening rdfs:subClassOf _:n3-70.
+_:n3-70 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1091.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:HardwareComponentInventory rdfs:subClassOf _:n3-71.
+_:n3-71 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1091.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ExecutableDenylisting rdfs:subClassOf _:n3-72.
+_:n3-72 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:DecoyFile rdfs:subClassOf _:n3-73.
+_:n3-73 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEncryption rdfs:subClassOf _:n3-74.
+_:n3-74 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:RestoreFile rdfs:subClassOf _:n3-75.
+_:n3-75 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ContentFiltering rdfs:subClassOf _:n3-76.
+_:n3-76 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:LocalFilePermissions rdfs:subClassOf _:n3-77.
+_:n3-77 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:RemoteFileAccessMediation rdfs:subClassOf _:n3-78.
+_:n3-78 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ContentQuarantine rdfs:subClassOf _:n3-79.
+_:n3-79 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ContentModification rdfs:subClassOf _:n3-80.
+_:n3-80 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ExecutableAllowlisting rdfs:subClassOf _:n3-81.
+_:n3-81 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1204.002.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-82.
+_:n3-82 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1137.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-83.
+_:n3-83 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1137.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:DynamicAnalysis rdfs:subClassOf _:n3-84.
+_:n3-84 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1137.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:EmulatedFileAnalysis rdfs:subClassOf _:n3-85.
+_:n3-85 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1137.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-86.
+_:n3-86 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1137.001.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-87.
+_:n3-87 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-88.
+_:n3-88 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-89.
+_:n3-89 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:DynamicAnalysis rdfs:subClassOf _:n3-90.
+_:n3-90 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:EmulatedFileAnalysis rdfs:subClassOf _:n3-91.
+_:n3-91 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1059.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ScheduledJobAnalysis rdfs:subClassOf _:n3-92.
+_:n3-92 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ProcessTermination rdfs:subClassOf _:n3-93.
+_:n3-93 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:HostReboot rdfs:subClassOf _:n3-94.
+_:n3-94 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:HostShutdown rdfs:subClassOf _:n3-95.
+_:n3-95 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ProcessSuspension rdfs:subClassOf _:n3-96.
+_:n3-96 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ProcessLineageAnalysis rdfs:subClassOf _:n3-97.
+_:n3-97 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:SystemDaemonMonitoring rdfs:subClassOf _:n3-98.
+_:n3-98 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ProcessSelf-ModificationDetection rdfs:subClassOf _:n3-99.
+_:n3-99 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:SystemCallAnalysis rdfs:subClassOf _:n3-100.
+_:n3-100 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ProcessSpawnAnalysis rdfs:subClassOf _:n3-101.
+_:n3-101 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1053.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ProcessSpawnAnalysis rdfs:subClassOf _:n3-102.
+_:n3-102 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1218.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:SystemCallAnalysis rdfs:subClassOf _:n3-103.
+_:n3-103 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1218.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-104.
+_:n3-104 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1218.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-105.
+_:n3-105 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1218.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-106.
+_:n3-106 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1218.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:DynamicAnalysis rdfs:subClassOf _:n3-107.
+_:n3-107 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1218.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:EmulatedFileAnalysis rdfs:subClassOf _:n3-108.
+_:n3-108 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1218.005.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:SystemCallFiltering rdfs:subClassOf _:n3-109.
+_:n3-109 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1113.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:SystemCallAnalysis rdfs:subClassOf _:n3-110.
+_:n3-110 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1113.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:CredentialRevocation rdfs:subClassOf _:n3-111.
+_:n3-111 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1539.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:CredentialCompromiseScopeAnalysis rdfs:subClassOf _:n3-112.
+_:n3-112 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1539.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:AuthenticationCacheInvalidation rdfs:subClassOf _:n3-113.
+_:n3-113 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1539.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-114.
+_:n3-114 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1083.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-115.
+_:n3-115 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1083.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-116.
+_:n3-116 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1083.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ProtocolMetadataAnomalyDetection rdfs:subClassOf _:n3-117.
+_:n3-117 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:UserGeolocationLogonPatternAnalysis rdfs:subClassOf _:n3-118.
+_:n3-118 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:NetworkTrafficSignatureAnalysis rdfs:subClassOf _:n3-119.
+_:n3-119 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:Client-serverPayloadProfiling rdfs:subClassOf _:n3-120.
+_:n3-120 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:NetworkTrafficCommunityDeviation rdfs:subClassOf _:n3-121.
+_:n3-121 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:ApplicationProtocolCommandAnalysis rdfs:subClassOf _:n3-122.
+_:n3-122 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:RemoteTerminalSessionDetection rdfs:subClassOf _:n3-123.
+_:n3-123 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:CertificateAnalysis rdfs:subClassOf _:n3-124.
+_:n3-124 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:PerHostDownload-UploadRatioAnalysis rdfs:subClassOf _:n3-125.
+_:n3-125 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileAnalysis rdfs:subClassOf _:n3-126.
+_:n3-126 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileEviction rdfs:subClassOf _:n3-127.
+_:n3-127 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:m a owl:ObjectProperty;
+    rdfs:subPropertyOf d3f:d3fend-object-property.
+d3f:FileIntegrityMonitoring rdfs:subClassOf _:n3-128.
+_:n3-128 a owl:Restriction;
+    owl:onProperty :m;
+    owl:someValuesFrom d3f:T1041.
+:CloudTunneling rdfs:subClassOf d3f:OffensiveTechnique.
+:MessagingPlatforms rdfs:subClassOf d3f:OffensiveTechnique.
+
+
+########################################################################
+# Diagnostics for CAD->Save As D3FEND Extension...                     #
+########################################################################
+#
+# Object property messages:
+#
+# Edge ID: xy-edge-0.9470729677052301__0.18902927615364096source-0.2880321798286115target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.1732736404843791__0.754357337750963source-0.2880321798286115target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.05641383817327916__0.5220766747727353source-0.20724093797956722target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.4011457363001293__0.3734383836010259source-0.20724093797956722target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.9547446070051429__0.3785668369859436source-0.06862101515611319target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.7658756688990462__0.8532548451434868source-0.4666405303603338target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.8075018261630819__0.4587916640225631source-0.2663821964130062target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.09570415879115213__0.5040114805341717source-0.2663821964130062target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.13889866746258617__0.09390683106670206source-0.49452286397545653target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.4389141632582143__0.14675387254936711source-0.45234452568070815target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.40978165826092094__0.011116107788120333source-0.45309492992826217target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.6139807522202955__0.21407453196062265source-0.04935778853867556target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.8033127709474659__0.47871536932352743source-0.04935778853867556target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: copy0.047934070216783975
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.8246170805341415__0.9598981205132405source-0.3291927066221012target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.34819161438338053__0.11522021883031275source-0.3291927066221012target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.533873569963091__0.03599586449015235source-0.3291927066221012target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.43767707866782335__0.36902957573111217source-0.18691271849356994target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.8291755024168915__0.5198237507267975source-0.18691271849356994target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.46728456654288275__0.262072174183836source-0.7983424059223615target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.2309640550904538__0.7897551486301699source-0.7983424059223615target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.37048457308193194__0.7227461141808182source-0.8248063621690449target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.6881014339051892__0.4024092605307511source-0.7044708457689389target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.7057363911953318__0.45591547537311605source-0.7044708457689389target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.5255294281013886__0.6714282420941279source-0.687899813587192target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+#
+# Edge ID: xy-edge-0.010532727424100385__0.64507951889814source-0.687899813587192target
+# [WARN]: d3f_property is undefined; no label.
+# {
+#   "label": ""
+# }
+

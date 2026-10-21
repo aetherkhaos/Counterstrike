@@ -1,0 +1,687 @@
+============================================================================
+  _   _ _  _ _____  __
+ | | | | \| |_ _\ \/ /
+ | |_| | .` || | >  < 
+  \___/|_|\_|___/_/\_\
+
+============================================================================
+{{{
+	Universal{{{
+		uname -a ## display the hostname and os version
+		date ## display the date, time and timezone info
+		netstat -rn ## view the routing table
+		hostname ## view hostname
+		history | less ## display current user history from memory for the current shell
+		less /<root|export|home>/<user>/.history ## bourne SHell (sh) and C SHell (csh)
+			.bash_history ## Bourne Again SHell (bash)
+			.zsh_history ## Z SHell (zsh)
+			.tcsh_history ## T C SHell (tcsh)
+			.local/share/fish/fish_history ## Friendly Interactive Shell (fish)
+		lsof -p PID ## display open descriptors for the specified PID
+		atq ## as root, lists all users at jobs
+		ls -li <path/file> | awk '{print $1}' | xargs -I inode find / -inum inode ## find files that share the same inode as the file specified
+		find / -perm -2000 -type f 2> /dev/null | wc -l ## find files with SGID bit set
+		## Identify the physical address of the host's default gateway.
+			## 1) view ip of gateway
+				netstat -rn
+				route -n
+			## 2) check arp table for the mac
+				arp -n
+	}}}
+	unsorted commands{{{	
+	
+		file /sbin/* | grep statically | wc -l
+
+		for i in $(getent passwd | tr -s ':' ' ' | awk '{ if ( $3 >= 500) if ($3 <= 1019) print $0}' | cut -d ' ' -f1); do getent shadow $i; echo; done ## find number of user account(with uids between 500-1019) have bee configured to login to the machine
+
+		##print the home directory of a spcific user <piped to change to that directory>
+			grep <username> /etc/passwd | tr ':' ' ' | awk '{print $7}' <| cd>
+
+		man systemd.service
+
+		for i in in $(find / -mtime -2 | grep -v "/proc/*\|/sys/*\|/var/spool/*\|/run/*\|/var/lib/*\|/dev/*"); do echo -------------$i----------- ; grep <ip> $i; done ## find file that have been modified in the last 2 hours
+
+		for i in !!logfiles!!; do grep "DPT=4444 " $i | grep "<!!dates!!>" <| wc -l> ## find iptables logs that have the destination port of 4444 for specific dates
+
+		for i in $(ps -eo pid | grep -vi pid); do ls -l /proc/$i/exe; done 2> /dev/null | awk '{print $NF}' | grep -v /proc | xargs -I tgt file tgt ## display all link files for the running processes
+
+		for i in $(echo $PATH | tr ':' ' '); do ls -lc $i | grep "Oct 26" | awk '{print $9}' | xargs -I out echo $i/out | xargs -I in stat in | grep 'File:\|Change:' | grep  10:44; done ## find the number of files in the $PATH tah have been modified on a specified date
+
+		scp -r <remote ip>:<path to dir to copy> <local dir to copy to>
+
+		command to check User Permissions{{{
+			## command 1:
+				ppriv() { PATH="/usr/xpg4/bin:/usr/xpg6/bin:$PATH" targperm=$(ls -ladh "$1" | awk '{print $1}'); targowner=$(ls -ladh "$1" | awk '{print $3}'); targgroup=$(ls -ladh "$1" | awk '{print $4}'); targname=$(ls -ladh "$1" | awk '{print $9}'); typeperm=$(echo $targperm | awk '{if (substr($0, 1, 1)=="-"){print "F";} else {print substr($0, 1, 1);}}'); ownerperm=$(echo $targperm | awk '{print substr($0, 2, 3)}'); groupperm=$(echo $targperm | awk '{print substr($0, 5, 3)}'); otherperm=$(echo $targperm | awk '{print substr($0, 8, 3)}'); case $typeperm in "d") targtype="Directory" ;; "F") targtype="File" ;; "b") targtype="Block" ;; "c") targtype="Character" ;; "l") targtype="Symbolic Link" ;; "n") targtype="Network File" ;; "p") targtype="FIFO (Pipe)" ;; "s") targtype="Socket" ;; esac;targroupid=$((getent group || cat /etc/group) | egrep "^$targgroup:" | awk -F':' '{print $3}'); membersprim=$((getent passwd || cat /etc/passwd) | egrep "$targgroup|$targroupid" | awk -v id=$targroupid -F':' '($4==id){print $1 ","}'); membersprim="$(echo "$membersprim" | tr -d '\n')"; memberssec=$((getent group || cat /etc/group) | egrep "$targgroup|$targroupid" | awk -v id=$targroupid -F':' '($3==id){print $4}'); if(( ${#targperm} == 11 )); then extperm=$(echo $targperm | awk '{if (substr($0, 11, 1)=="+"){print "A";} else if (substr($0, 11, 1)=="."){print "S";} else {print "E";}}'); faclcomm=$(find /bin /sbin /usr/bin /usr/sbin -name "getfacl" | awk 'NR==1{print $0}');if [ -x $faclcomm ]; then case $extperm in "A") facl=$($faclcomm $targname) ;; "S") facl=$($faclcomm $targname) ;; "E") facl="Extended File Attributes are present" ;; esac; fi; else unset facl; fi;if(("$typeperm" == "F"));then typeperm="-";fi; printf "\n$targname\nType($typeperm):\t$targtype\nOwner($ownerperm):\t$targowner\nGroup($groupperm):\t$targroupid $targgroup\nPrimary Members:\t$membersprim\nSecondary Members:\t$memberssec\nOther($otherperm)\n\n"; if [[ ! -z ${facl+x} ]]; then printf "Extended Permissions:\n$facl\n\n"; fi; }
+			## Command 2:
+				ppriv </path/to/file>
+		}}}
+		Name service
+			using 'getent' to find an ip
+				getent hosts <hostname> ## use '-s <databsae>' to serach within a specific database
+					getent and ping follow the order of the databases in /etc/nsswitch.conf, dig and nslookup bypass it
+			editing /etc/hosts
+				vi /etc/hosts
+				<ip>    <hostname>
+			get a recursive list host results from each nss database
+				for i in $(cat /etc/nsswitch.conf | grep hosts: | grep -v '#' | awk -F: '{print $NF}'); do echo ---$i--- ; getent -s $i hosts <hostname>; done
+		networking
+			check ip of default gateway
+				route -n
+				ip route show
+				netstat -rn
+			verify getway connection
+				ping -c 1 <ip obtaned from routing table>
+			obtain MAC of gateway
+				arp -an
+				
+			view current ip address for each interface
+				ip a
+				ifconfig -a
+			view static configuration
+				CentOS:
+					cat /etc/sysconfig/network-scripts/ifcfg-<interface>
+			add sub network interface
+				ip addr add <ip/subnet mask> dev <interface>
+		fuser
+		showmount -e localhost
+		File Shares
+			Local shares {{{
+				Check to see if the NFS service is running
+					Systemd
+						systemctl status nfs.service
+							## Start if not running
+				Create a folder
+					mkdir /var/nfsprac
+				Make an entry in /etc/exports to share the folder
+					allow single host
+						/var/nfsprac	192.168.11.15(rw)
+					allow serveral hosts
+						/var/yourdir <clientIP1>(rw) <clientIP2>(rw)
+				allow a subnet
+					/var/yourdir <subnetIP>/<subnetMask>(rw)
+				Update the NFS service
+					exportfs -a ## add all exports listed in /etc/exports and /etc/exports.d/* to /var/lib/nfs/etab
+				nfs service is viewable in the netstat
+					when running
+						- listening on tcp and udp 2049 ## - means a kernel process is holding the socket
+				viewing local shares
+					showmount -e localhost
+					exportfs -s
+		}}}
+			Remote shares {{{
+				view remote shares
+					nslookup <hostname>
+					showmount -e <ip>
+				mount remote share
+					mount <ip>:<share>
+				view connected shares
+					mount | grep "type nfs"
+				mount remote share at boot
+					vi /etc/fstab
+					<ip>:<share>    <dir to mount to>    nfs    defaults    0 0
+					verify with mount -a
+			}}}
+	
+		dumpe2fs </dev/sda1> | grep "Inode size:" ## view the inode size of the filesystem specified
+
+		## Identify the maximum number of processes that can be running on this host.
+			cat /proc/sys/kernel/pid_max
+		## Identify "permanently" configured static routes.
+			cat /etc/sysconfig/network-scripts/rule-<interface> ## compair with route -n
+		## Input the UTC date the password was last changed for the user account leela.
+			ausearch -x passwd | grep leela
+			ausearch -i | grep delete | grep -o "acct=.*" | cut -d" " -f1 | sort -u
+		## Identify the number of unique user agent strings
+			cat /var/log/httpd/access_log* | grep '<dd>/<Mmm>/<yyyy><<hh>:<mm>:<ss>>' | grep "GET /contact-us.html" | tr '"' '%' | awk -F% '{print $(NF-1)}' | sort -u | wc -l ## replace the '<dd>/<Mmm>/<yyyy><<hh>:<mm>:<ss>>' with the date in question keeping the given format ## time is not required.
+		## Using standard logging locations, identify the user account(s) that no longer exist on this host.
+			journalctl | grep "delete user" | awk '{print $NF}' | sort -u
+			ausearch -i | grep userdel | grep -o "acct=.*" | cut -d" " -f1 | sort -u
+		## Identify the persistent location(s) to which iptables is actively logging
+			## check rsyslog config 
+			journalctl | grep iptable 
+			ausearch -i | grep iptable | head
+			grep 'comm="iptables"' /var/log* /var/log/*/* 2> /dev/null | cut -d":" -f 1 | sort -u
+		xfs_info <path/device>
+		for i in $(ls /home) root; do passwd -S $i; done
+		find / -iname ".*" 2> /dev/null
+		## check process against package manager
+			Debian: 
+				for i in $(ls -la /proc/*/exe 2>/dev/null | awk '{print $11}' | sort | uniq); do dpkg -S $i; done | grep "no path" 
+			RHEL: 
+				for z in $(ps -ef --no-headers | awk '{ if ( $3 != 2) print $2}' | xargs -I {} ls -latr /proc/{}/exe 2> /dev/null | awk '{for(i=11;i<=NF;i++)printf $i""FS; print ""}' | sort -u); do rpm -qf "$z"; done
+
+				for i in $(ls -la /proc/*/exe 2>/dev/null | awk '{print $11}' | sort | uniq); do rpm -qf $i; done | grep "not owned" 
+			SystemD: 
+				for i in $(ls -la /usr/lib/systemd/system 2>/dev/null | awk '{print $11}' | sort | uniq); do rpm -qf $i; done <| grep "not owned">		## Identify the size on disk of the kernel object file associated a kernel module
+			(1) lsmod | grep <name>
+			(2) modinfo <module>
+			(3) du -sh </path/to/file>
+			(oneline) for i in $(lsmod | grep <name> | awk '{print $1}'); do modinfo $i | grep filename: | awk '{print $2}' | xargs -I path du -sh path; done
+		## find the process with the most threads
+			for i in $(ps -elf | awk '{print $4}'); do ps -p $i | grep $i; ls /proc/$i/task/* | wc -l; done
+		## creating a mounting unix filesystems
+			dd if=/dev/zero of=/tmp/my_stuff.img bs=2M count=125 ## create a file consisting of 250mb of null bytes
+			losetup /dev/loop0 /tmp/my_stuff.img ## associate loop device with a file
+			mkfs -t ext3 -b 1024 /dev/loop0 ## create an ext3 filesystem on /tmp/my_stuff.img with a block-size of 1024
+			mkisofs -iso-level 3 -o /tmp/my_stuff.iso /etc ## create an iso file from all the contents of /etc and store it as /tmp/my_stuff.iso
+			losetup /dev/loop1 /tmp/my_stuff.iso ## associate /tmp/my_stuff.iso to /dev/loop1
+			mount -t iso9660 /dev/loop1 /media ## mount /tmp/my_stuff.iso on the /media directory
+			mount /dev/loop0 /mnt ## mount /tmp/my_stuff.img on /mnt
+	}}}	
+	Debian 3.2.57 (sysv){{{
+		## Identify the maximum number of processes that can be running on this host.
+			cat /proc/sys/kernel/pid_max
+		## view listening ipv6 ports 
+			ifconfig ## check interface's ipv6 address
+			netstat -putan6 ##view ipv6 socket entries
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		cat /etc/anacrontab ## view scheduled jobs for anacron
+		getent -s <service> shadow | grep <username> ## query each service, in order, to verify user authentication
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ip addr show ## display network interface info
+		ifconfig ## display network interface info
+		route -n ## view the routing table
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		sestatus ## view SELINUX configuration ## requires SELINUX package
+		
+		cat /etc/issue ## display the os distrobution ## if blank, distro is possibly RHEL or hardened/CIS-benchmarked system
+		
+		ls -l /etc/*release ## locate files containing release version information
+		chage -l <user> ## display password aging info for a specific user
+		ip6tables -nvL ## display all rules from all chains, displaying numerical port numbers and packet/byte counters, interfaces, and rule options
+		lsb_release -a ##  display distro info
+		lsmod
+		modinfo
+		cat /etc/network/interfaces | less
+		cat /etc/resolv.conf
+		netstat -rn
+		route
+		ip route show
+		arp -n
+		less /etc/shadow
+		less /etc/passwd
+		history | less
+		less /<root|home/<user>>/.history ## bourne SHell (sh) and C SHell (csh)
+			.bash_history ## Bourne Again SHell (bash)
+			.zsh_history ## Z SHell (zsh)
+			.tcsh_history ## T C SHell (tcsh)
+		last
+		grep <pattern> /var/log
+		less /etc/inittab
+		who -r
+		lsof <pid>
+		netstat -putan
+		df -T
+		iptables -nvL | less
+		less /etc/rsyslog.conf 
+			## When a packet hits a LOG rule in iptables a message with the kern facility is generated 
+		ls -l /var/spool/cron/crontabs ## user-specific crontabs
+			/etc/cron.daily, /etc/cron.mothly, /etc/cron.weekly ## contain debian-provided jobs
+		for user in $(cut -f1 -d: /etc/passwd); do echo $user >> /tmp/crontabs; crontab -u $user -l >> /tmp/crontabs; done ## take all users listed in /etc/passwd and view their crontabs
+	}}}
+	CentOS 6.5(2.6.18 - 2.6.32)(sysv){{{
+		## Identify the maximum number of processes that can be running on this host.
+			cat /proc/sys/kernel/pid_max
+		## view listening ipv6 ports 
+			ifconfig ## check interface's ipv6 address
+			netstat -putan6 ##view ipv6 socket entries
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		cat /etc/anacrontab ## view scheduled jobs for anacron
+		getent -s <service> shadow | grep <username> ## query each service, in order, to verify user authentication
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ip addr show ## display network interface info
+		ifconfig ## display network interface info
+		route -n ## view the routing table
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		sestatus ## view SELINUX configuration
+		cat /etc/issue ## display the os distrobution ## if blank, distro is possibly RHEL or hardened/CIS-benchmarked system
+		
+		ls -l /etc/*release ## locate files containing release version information
+		chage -l <user> ## display password aging info for a specific user
+		ip6tables -nvL ## display all rules from all chains, displaying numerical port numbers and packet/byte counters, interfaces, and rule options
+		ls -l /etc/*release
+		uname -r
+		sestatus
+		getenforce
+		hostname
+		netstat -putan
+		chkconfig --list ## list each service and show status
+		service --status-all ## List all available services
+		cat /etc/inittab ## view what services start at each runlevel
+		iptables -L
+		find / -type f -name ".*"
+		find / -type d -name ".*"
+		fdisk -l
+		for user in $(cut -f1 -d: /etc/passwd); do echo $user >> /tmp/crontabs; crontab -u $user -l >> /tmp/crontabs; done ## take all users listed in /etc/passwd and view their crontabs
+	}}}
+	centos 7(systemd){{{
+		## Identify the maximum number of processes that can be running on this host.
+			cat /proc/sys/kernel/pid_max
+		## view listening ipv6 ports 
+			ip -6 addr show ## check interface's ipv6 address
+			ss -putan6 ##view ipv6 socket entries
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		cat /etc/anacrontab ## view scheduled jobs for anacron
+		getent -s <service> shadow | grep <username> ## query each service, in order, to verify user authentication
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ip addr show ## display network interface info
+		route -n ## view the routing table
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		sestatus ## view SELINUX configuration
+		cat /etc/issue ## display the os distrobution ## if blank, distro is possibly RHEL or hardened/CIS-benchmarked system
+		
+		ls -l /etc/*release ## locate files containing release version information
+		chage -l <user> ## display password aging info for a specific user
+		ip6tables -nvL ## display all rules from all chains, displaying numerical port numbers and packet/byte counters, interfaces, and rule options
+		swapon -s
+		df -a
+		df -T
+		systemctl list-units --type service --all ## List all available services
+		systemctl status <name> ## Get service status
+		systemctl list-unit-files –t service ## Determine what services are configured to start on boot
+		for user in $(cut -f1 -d: /etc/passwd); do echo $user >> /tmp/crontabs; crontab -u $user -l >> /tmp/crontabs; done ## take all users listed in /etc/passwd and view their crontabs
+		systemctl get-default ## display default target
+		systemctl list-units --type target | egrep "eme|res|gra|mul" | head -1 ## display current target
+		systemctl list-dependencies firewalld.service --reverse
+		lsof /dev/cpu_dma_latency | awk '{print $1}' | xargs -I N find / -iname N -exec md5sum {} \; 2> /dev/null
+		
+	}}}		
+	upstart (Ubuntu 9.10-14.10{{{
+		## Identify the maximum number of processes that can be running on this host.
+			cat /proc/sys/kernel/pid_max
+		## view listening ipv6 ports 
+			ifconfig ## check interface's ipv6 address
+			netstat -putan6 ##view ipv6 socket entries
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		cat /etc/anacrontab ## view scheduled jobs for anacron
+		getent -s <service> shadow | grep <username> ## query each service, in order, to verify user authentication
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ip addr show ## display network interface info
+		ifconfig ## display network interface info
+		route -n ## view the routing table
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		sestatus ## view SELINUX configuration ## requires SELINUX package
+		
+		cat /etc/issue ## display the os distrobution ## if blank, distro is possibly RHEL or hardened/CIS-benchmarked system
+		
+		ls -l /etc/*release ## locate files containing release version information
+		chage -l <user> ## display password aging info for a specific user
+		ip6tables -nvL ## display all rules from all chains, displaying numerical port numbers and packet/byte counters, interfaces, and rule options
+		initctl list ## List all available services
+		initctl status <service> ## Get service status
+		initctl show-config ## Determine what services are configured to start on boot
+	}}}
+	solaris 10(SMF){{{
+		## view listening ipv6 ports 
+			ifconfig -a6 ## check interface's ipv6 address
+			netstat -f inet6 -an ##view ipv6 socket entries
+		find / -inum <inode_number> ## find files that share the same inode as the file specified
+		cat /etc/crontab
+		crontab -l (-u <username>)
+		ls -la /var/spool/cron/crontabs/
+		## View all cron jobs for all users
+			for user in $(cut -f1 -d: /etc/passwd); do echo "=== $user ==="; crontab -l -u $user 2>/dev/null; done
+		getent shadow <username> ## query a specific name service for a user's shadow password entry, bypassing the default NSSwitch service order
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands ## sudo must be installed
+		ifconfig ## display network interface info
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		ls -l /etc/*release ## locate files containing release version information
+		hostname
+		ifconfig -a
+		less /etc/resolv.conf
+		less /etc/nsswitch.conf
+		netstat -rn
+		less /etc/shadow
+		less /etc/passwd
+		last
+		svcs milestone*
+		who -r
+		svcs <-a>
+		inetadm | grep enabled
+		ps -ef
+		netstat -na
+		less /etc/services ## view inetd controlled services and their assigned ports
+		pfiles /proc/*
+		less /etc/ipf/ipf.conf ## startup configuration of ipfilters
+		ipfstat -io ## find the currently active list of rules
+		less /etc/syslog.conf
+		less /var/spool/cron/crontabs
+		less /etc/ftpd/ftpaccess ## ftp server config file
+		for user in $(cut -f1 -d: /etc/passwd); do echo $user: >> /tmp/crontabs; crontab -l $user >> /tmp/crontabs; done ## take all users listed in /etc/passwd and view their crontabs
+		## Identify the maximum number of processes that can be running on this host
+			ulimit -a
+	}}}
+	solaris 11(SMF){{{
+		## view listening ipv6 ports 
+			ipadm show-addr ## check interface's ipv6 address
+			netstat -f inet6 -an ##view ipv6 socket entries
+		find / -inum <inode_number> ## find files that share the same inode as the file specified
+		crontab -l
+		svcs -a | grep scheduled
+		svccfg -s <service> listprop | grep schedule
+		ls -la /var/spool/cron/crontabs/
+		getent shadow <username> ## query a specific name service for a user's shadow password entry, bypassing the default NSSwitch service order
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands ## sudo must be installed
+		ipadm show-addr ## display network interface info
+		ifconfig ## display network interface info
+		route -p show ## view the routing table
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		ls -l /etc/*release ## locate files containing release version information
+		date
+		uptime
+		psrinfo -v
+		uname -a
+		hostid
+		modinfo -c
+		prtpicl
+		vmstat
+		hostname
+		ifconfig -a
+		arp -an
+		netstat -nr
+		netstat -na
+		cat /etc/resolv.conf
+		ps -ef
+		pfiles `echo /proc/*`
+		w
+		who -r
+		who -b
+		id -a
+		last
+		env
+		df -k -l
+		ls -la /
+			/etc
+			/bin
+			/sbin
+			/usr
+			/usr/bin
+			/usr/sbin
+			/etc/rc*.d/
+			/etc/init.d/
+			/etc/cron.d/
+			/var/spool/cron/crontabs
+			/var/spool/cron/atjobs
+		last -f /var/adm/wtmpx.<suffix>	
+		ls -lac /etc/init.d/
+			/etc/cron.d/
+		cat /etc/inittab
+		cat /var/spool/cron/crontabs/root
+		cat /etc/syslog.conf
+		cat /etc/inetd.conf
+		cat /etc/passwd
+		svcs
+		svcadm 
+		netstat -na -f inet
+		tail -50 /var/adm/messages
+		tail -50 /var/log/syslog
+		tail -50 /var/log/authlog
+		du -sh <file or dir> ## estimate the amount of file space used by a file or directory (recursively)
+	}}}
+	macOS(launchd){{{
+		## view listening ipv6 ports 
+			ifconfig | grep inet6 ## check interface's ipv6 address
+			netstat -anp tcp6 ##view ipv6 socket entries
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		launchctl list
+		ls -la /Library/LaunchDaemons/
+		ls -la /Library/LaunchAgents/
+		ls -la ~/Library/LaunchAgents/
+		ls -la /System/Library/LaunchDaemons/
+		cat /Library/LaunchDaemons/<jobname>.plist
+		launchctl list | grep -v "com.apple"
+		dscl . -read /Users/<username> ShadowHashData
+		dscl . -read /Users/<username> AuthenticationAuthority
+		cat /etc/nsmaps.conf ## View directory service configuration
+		security authorizationdb read system.login.console ## View authentication policy
+		dscl . -read /Config/shadowhash ## View Open Directory configuration
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ifconfig ## display network interface info
+		networksetup -getinfo <networkservice> ## view the routing table
+		dscl . list /Users ## view all users with the ability to login
+		sw_vers ## display release version information
+	}}}
+	FreeBSD (rc.d){{{
+		## view listening ipv6 ports 
+			ifconfig | grep inet6 ## check interface's ipv6 address
+			netstat -an -f inet6 ##view ipv6 socket entries
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		cat /etc/crontab
+		crontab -l (-u <username>)
+		ls -la /var/cron/tabs/
+		cat /etc/periodic.conf
+		ls -laR /etc/periodic/*
+		cat /etc/nsswitch.conf ## View NSSwitch configuration (if present)
+		cat /etc/master.passwd ## View FreeBSD password database configuration
+		cat /etc/pam.d/system | grep password ## View PAM configuration for authentication
+		cat /etc/login.conf | grep passwd ## Check password database format
+		cat /etc/auth.conf ## View authentication configuration
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ifconfig ## display network interface info
+		netstat -rn -f inet ## view the routing table ## IPv4 only 
+		netstat -rn -f inet6 ## view the routing table ## IPv6 only
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		cat /etc/issue ## display the os distrobution ## if blank, distro is possibly RHEL or hardened/CIS-benchmarked system
+		ls -l /etc/freebsd-version ## locate files containing release version information
+		
+		
+		
+	}}}
+	Ubuntu 16.04+ / Debian 8+ (systemd){{{
+		## Identify the maximum number of processes that can be running on this host.
+			cat /proc/sys/kernel/pid_max
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		cat /etc/anacrontab ## view scheduled jobs for anacron
+		getent -s <service> shadow | grep <username> ## query each service, in order, to verify user authentication
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ip addr show ## display network interface info
+		route -n ## view the routing table
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		sestatus ## view SELINUX configuration ## requires SELINUX package
+		cat /etc/issue ## display the os distrobution ## if blank, distro is possibly RHEL or hardened/CIS-benchmarked system
+		ls -l /etc/*release ## locate files containing release version information
+		chage -l <user> ## display password aging info for a specific user
+		ip6tables -nvL ## display all rules from all chains, displaying numerical port numbers and packet/byte counters, interfaces, and rule options
+		
+		
+	}}}
+	RHEL/CentOS 8+ (systemd){{{
+		## Identify the maximum number of processes that can be running on this host.
+			cat /proc/sys/kernel/pid_max
+		find / -samefile <path/file> ## find files that share the same inode as the file specified
+		cat /etc/anacrontab ## view scheduled jobs for anacron
+		getent -s <service> shadow | grep <username> ## query each service, in order, to verify user authentication
+		cat /etc/nsswitch.conf | grep shadow ## view available services for the shadow database
+		cat /etc/sudoers ## view user permissions to run sudo commands
+		ip addr show ## display network interface info
+		route -n ## view the routing table
+		cat /etc/passwd | grep -v nologin | grep -v sync | grep -v shutdown | grep -v halt ## view all users with the ability to login
+		sestatus ## view SELINUX configuration
+		cat /etc/issue ## display the os distrobution ## if blank, distro is possibly RHEL or hardened/CIS-benchmarked system
+		ls -l /etc/*release ## locate files containing release version information
+		chage -l <user> ## display password aging info for a specific user
+		ip6tables -nvL ## display all rules from all chains, displaying numerical port numbers and packet/byte counters, interfaces, and rule options
+		
+		
+	}}}
+}}}
+============================================================================
+  _   _ _  _ _____  __  _  _  ___ _____ ___ ___ 
+ | | | | \| |_ _\ \/ / | \| |/ _ \_   _| __/ __|
+ | |_| | .` || | >  <  | .` | (_) || | | _|\__ \
+  \___/|_|\_|___/_/\_\ |_|\_|\___/ |_| |___|___/
+  
+============================================================================
+{{{
+	SLOW DOWN AND ACTIVLY READ THE OUTPUT WHEN PROSECUTING PROCESSES AND THEIR PERSISTANCE
+	NO TYPE IN TERMINAL, ONLY PASTE 
+	CHECK /etc/sudoers FOR BOTH USERS AND GROUPS, THEN VERIFY THE USERS IN THOSE GROUPS
+
+malware process{{{
+	netstat -putan (copy everything that looks weird)
+	------
+	ps -efH (copy everything that looks weird)
+	------
+	lsof -p <each pid> (copy files that each process ahs open and any socket info)
+	------
+	for i in <list of all files found; do file $i | grep -i "ELF\|script"; done
+	------
+	what to do next: 
+		run strings on each ELF and cat each script looking for suspicious information(IE: listerers, backdoors, etc.)
+		find files craeted around the same time as any sus files found	
+			find / -newermt "$(date -d "$(stat -c %y reference_file) - 1 hour")" -not -newermt "$(date -d "$(stat -c %y reference_file) + 1 hour")"
+		look for any persistance in cron, anacron, at, and any system service files.
+		if not done already, identify any ports in use by the sus process.
+		
+	info checklist:
+		executable:
+		associated files:
+		persistance files:
+		md5 hash of executable:
+		open ports:
+		timestamp:
+		
+	!!examples of malware located using this method are located on persistant worstation!!
+	
+	====MAKE ONE LINER TO FIND SUS STRINGS IN EACH PROCESS====
+}}}
+Useful sites{{{
+	https://www.frozentux.net/iptables-tutorial/iptables-tutorial.html
+	https://www.epochconverter.com/ ## epoch time converter
+	https://opensource.com/article/18/5/you-dont-know-bash-intro-bash-arrays
+	https://man7.org/linux/man-pages/man1/tee.1.html
+	https://unix.stackexchange.com/questions/373223/which-shell-interpreter-runs-a-script-with-no-shebang
+	http://web.deu.edu.tr/doc/oreily/networking/puis/ch05_03.htm ## umask info
+	https://mason.gmu.edu/~montecin/UNIXpermiss.htm ## permissions
+	https://www.redhat.com/sysadmin/suid-sgid-sticky-bit ## sgid effect on egid
+	https://crontab.guru/ ## cron time expressions
+	https://i.stack.imgur.com/mZ6qv.png
+	https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh
+	https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files
+	https://devhints.io/bash
+	https://access.redhat.com/sites/default/files/attachments/12052018_systemd_6.pdf ## systemd cheat sheet
+}}}
+Identifying Kernel{{{
+	SysV:{{{
+		INIT(8) Linux System Administrator’s Manual INIT(8)
+
+		NAME
+		init, telinit – process control initialization
+	}}}
+	Systemd:{{{
+		SYSTEMD(1) systemd SYSTEMD(1)
+
+		NAME
+		systemd, init – systemd system and service manager
+	}}}
+	Upstart:{{{
+		init(8) System Manager’s Manual init(8)
+
+		NAME
+		init – Upstart process management daemon
+	}}}
+	SMF:{{{
+		System Administration Commands init(1M)
+
+		NAME
+		init, telinit – process control initilization
+	}}}
+}}}
+four areas where processes can start{{{
+	System start up 
+		These are services that start before the basic.target or as part of the sysinit line of the /etc/inittab
+	Userspace start up
+		These are services that start as part of userspace initialization. Services that are in the multi-user.target or graphical.target. For SysV These are services that start as part of the runlevel initialization and found in the /etc/rc*.d directories.
+	Scheduled Jobs
+		Scripts and processes that are run as part of cron, anacron, or atd.
+	User login
+		Scripts and processes that are run as a result of a user logging in. Review the logon scripts for common users.
+}}}
+firewalld order of precedence{{{
+	source ip > interface > default zone
+}}}
+firewalld file locations{{{
+	/etc/firewalld/...
+	/usr/lib/firewalld/...
+}}}
+Permissions{{{
+	owner access permissions supersede the group access permissions and group access permissions supersede the other access permissions
+		Read{{{
+			directory: 
+				access the names of files in that directory
+			file: 
+				review or display the content of the file
+		}}}
+		Write{{{
+			directory: 
+				modify information about the directory itself, such as:
+					name and attributes
+					add files to the directory
+					delete files from the directory
+					rename files in the directory
+			file: 
+				Write means you can modify the file content
+		}}}
+		Execute{{{
+			directory: 
+				enter or traverse the directory to perform actions on its files and subdirectories
+			file: 
+				execute the file when it is a script or a program
+		}}}
+		SGID{{{
+			When a file has the setgid (sgid) bit set, the extended group ID (EGID) of the process that executes the file will be set to the GID of the file's group owner, instead of the GID of the user who executed the file. The user who executes the file will temporarily become a member of that group for the duration of the program's execution.
+		}}}
+		SUID{{{
+			when a file has the setuid (suid) bit set, the extended user ID (EUID) of the process that executes the file will be set to the UID of the files owner, instead of the UID of the user who executed the file. The user temprarily becomes the user for the durration of the programs execution.
+		}}}
+		sticky bit{{{
+			only the owner of the file with the sticky bit {--t) set will be able to delete the file.
+		}}}
+	Read a file{{{
+		dir: --x
+		file: r--
+	}}}
+	Modify a file{{{
+		dir: --x
+		file: -w-
+	}}}
+	create files{{{
+		dir: -wx
+	}}}
+	list only filenames(no metadata){{{
+		dir: r--
+	}}}
+	list filenames and metatdata{{{
+		dir: r-x
+	}}}
+	delete files{{{
+		dir: -wx
+	}}}
+	execute a script{{{
+		dir: --x
+		file: r-x
+	}}}
+	execute an executable binary{{{
+		dir: --x
+		file: --x
+	}}}
+	perm table{{{
+		dir perm | octal | del, rename, create files | dir list 	   | read contents | write contents | cd dir | cd subdir | subdir list | access subdir files |
+		--- 	 | 0 	 |   						 |  	  	       |  			   |    		    |	     |			 |			   |					 |
+		-w- 	 | 2 	 |   						 |   			   |   			   |   			    |   	 |   		 |   		   |   				     |
+		r-- 	 | 4 	 |						     | only file names | 			   |                |		 |			 |			   |					 |
+		rw-		 | 6	 |							 | only file names | 			   |				|		 |			 |			   |					 |
+		--x 	 | 1	 |                           |                 | x             | x              | x      | x         | x           | x                   |
+		-wx      | 3     | x                         |                 | x             | x              | x      | x         | x           | x                   |
+		r-x      | 5     |                           | x               | x             | x              | x      | x         | x           | x                   |
+		rwx      | 7     | x                         | x               | x             | x              | x      | x         | x           | x                   |
+	}}}
+}}}
+}}}

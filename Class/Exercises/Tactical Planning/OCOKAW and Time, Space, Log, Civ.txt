@@ -1,0 +1,34 @@
+Friendly
+	o- our data sources include endpoint telemitry, windows evt logs, and fw logs, but the limited netflow and no full pcap limits the scope of our visibility in the network.
+	 
+	c- our resonse actions should be overt
+
+	o- enemys use of encrypted payloads and indicator removal coupled with their use of dynamic IP resolution and frequent domain/ip rotation prevent our use of domain/ip blacklisting
+
+	k- the network is used for energy-policy and transportation-sector planning; enemy havests bulk data from emails, documents, creds, cookie stealing, etc
+
+	a- Increasing our visibility with full PCAP and an additional tap on  the blue-edge-router to allow for the the capture of all C2 traffic
+
+	w- RFI: what is the current forcast for the area?
+
+Enemy
+	o- the enemy will be able to maintain situational awareness through the continued use of their C2 framework to effected hosts.
+	 
+	c- the enemy relys on the use of "smash and grab" operations and is therefore not stealthy.
+
+	o-the cusomers use of endpoint telemitry and log collection, along with their overt tactics 
+
+	k- enemy key terrain includes their layerd backdoor access and communication with their C2 server and also will rely on the blue-edge-router for C2 communication and exfil.
+
+	a- Spearphishing with LNK/HTA attachments in archives (T1566.001, T1204.001, T1204.002), HTML smuggling (T1027.006), weaponized Microsoft Word documents/templates (T1221), and USB drive weaponization for replication (T1091).
+
+	w- RFI: what is the current forcast for the area?
+
+Time	
+	the enemy relys on rapidly spreading through the network and exfil data as much as possible. due to automated scripting and collection, there is littile to no affect from timezone difference.
+Space
+	the network is located in lunovia's capital city, Velystok.
+Logistics
+	Are the required tools and infrastructure available and provisioned?
+Civ Considerations
+	the network is used for energy-policy and transportation-sector planning. 
