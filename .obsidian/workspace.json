@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_TTT Course/Instructor Notes/Team DGX Spark stack.md",
+                "file": "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Dallas — Lab 10.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Team DGX Spark stack"
+              "title": "Dallas — Lab 10"
             }
           }
         ]
@@ -185,10 +185,24 @@
       "bases:Create new base": false
     }
   },
-  "active": "17b887354a4a4661",
+  "active": "ef3329e6b247c84f",
   "lastOpenFiles": [
-    "00_TTT Course/Week 1 - Block 1/B01.M35_DGX Spark Team Buildout.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Phoenix — Lab 9.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Columbus — Lab 8.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Austin — Lab 7.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Houston — Lab 6.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Indianapolis — Lab 5.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Charlotte — Lab 4.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Chicago — Lab 3.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Jacksonville — Lab 2.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Philadelphia —Lab 1.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/Collie and Cow - Lab 1.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/Boar and Bull - Lab.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3",
+    "00_TTT Course/Interesting Dockers and sites.md",
     "00_TTT Course/Instructor Notes/Team DGX Spark stack.md",
+    "00_TTT Course/Week 1 - Block 1/B01.M35_DGX Spark Team Buildout.md",
     "00_TTT Course/Instructor Notes/Student n8n VM.md",
     "00_TTT Course/Instructor Notes/PCTE range specifications.md",
     "00_TTT Course/Instructor Notes/White-Box Adversary Agent Lab Environment.md",
@@ -206,25 +220,11 @@
     "00_TTT Course/Instructor Notes/References/Threat Actor Reports/cyberespionage-gamaredon-way.pdf",
     "00_TTT Course/Instructor Notes/References/Threat Actor Reports/CSA_COUNTERING_CHINA_STATE_ACTORS_COMPROMISE_OF_NETWORKS.pdf",
     "00_TTT Course/Instructor Notes/References/Threat Actor Reports/aa25-203a-stopransomware-interlock-072225.pdf",
-    "00_TTT Course/Instructor Notes/References/Threat Actor Reports/aa23-129a_snake_malware_2.pdf",
     "00_TTT Course/Instructor Notes/References/TacticalTasks.png",
     "00_TTT Course/Instructor Notes/References/node_anatomy.jpg",
     "00_TTT Course/Week 3 - Block 4/UntitledUntitled.md",
     "00_TTT Course/Week 3 - Block 4/Effects Advisor Agent - Lab.md",
     "00_TTT Course/Week 3 - Block 4/Adversary Agent CounterStrike - Lab.md",
-    "00_TTT Course/Week 3 - Block 4/Agent Reinforcement - Lab.md",
-    "00_TTT Course/Week 3 - Block 4/Build Agentic Workflow Lab - Lab.md",
-    "00_TTT Course/Week 3 - Block 4/Partner Handoff Package - Lab.md",
-    "00_TTT Course/Week 3 - Block 4/Poison Harvest Collection - Lab.md",
-    "00_TTT Course/Week 3 - Block 4/Break Harvest Collection - Lab.md",
-    "00_TTT Course/Week 3 - Block 4/C2 Tool Evaluation Peer Handoff - Team Exercise.md",
-    "00_TTT Course/Week 3 - Block 4/Adversary Exfil Stack Reconstruction - Lab.md",
-    "00_TTT Course/Week 3 - Block 4/Threat-Rep Mission Rehearsal Lab - Lab.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/On-Target Group Assessment - Assessment.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/SquidLab - Lab.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Ferret and Fowl - Lab.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Emu and Ewe - Lab.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Duck - Lab.md",
     "Class/Exercises/Tactical Planning/network-diagram.png",
     "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123534.png",
     "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123519.png",
