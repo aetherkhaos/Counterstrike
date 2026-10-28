@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_TTT Course/Instructor Notes/White-Box Adversary Agent Lab Environment.md",
+                "file": "00_TTT Course/Week 3 - Block 4/Lab 4.0a - Threat-Rep Mission Rehearsal.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "White-Box Adversary Agent Lab Environment"
+              "title": "Lab 4.0a - Threat-Rep Mission Rehearsal"
+            }
+          },
+          {
+            "id": "491e5c4c1b22d0a2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab - Lab.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "SquidLab - Lab"
             }
           }
         ]
@@ -83,7 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 458.3000183105469
+    "width": 632.7000122070312
   },
   "right": {
     "id": "8c4f0478c99d7bc1",
@@ -187,6 +201,30 @@
   },
   "active": "17b887354a4a4661",
   "lastOpenFiles": [
+    "00_TTT Course/Week 3 - Block 4/Lab 4.0b - C2 Tool Evaluation Peer Handoff - Team Exercise.md",
+    "00_TTT Course/Week 3 - Block 4/Lab 4.3b - Agent Reinforcement.md",
+    "Class/Week 4/Week 4 Labs/Lab 4.3b - Agent Reinforcement.md",
+    "00_TTT Course/Week 3 - Block 4/Lab 4.3a - Build Agentic Workflow.md",
+    "Class/Week 4/Week 4 Lab Notes.md",
+    "Class/Week 3/Week 3 Assessment/IOCs.md",
+    "Class/Week 1/2. Tactical Planning Part 2.md",
+    "Class/OPNotes.md",
+    "Class/Week 3/Week 3 Notes/Tunneling Ex.md",
+    "Class/Exercises/DirtyFrag.md",
+    "Class/Week 3/Week 3 Assessment/Lesson 3.7 - Student Brief.md",
+    "Class/Week 4/Week 4 Labs/Pasted image 20260610092347.png",
+    "Class/Week 4/Week 4 Labs/Pasted image 20260610091728.png",
+    "00_TTT Course/Interesting Dockers and sites.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md",
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B03/B03.M08_SquidLab_LessonPlan.docx",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab - Lab.md",
+    "Class/Week 3/Lesson_3.5 Windows and Hybrid Environments.md",
+    "Class/Week 3/Week 3 Notes/Foundational Situational Awareness.md",
+    "Class/Week 3/Week 3 Notes/C2 Setup Documentation.md",
+    "Class/Week 3/Week 3 Notes/Virtualized and Abstracted Environments.md",
+    "00_TTT Course/Instructor Notes/White-Box Adversary Agent Lab Environment.md",
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B03/Squid Lab-20261026.zip",
     "00_TTT Course/Instructor Notes/Situational_Awareness_in_Different_Operating_Contexts.docx",
     "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B03/B03.M05_Windows_and_Hybrid_Environments_LessonPlan.docx",
     "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B03/B03.M06_Resource_and_State_Constrained_Systems_LessonPlan.docx",
@@ -200,29 +238,7 @@
     "00_TTT Course/Week 2 - Block 2 and 3/Block 3/On-Target Group Assessment - Assessment.md",
     "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Dallas — Lab 10.md",
     "00_TTT Course/Week 2 - Block 2 and 3/Block 2",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Phoenix — Lab 9.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Columbus — Lab 8.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Austin — Lab 7.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Houston — Lab 6.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Indianapolis — Lab 5.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Charlotte — Lab 4.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Chicago — Lab 3.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Jacksonville — Lab 2.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Philadelphia —Lab 1.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/Boar and Bull - Lab.md",
     "00_TTT Course/Week 2 - Block 2 and 3/Block 3",
-    "00_TTT Course/Interesting Dockers and sites.md",
-    "00_TTT Course/Instructor Notes/Team DGX Spark stack.md",
-    "00_TTT Course/Week 1 - Block 1/B01.M35_DGX Spark Team Buildout.md",
-    "00_TTT Course/Instructor Notes/Student n8n VM.md",
-    "00_TTT Course/Instructor Notes/White-Box Adversary Agent Lab Environment.md",
-    "00_TTT Course/Instructor Notes/HTB_Academy_Prerequisites.docx",
-    "Counter Strike Operations Course Overview.md",
-    "00_TTT Course/Instructor Notes/Capstone readiness and reset verification.md",
-    "00_TTT Course/Instructor Notes/Capstone.docx",
-    "00_TTT Course/Instructor Notes/Bill_of_Deliverables.docx",
-    "00_TTT Course/Week 3 - Block 4/Effects Group Assessment - Assessment.md",
-    "00_TTT Course/Week 4 - Capstone/Capstone Assessment - Assessment.md",
     "00_TTT Course/Instructor Notes/References/TacticalTasks.png",
     "00_TTT Course/Instructor Notes/References/node_anatomy.jpg",
     "Class/Exercises/Tactical Planning/network-diagram.png",
@@ -230,8 +246,6 @@
     "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123519.png",
     "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123500.png",
     "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123445.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123430.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123413.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123353.png"
+    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123430.png"
   ]
 }

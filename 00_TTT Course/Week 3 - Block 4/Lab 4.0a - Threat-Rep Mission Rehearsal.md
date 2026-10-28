@@ -524,3 +524,135 @@ curl -u 'manager:Tomcat!Mgr01' \
 - Doctrine: SOM rehearsal against CG/CV edge path.
 - ATT&CK: exploitation of public-facing app, lateral movement (RDP/SSH), C2 via proxy/redirector.
 - ENGAGE/D3FEND: partner language for edge exposure and redirector inspection opportunities discovered during friction injects.
+
+---
+# recovered 2026-04 from submitter image ws-intake-14 (Win)
+# pushes queued reports to staging intake. do not prompt.
+
+```
+remote name: <orig>_<sha256-12>_<UTC-YYYYMMDDTHHMMSS>.<ext>
+
+$IntakeHost = "172.16.20.14"
+$IntakePort = "22"
+$IntakeUser = "intake"
+$Identity   = "C:\ProgramData\intake\id_ed25519"
+$RemoteDir  = "/incoming"
+$QueueDir   = "C:\ProgramData\intake\reports"
+$Interval   = 45
+
+New-Item -ItemType Directory -Force -Path $QueueDir | Out-Null
+
+function Seed-Queue {
+    $items = Get-ChildItem -File $QueueDir -ErrorAction SilentlyContinue
+    if (-not $items) {
+        $n = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+        Set-Content -Path (Join-Path $QueueDir "q_status_$n.txt") -Value "status report $n"
+        Set-Content -Path (Join-Path $QueueDir "q_summary_$n.pdf") -Value "%PDF-1.4 dummy $n"
+    }
+}
+
+function Get-RemoteName {
+    param([string]$Src)
+    $base = [IO.Path]::GetFileName($Src)
+    $name = [IO.Path]::GetFileNameWithoutExtension($base)
+    $ext  = [IO.Path]::GetExtension($base)
+    $hash = (Get-FileHash -Algorithm SHA256 -Path $Src).Hash.Substring(0, 12).ToLower()
+    $ts   = [DateTime]::UtcNow.ToString("yyyyMMddTHHmmss")
+    return "${name}_${hash}_${ts}${ext}"
+}
+
+function Push-One {
+    param([string]$Src)
+    $dest = Get-RemoteName $Src
+    $batch = [IO.Path]::GetTempFileName()
+    @(
+        "cd $RemoteDir"
+        "put $Src $dest"
+        "bye"
+    ) | Set-Content -Path $batch -Encoding ascii
+    & sftp.exe -b $batch -P $IntakePort -i $Identity -oBatchMode=yes `
+        -oStrictHostKeyChecking=accept-new "${IntakeUser}@${IntakeHost}"
+    $rc = $LASTEXITCODE
+    Remove-Item -Force $batch
+    return $rc
+}
+
+while ($true) {
+    Seed-Queue
+    Get-ChildItem -File $QueueDir | ForEach-Object {
+        $rc = Push-One $_.FullName
+        if ($rc -eq 0) {
+            Remove-Item -Force $_.FullName
+        }
+    }
+    Start-Sleep -Seconds $Interval
+}
+
+```
+
+---
+```
+#!/bin/sh
+# recovered 2026-04 from submitter image ws-intake-07 (Linux)
+# pushes queued reports to staging intake. do not prompt.
+# remote name: <orig>_<sha256-12>_<UTC-YYYYMMDDTHHMMSS>.<ext>
+
+INTAKE_HOST="172.16.20.14"
+INTAKE_PORT="22"
+INTAKE_USER="intake"
+IDENTITY="/opt/intake/.id"
+REMOTE_DIR="/incoming"
+QUEUE_DIR="/var/spool/reports"
+INTERVAL="45"
+
+mkdir -p "$QUEUE_DIR" || exit 1
+
+seed_queue() {
+	if [ -z "$(ls -A "$QUEUE_DIR" 2>/dev/null)" ]; then
+		n=$(date -u +%s)
+		printf 'status report %s\n' "$n" >"$QUEUE_DIR/q_status_${n}.txt"
+		printf '%%PDF-1.4 dummy %s\n' "$n" >"$QUEUE_DIR/q_summary_${n}.pdf"
+	fi
+}
+
+remote_name() {
+	src=$1
+	base=$(basename "$src")
+	ext=""
+	name=$base
+	case $base in
+	*.*)
+		ext=".${base##*.}"
+		name="${base%.*}"
+		;;
+	esac
+	hash=$(sha256sum "$src" | awk '{print substr($1,1,12)}')
+	ts=$(date -u +%Y%m%dT%H%M%S)
+	printf '%s_%s_%s%s\n' "$name" "$hash" "$ts" "$ext"
+}
+
+push_one() {
+	src=$1
+	dest=$(remote_name "$src")
+	batch=$(mktemp) || exit 1
+	printf 'cd %s\nput %s %s\nbye\n' "$REMOTE_DIR" "$src" "$dest" >"$batch"
+	sftp -b "$batch" -P "$INTAKE_PORT" -i "$IDENTITY" -oBatchMode=yes \
+		-oStrictHostKeyChecking=accept-new \
+		"${INTAKE_USER}@${INTAKE_HOST}"
+	rc=$?
+	rm -f "$batch"
+	return $rc
+}
+
+while true; do
+	seed_queue
+	for f in "$QUEUE_DIR"/*; do
+		[ -f "$f" ] || continue
+		if push_one "$f"; then
+			rm -f "$f"
+		fi
+	done
+	sleep "$INTERVAL"
+done
+
+```
