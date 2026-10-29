@@ -1,4 +1,4 @@
-# C2 Framework Evaluation and Peer Handoff
+ # C2 Framework Evaluation and Peer Handoff
 
 ## Student Brief
 

@@ -1,3 +1,10 @@
+# Three Goals of Counterstrike Operations:
+1: Maximize blue-space advantage
+2: Rapidly access adversary infrastructure
+3: Deny adversary's mission accomplishment in cyberspace
+
+## How do we get there?
+Starting from the assumption of a successful hunt, CSOs with take the artifacts and identify adversary TTPs using the MITRE ATTACK framework. This gives us the full picture of the adversary's actions. these TTPs are then taken and compared to the MITRE DEFEND framework. the resulting D3 codes, coupled with the Commander's intent, show us the alternate "defensive actions" instead of the traditional clear and harden. these defensive actions can then be pivoted to the MITRE ENGAGE framework in order to identify actions we can start taking against the adversary to maximize our blue-space advantage. following that, we revert to the MITRE ATTACK framework to identify initial access techniques that  allows us to access their infrastructure. from there we will continue to use the MITRE ATTACK and MITRE ATLAS frameworks to effect the adversary and deny their ability to accomplish their mission.
 ## Purpose
 
 The approved course learning objective is:
