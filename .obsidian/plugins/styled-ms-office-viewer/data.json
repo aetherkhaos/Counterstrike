@@ -1,0 +1,58 @@
+{
+  "sheetBackground": "white",
+  "showGridlines": true,
+  "showHeaders": true,
+  "zoom": 120,
+  "maxRows": 2000,
+  "minColumnWidth": 0,
+  "minRowHeight": 0,
+  "chipLimit": 10,
+  "documentZoom": 100,
+  "pageBackground": "white",
+  "showPageNumbers": true,
+  "virtualizePages": true,
+  "slideZoom": 100,
+  "slideFit": "contain",
+  "showSpeakerNotes": true,
+  "statusInView": false,
+  "pinchZoom": true,
+  "pinchInvert": false,
+  "fileState": {
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M01_course-introduction_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 6
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M09_military-tactical-planning_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 1
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M19_attck-navigator_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 4
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M33_threat-hunter-ai_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 0
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M02_scenario-brief_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 1
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M28_mitre-d3fend-cad_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 1
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B02/B02.M03_gaining-access_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 2
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B03/B03.M01_situational-awareness-environments_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 1
+    },
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B04/B04.M01_threat-rep-mission-rehearsal_Instructor.pptx": {
+      "kind": "presentation",
+      "slideIndex": 1
+    }
+  }
+}
