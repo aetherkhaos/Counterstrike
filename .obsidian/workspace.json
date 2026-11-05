@@ -11,31 +11,28 @@
             "id": "17b887354a4a4661",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "office-viewer",
               "state": {
-                "file": "Class/OPNotes.md",
-                "mode": "source",
-                "source": false
+                "file": "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx"
               },
-              "icon": "lucide-file",
-              "title": "OPNotes"
+              "icon": "presentation",
+              "title": "B01.M23_d3fend-engage_Instructor.pptx"
             }
           },
           {
             "id": "491e5c4c1b22d0a2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "office-viewer",
               "state": {
-                "file": "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab - Lab.md",
-                "mode": "source",
-                "source": false
+                "file": "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx"
               },
-              "icon": "lucide-file",
-              "title": "SquidLab - Lab"
+              "icon": "presentation",
+              "title": "B01.M23_d3fend-engage_Instructor.pptx"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "password",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,11 +90,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 370.3000183105469
+    "width": 491.10003662109375
   },
   "right": {
     "id": "8c4f0478c99d7bc1",
@@ -199,8 +197,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "17b887354a4a4661",
+  "active": "1fd8127ca169abaa",
   "lastOpenFiles": [
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/MITRE-Engage-V1.0.xlsx",
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_MITRE_D3FEND_and_ENGAGE_LessonPlan.docx",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab - Lab.md",
+    "file:C:/Users/Ianls/AppData/Local/Temp/c7d6eaad-e527-48a0-a5df-94011843051f_engage-1.0.zip.51f/engage-1.0/README.md",
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx",
+    "Class/OPNotes.md",
     "Class/Capstone/Capstone(1).docx",
     "00_TTT Course/Week 4 - Capstone/Capstone Assessment - Assessment.md",
     "00_TTT Course/Week 4 - Capstone/Capstone_Assessment_rubric.docx",
@@ -208,15 +212,11 @@
     "00_TTT Course/Instructor Notes/Capstone.docx",
     "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B05/B05.M01_Capstone_Assessment_LessonPlan.docx",
     "00_TTT Course/Interesting Dockers and sites.md",
-    "Class/OPNotes.md",
     "00_TTT Course/Instructor Notes/teachback_schedule.xlsx",
     "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M02_Scenario_Brief_LessonPlan.docx",
     "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M01_Course_Introduction_LessonPlan.docx",
     "file:C:/Users/Ianls/AppData/Local/Temp/d9dc0d4e-bde4-455e-9963-52f8a8bd7d6d_engage-0.9.1.zip.engage-0.9.1.zip/engage-0.9.1/README.md",
     "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B04/B04.M01_threat-rep-mission-rehearsal_Instructor.pptx",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B03/B03.M01_situational-awareness-environments_Instructor.pptx",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B03/B03.M01_Situational_Awareness_in_Constrained_Environments_LessonPlan.docx",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B02/B02.M03_gaining-access_Instructor.pptx",
     "Counter Strike Operations Course Overview.md",
     "00_TTT Course/Week 3 - Block 4/Break Harvest Collection - Lab.md",
     "00_TTT Course/Week 3 - Block 4/Lab 4.3a - Build Agentic Workflow.md",
@@ -237,8 +237,6 @@
     "Class/Week 4/Week 4 Labs/Pasted image 20260610091728.png",
     "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md",
     "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab - Lab.md",
-    "Class/Week 3/Lesson_3.5 Windows and Hybrid Environments.md",
     "00_TTT Course/Instructor Notes/References/TacticalTasks.png",
     "00_TTT Course/Instructor Notes/References/node_anatomy.jpg",
     "Class/Exercises/Tactical Planning/network-diagram.png",
