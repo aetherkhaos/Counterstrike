@@ -13,22 +13,24 @@
             "state": {
               "type": "office-viewer",
               "state": {
-                "file": "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx"
+                "file": "00_TTT Course/Week 3 - Block 4/B04.M06_effects-operations-overview_Student.pptx"
               },
               "icon": "presentation",
-              "title": "B01.M23_d3fend-engage_Instructor.pptx"
+              "title": "B04.M06_effects-operations-overview_Student.pptx"
             }
           },
           {
             "id": "491e5c4c1b22d0a2",
             "type": "leaf",
             "state": {
-              "type": "office-viewer",
+              "type": "markdown",
               "state": {
-                "file": "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx"
+                "file": "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "presentation",
-              "title": "B01.M23_d3fend-engage_Instructor.pptx"
+              "icon": "lucide-file",
+              "title": "SquidLab Walkthrough"
             }
           }
         ],
@@ -66,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "password",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -90,12 +92,12 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 491.10003662109375
+    "width": 491.10003662109375,
+    "collapsed": true
   },
   "right": {
     "id": "8c4f0478c99d7bc1",
@@ -197,28 +199,39 @@
       "bases:Create new base": false
     }
   },
-  "active": "1fd8127ca169abaa",
+  "active": "491e5c4c1b22d0a2",
   "lastOpenFiles": [
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/MITRE-Engage-V1.0.xlsx",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_MITRE_D3FEND_and_ENGAGE_LessonPlan.docx",
+    "00_TTT Course/Week 3 - Block 4/Break Harvest Collection - Lab.md",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md",
+    "00_TTT Course/Week 3 - Block 4/B04.M06_effects-operations-overview_Student.pptx",
+    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx",
+    "00_TTT Course/Week 2 - Block 2 and 3/Block 2/Houston — Lab 6.md",
+    "engage.mitre.org/index.html@p=6494.html",
+    "engage.mitre.org/index.html@p=6406.html",
+    "engage.mitre.org/index.html@p=3099.html",
+    "engage.mitre.org/index.html@p=6385.html",
+    "engage.mitre.org/index.html@p=6706.html",
+    "engage.mitre.org/index.html@p=6649.html",
+    "engage.mitre.org/index.html@p=6674.html",
+    "engage.mitre.org/wp-content/plugins/ninja-forms/assets/img/help-info.png",
+    "engage.mitre.org/wp-content/plugins/ninja-forms/assets/img",
+    "engage.mitre.org/wp-content/uploads/2023/06/Counter-Craft-Logo.jpg",
+    "engage.mitre.org/wp-content/uploads/2023/06/BHIS-Logo.jpg",
+    "engage.mitre.org/wp-content/uploads/2023/06/The-CISOs-Gambit-Logo.jpg",
+    "engage.mitre.org/wp-content/uploads/2023/06/Kevin-Fiscus-Logo.jpeg",
+    "engage.mitre.org/wp-content/uploads/2023/06/HICSS-Logo.jpg",
+    "engage.mitre.org/wp-content/uploads/2023/06/McAfee-Logo.jpg",
+    "engage.mitre.org/wp-content/uploads/2023/06/IBM-Logo.jpg",
+    "engage.mitre.org/wp-content/uploads/2022/04/CyberDeceptionDay-Share-480x270.jpg",
+    "engage.mitre.org/wp-content/uploads/2022/04/CyberDeceptionDay-Share-980x551.jpg",
     "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab - Lab.md",
     "file:C:/Users/Ianls/AppData/Local/Temp/c7d6eaad-e527-48a0-a5df-94011843051f_engage-1.0.zip.51f/engage-1.0/README.md",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M23_d3fend-engage_Instructor.pptx",
     "Class/OPNotes.md",
-    "Class/Capstone/Capstone(1).docx",
     "00_TTT Course/Week 4 - Capstone/Capstone Assessment - Assessment.md",
-    "00_TTT Course/Week 4 - Capstone/Capstone_Assessment_rubric.docx",
     "00_TTT Course/Instructor Notes/Capstone readiness and reset verification.md",
-    "00_TTT Course/Instructor Notes/Capstone.docx",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B05/B05.M01_Capstone_Assessment_LessonPlan.docx",
     "00_TTT Course/Interesting Dockers and sites.md",
-    "00_TTT Course/Instructor Notes/teachback_schedule.xlsx",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M02_Scenario_Brief_LessonPlan.docx",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B01/B01.M01_Course_Introduction_LessonPlan.docx",
     "file:C:/Users/Ianls/AppData/Local/Temp/d9dc0d4e-bde4-455e-9963-52f8a8bd7d6d_engage-0.9.1.zip.engage-0.9.1.zip/engage-0.9.1/README.md",
-    "00_TTT Course/Instructor Notes/Lesson Plans and Instructor Slides/B04/B04.M01_threat-rep-mission-rehearsal_Instructor.pptx",
     "Counter Strike Operations Course Overview.md",
-    "00_TTT Course/Week 3 - Block 4/Break Harvest Collection - Lab.md",
     "00_TTT Course/Week 3 - Block 4/Lab 4.3a - Build Agentic Workflow.md",
     "Class/Week 4/Week 4 Labs/Lab 4.3a - Build an Agentic Workflow.md",
     "Class/Week 4/Week 4 Labs/Lab 4.2b - Handoff and Partner RAT Deploy.md",
@@ -232,18 +245,6 @@
     "Class/Week 3/Week 3 Assessment/IOCs.md",
     "Class/Week 1/2. Tactical Planning Part 2.md",
     "Class/Week 3/Week 3 Notes/Tunneling Ex.md",
-    "Class/Week 3/Week 3 Assessment/Lesson 3.7 - Student Brief.md",
-    "Class/Week 4/Week 4 Labs/Pasted image 20260610092347.png",
-    "Class/Week 4/Week 4 Labs/Pasted image 20260610091728.png",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md",
-    "00_TTT Course/Week 2 - Block 2 and 3/Block 3/SquidLab Walkthrough.md.md",
-    "00_TTT Course/Instructor Notes/References/TacticalTasks.png",
-    "00_TTT Course/Instructor Notes/References/node_anatomy.jpg",
-    "Class/Exercises/Tactical Planning/network-diagram.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123534.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123519.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123500.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123445.png",
-    "00_TTT Course/Week 1 - Block 1/Pictures/Pasted image 20261013123430.png"
+    "Class/Week 3/Week 3 Assessment/Lesson 3.7 - Student Brief.md"
   ]
 }

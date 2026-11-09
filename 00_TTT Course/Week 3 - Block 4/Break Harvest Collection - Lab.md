@@ -212,7 +212,7 @@ From ops station:
 
 ```
 nmap -p 135,445,5985 172.16.4.20
-rpcdump.py 172.16.4.20 | grep -i spool
+/usr/share/doc/python3-impacket/examples/rpcdump.py 172.16.4.20 | grep -i spool
 enum4linux -a 172.16.4.20
 # or rpcclient / lookupsid-style RID cycling against null session
 ```
@@ -222,7 +222,6 @@ enum4linux -a 172.16.4.20
 Then run the staged offline PrintNightmare PoC (CVE-2021-1675 / CVE-2021-34527 class) authenticated as `printop` / `Printop!01` against `172.16.4.20` → **SYSTEM** shell. Confirm Spooler was the surface; do not hand students the PoC path in the brief.
 
 On SYSTEM (or equivalent):
-
 ```
 hostname; whoami
 Get-ScheduledTask -TaskName HarvestIndex

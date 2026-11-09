@@ -164,3 +164,250 @@ Use the answer key “Lab 1.1 — Linux Server — Answer Key (Instructor Only
 * * *
 
 **End of Walkthrough**.
+
+
+
+----
+----
+
+
+---
+id: B03.M08-ig
+title: SquidLab — Instructor Guide
+artifact_type: instructor_guide
+audience: instructor
+block: B03
+module_type: lab
+legacy_aliases: []
+source_status: authored
+review_required: false
+output_formats:
+- docx
+- pdf
+- docx_lesson_plan
+template_profile: instructor_guide_v1
+sensitivity: instructor_only
+---
+
+# SquidLab — Instructor Guide
+
+## Objective and context
+
+Counterstrike pursuit of adversary infrastructure from a recovered Alpine WSL image: locate the disguised Sliver implant, identify the pfSense redirector, reuse leftover OpenVPN material, import a stolen operator config, and survey the C2. Students report the 5 Ws and recommend an effect; they do not execute it. Student-safe tasking: [`student-brief.md`](./student-brief.md). Guest bake: [`setup-guide.md`](./setup-guide.md). Go/no-go: [`verification-runbook.md`](./verification-runbook.md).
+
+## Dual opening
+
+### Option 1 (Interactive / Whiteboard / Kinesthetic)
+
+- **Say:** "Hunting passed you a recovered Alpine WSL image. Start on that image. Follow evidence to the adversary's own path. Collection first; no effects on the C2."
+- **Do:** Confirm every seat can `wsl -d Alpine`. Sketch implant → redirector → overlay → C2 on the board without filling IPs yet.
+- **Ask (Q):** What must you record before you hunt off the image?
+- **Expected Response (A):** Host identity, user, working path, and process list on the issued distro.
+
+### Option 2 (Digital Slide / Virtual / Slide Deck)
+
+- **Say:** "Hunting passed you a recovered Alpine WSL image. Start on that image. Follow evidence to the adversary's own path. Collection first; no effects on the C2."
+- **Show:** Student-brief task list and reporting headings. Do not project implant path or redirector IP.
+- **Do:** Confirm `wsl -d Alpine` on each seat.
+- **Ask (Q):** What must you record before you hunt off the image?
+- **Expected Response (A):** Host identity, user, working path, and process list on the issued distro.
+
+## Instructor resources and pre-class preparation
+
+1. Complete [`setup-guide.md`](./setup-guide.md) and pass [`verification-runbook.md`](./verification-runbook.md).
+2. Issue Alpine.tar / WSL import steps. Do not hand this instructor guide to students.
+3. Range clue, if any: redirector `172.16.173.100` only. Do not pre-brief C2 or `192.168.135.0/24`.
+4. Tools on seats: `nmap`, browser, `ssh`/`scp`, OpenVPN (Windows or Linux NIC), `sliver-client`, `strings`/`find`/`curl`. Wireshark optional.
+5. Student access is `week3-constrained`. The student Windows seat is hostname `victim` at `80.90.100.11/24`. Students start with `wsl -d Alpine` there. Shared instructor access is `classroom-shared`: redirector `172.16.173.100`, C2 `172.16.173.101`, Win-Svr02 `172.16.173.200`.
+
+## Student resources and environment
+
+- Issued Alpine WSL distro on the ops-station Windows seat (primary access: recovered image / existing implant on that distro)
+- Lab LAN `172.16.173.0/24`
+- No extra kit beyond what the brief lists
+
+## Target access enablement
+
+| Item | Where |
+| --- | --- |
+| Primary student access | `wsl -d Alpine` on Windows seat `victim` (`80.90.100.11/24`) |
+| Fallback for OpenVPN | Windows OpenVPN GUI or a full Linux NIC (`tun` often missing in WSL) |
+| Redirector | `172.16.173.100` pfSense `admin` / `pfsense` (GUI and SSH; leftover default) |
+| Overlay | OpenVPN `192.168.135.0/24`; C2 `192.168.135.1` |
+| C2 LAN | `172.16.173.101` Rocky `root` / `counterstrike` (instructor/builder, not student start) |
+| Isolation | C2 iptables: lab LAN must **not** reach `:8000` or Sliver without the tunnel |
+
+## Facilitation flow
+
+### Step 1: Host-based analysis of the recovered Alpine image (15 min)
+
+- **Say:** "Start on the issued distro. Identity first, then find what hunting recovered."
+- **Show:** Student-brief Tasks 1–2. Do not display `/root/.bash`.
+- **Do:** Timebox. If a student is stuck after broad `ls`/`find`, hint at hidden files in the root home — not the filename.
+- **Ask (Q):** What evidence tells you the implant is not already running as a service you were handed?
+- **Expected Response (A):** They had to locate a file/process themselves; the beacon is not waiting as an obvious named service.
+
+The Sliver implant is **not running** when the Alpine WSL image is first launched unless persist already fired. Students must locate it.
+
+`ls -la /root/` lists all directory entries, including hidden names (`-a`). `find /root -type f` walks files under root's home. `2>/dev/null` hides permission noise:
+
+```bash
+hostname; id; pwd; ps aux
+ls -la /root/
+find /root -type f 2>/dev/null
+find / -name ".*" -type f 2>/dev/null | head
+```
+
+**Observation:** A hidden file named `.bash` is present in `/root/`.
+
+**Inference:** `/root/.bash` is the adversary implant. Persist is `.ashrc` via `.profile` (`set +m`, no job spam).
+
+### Step 2: Discover the callback and recon the first hop (10 min)
+
+- **Say:** "Prove where it calls. Then recon that host only."
+- **Show:** Optional Wireshark on the WSL/Hyper-V NIC. Do not announce `172.16.173.100` unless a team has already found it.
+- **Do:** Accept static (`strings`) or dynamic (capture) paths.
+- **Ask (Q):** Why not scan the whole lab LAN first?
+- **Expected Response (A):** Evidence already named one callback; wide scans waste the clock and leave scope.
+
+`strings` prints printable bytes from a binary so students can grep IPv4 without a debugger:
+
+```bash
+strings /root/.bash | grep -E '([0-9]{1,3}\.){3}[0-9]{1,3}'
+```
+
+**Method B – Dynamic:** launch the implant, capture on the Hyper-V / WSL interface, identify the outbound destination.
+
+**Observation:** Callback destination **172.16.173.100**.
+
+`nmap -Pn` skips host-discovery ping (useful when ICMP is filtered). `-sV` probes service versions. `-p-` scans all TCP ports:
+
+```bash
+nmap -Pn -sV -p- 172.16.173.100
+```
+
+**Observation:** pfSense with HTTP/HTTPS and SSH.
+
+### Step 3: Initial access via leftover defaults (10 min)
+
+- **Say:** "Redirectors and demo firewalls often keep vendor defaults. Try the web UI and SSH from evidence, not from a password list we issued."
+- **Show:** Browser to `https://172.16.173.100` only after they have the IP.
+- **Do:** If they try `root` on SSH first, point them at the pfSense admin account the GUI uses.
+- **Ask (Q):** What makes default credentials a Counterstrike-relevant find rather than a gimme?
+- **Expected Response (A):** Adversary (or lab) leftover admin access is how you enter *their* redirector, not a student-only backdoor.
+
+- URL: `https://172.16.173.100`
+- Credentials: `admin` / `pfsense`
+
+```bash
+ssh admin@172.16.173.100
+# Password: pfsense
+```
+
+(SSH as `root` may work on some builds; the documented leftover is `admin` / `pfsense`.)
+
+### Step 4: Enumerate NAT and OpenVPN (10 min)
+
+- **Say:** "You are on their redirector. Find how traffic is forwarded and whether they tunnel."
+- **Show:** Firewall → NAT → Port Forward; VPN → OpenVPN.
+- **Do:** Let them read the internal/redspace IP out of NAT. Do not name `192.168.135.1` first.
+- **Ask (Q):** What does a port-forward to an RFC1918 address behind the WAN tell you?
+- **Expected Response (A):** A hidden C2/redspace hop; the WAN host is a redirector, not the whole infrastructure.
+
+**Observation:** NAT points at an internal/redspace IP. An OpenVPN client config is present.
+
+### Step 5: Recover the OpenVPN cert and join the overlay (15 min)
+
+- **Say:** "Certificate material is usually on disk if the tunnel is already a client."
+- **Show:** `find` for `*.ovpn`. `scp` copies a remote file to the local cwd.
+- **Do:** If WSL cannot create `tun` (`TUNSETIFF` fails), run OpenVPN on Windows instead. Confirm `tun0` in `192.168.135.0/24`.
+- **Ask (Q):** Why must further C2 work happen on the tunnel?
+- **Expected Response (A):** Host firewall/iptables drop lab-LAN paths to staging and Sliver.
+
+```bash
+find /root /tmp /var -name "*.ovpn" 2>/dev/null
+ls -la /root/.tmp/
+cat /root/.tmp/redir-cert.ovpn
+scp admin@172.16.173.100:/root/.tmp/redir-cert.ovpn .
+sudo openvpn --config redir-cert.ovpn
+```
+
+`openvpn --config` uses that file as the client profile (remote, certs, `ta.key`). Success: TLS `VERIFY OK`, `tun0`, address in `192.168.135.0/24`.
+
+**Common issues:** `tls-crypt unwrap error` → wrong `ta.key`. `Cannot ioctl TUNSETIFF` in WSL → `/dev/net/tun` missing.
+
+### Step 6: Redspace discovery and stolen operator config (15 min)
+
+- **Say:** "You are on their overlay. Find the C2 and any staging they left."
+- **Show:** `nmap` from `tun0`. `curl` fetches HTTP without a browser.
+- **Do:** Force the `lhost` edit to `192.168.135.1` if the cfg still lists `172.16.173.101`.
+- **Ask (Q):** Why would a stolen operator cfg fail until they change an IP?
+- **Expected Response (A):** It still points at a LAN address not reachable from the overlay.
+
+```bash
+ip addr show tun0
+nmap -sn 192.168.135.0/24
+nmap -Pn -sV -p- 192.168.135.1
+curl http://192.168.135.1:8000/
+```
+
+Port **8000/tcp** is a Python HTTP staging tree (`/opt/squid-stage`). Download the Sliver operator cfg. Replace listed IP with **`192.168.135.1`**.
+
+### Step 7: Connect, survey, report (15 min)
+
+- **Say:** "Import as an operator. Answer the 5 Ws. Name an effect. Do not pull the trigger."
+- **Show:** `sliver-client import` loads a multiplayer config. Then `sessions`, `beacons`, `jobs`, `operators`.
+- **Do:** Stop anyone killing Octagon-SECDEF or listeners. Collect reports.
+- **Ask (Q):** What is in-scope versus a recommended effect?
+- **Expected Response (A):** Survey and report are in-scope; killing listeners or implants is recommendation-only.
+
+```bash
+sliver-client import <modified-operator.cfg>
+sliver-client
+sessions
+beacons
+jobs
+operators
+info
+```
+
+| Question | What to examine |
+|----------|-----------------|
+| **Who** | Operator accounts, active sessions |
+| **What** | Listeners, implant types, beacon/session list |
+| **When** | Session/beacon timestamps, uptime |
+| **Where** | Listener bind addresses, callback destinations |
+| **Why / How** | Infrastructure purpose and current state |
+
+Report: how redirector access was obtained; how the OpenVPN cert was reused; how the operator cfg was obtained/modified; C2 state; recommended effects without execution.
+
+## Key learning points
+
+* Operators adapt to the adversary's tools (OpenVPN, Sliver) under time pressure.
+* Leftover defaults and on-disk tunnel/operator material are high-value on real infrastructure.
+* Isolation means the overlay path is the one that works.
+* Intelligence and reporting beat immediate effects in this hour.
+
+## Failed / non-intended paths
+
+* Hitting `:8000` or Sliver from the lab LAN — isolation is broken or they skipped the tunnel.
+* Unmodified operator cfg still on `172.16.173.101` — connect fails from `tun0`.
+* Killing Octagon-SECDEF or listeners — out of scope; score as a process miss.
+
+## Lesson summary
+
+This lab is a pursuit from a recovered image, not a PCTE hostname scavenger hunt. Students prove implant → pfSense redirector → stolen OpenVPN → operator cfg → C2 survey, then report. Destructive effects stay recommendations.
+
+## Questions and check on learning
+
+- **Ask (Q):** Why start on the WSL image instead of nmap'ing the whole student LAN?
+- **Expected Response (A):** The recovered artifact is the authorized start; callback evidence names the first hop.
+- **Ask (Q):** What must be true before C2 staging answers?
+- **Expected Response (A):** They are on the OpenVPN overlay (or otherwise allowed by C2 iptables); lab-LAN paths are denied.
+
+## Related artifacts
+
+- Student brief: [`student-brief.md`](./student-brief.md)
+- Setup: [`setup-guide.md`](./setup-guide.md)
+- Verification: [`verification-runbook.md`](./verification-runbook.md)
+- Bake scripts: [`environments/b03_squidlab/`](../../../../environments/b03_squidlab/)
