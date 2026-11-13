@@ -1,0 +1,2200 @@
+{
+  "files": {
+    "blocks/B01-military-tactical-planning/modules/B01.M01-course-introduction/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "bfaa01bf092152be8b50b98df17ec758b3b22f56"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M01-course-introduction/archive/provenance/lecture.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "358d81336a523db25a6f9fd8dffe9eee908bc8eb"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M01-course-introduction/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "820b48a1375a25c9a2f34bedb9b005faf9a053f2"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M01-course-introduction/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "66b7c6c44f638f546e856828833e1699652cf9df"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M01-course-introduction/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5412e436159980e15c98e143fbf1cca9408f569b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "2b5e3829441b706a1c61be29f1e1c355e8ade749"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/archive/provenance/lecture.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "7995ebe35f0853ff258dcda2efb96a59e838b55d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "e0ea355577da6ac941833a4f9c67e4d80b219e47"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f230c061a8c02bc70b8f79a253b64ff8ec7d4090"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "0f27285996ee8647e11e7e72f58fd601118f52c2"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M10-tactical-task-orientations/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "bc0c2a0ff0c0cb7849cbad377503129941004dec"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M10-tactical-task-orientations/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "3e03ed21136175348ee2018ed31a85425ee87f76"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M10-tactical-task-orientations/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f54c32d818accc0521f27ccd433a84c285b539ec"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M10-tactical-task-orientations/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "12867ae180b6fca66fe7d3259edd9c31863e6b84"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M10-tactical-task-orientations/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "14791d5dbad4f935ea1263a52e84eb00d9259830"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M10-tactical-task-orientations/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "569c8746d1168d05565a71924a7510cc4973d34d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M10-tactical-task-orientations/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "40258c5b5b4fa3672dc4bf3c3e7c8db6a576edfe"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M11-tactical-task-translation/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "0015d48a5fa3c45dfc4f4ffeabc2d0082fad8256"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M11-tactical-task-translation/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "9a31080b2284b4ffb3a963ac6e5c3cb84509ee84"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M11-tactical-task-translation/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "00456cc81dabf4c7c6683e6942a5bf9ef0546c41"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M11-tactical-task-translation/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ba9ca3bda61f097628bae19d22410a5d39929021"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M11-tactical-task-translation/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a93456aa6b6f46a48171e2cc3970666e8d23dfa7"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M11-tactical-task-translation/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5e54f621b1e28623e584069c5b2cb17713b819bd"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M11-tactical-task-translation/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "330be058663683889a147b0dc7bb7a382cf33642"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M12-tactical-task-decision/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "fd4380fcc86f10c44f3739838ff1db7686e6cb45"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M12-tactical-task-decision/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4d935c806122f773a18a53ee2ffc783b4311df16"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M12-tactical-task-decision/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "e5a060bfcc3f28392afc8d65a84d9fde8320d018"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M12-tactical-task-decision/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "b716736a9b0991801063718b6febf1d74ad4d753"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M12-tactical-task-decision/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5b2ed920e267acfa73c2c3bb4ab530e37347718d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M12-tactical-task-decision/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "2bd5d6fb6c999b6c0eaaea9cdb87c3747c16d6f8"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M12-tactical-task-decision/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "01e84c09150926f6db48304a47fab790ccfc6965"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M13-apt-salute/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "6037880b160f6586036053f30f10f18d31b4df4d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M13-apt-salute/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "fbe333b3ddd96b480692118631d7c90e651d1423"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M13-apt-salute/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4359025516458e16552c5161274aa18dbf8a48dd"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M13-apt-salute/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "cc4493136eef49097250c2b49b3fb8ed92926f86"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M13-apt-salute/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "034922a7b552abdecff10c63de68ac879082c886"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M13-apt-salute/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "9cd8e2a0b500aebf03e9fa49ae80ac513550f7bc"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M13-apt-salute/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "7dc2ca38ec3dc3c3557ffa46986af3b5503f8b68"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M14-draw-d-challenge/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c8800cffd63f3c58b812628d43f6550e3d165402"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M14-draw-d-challenge/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "fbdf02c63da5608d4a4b709c6491e2539cbb1b96"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M14-draw-d-challenge/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "e139643e6d6cc81d1873cc814cefa5b880ee2b8a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M14-draw-d-challenge/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "98935c598f6df350bf2c3d3a430b1ba3e7efe5ba"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M14-draw-d-challenge/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "9353c4c7ac24ee16f08195807b2c6a1dc1810746"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M14-draw-d-challenge/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d7dbff86d1526cb774bb66ee1cec52aef31fb71e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M14-draw-d-challenge/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "45a1a1942cd7f477336d4983173d9c85c006dabe"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M15-ocoka-w-analysis/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c74a08a299bc0b54a0ffa4bd7f406687a26375d1"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M15-ocoka-w-analysis/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d561b680ae516c6841ecaea826352dded8d3d006"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M15-ocoka-w-analysis/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "e55db8ab71871f3f96ec7cb665965ed3cabbd776"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M15-ocoka-w-analysis/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5c5f832c64634824fbe79165438b2d38e62da1ad"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M15-ocoka-w-analysis/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "3851c7132d7300098a43bc48100e8d40b1d7a8e1"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M15-ocoka-w-analysis/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "00be2da9d9cbf834ca5df4911a50c571ee7e6321"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M15-ocoka-w-analysis/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4f58366965386cb914330c00a94d6c627e03fd35"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M16-cog-chain-practice/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "6065dbeb4ea76bbed66f637344025dc757e3534e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M16-cog-chain-practice/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5df93a3a82c52e93dc9415433344470ca8956ab8"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M16-cog-chain-practice/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "0b5330251c1205fa7981222406ecd17605604e4a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M16-cog-chain-practice/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "3a97b36d8318b0254b161c42874666d902ea381d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M16-cog-chain-practice/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a69609a65a3def165e0c51d128af131439c3cb22"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M16-cog-chain-practice/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "bceb056ea7d43e937161586f0fd5170943da74e0"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M16-cog-chain-practice/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "da72f3eda29a46fe5772e55690215cc3d0b6c914"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M17-fsb-center-18-worked-plan/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "aac2f073736d31fe2a68009aa3632262d69d9a38"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M17-fsb-center-18-worked-plan/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c609ffbaabc5fb10734bc17fdd75e52f01cca726"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M17-fsb-center-18-worked-plan/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d9611187cf740c3cdf78f397075097fab18786a6"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M17-fsb-center-18-worked-plan/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "7085f5d4fa717417a858a61b150d3df1f32f3c29"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M17-fsb-center-18-worked-plan/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4eb501361fb76adf3b46064132a6a59f7549c175"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M17-fsb-center-18-worked-plan/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c0ad2d0f319756ca386e2de5b72dce55c347a199"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M09-military-tactical-planning/modules/B01.M17-fsb-center-18-worked-plan/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "6c88a978696bef1726ef6a691309dd7ffed2fcf4"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ef69a90b8b332ac2124058400e02ceeb5a22ad51"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "b0b8b3ecf4b2dcd853d57a95e406cb163c6e58bc"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/archive/provenance/L1.3 Instructor Answer Key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ff498a56134d68fa70625259a79db44a4f751a99"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/archive/provenance/L1.3 Student Brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "cc82403b0efb0cfa67f4d8277d4f118fe3a34420"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/archive/provenance/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ad60cf7c955a1fc88da0466170161c03ca64b46c"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "373f354c6272fc76a9a23ef2cb23a9456343728b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "530cb52f4b6a24c3e5d8b06f3e63e6724d3ec5d9"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4c0cd6ff9f6e7a053d755f44b55bcc82b873a73c"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M18-tactical-planning-practical/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "943d6a956f05299535b50d384c3cf403633f1c54"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "373fe41ca30b94643747fbb09797c88336e56c7a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/archive/provenance/lecture.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "9e029be28be8670a78ea6e308905e723a7bda663"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ee4c416df76fc9974813a3f45f2d5398b0fd3547"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "741375977b77b5bf7f87527c457b7af758b6cd89"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "57d292b4f2642059481270551fa5368f522c4c85"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M20-navigator-demonstration/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "07dfa5d5e4db6d41a721c69201f26f3d0ae2264b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M20-navigator-demonstration/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a37025839ab98723ed565ef751cee061fba48a26"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M20-navigator-demonstration/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "56d129463dc21eb91a8e7e08a206bed1e1dfc070"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M20-navigator-demonstration/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "696831fc25fc3ac43abba3667ff77a4d2fc7c42c"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M20-navigator-demonstration/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f3f5d042e6a9901ebe18de6fcf43105901c0c96f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M20-navigator-demonstration/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ec0f0c207690eecb4372d0c796812f2e60b873e3"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M21-intrusion-mapping/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4de5c75e15f545e60fb39f905b7aa24d95b27d89"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M21-intrusion-mapping/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "163d947abbd8b92f7d77cab3f326d035dbaf791e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M21-intrusion-mapping/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "735f00bde60a6bd4cbe7aba4db1f7e16a2aad810"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M21-intrusion-mapping/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "3e712444cc5b9edea2e018c4745b74e4dec2f5b8"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M21-intrusion-mapping/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "2e4388dbd382e4a130c6cac50e87dfb536eb30c2"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M21-intrusion-mapping/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "9faec5218b384245a0a1aef3430bd1550ab0fe68"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M21-intrusion-mapping/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "6dbacdd3fba414a0d5d2392d1ba6b8ecdebe00e4"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M22-mission-emlcoa-back-brief/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f12a0f879643a3ca36f96ce237e8b8005f367e69"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M22-mission-emlcoa-back-brief/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "64ec8e14ada9d89246ec72c492fac67b712b7f20"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M22-mission-emlcoa-back-brief/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "fa4bc476d66ac633f436bb7d63494800d819a561"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M22-mission-emlcoa-back-brief/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "21b169bc0a676bed06653d49ce9b5c3e794d7d85"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M22-mission-emlcoa-back-brief/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "103f6a8cd9455287d92a7ccea7509fe67445f059"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M22-mission-emlcoa-back-brief/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "888d21cce87024cded1595d367254762c100ed3e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M19-attck-navigator/modules/B01.M22-mission-emlcoa-back-brief/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "e032bab68c5157c9564bf8a224b10c3e19d4c347"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M08-runspace-debugging/PowerShell Runspace Debugging/lab_env/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a4b35256f25e3c4c313133b93e811e3b7c1b4b50"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M08-runspace-debugging/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a2a9f9033d22e3524d2b3bc69fcc0d7d7f07a1b0"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M08-runspace-debugging/RunspaceDebugging.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "8e624fbc42a49ac50b3bdb3ea45a2e43dd28aa9e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M08-runspace-debugging/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "77bf2a8a530d41580394bd17a3f414c3e5495ec6"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M08-runspace-debugging/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "201ad4c0d479ef0838910197f1ccf099221f1d4d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M08-runspace-debugging/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "e2e33e5ca9722a336d33af931c38de3696f22ce4"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M08-runspace-debugging/student-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "7a38a2eb8c70f91c6a663f5ca933b4e08a8bf577"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "6e7e1066d3aed48afebda37cce405bd6db9b0a84"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/archive/provenance/lecture.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5094eb6d6784021f2ddb6aec6e8ad0f96ab7c57b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "195d787778558d63a268cf5f79699288a877659d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a742c807f2a998c9059e65dcd3958009e3ba1277"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "b1d1bad32851985960f9a7058e352a14ec273e3d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M29-shadowcat-exploration/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5b03854f3ec6f05ea6fe1716dd9b55020e89620b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M29-shadowcat-exploration/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "fd614e968ac605d3bb1118641fa912616bf81aea"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M29-shadowcat-exploration/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "23cd75b19c19dcd3dc3f4c20d66fbbe531969c6f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M29-shadowcat-exploration/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a6e6897cff47780b7c066d1fe8aab6bbba5cb524"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M29-shadowcat-exploration/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "1b0e21453467569d377ca7d8c3e85b9c8ebddf25"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M29-shadowcat-exploration/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "6428abf4cf7ded7e13b6ef773e907cff7b854e02"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M30-cad-mini-build/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "261150c5e1671cfa67e747beb09a79459e1fa949"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M30-cad-mini-build/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f971826be9e174555547da4211e31977ac519cd1"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M30-cad-mini-build/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "1e98523fa04c2cf449b778138d13cdce99eef395"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M30-cad-mini-build/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "80c734bd030861d6debf81cdec340f16046ff9f5"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M30-cad-mini-build/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ecee326a4c7e0163bd96d5823281c8c0d3883425"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M30-cad-mini-build/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "1025d7f6d3f9ac04296d5376ed02c9755bf2dc8e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M28-mitre-d3fend-cad/modules/B01.M30-cad-mini-build/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c7df5d25245763a1999f412dda7c680cce7d00c0"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4982693220656077b5099120a4f4ea32cc3042a9"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "46ccbed70c7dc28ea678d860ada63e9d3b9ce9b9"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/archive/provenance/lecture.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "3d8b54b5f2f2c611e13f8130b1e3f71172f1eb12"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5533d24c0c6216afa3afaff9f665f26ce3084bc2"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c063bdcb7cc9fa5840bb25d1ca03adb3488f6c85"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "1c2f79408c9b3250ffc30ffdabbf2dfd55ecd15a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "941f390492f84f378374557f3a5b0371fbba3ed9"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/modules/B01.M32-framework-mapping-callback/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d6420ceb2f4f3b3788897f71ee4c811ff5dfe793"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/modules/B01.M32-framework-mapping-callback/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ac345722e40a6267ae1d5496e2d2bbe5e382efe4"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/modules/B01.M32-framework-mapping-callback/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "469cd9dd28d98132a8813ddf2fd362a1fc214cef"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/modules/B01.M32-framework-mapping-callback/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f87b752138313aa8f7927d0439d81cb8b1652e13"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/modules/B01.M32-framework-mapping-callback/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4501d60af21e4dfaeae5690df4c5a5e98749dc5b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/modules/B01.M32-framework-mapping-callback/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "cb1041fe1e28552f331a0a08eb385b9256d72980"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/modules/B01.M32-framework-mapping-callback/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "1b5660f077d9fedd935fc391639f84031e4e7929"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M31-framework-tactical-task-synthesis/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "140bede0b52d5e379f7c9f82833acce8203016b9"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f89bcdaae77155e316df8806d79a38b3fb408e2f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/archive/provenance/lecture.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "8435fccdacd3f9c326a5f8e7ca7d2970fd391111"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "110be4d09dc544164a89d5add28fc42d7224df49"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "793316e883cd12b4576844706ddd6265ba5558e9"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f196e38c2d431e9865e378825c81e450a43915e1"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M24-d3fend-mapping/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "83ec67ab140039510e1b92341e8d32ef55a46a51"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M24-d3fend-mapping/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a49608acd9f780752b00d10a9556c07abad6eaf8"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M24-d3fend-mapping/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c66a6e070f00e83120b401ecebb7bf23c3c89752"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M24-d3fend-mapping/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d1ef2d25187ca49864a50578b3745e5ad09c3095"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M24-d3fend-mapping/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d4b1ef1061022599bcc5f777de6b78dfb7d87b3e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M24-d3fend-mapping/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f69a5963446f5b3c605c62c3c1e1d3513e4329f9"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M24-d3fend-mapping/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "3ee1293144f01de9453becde20f45aa05c72aeb7"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M25-engage-technique-drills/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "9165691a967fb3a83747f4ec6e24f294054724b0"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M25-engage-technique-drills/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "7a3ffdb439178162b20f885b4d1048df7554c67b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M25-engage-technique-drills/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "088877ee789376dd651eb8375b63dae2c1a0e561"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M25-engage-technique-drills/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "20a7dc9bf4d6e48d57029e064c128d904d3c3c4b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M25-engage-technique-drills/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "235312521496231e7f6493734840968262b18f2d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M25-engage-technique-drills/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "fdde25900c2673f44f2ab6eff1942c740f3a92ae"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M25-engage-technique-drills/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "15761568f1a29fad8be47f105f17189cddf95217"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M26-paired-commander-options/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5f5b9d8de27029b7005a8d3be80b7ccf8b095c5a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M26-paired-commander-options/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "fdcd18efa09ca6770037df1559cc86f6edf387b6"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M26-paired-commander-options/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d800d0d173d9eae8fcef19a8032f9985750a8f0a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M26-paired-commander-options/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "dc03ba5db28a45ad23fd37eb14c5f138cfb7198f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M26-paired-commander-options/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "8e182de45650429750cd3df8d1dfa7717cb2da86"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M26-paired-commander-options/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4e4264a256de4f641656e88da71731ef05e8da19"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M26-paired-commander-options/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "2324dad605fa0fdcfc02bb42674f14678f47ebaa"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M27-integration-discussion/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "c7ff8d021bc8de67f3d5e3ca700d66323b11f624"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M27-integration-discussion/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "300748032e40bea83106f56dd969c3ba9672c3e0"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M27-integration-discussion/archive/provenance/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "61d1e2cdd33da81fd01fcd38ec4640d7d2c52e3d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M27-integration-discussion/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "59896eef182507fc91799667e976b6601d3edac5"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M27-integration-discussion/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f9f580d62aba549909c440916a95935c3107af75"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M27-integration-discussion/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "291fca68f3ab5396140be2a6cbdc8a7240590343"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M23-d3fend-engage/modules/B01.M27-integration-discussion/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "8262fc82b47a97461faa9f612b78c315701fe4cf"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M33-threat-hunter-ai/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "a71ef9b7e4051a25e32b76b7298698f2b50674da"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M33-threat-hunter-ai/archive/provenance/lecture.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "e938bed640182d0ca70e4fee37755c365fabd2fa"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M33-threat-hunter-ai/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "887589287c014802473568682e46ccf4aa815b08"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M33-threat-hunter-ai/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "febc62bab2a6571d1ae6216d0aac1dc27703730f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M33-threat-hunter-ai/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "8a16d4b5c0051eed0714858966ee9576612cf457"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5039bc5309f218492d3e62c0baf7b7c48ebfd3d5"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f16c381088824b1a0a1f2efdc520bb5fc04a4497"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/archive/provenance/L1.7b Blank Student Rubric.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "30ced582b3656a2c0a138116e087c38638784b14"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/archive/provenance/L1.7b Instructor Answer Key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "606d67f3b0c2e5d796067e887f27feafe1c3fa8f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/archive/provenance/L1.7b Instructor Setup Guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "1fbecb9a2bf8b0061906749456ede8297b9236b4"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/archive/provenance/L1.7b Student Brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "5e747cea1802c6788f41682c7bac6ce4eaed071a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/archive/provenance/L1.7b Student Step-by-Step Guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "7523f94c88c75e8fe64e9d6b105c6624144dc69f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "1ff3f9be8b52a18bfe00e2bff60d28ef00b25878"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d7577f41d0c8d1aef4fbe8e08be7aa422ebe4144"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/instructor_support_stack/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f9255881081e4518e8ce7404664bddb3d6815f03"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d59a4bc2a4eeecf5cc004a6cd43508b1940939a4"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/rubric.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "de19eab626b0e2036e67da6a45c0cf8a4e315c7b"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/setup-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "ba0b7c7669abd9441101cff804555cfe22d00788"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4581e30f9de0c38ccb77826755f2e9b0d2dcfcf8"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/student-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "55b765b8d48dc33e291ed85504465bdf4dabb15e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/verification-runbook.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "b81fb6de740ad58619255d10daa73d7557bdc506"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M35-dgx-spark-team-buildout/work-aid.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "2e75eaf20f95c4d78bf330e94b5a86a8643a1001"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M02-scenario-brief/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "2a85ab9371a06863151e028887bb5823db0d1f6e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M02-scenario-brief/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4a7ff03064605c1b80c717a2e5091e3b6002f04d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M02-scenario-brief/content-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "3b045484b125a5e4da65e7cb8e9b76de266a9ba0"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M02-scenario-brief/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "b9e33a4350819fb91b8741d0181014a70f8dc27e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/README.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "82f5508d8436037d38b67237a4665e4d05e2d35a"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/answer-key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "31ef6520d85e8dbbbd8e8c3a68247490d57431df"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/archive/provenance/L1.8 Blank Student Rubric.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "b1b6983a604de7d137265b2f5a915943816dc110"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/archive/provenance/L1.8 Instructor Answer Key.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "62ee74c1bb40ef73528cf02637269ae4cef67663"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/archive/provenance/L1.8 Student Brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "6869f58f3e0d2846b8dcf37576a310e20cbf5f8f"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/archive/provenance/module-delivery.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "53bc1f364caeee992ae403cded4f9a8a2ed0714d"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/instructor-guide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "464834206e334dab981811cca4e3ecce8739c5c5"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/lesson-plan.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "048fc227ba7965b14df584973c2d53d19a6338d6"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/rubric.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "d97a5dec6f944b21bc75d4007967cf879a128b55"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/student-brief.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "75cf1c97523597014feb0a84ad26e6a0d4f7e953"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/supporting-documents/L1.8 Threat Actor Intelligence Sheet - Amber Tide.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "4ce1a60d6125d06eb3634db966c1d504c1db385e"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/supporting-documents/Week1_Group_Assesment.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "423fb1aefad0909bcd7231d4b5c14efcd9076ca4"
+    },
+    "blocks/B01-military-tactical-planning/modules/B01.M36-planning-group-assessment/supporting-documents/morey intel.md": {
+      "commit": "685812b2cba09bd1efef211b691023570a43eb55",
+      "blob": "f3a575d46b266bb2b161ba5f6565c75cc4447adf"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M01-info-gathering-recon/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e3f83d21bf22f979dd5519fb57ba4d864af41a76"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M01-info-gathering-recon/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b317670c53431b1b1a4849e6e199e1d270cd9052"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M01-info-gathering-recon/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "26f5e586fc866ec394b8c8c3cec5ef8dd917c646"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M01-info-gathering-recon/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "492cd833170c0fe28aff7a7e948f02328855a297"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M02-open-source-ecosystem/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8a70e10d86ffe5a5378b7f099fa37de3fd3f326e"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M02-open-source-ecosystem/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "99eebab7de71887ccbb141105c4228ff3fd7855b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M02-open-source-ecosystem/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ba502fcf3c87266dbdc4d7b01e81aeac4ac57786"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M02-open-source-ecosystem/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8a296c8cce758222806b11c875f21f733df5433a"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M03-gaining-access/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0bd2080b37b5fc1b373f32dd363a927107eb8c9b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M03-gaining-access/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2f461a6edf78779faddb5f1c325cb705d32c72b7"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M03-gaining-access/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "bb7c2c942a5051e0e719f120fa73d6c48d21b294"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M03-gaining-access/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "80dbcbe0066c8ae7817a200dd8aabea5980c6591"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f64b175099424f30b4fa74d533b6ab677348f022"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "72b8453d3f2a8033e8d285e501355da3f3a5b8dc"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/archive/provenance/01-tunneling-pivot-walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "16defc3df7abc83b6448a3fb1966ea10b073ec3f"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8afea392eabf51172961db8518ddec9fa6f47b06"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/docs/L2.11 Tunneling Pivot Student Guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1c303427f0f0176d90860fee9faa0b3c184dddb6"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b780ef0a687e968d94c649b7854fda24a6e3a022"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ee5f66428ad0a2f51f07f331174bfb8b308df282"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0c2e7603f018c9aa9f003a9b48fefe77f39842f6"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "67be2b69a8b766dc7c2b7f275f8852b4028b0628"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M04-tunneling-pivot/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f108eaa827e6dae9034b370ac653a160ffb7a80f"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6991a1926ddb05344a60bafcec7ee04649eb630f"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "04c012b5c7621b011ac3c9b7400e3cd3390f0e24"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a0618ab7c08acfcdc702bbb4db6f8d4dd3c47a79"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e08119d5f1aae428fb176a05bd61170935ea367a"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5cfa82ebb628550f14d32c29504078aa8d110479"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6a14ac1f0c8c779c5a08e1bf0b102cef2e216df5"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "fc6af6cc385f2343fabb3e491a0af43c72454867"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M05-philadelphia/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2a7dd88d22e0d9a633d39341a946ac6c9dd0cb29"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f13812301f2440b06ebe30310648bc5b17056dda"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "44a6dc4fd2a710e61fc31e25ebf7391188c5bee5"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9ca3e99b9727e7143ae9ebc4dfb90550479a5d63"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "58a2900bf907b5fd6f4d6381f7b62ebf49e4851a"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "659d1631cdac08119c9cb53da95478e0170c9d75"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "65f2b4615d3d1cbc20b65e8ad882f16b17d9338c"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "05ef3844f477e9d0381542cd1b27be398334500c"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M06-jacksonville/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "51a2e55cd79d8e3b88f9e4fb743f996dcec218d1"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d7474c452fbe3fef6e77b25cbab0512c40ac8eed"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d55283512e1d8efbd46735c7b1be8a719bcee62c"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1c76b6ec69623e61d35c430aa2b5a51b0fb64c96"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ad6530cb467dc2b39e746468cef72740efc1219c"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "41c2a10d677bb49370a02d5acc3dfd10dfc541b0"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "bd186d928dd0b1273653b791a3dd8e4afc47d21a"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3c52e065dcff2a11db19024be462c0f756c5c108"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M07-chicago/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b0de90083b45e3b76724923046ddde4cab3ec80b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7ac772fad851690732ce67f1fd704e74687595f4"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "400b6df64a21955534e0cd617e9c67110e0acc07"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "827c347c354ec517083646e8fe68d1a4bf833aa6"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0945d4b6993fd26a350f3037fc9f64f04e6ffaf4"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ceede97d0136d1c392764051928525188a30577d"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "c51bcb26aaceb4170477dc85a2b5007a05ec7ebf"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e7797258a809845bf6558697ef58da8771c9e5d8"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M08-charlotte/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1f23a850df2258c49c5f58393513e2087b69f6b2"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6dcb562bee66d5b582ef3b6a312adf887e27c638"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8c1da5e34d5bac6cfad32b2e8c65d7963235bc32"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cc3f6c408af9277bea98137d0988f409fb7926b2"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cd5bc225c646647da9b4e5e18344611060b73b45"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a94b52928c2e82644cf513492e12cb0e762f8c6d"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0a662a31638a901e9e177e9465f90b3a95557fe0"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4209d4d25e327fc13ace5a2464a7bf847ae8cb91"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M09-indianapolis/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3679129e17f8e7f7dae317bdaad96544e126cde4"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e543bde7a96f50010b1bff40cc2641ffb52d7b85"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "daaefb3cf1e6b5cb93424c5dddbad9447f3173dd"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5a874fb23fd648bd70cb48e70b678b552e3b09cb"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3cb214d1df44450503bc7aff081be1189185380b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1dddd2e13163612ae3bcec20f520e0bad3b57501"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8dd37648835bf7011ad920239c09b9422ed5c7b3"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7fcb999f40d054771e5163e4538b4c2ea9c1c107"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M10-houston/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "11d0fc6ebedf4039fd2ca37451f081f6628c228b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "df076d263130b7a7993f36871c48c6eb6deb7cbf"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "abb083bb3ad0ca193fe7ed73fa2435d0b9dea981"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "fa836ae7db14f5422672234b8dbaf864f059daec"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "61961657c509a843b2f5b98400540f903966d3bd"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "422cefadd6d981233586cbc022c4e0ecab3f813b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "82d0380a552d450f04719121c0302b2ebb467a47"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6e7ccc2d86b297b2d21005e9e65bd01ad97a7eeb"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M11-austin/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a4cc1ee24c6e1651ead1e06f396d5e18a52b6552"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0e19c7073e46eca8f682ca3171a3407b68a77a8a"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "861e70ced0a787f1c349beb07740939a923dd175"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3fafd2ea4bb5bcbe9fe5856d6676715c325ce2c0"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4ae86a53b1a9ae9ea3c54e86e25013fad0b0305e"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "961bb21de52112d5bed3fe14ce26202db5003621"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6f706f5fcc25c3da35226eac0160b46ad7b67133"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "be223691876dee86356e62985a2645c9aa8919f5"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M12-columbus/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "464beb1e0262996179578bb0247d91c217085384"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7333c864b0e118cf5478248586ff20b3765d5b87"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4e346ec0afdb7898144b62f46ce2a364ab465f70"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "36a0f85c6b01a255d6a0f34808410391846340a4"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "86e64be20e06dda8ac8abfa5193b34cef7e80b4d"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "df25a1266308e376cf799346a6ce19e3b87f36e7"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9b0139aa45efa99c28f825890df2a8877f336b8f"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5e9d70a8d9277ae28fe56f9c66a14715f783c85e"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M13-phoenix/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6d0d9beb77f99144c82668ee3d9137809b99fcd7"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "fdbae2909184ed13abd240572310ff8e85a38c9a"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f133c0de15810f44751807db622f5d0709da1d59"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e8c5e8f7c56e75cce00615e0f4baf3cf84375ce0"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/archive/provenance/walkthrough.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "79c2dc1841dde3a2b2f9460885f882c5bd45fb3a"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2dd7a26b14b9d4188d7245b459cc19ad58a64807"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a46020e08ab8d18f81430b7464ec8e4dce02e3e4"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/quiz.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e6889f13f7a8e17c7e0074a96b6c6d9aa2e704b4"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M14-dallas/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1680004361f791f4523f1edc9ab02e8c2d287659"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a538887e02f645eaae9b8fb4710b1cdf47d597e5"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f2723a17872e70a4be72e872b403a7b3a99cb485"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/archive/provenance/L2.10 Instructor Guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "924d1120374037bdd2a01277152a7366a7cbf059"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/archive/provenance/L2.10 Student Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1fc215176435719e333305f39befc7f7a5ea6779"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "40e171baea338fedc6463c4a14f8c4e54a3eb43e"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "441d24b9ed14221534d3d66e6e1ee844eca74d32"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "15a2364000b361622b1110fa155a8d7e6e22c154"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e93b23574c2ca0728fd0c505b3fd1f3647088d19"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M15-access-group-exercise/supporting-documents/L2.10 Group Exercise Friday.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "da25e39f05830266fd8c8b8f3766b4789042ab27"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f3a4579dbbbf8f149e1cfe28c139d50a2091435b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a06750021c9c773b5123994a2b5e7064726ff982"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/archive/provenance/L2.13 Web-to-SQL Instructor Guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3b48b32d1cf607102d12850e55a5f62321396de8"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/archive/provenance/L2.13 Web-to-SQL Student Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b5cab6a4771bf20d02b2ee426bd9587d5d03ff6b"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "75ac67b0e96d6c9915dda11f7afd64254ba45b9f"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d04ff0d3fdce2ce3a105c58c5ca47ccc6343b4b2"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "fcab1e25553bf07a6afbc456c5292066d033ba0d"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/source_content/OPAL.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "954e5c890951834de8d1ab9ff5bd98b24ba5d734"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f1000b6b4ba9e010d0ba05c014047d19197d89de"
+    },
+    "blocks/B02-maneuvering-to-target/modules/B02.M16-web-to-sql-group-exercise/supporting-documents/L2.13 Web-to-SQL Instructor Hints.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "588d0d9350f92a8e3490dc8304aabd5ce80668b4"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M01-situational-awareness-environments/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0658fe2af0f87f863e3de55ebe2e1a361bc54662"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M01-situational-awareness-environments/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "bfb05fe840b118a0ae7853c74a81824b0f293ebc"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M01-situational-awareness-environments/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d065d960cd68c54291160efca35c36dc15356513"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M01-situational-awareness-environments/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "c0065d7ca4a4af38b27948f30f9e6256617b8f0b"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "517241a0ff9ce5e516570ec55d506961feb0fad8"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d08e1e1633a0c36c759d36e7b2eafd8504ce36af"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/archive/provenance/lab-1.1-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4c3634148b503c7eae261719e56eda8f1b86148f"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/archive/provenance/lab-1.2-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "945c7d02820058e27637a637207ab08f28347fe8"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "36cbc43809000b7f1aba1950327d925edab9a364"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "874577c889f95e76796576ffe7716c9912e42a76"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "56161ab643970a1c53179b9cf0877223c122dfff"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M02-foundational-situational-awareness/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "65d4e0cb14d5f17aba9eec4ca4be886e449c153e"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "617586027ec4db4daced71ff04a2809337725361"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "24d352cad43729a416f89409eb73170ab275e1cf"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/archive/provenance/lab-2.1-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e0a4c65bc4ce3ee80e9f585d85ee7f702c17d380"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/archive/provenance/lab-2.2-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "364806ce2c5b290abcf112eddbb489fa59dccf01"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e1eff8be769d179eaa5ba19fdb93ff8e43d90230"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "aa9596df1d375ce8eb441e3df442f5878c8535eb"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1aae3aa3a286e65ba9f11d47b44b0a23b7a36716"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M03-filesystem-kernel-restrictions/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4456d2b3c2eeb5afa26feb622fe575421cccc2e7"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M04-virtualized-abstracted-environments/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "215dc43f81fbb894c611ea137bf745b315b79f16"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M04-virtualized-abstracted-environments/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "bb2178adaf9c9042c11c526fc8093296e11fbd74"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M04-virtualized-abstracted-environments/archive/provenance/lab-3.1-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "921a3f101d6dc5b7e465411396ff4bb62d95aec5"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M04-virtualized-abstracted-environments/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6cea16e75635e8f02c7c65f74a070fc69ed55772"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M04-virtualized-abstracted-environments/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cb29cdc11789d6ab76ba432c361fc59536f5dd72"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M04-virtualized-abstracted-environments/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "99d530c17cac70f7da57614af2813f0e5da77dd2"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M04-virtualized-abstracted-environments/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6a64513655262391f6039af5de822e365091a11c"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b0253f025918a175615e365537aa3172e49035ad"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5a7c6e5c9046d90f99776f2fc8b67fa2b2ac1bd6"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/archive/provenance/lab-4.1-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "56fbcca4b18dcb4f0f36ee987066760c6596925d"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/archive/provenance/lab-4.2-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1aa0456bbbc242bc23d7d18996732a80de8c02f4"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b9c6a77cc205b322c8f362db65092ac18fe7ce32"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0f00ac00f01e46860a23fee8247e996f49f92ce3"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6316941f72d37c3039adcc86240d5cadec2ae9d2"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M05-windows-hybrid-environments/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cc0f97e180f87f2c7ae331c46849069f623d3081"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ed805330112a7629d527641b514bdc33552a9827"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "26f55fb7214ef532d77c1c37d4d6a14775045d13"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/archive/provenance/lab-5.1-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "826ca47622bb6d82d9fd21bf0273cc6c4c5378ce"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/archive/provenance/lab-5.2-answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "84dab54c773f93985a1183a6a2aa7871da5a8030"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3f47ec883a6ddc7845ac666d54210285eae38d88"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8e02f4ec21282c81cef494570191fbdc123826c2"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cf8741830282ac37379f31e564f387682eb211e7"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M06-resource-state-constrained-systems/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "960ee217bcda4972f0ac8b737346ad47eed21559"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M08-squidlab/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1383011635262f10425fb38124c863cadebf1a84"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M08-squidlab/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6c79360db04c063c24052c1276eea762818aae10"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M08-squidlab/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d0537b56808d9fd4bc58342b2cbcaeaef10df61c"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M08-squidlab/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a7147d1bdadd71c106000cb6e5f2c7a2382a675e"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M08-squidlab/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "42f7a44c935feb316401f6d0a68084ae90542b72"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M08-squidlab/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ffbdecf76f0ec46febeb7e29a908162575a1bf1a"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M08-squidlab/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8fbddaab818a24ef320e67c9e65f287c74ea0433"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "be83d4b5517bd238b81dd82cab24a62c7cdefe23"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d14f44a6057ae48d10fa3865a7b0d31096716959"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/archive/provenance/L3.7 Instructor Rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8b21cd8e27bb48d352bebc8fb9d117e19a26dd95"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/archive/provenance/L3.7_Student_Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0f89667a17e76942e86f9c2fab3bd2fb9d44791d"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f2d46bbb9bf4bd7f16bd642d4b101062cb7e5cba"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "24e46b741d2341e102521f748a0f971aa119c655"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ea9b302f12d1a982a2baed78d5b026504f1ae16b"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "415c799f85ade52f2da6a5e6def63bbed2a516cd"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6e2e777c3a1d5b701278a8b918b1cfae54f89552"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/supporting-documents/Tactical_Planning_Part_2.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "fbac8d9a6248033a3035df12eebcc8ab9e998134"
+    },
+    "blocks/B03-situational-awareness-contexts/modules/B03.M07-on-target-group-assessment/supporting-documents/it-wks1-hunt-notes.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8fae4da9bbc89bb5f89fccea0a0322c91aec5cea"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M01-threat-rep-mission-rehearsal/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7f3152bf15ee0840d70111cff8f7875e32a416c7"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M01-threat-rep-mission-rehearsal/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ccfa4358a48e9d6f615e3aa22883ba5b9f089647"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M01-threat-rep-mission-rehearsal/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "08a018f20d1334d1737f83a092ad6e1b0dee83c2"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M01-threat-rep-mission-rehearsal/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "aca2ca461ff18e4b48de260b322cb6bf418d2b80"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M25-threat-rep-mission-rehearsal-lab/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "67a1bb785265bbcbccf488bf20e5cd96cd77ceef"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M25-threat-rep-mission-rehearsal-lab/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cfff3a3a87fd7a802db9c09e10a1012358c7af8a"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M25-threat-rep-mission-rehearsal-lab/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ab9793d03ccf0c88e371f72bcd2ccd312b86607d"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M25-threat-rep-mission-rehearsal-lab/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5ffe6ef08042fcc3bcb31c5359ab65a9a66453c1"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M25-threat-rep-mission-rehearsal-lab/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "36f00846a5556e4f7a101617ec30f05080c715ea"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M25-threat-rep-mission-rehearsal-lab/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1528446123c2de7ec28b26b4c72f9f0aab48e8c2"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M25-threat-rep-mission-rehearsal-lab/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b8b9b4bddfccc29aae3e5de68acfc494398b079d"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2346c6ecaeac9e509040d9145092f315da666774"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f21e767e95f38b86e62d5fa5fcd061f1cdd756d1"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/archive/provenance/L4.0.a Alternative Assessment Rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d88a644ec827c258adc24d7035fba92007b53fcd"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/archive/provenance/L4.0.a Alternative Instructor Setup Guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5e5e111aa3de95012cec01b3c5f74a12fe88064f"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/archive/provenance/L4.0.a Alternative Student Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d67e268247abcfbeadaeae7679dd56f03263bd75"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7364291d8d62f28de980f4a0e595076a5b068f7e"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2a85bceb2b3f6600b3f77ebd3421cdc257016d2f"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "c171cf5a02bfe9452a30cb7570c91299012196aa"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "38a7c9095939312b8aff9d3f6a197b9a206a362c"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1528b0ee2ef3f81b130687638416bf6dbbdd73b1"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8bfbf3727007f43a3a41c41497d0058e83ad79ae"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M03-adversary-exfil-stack-reconstruction/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2001ebee5f6ded1a7f7dc3197b614d5c048978da"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M04-offensive-tool-testing/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3cd386734645c1f2733f148c64f1f0f74f625b7e"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M04-offensive-tool-testing/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0dba88e3099a6194ccc6f28ef425966f69611003"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M04-offensive-tool-testing/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b7975b4ea30a573179d792d2d2d7f7a70238100f"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M04-offensive-tool-testing/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "354d4ba86751b2378bd7c45042a1750a1817e75b"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ad1a6aa92a30f601d0326ffa2d3548d3c2323956"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "22489783774c0ff77b7d8175ba64484f8d29b33d"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/archive/provenance/L4.0.b Instructor Setup Guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "dc7bf5d4f642ab8082be7ac93e52eed2f252c518"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/archive/provenance/L4.0.b Peer Handoff Rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "dd3c33b68a4ce35304d4b663cc319177a3c5bd91"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/archive/provenance/L4.0.b Student Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6f7aafe66cd6c98c514c218d83098c489bfbbbcf"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "84f79ab8c28c41d72136447bc35c826d938fbcb9"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b349ad745877f30fbe30353747e66d7fff7a5492"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "756d46d630601b695f3058837b40d3bfa09a5b20"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1f3a03cb832be517417da1b1e0b3b95f627051a3"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0e7940d8532c594f43c74f258ad3184ebbccb594"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6557870ab712367cb36a2dfd9da2577c9e102f3c"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/supporting-documents/L4.0.b Peer Review Form.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "86e64c8094f669191b303e3ab88bc084abb4900f"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M05-c2-tool-evaluation-peer-handoff/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "406e67e1dfa199828f50ec68913849f9257f5680"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M06-effects-operations-overview/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "579e8ad5072db14f338a61011ed14ac60f6a71f7"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M06-effects-operations-overview/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "34848abf2f9f6025612ca1de39b6c14eb9f91ce1"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M06-effects-operations-overview/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a31702f6a71d411a5706fdd31c41c290d5d11fa6"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M06-effects-operations-overview/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ede42a1f806ff53aac4d2826d1a3c3b41deb2af4"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "130726fd20a81c82b12ec0f1a30d1a884e176171"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ef2be200c7f4806dd08de2828cee1d0ceee358b4"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "c546285b06e7d966dc7f0f65d2ecb46f31173ecb"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "182dde3152d3c0d5ff056e5f61c84e4633640fc2"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/range-reset/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3d6d73a71e61cef1626c11337a24dcf643eb5322"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2cabf41fd740d31fab977a64f3b8784a10678c54"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "343ada67576aaa21022375656683f928e3b194d3"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/supporting-documents/instructor-range-breakdown.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cd9069820c66e6d826607235fea523f12c04680c"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M20-break-harvest-collection/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7c8283270b565a5917e8751ac26d14ec3654c4b6"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M21-poison-harvest-collection/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e8419efb16021c821ef6b4f0f7e1e4fe8a622468"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M21-poison-harvest-collection/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5ba604664ecab2b81da8fd8245631a799a0b98a8"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M21-poison-harvest-collection/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4ccdabc38250d56ddab88291b5811f419236f612"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M21-poison-harvest-collection/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e01cda90cfbae0c0907851082e75b9e587d86afb"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M21-poison-harvest-collection/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "10c920c133488cd366f39ab3febd2f5844502ee9"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M21-poison-harvest-collection/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f20acf0b199f6c5738acf76282e37f445d6ab0fe"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M21-poison-harvest-collection/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "80eecfa77653e9c74a26bd9881bdef45e714f110"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M09-persistent-effects-handoff/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "eab75e86259e4388d0b71716ce1619e06be76768"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M09-persistent-effects-handoff/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d8e06eaa75d02c304049c85b1eb402749b36f183"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M09-persistent-effects-handoff/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7761dc7a765312c2e992cf70b33a2b907e483632"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M09-persistent-effects-handoff/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "957232f6cc96815bbcc6ac240dfbad631886bff7"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M23-partner-handoff-package/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ddbb3435dc44e18bde92c176b35dbb46bf87a691"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M23-partner-handoff-package/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "09a9ec28c07dfc0a4b01079071475976d8889b74"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M23-partner-handoff-package/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cc31a6da915d7b4d572f4d86e742e2c649ed9e60"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M23-partner-handoff-package/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "c28b9f0f36d12af40c0e26591ec25321ca02c1af"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M23-partner-handoff-package/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "c588a1f08a18925c831dd850bd6b4a212ab76179"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M12-build-agentic-workflow/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5ed459d8801de28cc7a5e4ffdc4121c3a5779f2d"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M12-build-agentic-workflow/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9f3cd079573bb96ab516a7027bf549fa30eba5e8"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M12-build-agentic-workflow/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7909e08eb60eeec42e43b6612b2b3eb5f660d223"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M12-build-agentic-workflow/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "bd85ba26b55f63ddcfff0445f0ada805754088cf"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "11047881da1af2013f932fe12f61394100272e93"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/archive/provenance/L4.3a Instructor Setup Notes.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "106893279109b05a759f3b0be77ffa14032b004e"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/archive/provenance/L4.3a Student Guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d616a499d1a959b049628d491a1b847ad2adb08d"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "dbb9f5274c23ede5f9aa17b20815979a5905e143"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f1694f5f0b6ff666f69764775cd74a9a868c448b"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "fec34be384720635972242b892a406765f29bfbf"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "309c538ffb257f842f757b50428c009c2de6bfab"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b90c8864a2740409f74d5674f4ac91fb199df4a2"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/student-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "228d2e56cf00a7a5c2f828182a94fbed18f8c284"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M13-build-agentic-workflow-lab/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ca539cf86ecbdf30e3ee8dd72e6cb19273b3cd8f"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "e940762f50651f483d2c1188392697f351af6cb6"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "8eaec66231323f4d431ce713b7f46352d3cd5cf8"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/archive/provenance/L4.3b Instructor Answer Key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6fc8f7feb62f537017b43a772d2dee45bda7273b"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/archive/provenance/L4.3b Student Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "16a97afa74149e0a6e71c5857cf182f15107fc68"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "45926dcc965d53c3a3ff6ff31abe2209faf2fc74"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "172027d40ff687d484001b0b98663d292b166419"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "383699df277be27d046f519ff2800876c0282f5d"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M14-agent-reinforcement/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6683814b5e9071ee0c4a0c9802b4a15d5f6e3910"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M15-agent-tool-use-rag/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "367e84d1279ddc8460175c1447cb429ae9f9cd12"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M15-agent-tool-use-rag/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "20df89ab5920e992108b957f599e0a52cf46c165"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M15-agent-tool-use-rag/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7091235f51fbc2ac45cbab79ed4e970f4badbb06"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M15-agent-tool-use-rag/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "148c0863334bd501701b3216784f5dc30bc7b349"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b030fb29b4af00281bbb35f7d49e46f2ff2a19ad"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "dad64d41ed8ea256c2f6b012488d21f59a6d243f"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/archive/provenance/L4.4 Instructor Answer Key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ab3d7fc203500103a2712a1a03e75838f5859184"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/archive/provenance/L4.4 Instructor Setup Notes.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0cf62a023e2e841a995c2da69b27e47b0fe8b6b6"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/archive/provenance/L4.4 Student Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ca8203c44326c4e95cfe000a80c97023ec3acc3a"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6d4fd170f2de21002e60e9c7ed59e12e8187fd9a"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "7b324634cb469af03843c2840e62d85ad9cfc766"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "879515c0ef1d5fae38777d79b889a80564cc66bd"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/d3fend/t1041-exfiltration.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0c47dde1745768def486356119729c5475720279"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/engage/affect-baseline.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f9dc800121abcc055505bb0914ebd8edb10e5d5b"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/engage/affect-deceive.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "80865c63918f96121976943a3287aaab22ec2068"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/engage/affect-disable.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "ea91c72762837abbe6792d0f2a26d41792320b86"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/engage/elicit-lure.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "55d56eb51fb883f26e8ac238df334f71edfe4921"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/partner_contacts/partner_bravo.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1638affc639ca0af938dbec84829241ceeab0ea2"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/partner_contacts/partner_charlie.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "88f90d21850e3bdee3a4b8a4ee003effb144ce3a"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/unit_roe/effects-ceiling.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "cf1b36f2b4537dcafd5bc313d69a1c25cc0bc2f2"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/week1_planning/cg_cv.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "bb1b71cc78dae42c11a86358d9c2833658e9a039"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/moodle_artifacts/kb/week1_planning/rfi.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "326b51b14170b8c89edd3d3db8e4f6e94793d87a"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/setup-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "97acfe028c4e065a1daff9efda1769ce3bc9c4c6"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a22e15147169173792892543b74e7740261cc304"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M16-effects-advisor-agent/verification-runbook.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6b4cc43966864664a686022ed3295e3be7deaea5"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M17-adversary-agentic-workflows/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "27e612115c2263b8f8dac6cbc6ff327c04ee13c2"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M17-adversary-agentic-workflows/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "b3fb9c92f875a2c6028fd39fead091bdf7903d6e"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M17-adversary-agentic-workflows/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6b374718b74d7e277e2afba82127e3219ed0dce9"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M17-adversary-agentic-workflows/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4a7d202e7e5abbac0b444e49e5d51318e6ddc1be"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1fa448984b2ed6d9837273c7582d423fb2c3b1e5"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "56ea379da18f82dc17b587e96b5ad325e07e8548"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/archive/provenance/L4.5 Instructor Answer Key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9908fd178d14b8ad18c238e89a45209c2c2b0e4a"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/archive/provenance/L4.5 Student Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "174f202530e68e5a1ede8bc250aa6a08a3e57e3f"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "eb249de8622bb078e2c0680d1c13381dd4275ce0"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9e79a880116498aa927521681927571c4ee1c31a"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f9d6d19ec87f242d7a6ff5bed3b1bcf0147b004e"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M18-adversary-agent-counterstrike/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "fe70f4a4f72917ff7bcf4d0d9115c15dbef34a50"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "0329467bbc62b25af3682a2d8468bbca6ff75bdf"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "d5ca134dd590039434dcb883f9233d64d88dfa4c"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/archive/provenance/L4.9 Instructor Rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "1d8c4beb5f27f75e4a911a0806ba42c3f123ab6e"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/archive/provenance/L4.9_Student_Brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a840f5490fdbf4f297e3bb74fb4eb836415d4d14"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "27fdb4f38bac7349f5b59dbc4dcd37e5b7bb7141"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "781e9e70a77d0369cf13b0523a0d5e9326ca6a7b"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9c8852717e3c415a7ec9383b44ff669c61fd8433"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "6a768dc5fd8925cbd66ea7abecf5e72b7699bf05"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M19-effects-group-assessment/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a90cc85c69f73223a234f1826f9f4eec439e8895"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M24-threat-rep-mission-rehearsal/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "645b21f3534da5b18065c33f5a94068cec43a3cc"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M24-threat-rep-mission-rehearsal/content-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "dfbe8daa655d0f7b18a0dccff601427278130d5c"
+    },
+    "blocks/B04-effects-agentic-operations/modules/B04.M24-threat-rep-mission-rehearsal/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "34f9ac6f2f868ff33eae1a68d147c3984e19c2fb"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/README.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9f5961c5db57f5ab2e9b7bdeb29ff4a410064d31"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/answer-key.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "f7e9bf7465a1e2fb6fc77439ad28876347716efb"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/archive/provenance/Capstone-instructor-rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "4c91446a45149bdc0439c733916708efc29781fe"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/archive/provenance/Capstone_student_brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "22cb84ae1ad106c31139cde403c74c18fc3ec660"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/archive/provenance/CounterStrike_Capstone_Instructor_Guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "178e8b7bdaf729c79ce97c8e8da773ec3c0f4d1e"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/archive/provenance/module-delivery.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "a53ab45a5422b4e240ce82f2984e4d83a8aed2e6"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/instructor-guide.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3817d0f63759f3f12c6fcc0da30890f467a253fc"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/lesson-plan.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "833e38df6f8cffcd796217614517bbded97de2f6"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/rubric.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "274c83659d4a9057bcfa9bff95496a565add8494"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/student-brief.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "381894a5aef0f81b126c97512d97578ce42ba66a"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/supporting-documents/Bluenet_ThreatHunting_Report.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "3b3652b51ae5ae0f21309798050c3b5333296568"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/supporting-documents/Tactical Planning.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "9663e1ff6a00f2731020ec9ceacc5b621cae471c"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/supporting-documents/capstone-exploit-details.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "5cc4042c506f37ed0427d2b3bb82194862cf39f5"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/supporting-documents/capstone-lure-data-flow.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "2bec626029f7d2ad121154b013888ef11963a2ec"
+    },
+    "blocks/B05-capstone/modules/B05.M01-capstone/supporting-documents/red-operator-environment.md": {
+      "commit": "d1b8b620aedcb51d2c508c56009917cc8b77e52e",
+      "blob": "51430c2fd378cd985e9217dcbfb2561f935fcc93"
+    }
+  }
+}

@@ -1,0 +1,168 @@
+---
+id: B01.M18-brief
+title: Tactical Planning Practical — Student Brief
+artifact_type: student_brief
+audience: student
+block: B01
+module_type: group_activity
+legacy_aliases: []
+source_status: canonical
+review_required: false
+output_formats:
+- mkdocs
+- pdf
+- docx
+template_profile: student_brief_v1
+sensitivity: course_internal
+---
+
+# Tactical Planning Practical
+## Student Brief
+
+**Sequence:** Tactical Planning Practical.
+**Duration:** ~2 hours.
+**Primary system:** No lab environment required; use course handouts, the Lunovia scenario packet, whiteboard space, and team notes.
+**Stack:** Scenario documents, network diagram, Military Tactical Planning notes, and planning worksheets.
+
+## Operational Context
+
+Lunovia's National Cyber Defense Agency (NCDA) and Digital Infrastructure Protection Corps (DIPC) have confirmed that a Varenskian cyber unit is operating inside a defended Lunovian government network. The network supports routine government coordination and sensitive policy work tied to energy, transportation, and border security.
+
+The adversary has been uncovered, but the commander has not yet authorized disruptive action. Your team has been directed to turn the initial discovery into a disciplined tactical-planning product. The commander needs to understand what the enemy is likely doing, what terrain matters, what assumptions remain unproven, and what planning products must be ready before anyone maps observed behavior to MITRE ATT&CK, D3FEND, and ENGAGE.
+
+The exercise starts at the moment the intrusion is confirmed and ends before technical countermeasure selection. Your job is not to "fix the network" during this lab. Your job is to produce the planning foundation that makes response options coherent.
+
+## Scenario Inject
+
+Initial hunt reporting from the defended network includes the following facts:
+
+- Two government user workstations and one departmental file server show signs of unauthorized activity.
+- The affected users work on energy-policy coordination and transportation-sector continuity planning.
+- Analysts observed repeated script execution from user profile paths and unusual outbound web traffic to external infrastructure.
+- A removable-media alert was recorded on one affected workstation during the same week as the first suspicious script activity.
+- One file server contains staged archives of common office-document types in a user-writable directory.
+- The adversary appears to prefer rapid collection and repeated access attempts over stealthy long-term credential theft.
+- Existing defenders have endpoint telemetry, Windows event logs, firewall logs, and limited netflow. They do not have full packet capture across every segment.
+- The commander wants to preserve friendly freedom of maneuver, avoid unnecessary disruption to government services, and generate options for pursuit.
+
+Use the broader Varensk/Lunovia scenario packet to interpret these facts. Treat missing details as RFIs rather than inventing certainty.
+
+## Starting Assumptions
+
+You begin with:
+
+- The course scenario context for Varensk, Lunovia, and the Varensk cyber apparatus.
+- The tactical-planning framework from Military Tactical Planning Military Tactical Planning.
+- A confirmed adversary presence in a defended Lunovian network.
+- No requirement to connect to a live target, run tools, or modify systems.
+
+If your team needs information not provided in the inject, write it as an RFI and explain why it matters to the plan.
+
+## Planning Frame
+
+Use this practical to apply the tactical-planning pipeline directly to the Varensk/Lunovia scenario:
+
+```text
+METT-TC -> EMLCOA -> CG/CV -> exploitation framing -> SOM/FSP/tasks
+```
+
+For this lab, your team will work through the pipeline up to a candidate center of gravity, critical vulnerability, and ATT&CK-ready handoff. You are not building the full scheme of maneuver, fire support plan, or role tasking yet. Those later products require ATT&CK, D3FEND, and ENGAGE mapping, which is out of scope here.
+
+When developing the EMLCOA, answer three questions:
+
+1. What do you deduce is the enemy's tactical task and purpose?
+2. What is the enemy currently doing?
+3. What will the enemy likely do on contact?
+
+When analyzing terrain, produce both friendly and enemy OCOKA-W. Consider cyber terrain across physical, logical, and persona layers. Do not stop at naming hosts; explain how the terrain affects the enemy mission and the friendly response.
+
+## Lab Objectives
+
+You will:
+
+1. Translate the commander tasking into explicit and implied tasks with a clear purpose.
+2. Produce a best-effort METT-TC estimate using scenario evidence.
+3. Analyze the adversary with SALUTE and DRAW-D.
+4. Analyze the terrain from friendly and enemy perspectives using OCOKA-W across physical, logical, and persona layers where applicable.
+5. Draft an EMLCOA that explains the enemy's mission, current tactical activity, and likely actions on contact.
+6. Identify candidate enemy center of gravity and critical vulnerability statements.
+7. State what exploitation question the critical vulnerability creates without selecting final countermeasures.
+8. Prepare an ATT&CK-ready evidence list that can be used in the next lesson without jumping ahead to D3FEND or ENGAGE selections.
+
+## Constraints and Handling Rules
+
+- Do not assume facts that are not in the scenario packet, lecture notes, or inject. Mark uncertainty as an RFI.
+- Do not select final D3FEND or ENGAGE countermeasures in this lab. You may identify what evidence should be mapped next.
+- Do not propose disruptive action before stating the enemy's likely mission and actions on contact.
+- Keep the commander audience in mind: concise, evidence-based, and tied to mission outcome.
+- Separate what you know, what you think, and what you recommend doing next.
+- Preserve the distinction between adversary tradecraft labels and the Varenskian unit or service responsible for the activity.
+
+## Specific Tasks
+
+1. **Mission analysis.**
+   - State the given mission in your own words.
+   - Identify explicit tasks, implied tasks, and constraints.
+   - Write one purpose statement using "in order to" language.
+
+2. **Enemy analysis.**
+   - Complete a SALUTE assessment for the Varenskian actor using scenario evidence.
+   - Complete a DRAW-D assessment. For each DRAW-D category, state what the enemy can do, what limits them, and when they are likely to do it.
+   - Record at least five RFIs that would improve the enemy estimate.
+
+3. **Terrain and weather analysis.**
+   - Produce a friendly OCOKA-W focused on defender visibility, constraints, key terrain, and available data sources.
+   - Produce an enemy OCOKA-W focused on what the adversary can observe, where they can hide, what slows them, and what terrain enables their mission.
+   - Call out physical, logical, and persona-layer considerations where they affect the mission.
+
+4. **Time, space, logistics, and civil considerations.**
+   - Identify the adversary's likely operating tempo and how it compares to the friendly decision cycle.
+   - State what physical, logical, and persona-layer access the friendly team has and does not have.
+   - Identify logistics or coordination limits that could slow response.
+   - Note any civil considerations tied to government services, energy, transportation, or public trust.
+
+5. **EMLCOA development.**
+   - Draft one paragraph describing the enemy's most likely course of action.
+   - Answer three questions directly:
+     - What do you deduce is the enemy's tactical task and purpose?
+     - What is the enemy currently doing?
+     - What will the enemy likely do on contact?
+
+6. **CG/CV candidate statements.**
+   - Write one candidate center of gravity statement.
+   - Write one candidate critical vulnerability statement that could render that center of gravity ineffective.
+   - Write one sentence explaining what exploitation question this CV creates for later planning.
+   - Explain your confidence level and top assumptions.
+
+7. **ATT&CK handoff prep.**
+   - Build a short evidence-to-behavior table with at least six rows.
+   - Each row should include the observed fact, the suspected behavior, the supporting evidence, and what question must be answered when mapping to ATT&CK.
+   - Do not fill in D3FEND or ENGAGE actions yet.
+
+## Deliverables
+
+Submit to the instructor:
+
+1. **Mission analysis summary** with explicit tasks, implied tasks, constraints, and purpose.
+2. **METT-TC worksheet packet** including SALUTE, DRAW-D, friendly OCOKA-W, enemy OCOKA-W, time/space/logistics, and civil considerations.
+3. **One-paragraph EMLCOA** with actions-on-contact reasoning.
+4. **Candidate CG/CV pair** with exploitation-framing question, confidence statement, and RFIs.
+5. **ATT&CK-ready handoff table** that records observed facts without selecting D3FEND or ENGAGE actions.
+6. **Two-minute commander back-brief** covering the enemy mission, key terrain, CG/CV candidate, and what evidence must be mapped next.
+
+## Success Criteria
+
+- The planning packet clearly separates evidence, assumptions, and RFIs.
+- SALUTE and DRAW-D are grounded in scenario facts and tactical-planning doctrine language.
+- Friendly and enemy OCOKA-W both address cyber terrain, not just host names.
+- The EMLCOA explains current adversary activity and likely actions on contact.
+- The CG/CV pair follows logically from the EMLCOA.
+- The exploitation-framing question targets the CV without selecting final countermeasures.
+- The ATT&CK-ready handoff table primes later mapping without prematurely selecting D3FEND or ENGAGE actions.
+- The commander back-brief is concise, mission-focused, and suitable for decision support.
+
+## Tie-Back
+
+- **Military Tactical Planning:** This practical applies METT-TC, SALUTE, DRAW-D, OCOKA-W, EMLCOA, COG, and CV against the course scenario.
+- **Applied planning:** This practical is the applied planning exercise for the Varensk/Lunovia scenario.
+- **ATT&CK-ready handoff:** Your evidence-to-behavior table is the starting point for mapping observed adversary behavior to ATT&CK, then deriving D3FEND and ENGAGE options.

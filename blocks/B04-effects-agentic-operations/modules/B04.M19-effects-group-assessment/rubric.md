@@ -1,0 +1,53 @@
+---
+id: B04.M19-rubric
+title: Effects Group Assessment — Blank Student Rubric
+artifact_type: rubric
+audience: student
+block: B04
+module_type: assessment
+source_status: canonical
+review_required: false
+output_formats:
+- docx
+- pdf
+- xlsx
+template_profile: rubric_v1
+sensitivity: course_internal
+---
+
+
+# L4.9 Effects Group Assessment — Instructor Rubric
+
+**Assessment:** B04.M19 / L4.9 Effects Operations and Persistent Redirector Monitoring  
+**Use:** Instructor scoring of team products, briefs, Q&A, and contribution  
+**Points:** Poor = 1, Marginal = 2, Acceptable = 3, Exemplary = 4 per row  
+**Crosswalk:** Row IDs map to evidence in [L4.9_Student_Brief.md](student-brief.md) (planning packet, rehearsal notes, execution evidence, BDA, monitoring log, briefs, AAR).
+
+Student-facing note: performance descriptors only — no hidden solution content.
+
+## Automatic-fail and major-penalty gates (score after gates)
+
+Apply course policy first. These are not 1–4 rows.
+
+- Automatic fail: destructive or out-of-scope action outside approved authority.
+- Automatic fail: fabricated evidence or claimed effect without proof.
+- Automatic fail: confirmed protected-operation data on the redirector with no commander alert.
+- Major penalty: keyword-only monitoring with no semantic/contextual rationale.
+- Major penalty: preventable loss of redirector access that stops monitoring or BDA.
+- Major penalty: execution before instructor approval of the pre-execution check.
+- Major penalty: broad deletion unrelated to the protected-information task or without required metadata.
+
+| Instructor question | Poor (1 pt) | Marginal (2 pts) | Acceptable (3 pts) | Exemplary (4 pts) |
+| --- | --- | --- | --- | --- |
+| **EF-1 (Weight: 15/100). Did the team select a mission-relevant effect grounded in prior CG/CV analysis, redirector terrain, and commander priorities?** | Effect is vague, unauthorized, or disconnected from the mission. Score: 1 | Effect is plausible but weakly tied to CG/CV, purpose, or redirector findings. Score: 2 | Effect is relevant and mostly grounded; commander can see why it matters. Score: 3 | Effect is tied to prior analysis, authority, constraints, RFIs, and predicted adversary response; vocabulary is precise. Score: 4 |
+| **EF-2 (Weight: 20/100). Did the team produce an executable SOM, FSP, and tasking with deconfliction and rollback?** | Plan is not executable, unassigned, or ignores key constraints. Score: 1 | Major gaps in sequencing, ownership, support, or rollback. Score: 2 | Plan is executable and roles are mostly clear; some measurement or deconfliction needs precision. Score: 3 | Phased SOM, realistic FSP, purpose-stated tasks, MoP/MoE, rollback, and supervision. Score: 4 |
+| **EF-3 (Weight: 15/100). Did rehearsal test the actual sequence and produce an approved pre-execution check?** | No meaningful rehearsal, or execution begins before approval. Score: 1 | Mostly a verbal walkthrough; misses operational risk. Score: 2 | Rehearsal covers most important steps and yields a usable pre-execution check. Score: 3 | Rehearsal tests access, comms, abort, BDA collection, and alerting; plan is updated from findings. Score: 4 |
+| **EF-4 (Weight: 15/100). Did the team execute in scope and collect before/after evidence of the intended effect?** | Effect not achieved, out of scope, or evidence missing. Score: 1 | Partial success; evidence ambiguous or unexplained. Score: 2 | Likely intended effect with enough evidence to support the claim. Score: 3 | Intended effect, access preserved, clear before/after proof, honest side-effect notes. Score: 4 |
+| **EF-5 (Weight: 10/100). Did BDA separate performance from effectiveness and state confidence plus follow-on?** | BDA absent, unsupported, or misleading. Score: 1 | Mostly reports task completion rather than mission effect. Score: 2 | Evidence-based BDA; uncertainty or follow-on is thin. Score: 3 | MoP vs MoE, before/after, confidence, uncertainty, commander-ready follow-on. Score: 4 |
+| **EF-6 (Weight: 20/100). Did the team monitor the redirector for protected-operation leakage with more than keyword search, and handle confirmations correctly?** | Failed to monitor, keyword-only, or failed to alert/delete confirmed related data. Score: 1 | Inconsistent monitoring or cannot explain paraphrase detection. Score: 2 | Monitors the right places and uses more than exact keywords; deletion/alert details may need precision. Score: 3 | Presence maintained, semantic screening, false-positive handling, immediate delete+alert, audit metadata preserved. Score: 4 |
+| **EF-7 (Weight: 5/100). Did multiple teammates deliver commander-focused, evidence-backed briefs and an honest AAR?** | Brief missing, unsupported, or ignores commander priorities. Score: 1 | Disorganized, too technical, or dominated by one person. Score: 2 | Clear, mostly complete briefs; contribution is visible. Score: 3 | Concise, evidence-backed briefs from multiple members; AAR complete and honest. Score: 4 |
+
+## Scoring notes
+
+- Score EF-1–EF-5 from the primary effect path; score EF-6 separately. A strong primary effect does not offset weak protected-information handling.
+- Recommended order: gates → planning brief → rehearsal notes → execution/BDA evidence → monitoring log → briefs/AAR.

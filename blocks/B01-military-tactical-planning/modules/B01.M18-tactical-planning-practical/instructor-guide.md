@@ -1,0 +1,471 @@
+---
+id: B01.M18-ig
+title: Tactical Planning Practical — Instructor Guide
+artifact_type: instructor_guide
+audience: instructor
+block: B01
+module_type: group_activity
+legacy_aliases: []
+source_status: canonical
+review_required: false
+output_formats:
+- docx
+- pdf
+- docx_lesson_plan
+template_profile: instructor_guide_v1
+sensitivity: instructor_only
+---
+
+# Tactical Planning Practical — Instructor Guide
+
+## Objective and context
+
+Use this as a facilitation guide and grading reference. The goal is not to produce one perfect doctrinal answer. The goal is to make students reason from scenario evidence through METT-TC, EMLCOA, CG/CV, and an ATT&CK-ready handoff without jumping straight to tools or countermeasures.
+
+Instructor note: this practical is the student application following the merged B01.M09 lesson. Use the FSB Center 18 material only as the instructor worked example; teach student application through the Varensk/Lunovia scenario and keep mature example answers instructor-facing.
+
+## Dual opening
+
+### Option 1 (Interactive / Whiteboard / Kinesthetic)
+
+- **Say:** "This practical is planning, not exploitation. Start from the mission statement and scenario evidence. Do not jump to tools or countermeasures."
+- **Do:** Put the mission statement on the board. Confirm teams have the scenario packet and planning worksheets from the pre-class checklist.
+- **Ask (Q):** What is the team producing in this session, and what must they not do yet?
+- **Expected Response (A):** An ATT&CK-ready planning packet and commander back-brief. No live target, no disruptive action, no D3FEND/ENGAGE recommendations before mapping observed behavior.
+
+### Option 2 (Digital Slide / Virtual / Slide Deck)
+
+- **Say:** "This practical is planning, not exploitation. Start from the mission statement and scenario evidence. Do not jump to tools or countermeasures."
+- **Show:** The student brief operational context and the mission statement.
+- **Do:** Confirm every team can open the scenario files before the first timed row.
+- **Ask (Q):** What is the team producing in this session, and what must they not do yet?
+- **Expected Response (A):** An ATT&CK-ready planning packet and commander back-brief. No live target, no disruptive action, no D3FEND/ENGAGE recommendations before mapping observed behavior.
+
+## Instructor resources and pre-class preparation
+
+Before lab start:
+
+1. Confirm students have access to:
+   - `blocks/B01-military-tactical-planning/shared/scenario/index.md`
+   - `blocks/B01-military-tactical-planning/shared/scenario/overview/background.md`
+   - `blocks/B01-military-tactical-planning/shared/scenario/overview/lunovia.md`
+   - `blocks/B01-military-tactical-planning/shared/scenario/overview/varensk.md`
+   - `blocks/B01-military-tactical-planning/shared/scenario/maps/network-diagram.png` if available for projection or handout use
+   - B01.M09 Military Tactical Planning notes or handouts
+2. Prepare printed or digital planning worksheets for:
+   - Mission analysis
+   - SALUTE
+   - DRAW-D
+   - Friendly OCOKA-W
+   - Enemy OCOKA-W
+   - EMLCOA
+   - CG/CV
+   - ATT&CK handoff table
+3. Prepare a board or shared document with the mission statement:
+
+```text
+Deny or degrade the Varenskian actor's ability to collect intelligence from the defended Lunovian government network in order to preserve friendly freedom of maneuver in cyberspace and generate options for pursuit.
+```
+
+4. Assign teams of 3-5 students.
+5. Remind students that this exercise has no live target and no requirement to run tools.
+6. Timebox the practical to protect the transition into the ATT&CK/D3FEND lesson.
+
+## Student resources and environment
+
+This is a low-infrastructure tabletop practical. It does not use:
+
+- a range VM;
+- an ops-station-to-target foothold;
+- a remote shell;
+- a C2 server;
+- live malware;
+- Docker, local services, or cloud accounts.
+
+Students operate from scenario materials and lecture notes. Their deliverables are planning artifacts and a commander back-brief.
+
+If the classroom uses laptops, they are only for reading files, taking notes, and building the deliverable packet. Do not require internet access. Do not require students to install software.
+
+## Facilitation flow
+
+### 2. Initial Situational-Awareness Baseline
+
+Because this practical has no live technical target, the baseline is split into two parts: a scenario baseline and an optional classroom workstation baseline.
+
+### 2.1 Scenario Baseline
+
+Have teams write these baseline facts at the top of their packet before analysis begins:
+
+```text
+Friendly force: Lunovia NCDA / DIPC defensive cyber element.
+Enemy force: Varensk cyber apparatus, likely ISB Unit 18 Amber Tide based on near-abroad political operations and rapid-collection behavior.
+Friendly terrain: defended Lunovian government network supporting energy, transportation, and border-security coordination.
+Known compromise: two user workstations and one departmental file server.
+Known evidence classes: endpoint telemetry, Windows event logs, firewall logs, limited netflow, removable-media alert, script execution, outbound web traffic, staged document archives.
+Current authority: plan and prepare; do not execute disruptive action.
+Required end state: ATT&CK-ready evidence and RFIs for the next lesson.
+```
+
+Expected teaching point: this replaces the "what host am I on?" habit from technical labs with an operational baseline: who is friendly, who is enemy, what terrain is in play, what authority exists, and what evidence is available.
+
+### 2.2 Optional Classroom Workstation Baseline
+
+If teams use a Linux or Windows workstation to write the packet, instructors may have them capture local context for troubleshooting file access only.
+
+Linux/macOS:
+
+```bash
+date -Is
+hostname
+whoami
+pwd
+uname -a
+id
+w
+ps -eo pid,ppid,comm,%cpu,%mem --sort=-%cpu | head
+ss -tulpen 2>/dev/null | head -40
+```
+
+Windows PowerShell:
+
+```powershell
+Get-Date -Format o
+hostname
+whoami
+Get-Location
+$PSVersionTable
+[System.Environment]::OSVersion.VersionString
+query user
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 10 ProcessName, Id, CPU
+Get-NetTCPConnection | Where-Object { $_.State -in @("Listen","Established") } | Select-Object -First 30 LocalAddress, LocalPort, RemoteAddress, RemotePort, State, OwningProcess
+Get-NetUDPEndpoint | Select-Object -First 30 LocalAddress, LocalPort, OwningProcess
+```
+
+This optional baseline is not part of grading. It exists only to keep classroom troubleshooting concrete if students cannot access documents.
+
+### 3. Value Provenance (How Students Know Non-Default Values)
+
+| Value | How students know it | Why it matters |
+| --- | --- | --- |
+| Varensk | Scenario background and Varensk profile | Establishes enemy nation-state context. |
+| Lunovia | Scenario background and Lunovia profile | Establishes defended friendly terrain and mission owner. |
+| NCDA / DIPC | Lunovia cyber defense structure | Identifies likely friendly units and supported stakeholders. |
+| ISB Unit 18 Amber Tide | Varensk cyber apparatus profile | Provides the scenario analogue for Gamaredon-style near-abroad operations. |
+| Government network mission focus | Scenario inject plus Lunovia strategic posture | Drives friendly key terrain and civil considerations. |
+| Energy, transportation, border-security coordination | Scenario inject | Explains why document collection matters to Varensk. |
+| Endpoint telemetry, Windows event logs, firewall logs, limited netflow | Scenario inject | Sets observation and fields of fire for friendly OCOKA-W. |
+| No full packet capture everywhere | Scenario inject | Prevents overclaiming visibility. |
+| No disruptive action yet | Student brief and commander context | Keeps the practical in planning and handoff mode. |
+
+### 4. Evidence Reference
+
+| Scenario evidence | Expected planning interpretation | ATT&CK handoff question |
+| --- | --- | --- |
+| Two user workstations affected | Initial foothold or repeated endpoint compromise | Which initial access or execution behaviors explain the first compromise? |
+| Departmental file server affected | Collection or staging terrain | Is this local data collection, remote collection, staging, or lateral movement? |
+| Energy and transportation policy users | Adversary target set likely tied to strategic intelligence requirements | What collection objective is implied by victim role and data? |
+| Script execution from user profile paths | Possible user-context execution and script-based malware | Which command/scripting interpreter and execution technique applies? |
+| Unusual outbound web traffic | Possible C2 or exfil path | Is the traffic command-and-control, exfiltration, or both? |
+| Removable-media alert | Possible removable media access vector or propagation | Does evidence support replication through removable media or only device insertion? |
+| Staged archives of office documents | Collection and staging before exfiltration | Is the behavior data from local system, archive collection, or exfiltration staging? |
+| Endpoint logs and limited netflow only | Incomplete observation | What logs are needed to prove sequence, scope, and exfil volume? |
+
+### 5. Recommended Instructor Walkthrough
+
+### Step 1: In-Brief and Frame the Mission (10 minutes)
+
+Project or read the mission statement:
+
+```text
+Deny or degrade the Varenskian actor's ability to collect intelligence from the defended Lunovian government network in order to preserve friendly freedom of maneuver in cyberspace and generate options for pursuit.
+```
+
+Expected student outputs:
+
+- Explicit task: deny or degrade adversary intelligence collection.
+- Implied tasks: identify what the adversary is collecting, preserve evidence, avoid alerting the adversary prematurely, determine scope, identify data sources, generate RFIs, prepare commander options.
+- Constraint: no disruptive action during this practical.
+- Purpose: preserve friendly freedom of maneuver and create pursuit options.
+
+Instructor teaching point: students should not begin by naming a tool. They begin by stating task and purpose.
+
+### Step 2: Scenario Baseline and RFIs (10 minutes)
+
+Have each team copy the scenario baseline from Section 2.1 and produce initial RFIs.
+
+Strong RFIs include:
+
+- Which user accounts were active during script execution?
+- What exact process names, command lines, hashes, and parent processes were observed?
+- Which external domains, IPs, ports, and URIs were contacted?
+- Was data actually exfiltrated, or only staged?
+- What files were included in the staged archives?
+- Was removable media only inserted, or did it execute content or write artifacts?
+- Are other teams or partners already observing the same Varensk infrastructure?
+
+Weak RFIs are too broad, such as "tell us more about the adversary" or "give us all logs."
+
+### Step 3: Mission Analysis and SALUTE (20 minutes)
+
+Expected SALUTE range:
+
+| SALUTE field | Strong answer characteristics |
+| --- | --- |
+| Size | Varensk state-backed cyber apparatus; exact team size unknown; resourced enough for repeated operations. |
+| Activity | Cyberespionage or near-abroad political/intelligence collection; rapid access and document collection. |
+| Location | Physical actor tied to Varensk; logical activity inside a Lunovian government network and external web infrastructure. |
+| Unit | Likely ISB Unit 18 Amber Tide based on scenario profile; students may caveat if they only say Varensk ISB. |
+| Time | Ongoing; first suspicious activity aligned with removable-media alert and current outbound traffic. |
+| Equipment | Script-based tooling, removable-media path, web C2 or exfil infrastructure, document staging mechanism. |
+
+Instructor note: accept "Varensk ISB / Unit 18 Amber Tide" as the scenario answer. If a team names D7 or EIS, ask them to justify why destructive/battlefield or stealth-cloud indicators are stronger than the near-abroad rapid-collection profile. They should usually self-correct.
+
+### Step 4: DRAW-D (20 minutes)
+
+Expected DRAW-D reasoning:
+
+- **Defend:** The enemy can defend access by using repeated script-based access, alternate outbound infrastructure, or multiple infected endpoints. They are limited by defender visibility and their reliance on user-context activity. They will likely defend access when a path is blocked or a host is isolated.
+- **Reinforce:** The enemy can reinforce through additional phishing, removable media, new scripts, or fresh access attempts. They are limited by user interaction, endpoint controls, and network egress paths. They will reinforce if the target remains valuable or if current access is degraded.
+- **Attack:** The enemy may have broader Varensk capability, but this unit's observed mission is collection, not destructive attack. They are unlikely to attack destructively without a mission change or handoff.
+- **Withdraw:** The enemy can abandon individual hosts or infrastructure, but may not fully withdraw if rapid collection is still productive. They may shift infrastructure or reattempt access rather than leave.
+- **Delay:** The enemy can delay defenders through noisy repeated infections, obfuscated scripts, multiple staging locations, and infrastructure churn. They are limited by the simplicity and detectability of script-based behavior.
+
+Instructor teaching point: actions on contact should come from DRAW-D, especially withdraw and reinforce.
+
+### Step 5: Friendly and Enemy OCOKA-W (25 minutes)
+
+Strong friendly OCOKA-W findings:
+
+- **Observation and fields of fire:** Endpoint telemetry, Windows event logs, firewall logs, and limited netflow; no complete full-packet visibility.
+- **Cover and concealment:** Defender actions should avoid obvious disruptive changes until the commander authorizes action.
+- **Obstacles:** Limited packet capture, incomplete host coverage, civil-service disruption risk, and possible legal/partner coordination queues.
+- **Key terrain:** Policy-user workstations, departmental file server, document repositories, identity/persona access used by affected users, egress control points, and logs needed to prove collection.
+- **Avenues of approach:** User-facing access paths, removable media, phishing or malicious attachment paths, and allowed outbound web traffic.
+- **Weather:** Power, communications, and government-service continuity concerns due to regional tension.
+
+Strong enemy OCOKA-W findings:
+
+- **Observation and fields of fire:** Host-level view from compromised endpoints; possible ability to see local files, user activity, and network shares; limited network-wide sensor access.
+- **Cover and concealment:** Script execution from user paths, living-off-the-land style behavior, outbound web over common protocols, and user-writable staging.
+- **Obstacles:** Endpoint telemetry, firewall controls, limited permissions, user behavior, and defender triage.
+- **Key terrain:** Workstations/personas with access to sensitive policy files, departmental file server, staged archive path, outbound path to external infrastructure.
+- **Avenues of approach:** Removable media, phishing, user execution, allowed outbound web protocols.
+- **Weather:** Regional conflict tempo and government operating cadence may influence when users are active and what documents are valuable.
+
+Instructor teaching point: "domain controller" alone is not a strong key-terrain answer here. The adversary's mission points to documents, user personas, and staging/egress paths.
+
+### Step 6: Time, Space, Logistics, and Civil Considerations (10 minutes)
+
+Expected findings:
+
+- **Time:** The adversary appears tempo-driven. Rapid collection and repeated access attempts mean the friendly decision cycle must be faster than the collection cycle.
+- **Space:** Friendly access is strongest in blue-space telemetry and network control points. Enemy access appears strongest at affected user endpoints, a departmental file server, user personas, and outbound web paths.
+- **Logistics:** Defender limitations include analyst capacity, endpoint coverage, firewall/log access, coordination with NCDA/DIPC stakeholders, and possible partner or legal review.
+- **Civil considerations:** Government service continuity, public trust, energy and transportation coordination, and avoiding disruption to normal government work should shape later response options.
+
+Instructor teaching point: these factors should constrain the later exploitation plan. A technically strong countermeasure can still be a poor plan if it disrupts the very services Lunovia needs to preserve.
+
+### Step 7: EMLCOA Development (20 minutes)
+
+Strong EMLCOA should cover:
+
+- Enemy tactical task and purpose: collect intelligence from Lunovian government policy networks in order to support Varensk coercion, political pressure, or future military options.
+- Current activity: maintain access on user workstations, use scripts and common web traffic, stage office documents on a file server or user-writable location, and attempt exfiltration.
+- Actions on contact: shift infrastructure, reattempt access, use alternate compromised hosts, reinforce with new script payloads, or accelerate collection. Full withdrawal is less likely than adaptation unless defenders reveal a broad containment action.
+
+Sample strong paragraph:
+
+```text
+The Varenskian actor's most likely course of action is to maintain repeated user-context access to selected Lunovian government endpoints and file repositories in order to collect energy, transportation, and border-security policy documents for intelligence exploitation. The actor is currently using script-based execution, removable-media or user-driven access paths, document staging, and outbound web traffic to collect and move files while blending into ordinary endpoint and web activity. On contact, the actor is unlikely to abandon the mission outright; they will likely shift infrastructure, reattempt access through users or removable media, reinforce with additional script payloads, and accelerate collection from already identified document stores.
+```
+
+### Step 8: Candidate CG/CV (15 minutes)
+
+Acceptable CG statements:
+
+- The enemy's center of gravity is the combination of rapid document discovery/staging and a usable outbound path before defenders can react.
+- The enemy's center of gravity is repeated user-context access to policy-user workstations plus access to shared document stores.
+- The enemy's center of gravity is collection tempo: quickly finding, staging, and moving documents before detection becomes action.
+
+Acceptable CV statements:
+
+- The enemy's critical vulnerability is reliance on script-based execution and user-writable staging locations that defenders can detect and monitor quickly.
+- The enemy's critical vulnerability is dependence on a small set of user personas and endpoints with access to the targeted documents.
+- The enemy's critical vulnerability is reliance on ordinary outbound web paths that create observable firewall/netflow patterns when correlated with host events.
+
+Acceptable exploitation-framing questions:
+
+- How can the team reduce detection-to-action time against script execution and staging behavior?
+- What evidence is needed to detect collection and staging before exfiltration completes?
+- Which observed behaviors should be mapped first to ATT&CK so later D3FEND and ENGAGE options target the CV rather than generic malware?
+
+Instructor note: push teams away from overbroad CGs such as "Varensk operators" or "their malware." A useful CG/CV pair should be specific enough to shape the next lesson's ATT&CK mapping.
+
+### Step 9: ATT&CK Handoff Table (20 minutes)
+
+Expected handoff rows may include:
+
+| Observed fact | Suspected behavior | Supporting evidence | Next ATT&CK question |
+| --- | --- | --- | --- |
+| Script execution from user profile paths | Command/scripting execution | Endpoint telemetry and Windows events | Which interpreter and parent process were used? |
+| Outbound web traffic to external infrastructure | C2 or exfil over web protocols | Firewall logs and limited netflow | Does timing align with script execution or archive creation? |
+| Removable-media alert | Removable-media access or propagation | Device control or endpoint alert | Was content executed or copied from the device? |
+| Staged office-document archives | Collection/staging | File server artifacts | Were archives created by adversary process or normal user activity? |
+| Affected policy users | Targeted collection | User roles and file access | Which data source proves adversary access to policy files? |
+| Multiple affected hosts | Scope expansion or repeated access | Endpoint detections across systems | Is this lateral movement, repeated initial access, or propagation? |
+
+Teaching transition: tell students this table is exactly what the next block needs. ATT&CK mapping starts from evidence and behavior, not from memorized technique IDs.
+
+### Step 10: Commander Back-Brief (20 minutes)
+
+Each team briefs for two minutes:
+
+1. Enemy mission and current activity.
+2. Key terrain from enemy perspective.
+3. Candidate CG/CV.
+4. Top RFIs.
+5. Evidence rows that must be mapped to ATT&CK next.
+
+Instructor should ask one question per team:
+
+- "What evidence changed your EMLCOA?"
+- "What would the enemy do if we quarantined the first workstation?"
+- "Which part of your CG/CV is most weakly supported?"
+- "Which evidence row must be mapped first in ATT&CK and why?"
+
+## Timing
+
+Protect the two-hour window. Use the durations already on the walkthrough rows:
+
+- In-brief and frame the mission: 10 min
+- Scenario baseline and RFIs: 10 min
+- Mission analysis and SALUTE: 20 min
+- DRAW-D: 20 min
+- Friendly and enemy OCOKA-W: 25 min
+- Time, space, logistics, and civil considerations: 10 min
+- EMLCOA: 20 min
+- Candidate CG/CV: 15 min
+- ATT&CK handoff table: 20 min
+- Commander back-brief: 20 min
+
+## Common stalls
+
+### 8. Common Mistakes
+
+- Jumping straight to "block the IP" or "deploy EDR" before completing EMLCOA.
+- Treating the domain controller as key terrain by default.
+- Writing RFIs that are too broad for an intel or hunt team to answer.
+- Confusing Varensk unit identity with industry threat-actor labels.
+- Assuming destructive intent because the adversary theoretically could destroy systems.
+- Filling in D3FEND or ENGAGE actions before mapping the observed behavior to ATT&CK.
+- Ignoring actions on contact when proposing later response options.
+
+### 9. Troubleshooting and Confirmation
+
+### Teams Are Stuck on Technical Details
+
+Prompt them back to planning:
+
+```text
+What do you know?
+What do you think?
+What are you going to do next?
+What RFI would reduce the biggest risk in your assumption?
+```
+
+### Teams Disagree on Attribution
+
+Require them to cite scenario evidence and confidence level. A caveated answer is stronger than unsupported certainty.
+
+```text
+We assess Varensk ISB Unit 18 Amber Tide with moderate confidence because the behavior matches near-abroad political/intelligence collection and rapid script-based access. We need infrastructure, payload, and targeting details to increase confidence.
+```
+
+### Teams Jump to D3FEND
+
+Stop them and ask for the ATT&CK handoff row that justifies the action.
+
+```text
+Before we choose a countermeasure, what behavior did we observe, what evidence supports it, and which ATT&CK question must be answered first?
+```
+
+### Teams Produce Overbroad CG/CV
+
+Ask whether their CV is something the friendly force can actually target.
+
+```text
+If the CV is "their operators," what method renders that ineffective from this defended network? If you cannot answer that, make the CG/CV more specific.
+```
+
+## Lesson summary
+
+**Transition to ATT&CK, D3FEND, and ENGAGE**
+
+Close the lab by collecting or projecting one strong ATT&CK handoff table. Tell students:
+
+```text
+This is where the next lesson starts. We are not using ATT&CK as a poster or a memorization test. We are using it to turn observed facts into structured adversary behavior. Once the behavior is mapped, D3FEND and ENGAGE become planning vocabularies for commander options.
+```
+
+The desired exit state is:
+
+- a plausible EMLCOA;
+- a candidate CG/CV pair;
+- a prioritized RFI list;
+- a clean evidence-to-behavior table;
+- students ready to map behavior to ATT&CK before selecting D3FEND or ENGAGE options.
+
+**Link to Course Objectives**
+
+This lab satisfies the Week 1 outcome of converting scenario discovery into a disciplined tactical-planning product. It directly prepares students for the ATT&CK to D3FEND and ENGAGE block by forcing them to separate observed evidence, adversary behavior, assumptions, and response options.
+
+## Questions and check on learning
+
+- **Ask (Q):** What evidence changed your EMLCOA?
+- **Expected Response (A):** A scenario fact (script execution, staged archives, outbound web, removable-media alert, affected user roles) that shaped enemy current activity or actions on contact.
+- **Ask (Q):** Which evidence row must be mapped first in ATT&CK, and why?
+- **Expected Response (A):** The row that most directly supports the candidate CV or the next commander decision, stated as observed fact plus behavior plus a follow-on ATT&CK question.
+
+## Grading checkpoints
+
+This Module is not graded. Use the checkpoints as debrief standards.
+
+### 6. Grading Checkpoints
+
+Use a simple 1-3 scale for each checkpoint:
+
+| Checkpoint | 1 - Needs work | 2 - Acceptable | 3 - Strong |
+| --- | --- | --- | --- |
+| Mission analysis | Restates scenario without task/purpose | Identifies tasks and purpose | Separates explicit/implied tasks, constraints, and purpose cleanly |
+| SALUTE/DRAW-D | Generic APT language | Mostly scenario-grounded | Ties each claim to scenario evidence and RFIs |
+| OCOKA-W | Lists hosts only | Covers friendly and enemy terrain | Explains physical/logical/persona terrain and mission impact |
+| EMLCOA | Vague adversary description | States mission/current activity/contact | Coherent enemy scheme of maneuver tied to DRAW-D |
+| CG/CV | Too broad to act on | Plausible and related | Specific, testable, and directly tied to EMLCOA |
+| ATT&CK handoff | Jumps to tools or defenses | Identifies behavior/evidence | Builds clean evidence-to-behavior questions for next block |
+| Back-brief | Too technical or unfocused | Understandable and concise | Commander-focused, evidence-based, and decision-oriented |
+
+### 7. Acceptable Student Answers
+
+There is not a single required final answer. Award credit when students make defensible, evidence-based arguments.
+
+Acceptable adversary identification:
+
+- Strong: Varensk ISB Unit 18 Amber Tide, caveated as the scenario analogue for Gamaredon-style near-abroad collection.
+- Acceptable: Varensk ISB or Varensk near-abroad cyber element.
+- Weak: generic "APT" with no connection to the scenario's Varensk apparatus.
+
+Acceptable enemy mission:
+
+- Strong: intelligence collection from Lunovian government policy and continuity-planning material to support Varensk strategic pressure.
+- Acceptable: espionage against government files.
+- Weak: destructive attack or ransomware without evidence.
+
+Acceptable end state:
+
+- Strong: an ATT&CK-ready evidence table plus RFIs that preserve planning discipline.
+- Acceptable: a partial table with clear evidence and assumptions.
+- Weak: D3FEND or ENGAGE recommendations without explaining observed ATT&CK behavior.
+
+## Related artifacts
+
+- Student brief: [`student-brief.md`](./student-brief.md)

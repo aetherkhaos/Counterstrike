@@ -1,0 +1,38 @@
+---
+id: B04.M05-rubric
+title: C2 Tool Evaluation Peer Handoff — Blank Student Rubric
+artifact_type: rubric
+audience: student
+block: B04
+module_type: group_activity
+source_status: canonical
+review_required: false
+output_formats:
+- docx
+- pdf
+- xlsx
+template_profile: rubric_v1
+sensitivity: course_internal
+---
+
+# L4.0.b Peer Handoff Rubric
+
+**Lab:** L4.0.b C2 Framework Evaluation and Peer Handoff  
+**Use:** Instructor scoring of author dossiers and peer-execute outcomes  
+**Points:** Poor = 1, Marginal = 2, Acceptable = 3, Exemplary = 4 per row
+
+Student-facing note: performance descriptors only — no hidden solution content.
+
+| Instructor question | Poor (1 pt) | Marginal (2 pts) | Acceptable (3 pts) | Exemplary (4 pts) |
+| --- | --- | --- | --- | --- |
+| **PH-1 (Weight: install reproducibility). Did the dossier enable a peer to install from staged media without author coaching?** | Peer could not begin install, or required author intervention / missing path. Score: 1 | Peer installed only with significant guesswork; critical prereqs missing or unclear. Score: 2 | Peer completed install from dossier + staged path with only minor clarification to instructor about environment faults. Score: 3 | Peer installed cleanly on first pass; prereqs, paths, and order were explicit and verified. Score: 4 |
+| **PH-2 (Weight: operational clarity). Did the employment workflow make the install → build/deploy beacon → task-via-teamserver chain observable and ordered?** | Workflow absent or contradictory; peer could not identify next action. Score: 1 | Partial workflow; peer stalled on beacon build, deployment, or tasking steps. Score: 2 | Clear happy-path steps for building/deploying the beacon and tasking it through the teamserver. Score: 3 | Workflow is concise, ordered, and anticipates common operator decision points (e.g., listener config, callback timing) without bloat. Score: 4 |
+| **PH-3 (Weight: validation evidence). Did validation checks (e.g., tasking the beacon and confirming a response) prove the tool worked and match what the peer could re-run?** | No validation section, or claims without runnable checks. Score: 1 | Validation vague; peer unsure what “success” looks like. Score: 2 | Runnable validation checks; peer completed the minimal proof described. Score: 3 | Validation includes expected evidence cues and failure discriminators the peer used successfully. Score: 4 |
+| **PH-4 (Weight: limitation honesty). Did the dossier surface real limitations, footprint, and failure modes?** | Marketing-only tone; no limitations or known breaks. Score: 1 | Generic caveats unrelated to observed testing. Score: 2 | Concrete limitations and footprint notes tied to the author’s test. Score: 3 | Limitations clearly change mission suitability; ties burden/footprint to planned TTP risk. Score: 4 |
+| **PH-5 (Weight: peer success from docs alone). Did the peer complete install + build/deploy a beacon + task it via the teamserver using only the dossier and approved media?** | Peer failed two or more of install / beacon build-deploy / tasking under sealed-dossier rules. Score: 1 | Peer completed only one major step; others needed coaching or were abandoned. Score: 2 | Peer completed all three major steps under sealed-dossier rules. Score: 3 | Peer completed all three major steps efficiently and documented residual gaps that still improve the dossier. Score: 4 |
+
+## Scoring Notes
+
+- Score the **author** primarily with PH-1–PH-4; use PH-5 as the integrated outcome check.
+- If environment breakage (share down, pool exhausted) blocked the peer, do not penalize the author for that interval; resume scoring after restore.
+- Hotwash quality can inform Exemplary vs Acceptable on PH-4/PH-5 but does not replace peer-execute evidence.
